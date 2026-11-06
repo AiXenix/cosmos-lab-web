@@ -1,0 +1,3584 @@
+{
+ "schema": "aixenix.cosmos.lessons/1",
+ "lessons": [
+  {
+   "id": "L01",
+   "theme": "Орбиты и измерения",
+   "title": {
+    "en": "Orbits and units",
+    "ru": "Орбита и единицы"
+   },
+   "scene_id": "real.solar_system",
+   "goal": {
+    "en": "Read an orbit in SI units and connect period to distance.",
+    "ru": "Прочитать орбиту в единицах СИ и связать период с расстоянием."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open the Solar System.",
+      "ru": "Откройте Солнечную систему."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.solar_system"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Select Earth in the tree.",
+      "ru": "Выберите Землю в дереве."
+     },
+     "ui_hint": {
+      "panel": "tree",
+      "control": "body_row",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "body_selected",
+      "where": {
+       "body_id": "earth"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Record Earth's orbital period.",
+      "ru": "Запишите орбитальный период Земли."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "orbital_period",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "orbital_period",
+       "body": "earth"
+      }
+     },
+     "check": {
+      "measurement": "orbital_period",
+      "op": "in_range",
+      "value": [
+       31300000.0,
+       31900000.0
+      ],
+      "unit": "s",
+      "lo": 31300000.0,
+      "hi": 31900000.0,
+      "body": "earth"
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Select Mars and record its period.",
+      "ru": "Выберите Марс и запишите его период."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "orbital_period",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "orbital_period",
+       "body": "mars"
+      }
+     },
+     "check": {
+      "measurement": "orbital_period",
+      "op": "in_range",
+      "value": [
+       58000000.0,
+       60500000.0
+      ],
+      "unit": "s",
+      "lo": 58000000.0,
+      "hi": 60500000.0,
+      "body": "mars"
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Run the simulation for one Earth year.",
+      "ru": "Запустите симуляцию на один земной год."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 31560000.0
+      },
+      "value": 31560000.0
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L01q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L01q1",
+      "text": {
+       "en": "Mars is about 1.52 times farther from the Sun than Earth. Its period is longer by about...",
+       "ru": "Марс примерно в 1,52 раза дальше от Солнца, чем Земля. Его период длиннее примерно в..."
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "1.52 times",
+         "ru": "1,52 раза"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "1.88 times (1.52^1.5)",
+         "ru": "1,88 раза (1,52^1,5)"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "2.3 times (1.52^2)",
+         "ru": "2,3 раза (1,52^2)"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L01q1",
+     "text": {
+      "en": "Mars is about 1.52 times farther from the Sun than Earth. Its period is longer by about...",
+      "ru": "Марс примерно в 1,52 раза дальше от Солнца, чем Земля. Его период длиннее примерно в..."
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "1.52 times",
+        "ru": "1,52 раза"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "1.88 times (1.52^1.5)",
+        "ru": "1,88 раза (1,52^1,5)"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "2.3 times (1.52^2)",
+        "ru": "2,3 раза (1,52^2)"
+       }
+      }
+     ],
+     "correct": "b"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Explain why one number (the period) depends on distance and the Sun's mass.",
+     "ru": "Объясните, почему период зависит от расстояния и массы Солнца."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Newtonian point masses; the ten-body subset drifts slowly from the real ephemeris.",
+    "ru": "Ньютоновские точечные массы; набор из десяти тел медленно расходится с реальной эфемеридой."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L02",
+   "theme": "Орбиты и измерения",
+   "title": {
+    "en": "Testing a hypothesis",
+    "ru": "Проверка гипотезы"
+   },
+   "scene_id": "real.solar_system",
+   "goal": {
+    "en": "Test a hypothesis with a reversible change.",
+    "ru": "Проверить гипотезу обратимым изменением."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Write a hypothesis: what happens to Earth's orbit if the Sun is twice as massive?",
+      "ru": "Запишите гипотезу: что станет с орбитой Земли, если масса Солнца удвоится?"
+     },
+     "ui_hint": {
+      "panel": "journal",
+      "control": "hypothesis",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "hypothesis_recorded"
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Create branch B to keep the original.",
+      "ru": "Создайте ветку B, чтобы сохранить исходник."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "branch",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "branch_created"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Double the Sun's mass in the live world (B keeps the original).",
+      "ru": "Удвойте массу Солнца в текущем мире (ветка B хранит исходник)."
+     },
+     "ui_hint": {
+      "panel": "properties",
+      "control": "mass_kg",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "property_edited",
+      "where": {
+       "body_id": "sun",
+       "field": "mass_kg"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Run one year.",
+      "ru": "Прогоните год."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 31557600.0
+      },
+      "value": 31557600.0
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Record Earth's eccentricity.",
+      "ru": "Запишите эксцентриситет Земли."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "eccentricity",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "eccentricity",
+       "body": "earth"
+      }
+     },
+     "check": {
+      "measurement": "eccentricity",
+      "op": "in_range",
+      "value": [
+       0.4,
+       0.6
+      ],
+      "lo": 0.4,
+      "hi": 0.6,
+      "body": "earth"
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Compare branches A and B on Earth's period.",
+      "ru": "Сравните ветки A и B по периоду Земли."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "compare",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "branch_compared",
+      "where": {
+       "metric": "orbital_period",
+       "body": "earth"
+      }
+     }
+    },
+    {
+     "id": "s7",
+     "instruction": {
+      "en": "Undo to return to the original world.",
+      "ru": "Отмените изменение и вернитесь к исходному миру."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "undo",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "transaction_undone"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Did the result support your hypothesis? Mention period and eccentricity.",
+     "ru": "Подтвердил ли результат гипотезу? Упомяните период и эксцентриситет."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Instant mass change is a thought experiment; real stars cannot double their mass instantly.",
+    "ru": "Мгновенная смена массы — мысленный опыт; реальные звёзды не меняют массу мгновенно."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L03",
+   "theme": "Экзосистемы и данные",
+   "title": {
+    "en": "Passport of an unknown world",
+    "ru": "Паспорт неизвестного мира"
+   },
+   "scene_id": "real.proxima_centauri",
+   "goal": {
+    "en": "Read the passport of an exoplanet and separate measured from assumed.",
+    "ru": "Прочитать паспорт экзопланеты и отделить измеренное от принятого."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open Proxima Centauri.",
+      "ru": "Откройте Проксиму Центавра."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.proxima_centauri"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Select Proxima b and open its passport.",
+      "ru": "Выберите Проксиму b и откройте её паспорт."
+     },
+     "ui_hint": {
+      "panel": "properties",
+      "control": "provenance_toggle",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "passport_opened",
+      "where": {
+       "body_id": "proxima_cen_b"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Find which mass value is a minimum (Msini).",
+      "ru": "Найдите, какая масса является минимальной (Msini)."
+     },
+     "ui_hint": {
+      "panel": "passport",
+      "control": "mass_kg",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L03q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L03q1",
+      "text": {
+       "en": "Proxima b's listed mass is...",
+       "ru": "Масса Проксимы b в каталоге — это..."
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "the true mass",
+         "ru": "истинная масса"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "a minimum mass (Msini); true mass is larger by 1/sin i",
+         "ru": "минимальная масса (Msini); истинная больше в 1/sin i"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "an upper limit",
+         "ru": "верхний предел"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Open the atlas card of Proxima Cen b.",
+      "ru": "Откройте карточку атласа Proxima Cen b."
+     },
+     "ui_hint": {
+      "panel": "atlas",
+      "control": "card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "catalogue_card_opened",
+      "where": {
+       "record": "Proxima Cen b"
+      }
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L03q1",
+     "text": {
+      "en": "Proxima b's listed mass is...",
+      "ru": "Масса Проксимы b в каталоге — это..."
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "the true mass",
+        "ru": "истинная масса"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "a minimum mass (Msini); true mass is larger by 1/sin i",
+        "ru": "минимальная масса (Msini); истинная больше в 1/sin i"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "an upper limit",
+        "ru": "верхний предел"
+       }
+      }
+     ],
+     "correct": "b"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Name one measured and one assumed field of Proxima b.",
+     "ru": "Назовите одно измеренное и одно принятое поле Проксимы b."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Atmosphere, ocean and radius of Proxima b are unknown; the look is an artistic hypothesis.",
+    "ru": "Атмосфера, океан и радиус Проксимы b неизвестны; облик — художественная гипотеза."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L04",
+   "theme": "Экзосистемы и данные",
+   "title": {
+    "en": "Reconstruction and assumptions",
+    "ru": "Реконструкция и допущения"
+   },
+   "scene_id": "real.hd_10180",
+   "goal": {
+    "en": "See how missing data were reconstructed and which planets are contested.",
+    "ru": "Увидеть, как восстановлены недостающие данные и какие планеты спорны."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open HD 10180.",
+      "ru": "Откройте HD 10180."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.hd_10180"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Select HD 10180 c; in Properties note the 'reconstructed' badge on Radius, then open 'Where the numbers come from' and read how radius_m was reconstructed.",
+      "ru": "Выберите HD 10180 c; во вкладке «Свойства» найдите отметку «реконструировано» у радиуса, затем откройте «Откуда эти числа» и прочитайте, как восстановлен radius_m."
+     },
+     "ui_hint": {
+      "panel": "properties",
+      "control": "provenance_toggle",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "passport_opened",
+      "where": {
+       "body_id": "hd_10180_c"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Add contested candidate HD 10180 b from the optional list.",
+      "ru": "Добавьте спорного кандидата HD 10180 b из списка опциональных."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "optional_bodies",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "optional:hd_10180_b"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L04q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L04q1",
+      "text": {
+       "en": "Why is HD 10180 b not in the start state?",
+       "ru": "Почему HD 10180 b нет в стартовом состоянии?"
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "It was destroyed",
+         "ru": "Она разрушена"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "Its signal is low-significance and not in the archive's default set",
+         "ru": "Её сигнал слабый и не входит в набор архива по умолчанию"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "It is too small to simulate",
+         "ru": "Она слишком мала для расчёта"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L04q1",
+     "text": {
+      "en": "Why is HD 10180 b not in the start state?",
+      "ru": "Почему HD 10180 b нет в стартовом состоянии?"
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "It was destroyed",
+        "ru": "Она разрушена"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "Its signal is low-significance and not in the archive's default set",
+        "ru": "Её сигнал слабый и не входит в набор архива по умолчанию"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "It is too small to simulate",
+        "ru": "Она слишком мала для расчёта"
+       }
+      }
+     ],
+     "correct": "b"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Explain the difference between 'reconstructed' and 'measured' in this scene.",
+     "ru": "Объясните разницу между «восстановлено» и «измерено» в этой сцене."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Minimum masses and assumed inclinations; the scene is not a coherent dynamical fit.",
+    "ru": "Минимальные массы и принятые наклоны; сцена не является согласованным динамическим решением."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L05",
+   "theme": "Двойные и иерархии",
+   "title": {
+    "en": "Barycentre and system composition",
+    "ru": "Барицентр и состав системы"
+   },
+   "scene_id": "real.sirius_ab",
+   "goal": {
+    "en": "Find the barycentre of a binary and see both stars orbit it.",
+    "ru": "Найти барицентр двойной и увидеть, что обе звезды обращаются вокруг него."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open Sirius A/B.",
+      "ru": "Откройте Сириус A/B."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.sirius_ab"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Place the barycentre marker.",
+      "ru": "Поставьте маркер барицентра."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "tool.barycentre_marker",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "tool.barycentre_marker"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Run 25 years and watch both stars.",
+      "ru": "Прогоните 25 лет и следите за обеими звёздами."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 790000000.0
+      },
+      "value": 790000000.0
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Record Sirius A's distance from the barycentre.",
+      "ru": "Запишите расстояние Сириуса A до барицентра."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "distance",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "distance",
+       "body": "sirius_a",
+       "body2": "barycentre"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Record Sirius B's distance from the barycentre.",
+      "ru": "Запишите расстояние Сириуса B до барицентра."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "distance",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "distance",
+       "body": "sirius_b",
+       "body2": "barycentre"
+      }
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L05q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L05q1",
+      "text": {
+       "en": "Sirius A is about twice as massive as B. Its distance from the barycentre is...",
+       "ru": "Сириус A примерно вдвое массивнее B. Его расстояние до барицентра..."
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "about half of B's",
+         "ru": "примерно вдвое меньше, чем у B"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "the same",
+         "ru": "такое же"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "twice B's",
+         "ru": "вдвое больше"
+        }
+       }
+      ],
+      "correct": "a",
+      "correct_index": 0
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L05q1",
+     "text": {
+      "en": "Sirius A is about twice as massive as B. Its distance from the barycentre is...",
+      "ru": "Сириус A примерно вдвое массивнее B. Его расстояние до барицентра..."
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "about half of B's",
+        "ru": "примерно вдвое меньше, чем у B"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "the same",
+        "ru": "такое же"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "twice B's",
+        "ru": "вдвое больше"
+       }
+      }
+     ],
+     "correct": "a"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Explain why the heavier star moves less.",
+     "ru": "Объясните, почему более тяжёлая звезда движется меньше."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Stellar evolution is not simulated.",
+    "ru": "Эволюция звёзд не моделируется."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L06",
+   "theme": "Двойные и иерархии",
+   "title": {
+    "en": "A planet with two suns",
+    "ru": "Планета у двух солнц"
+   },
+   "scene_id": "real.kepler_16",
+   "goal": {
+    "en": "See a planet orbit two suns and measure changing flux.",
+    "ru": "Увидеть планету у двух солнц и измерить меняющийся поток."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open Kepler-16.",
+      "ru": "Откройте Kepler-16."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.kepler_16"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Select Kepler-16 b.",
+      "ru": "Выберите Kepler-16 b."
+     },
+     "ui_hint": {
+      "panel": "tree",
+      "control": "body_row",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "body_selected",
+      "where": {
+       "body_id": "kepler_16_b"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Place a flux meter on the planet.",
+      "ru": "Поставьте измеритель потока на планету."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "tool.flux_meter",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "tool.flux_meter"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Run 230 days while the meter records.",
+      "ru": "Прогоните 230 суток, пока измеритель записывает."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 19872000.0
+      },
+      "value": 19872000.0
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Record the flux series.",
+      "ru": "Запишите ряд потока."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "flux_series",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "flux_series",
+       "body": "kepler_16_b"
+      }
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L06q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L06q1",
+      "text": {
+       "en": "Why does the flux on Kepler-16 b wiggle every ~41 days?",
+       "ru": "Почему поток на Kepler-16 b колеблется с периодом ~41 сутки?"
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "The planet's orbit is very eccentric",
+         "ru": "Орбита планеты очень вытянута"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "The two stars orbit each other, changing their distances to the planet",
+         "ru": "Звёзды обращаются друг вокруг друга, меняя расстояния до планеты"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "Clouds",
+         "ru": "Облака"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L06q1",
+     "text": {
+      "en": "Why does the flux on Kepler-16 b wiggle every ~41 days?",
+      "ru": "Почему поток на Kepler-16 b колеблется с периодом ~41 сутки?"
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "The planet's orbit is very eccentric",
+        "ru": "Орбита планеты очень вытянута"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "The two stars orbit each other, changing their distances to the planet",
+        "ru": "Звёзды обращаются друг вокруг друга, меняя расстояния до планеты"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "Clouds",
+        "ru": "Облака"
+       }
+      }
+     ],
+     "correct": "b"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Describe how two moving suns change the energy the planet receives.",
+     "ru": "Опишите, как два движущихся солнца меняют энергию, получаемую планетой."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Binary phase at the scene epoch is assumed; eclipse dates differ from real ones.",
+    "ru": "Фаза двойной в эпоху сцены принята; даты затмений отличаются от реальных."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L07",
+   "theme": "Конструктор и резонансы",
+   "title": {
+    "en": "Generator with a seed",
+    "ru": "Генератор с seed"
+   },
+   "scene_id": "generated.red_chain",
+   "goal": {
+    "en": "Use the generator with a seed and reproduce the same system.",
+    "ru": "Использовать генератор с seed и воспроизвести ту же систему."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open the generator and choose 'Red dwarf with a compact chain'.",
+      "ru": "Откройте генератор и выберите «Красный карлик с цепочкой»."
+     },
+     "ui_hint": {
+      "panel": "generator",
+      "control": "archetype",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "panel_opened",
+      "where": {
+       "panel": "generator"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Generate with seed 1101.",
+      "ru": "Сгенерируйте с seed 1101."
+     },
+     "ui_hint": {
+      "panel": "generator",
+      "control": "seed",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "generator_run",
+      "where": {
+       "archetype": "red_dwarf_chain",
+       "seed": 1101
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Compare the state hash with the authored place 'Red dwarf chain'.",
+      "ru": "Сравните хэш состояния с местом «Цепочка у красного карлика»."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "state_hash",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "state_hash"
+      }
+     },
+     "check": {
+      "measurement": "state_hash",
+      "op": "state_equal",
+      "value": "scene:generated.red_chain"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Why is a seed useful for an experiment?",
+     "ru": "Чем seed полезен для эксперимента?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Generated systems pass short static checks only; long-term stability is not claimed.",
+    "ru": "Сгенерированные системы проходят только короткие статические проверки; устойчивость не заявляется."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L08",
+   "theme": "Конструктор и резонансы",
+   "title": {
+    "en": "Period ratio and angle",
+    "ru": "Отношение периодов и угол"
+   },
+   "scene_id": "real.gj_876",
+   "goal": {
+    "en": "Measure a period ratio and a resonance angle over an interval.",
+    "ru": "Измерить отношение периодов и резонансный угол на интервале."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open GJ 876.",
+      "ru": "Откройте GJ 876."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.gj_876"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Measure the period ratio of planets b and c.",
+      "ru": "Измерьте отношение периодов планет b и c."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "period_ratio",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "period_ratio",
+       "body": "gj_876_c",
+       "body2": "gj_876_b"
+      }
+     },
+     "check": {
+      "measurement": "period_ratio",
+      "op": "in_range",
+      "value": [
+       1.9,
+       2.15
+      ],
+      "lo": 1.9,
+      "hi": 2.15,
+      "body": "gj_876_c"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Place the resonance tracker.",
+      "ru": "Поставьте трекер резонанса."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "tool.resonance_tracker",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "tool.resonance_tracker"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Select planets c and b and start monitoring their 2:1 resonance angle.",
+      "ru": "Выберите планеты c и b и запустите монитор их резонансного угла 2:1."
+     },
+     "ui_hint": {
+      "panel": "observatory",
+      "control": "monitor",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "resonance_monitor_added",
+      "where": {
+       "p": 2,
+       "q": 1,
+       "body_id": "gj_876_c",
+       "body2_id": "gj_876_b"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Run 50 orbits of b.",
+      "ru": "Прогоните 50 оборотов b."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 264000000.0
+      },
+      "value": 264000000.0
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Record the state of the resonance angle.",
+      "ru": "Запишите состояние резонансного угла."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "resonance_angle_state",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "resonance_angle_state",
+       "body": "gj_876_c",
+       "body2": "gj_876_b"
+      }
+     }
+    },
+    {
+     "id": "s7",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L08q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L08q1",
+      "text": {
+       "en": "A period ratio close to 2 alone proves resonance.",
+       "ru": "Отношение периодов около 2 само по себе доказывает резонанс."
+      },
+      "options": [
+       {
+        "id": "t",
+        "text": {
+         "en": "True",
+         "ru": "Верно"
+        }
+       },
+       {
+        "id": "f",
+        "text": {
+         "en": "False: the critical angle must librate",
+         "ru": "Неверно: критический угол должен либрировать"
+        }
+       }
+      ],
+      "correct": "f",
+      "correct_index": 1
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L08q1",
+     "text": {
+      "en": "A period ratio close to 2 alone proves resonance.",
+      "ru": "Отношение периодов около 2 само по себе доказывает резонанс."
+     },
+     "choices": [
+      {
+       "id": "t",
+       "text": {
+        "en": "True",
+        "ru": "Верно"
+       }
+      },
+      {
+       "id": "f",
+       "text": {
+        "en": "False: the critical angle must librate",
+        "ru": "Неверно: критический угол должен либрировать"
+       }
+      }
+     ],
+     "correct": "f"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "What distinguishes libration from circulation?",
+     "ru": "Чем либрация отличается от циркуляции?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Point-mass model; the scene is a transcription of one published coplanar fit, not re-fitted here.",
+    "ru": "Модель точечных масс; сцена переносит одно опубликованное решение, без повторной подгонки."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L09",
+   "theme": "Обсерватория",
+   "title": {
+    "en": "Transit geometry",
+    "ru": "Геометрия транзита"
+   },
+   "scene_id": "generated.hot_jupiter",
+   "goal": {
+    "en": "Record a transit light curve and read its depth.",
+    "ru": "Записать кривую блеска транзита и прочитать глубину."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open 'Hot Jupiter'.",
+      "ru": "Откройте «Горячий Юпитер»."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "generated.hot_jupiter"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Place the transit photometer along the observer direction.",
+      "ru": "Поставьте транзитный фотометр по направлению наблюдателя."
+     },
+     "ui_hint": {
+      "panel": "observatory",
+      "control": "photometer",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "observer_placed"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Observe for three orbits.",
+      "ru": "Наблюдайте три оборота."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 792772.370549127
+      },
+      "value": 792772.370549127
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Record the transit depth.",
+      "ru": "Запишите глубину транзита."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "transit_depth",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "transit_depth"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L09q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L09q1",
+      "text": {
+       "en": "Transit depth is approximately...",
+       "ru": "Глубина транзита приблизительно равна..."
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "(R_planet/R_star)^2",
+         "ru": "(R_планеты/R_звезды)^2"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "M_planet/M_star",
+         "ru": "M_планеты/M_звезды"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "a/R_star",
+         "ru": "a/R_звезды"
+        }
+       }
+      ],
+      "correct": "a",
+      "correct_index": 0
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L09q1",
+     "text": {
+      "en": "Transit depth is approximately...",
+      "ru": "Глубина транзита приблизительно равна..."
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "(R_planet/R_star)^2",
+        "ru": "(R_планеты/R_звезды)^2"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "M_planet/M_star",
+        "ru": "M_планеты/M_звезды"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "a/R_star",
+        "ru": "a/R_звезды"
+       }
+      }
+     ],
+     "correct": "a"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "How would the depth change if the planet were twice as large?",
+     "ru": "Как изменится глубина, если планета вдвое больше?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Uniform or simple limb-darkened disk; no stellar spots or atmosphere spectra.",
+    "ru": "Однородный или простой потемнённый к краю диск; без пятен и спектров атмосферы."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L10",
+   "theme": "Обсерватория",
+   "title": {
+    "en": "Radial velocity",
+    "ru": "Лучевая скорость"
+   },
+   "scene_id": "real.hd_69830",
+   "goal": {
+    "en": "Record a radial-velocity curve and estimate an amplitude.",
+    "ru": "Записать кривую лучевых скоростей и оценить амплитуду."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open HD 69830.",
+      "ru": "Откройте HD 69830."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.hd_69830"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Place the RV spectrograph.",
+      "ru": "Поставьте RV-спектрограф."
+     },
+     "ui_hint": {
+      "panel": "observatory",
+      "control": "rv",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "observer_placed",
+      "where": {
+       "instrument": "rv_spectrograph"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Observe 200 days.",
+      "ru": "Наблюдайте 200 суток."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 17280000.0
+      },
+      "value": 17280000.0
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Find the strongest period.",
+      "ru": "Найдите самый сильный период."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "periodogram_peaks",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "periodogram_peaks"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Why can RV alone not give the true mass?",
+     "ru": "Почему одни лучевые скорости не дают истинную массу?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Masses are minimum masses with edge-on geometry assumed.",
+    "ru": "Массы минимальные при допущении наблюдения с ребра."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L11",
+   "theme": "Серии и неопределённость",
+   "title": {
+    "en": "Experiment queue",
+    "ru": "Очередь экспериментов"
+   },
+   "scene_id": "generated.climate",
+   "goal": {
+    "en": "Queue a series of runs and read a result table.",
+    "ru": "Поставить серию прогонов в очередь и прочитать таблицу результатов."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open the climate lab.",
+      "ru": "Откройте климатическую лабораторию."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "generated.climate"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Open the series runner.",
+      "ru": "Откройте прогон серий."
+     },
+     "ui_hint": {
+      "panel": "series",
+      "control": "open",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "panel_opened",
+      "where": {
+       "panel": "series"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Select the target world Dravoqui e and enable its surface grid.",
+      "ru": "Выберите целевой мир Dravoqui e и включите сетку поверхности."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "enable",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_grid_enabled",
+      "where": {
+       "body_id": "p4"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Run 4 albedo values for the target world.",
+      "ru": "Прогоните 4 значения альбедо целевого мира."
+     },
+     "ui_hint": {
+      "panel": "series",
+      "control": "start",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "series_completed"
+     },
+     "check": {
+      "op": "ge",
+      "value": 4,
+      "field": "runs_total"
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Record the result table.",
+      "ru": "Запишите таблицу результатов."
+     },
+     "ui_hint": {
+      "panel": "series",
+      "control": "series_table",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "series_table"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Compare the four mean surface temperatures and explain how they change with albedo.",
+     "ru": "Сравните четыре средние температуры поверхности и объясните, как они меняются с альбедо."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Sequential runs; each run uses the same model profile.",
+    "ru": "Последовательные прогоны с одним профилем модели."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L12",
+   "theme": "Серии и неопределённость",
+   "title": {
+    "en": "Comparing branches",
+    "ru": "Сравнение ветвей"
+   },
+   "scene_id": "real.kepler_11",
+   "goal": {
+    "en": "Compare two branches after one intervention.",
+    "ru": "Сравнить две ветки после одного вмешательства."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open Kepler-11 and create branch B to keep the original.",
+      "ru": "Откройте Kepler-11 и создайте ветку B, чтобы сохранить исходник."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "branch",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "branch_created"
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Add a Neptune-like planet at 0.7 au in the live world (B stays the unchanged control).",
+      "ru": "Добавьте нептун на 0,7 а.е. в текущем мире (ветка B остаётся неизменным контролем)."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "planet.ice_giant",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "planet.ice_giant"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Run 5 years in both branches.",
+      "ru": "Прогоните 5 лет в обеих ветках."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 158000000.0
+      },
+      "value": 158000000.0
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Compare the mutual inclination of planets b and g.",
+      "ru": "Сравните взаимный наклон планет b и g."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "compare",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "branch_compared",
+      "where": {
+       "metric": "mutual_inclination",
+       "body": "kepler_11_b",
+       "body2": "kepler_11_g"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "What changed and what stayed the same between the live world and branch B?",
+     "ru": "Что изменилось, а что нет между текущим миром и веткой B?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Single runs are not probabilities; node angles in the start state are assumed.",
+    "ru": "Один прогон — не вероятность; узлы в старте приняты."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L13",
+   "theme": "Столкновения и катастрофы",
+   "title": {
+    "en": "Matter and momentum",
+    "ru": "Вещество и импульс"
+   },
+   "scene_id": "generated.moon_lab",
+   "goal": {
+    "en": "Follow mass and momentum through a collision.",
+    "ru": "Проследить массу и импульс при столкновении."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open the moon lab.",
+      "ru": "Откройте лабораторию спутников."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "generated.moon_lab"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Open the collision ledger.",
+      "ru": "Откройте журнал столкновений."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "collision_ledger",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "panel_opened",
+      "where": {
+       "panel": "measurements"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Push the innermost moon onto a collision course (velocity kick).",
+      "ru": "Направьте внутренний спутник на столкновение (импульс)."
+     },
+     "ui_hint": {
+      "panel": "properties",
+      "control": "kick",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "velocity_kick",
+      "where": {
+       "body_id": "moon1"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Wait for the collision.",
+      "ru": "Дождитесь столкновения."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "collision"
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Check the mass ledger closes.",
+      "ru": "Проверьте, что баланс масс сходится."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "mass_ledger",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "mass_ledger"
+      }
+     },
+     "check": {
+      "measurement": "mass_ledger",
+      "op": "unchanged_within",
+      "value": 1e-09
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Where did the mass go?",
+     "ru": "Куда делась масса?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Collisions use a documented merge/fragment rule; no hydrodynamics.",
+    "ru": "Столкновения по документированному правилу слияния/дробления; без гидродинамики."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L14",
+   "theme": "Столкновения и катастрофы",
+   "title": {
+    "en": "Energy of a catastrophe",
+    "ru": "Энергия катастрофы"
+   },
+   "scene_id": "real.solar_system",
+   "goal": {
+    "en": "Estimate the energy of a catastrophe.",
+    "ru": "Оценить энергию катастрофы."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Place a Mars-size body on a crossing orbit with Earth.",
+      "ru": "Поставьте тело размером с Марс на пересекающуюся с Землёй орбиту."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "planet.mars_like",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "planet.mars_like"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Run until the impact.",
+      "ru": "Прогоните до удара."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "collision"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Record the ejecta mass.",
+      "ru": "Запишите массу выброса."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "ejecta_mass",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "ejecta_mass"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Record Earth's mass after the impact (the remnant).",
+      "ru": "Запишите массу Земли после удара (это остаток)."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "body_mass",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "body_mass",
+       "body": "earth"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Undo the impact via checkpoint.",
+      "ru": "Отмените удар через контрольную точку."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "undo",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "transaction_undone"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Compare impact energy with Earth's binding energy.",
+     "ru": "Сравните энергию удара с энергией связи Земли."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Impact outcome uses a simplified scaling; not a giant-impact simulation.",
+    "ru": "Исход удара — упрощённая формула, не моделирование гигантского удара."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L15",
+   "theme": "Поверхность и энергия",
+   "title": {
+    "en": "Grid and flux",
+    "ru": "Сетка и поток"
+   },
+   "scene_id": "generated.climate",
+   "goal": {
+    "en": "Read the surface grid: flux, albedo, temperature.",
+    "ru": "Прочитать поверхностную сетку: поток, альбедо, температура."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Select the target world Dravoqui e and open the surface panel.",
+      "ru": "Выберите целевой мир Dravoqui e и откройте панель поверхности."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "open",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "panel_opened",
+      "where": {
+       "panel": "surface"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Enable its surface grid.",
+      "ru": "Включите сетку поверхности."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "enable",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_grid_enabled",
+      "where": {
+       "body_id": "p4"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Run 90 days so the grid settles.",
+      "ru": "Прогоните 90 суток, чтобы сетка установилась."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 7776000.0
+      },
+      "value": 7776000.0
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Show the temperature heat map.",
+      "ru": "Покажите тепловую карту температуры."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "surface_temperature_map",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "surface_temperature_map",
+       "body": "p4"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Record the mean temperature.",
+      "ru": "Запишите среднюю температуру."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "surface_temperature_mean",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "surface_temperature_mean",
+       "body": "p4"
+      }
+     },
+     "check": {
+      "measurement": "surface_temperature_mean",
+      "op": "in_range",
+      "value": [
+       200,
+       330
+      ],
+      "unit": "K",
+      "lo": 200,
+      "hi": 330,
+      "body": "p4"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Why is the equator warmer?",
+     "ru": "Почему на экваторе теплее?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Energy-balance grid, not a climate model with winds.",
+    "ru": "Сетка энергобаланса, не климатическая модель с ветрами."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L16",
+   "theme": "Поверхность и энергия",
+   "title": {
+    "en": "Water, ice and heat",
+    "ru": "Вода, лёд и тепло"
+   },
+   "scene_id": "generated.climate",
+   "goal": {
+    "en": "Melt ice with limited energy and track phases.",
+    "ru": "Растопить лёд ограниченной энергией и отследить фазы."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Select Dravoqui e and enable its surface grid.",
+      "ru": "Выберите Dravoqui e и включите сетку поверхности."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "enable",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_grid_enabled",
+      "where": {
+       "body_id": "p4"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Paint ice on the north polar cap with the ice brush.",
+      "ru": "Нанесите лёд на северную полярную шапку кистью льда."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "brush_ice",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_brush_applied",
+      "where": {
+       "field": "ice"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Apply a local heater to the polar cap.",
+      "ru": "Включите локальный нагреватель на полярной шапке."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "heater",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "heater_finished"
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Record ice, water and vapour masses.",
+      "ru": "Запишите массы льда, воды и пара."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "water_phase_masses",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "water_phase_masses",
+       "body": "p4"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L16q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L16q1",
+      "text": {
+       "en": "Total water mass after heating is...",
+       "ru": "Полная масса воды после нагрева..."
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "unchanged (phases moved)",
+         "ru": "не изменилась (сменились фазы)"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "larger",
+         "ru": "больше"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "smaller",
+         "ru": "меньше"
+        }
+       }
+      ],
+      "correct": "a",
+      "correct_index": 0
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L16q1",
+     "text": {
+      "en": "Total water mass after heating is...",
+      "ru": "Полная масса воды после нагрева..."
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "unchanged (phases moved)",
+        "ru": "не изменилась (сменились фазы)"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "larger",
+        "ru": "больше"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "smaller",
+        "ru": "меньше"
+       }
+      }
+     ],
+     "correct": "a"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Where did the heater's energy go?",
+     "ru": "Куда ушла энергия нагревателя?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Latent heat and finite heater power; no atmospheric escape in 1.0. At this power and time the heated ice turns straight into vapour; no standing meltwater forms.",
+    "ru": "Скрытая теплота и конечная мощность; без утечки атмосферы в 1.0. При этой мощности и времени нагретый лёд сразу переходит в пар; стоячей талой воды не образуется."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L17",
+   "theme": "Планетная инженерия",
+   "title": {
+    "en": "Change a condition",
+    "ru": "Изменить условие"
+   },
+   "scene_id": "generated.climate",
+   "goal": {
+    "en": "Change one condition and measure the response.",
+    "ru": "Изменить одно условие и измерить отклик."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Select Dravoqui e and enable its surface grid.",
+      "ru": "Выберите Dravoqui e и включите сетку поверхности."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "enable",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_grid_enabled",
+      "where": {
+       "body_id": "p4"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Create branch B to keep the original.",
+      "ru": "Создайте ветку B, чтобы сохранить исходник."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "branch",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "branch_created"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Raise the target's albedo with the brush in the live world (B keeps the original).",
+      "ru": "Повысьте альбедо цели кистью в текущем мире (ветка B хранит исходник)."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "brush_albedo",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_brush_applied",
+      "where": {
+       "field": "albedo"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Run one year.",
+      "ru": "Прогоните год."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 31557600.0
+      },
+      "value": 31557600.0
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Compare the mean temperature of the target in branches A and B.",
+      "ru": "Сравните среднюю температуру цели в ветках A и B."
+     },
+     "ui_hint": {
+      "panel": "history",
+      "control": "compare",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "branch_compared",
+      "where": {
+       "metric": "surface_temperature_mean",
+       "body": "p4"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Describe the cause and the effect.",
+     "ru": "Опишите причину и следствие."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Single-parameter change; other parameters fixed.",
+    "ru": "Изменён один параметр; остальные фиксированы."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L18",
+   "theme": "Планетная инженерия",
+   "title": {
+    "en": "Restore a habitable model regime",
+    "ru": "Восстановить пригодный режим модели"
+   },
+   "scene_id": "real.toi_700",
+   "goal": {
+    "en": "Restore a habitable regime of the model and name the assumptions.",
+    "ru": "Восстановить пригодный режим модели и назвать допущения."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open TOI 700 and place the habitable-zone overlay.",
+      "ru": "Откройте TOI 700 и включите зону обитаемости."
+     },
+     "ui_hint": {
+      "panel": "catalogue",
+      "control": "tool.habitable_zone",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "preset_placed",
+      "where": {
+       "preset_id": "tool.habitable_zone"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Select TOI-700 d and record its flux.",
+      "ru": "Выберите TOI-700 d и запишите поток."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "stellar_flux_at_body",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "stellar_flux_at_body",
+       "body": "toi_700_d"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Enable the surface grid of TOI-700 d.",
+      "ru": "Включите сетку поверхности TOI-700 d."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "enable",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_grid_enabled",
+      "where": {
+       "body_id": "toi_700_d"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Give it an ocean: paint water over one hemisphere with the water brush (the brush covers up to a hemisphere).",
+      "ru": "Добавьте океан: покройте водой одно полушарие кистью воды (кисть покрывает не больше полушария)."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "brush_water",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_brush_applied",
+      "where": {
+       "field": "water"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Paint water over the other hemisphere too.",
+      "ru": "Покройте водой и второе полушарие."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "brush_water",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "surface_brush_applied",
+      "where": {
+       "field": "water"
+      }
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Run 90 days.",
+      "ru": "Прогоните 90 суток."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 7776000.0
+      },
+      "value": 7776000.0
+     }
+    },
+    {
+     "id": "s7",
+     "instruction": {
+      "en": "Record the mean temperature of TOI-700 d.",
+      "ru": "Запишите среднюю температуру TOI-700 d."
+     },
+     "ui_hint": {
+      "panel": "surface",
+      "control": "surface_temperature_mean",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "surface_temperature_mean",
+       "body": "toi_700_d"
+      }
+     }
+    },
+    {
+     "id": "s8",
+     "instruction": {
+      "en": "Open the passport to list assumptions.",
+      "ru": "Откройте паспорт и перечислите допущения."
+     },
+     "ui_hint": {
+      "panel": "properties",
+      "control": "provenance_toggle",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "passport_opened",
+      "where": {
+       "body_id": "toi_700_d"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "List two assumptions that the result depends on.",
+     "ru": "Назовите два допущения, от которых зависит результат."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "'Habitable' here means a model temperature range, not a claim about life. The grid's heat capacity is a fixed ~1 m mixed layer, so a deeper ocean does not buffer the temperature in 1.0.",
+    "ru": "«Пригодный» означает диапазон модельной температуры, а не утверждение о жизни. Теплоёмкость сетки — фиксированный слой ~1 м, поэтому более глубокий океан в 1.0 не сглаживает температуру."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L19",
+   "theme": "Пульсары и остатки",
+   "title": {
+    "en": "Pulsar receiver",
+    "ru": "Приёмник пульсара"
+   },
+   "scene_id": "real.psr_b1257_12",
+   "goal": {
+    "en": "Read pulsar timing without strobe.",
+    "ru": "Прочитать тайминг пульсара без мигания."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open PSR B1257+12.",
+      "ru": "Откройте PSR B1257+12."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.psr_b1257_12"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Place the pulsar timing receiver.",
+      "ru": "Поставьте приёмник тайминга."
+     },
+     "ui_hint": {
+      "panel": "observatory",
+      "control": "pulsar_receiver",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "observer_placed",
+      "where": {
+       "instrument": "pulsar_receiver"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Run 100 days while the receiver records.",
+      "ru": "Прогоните 100 суток, пока приёмник записывает."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 8640000.0
+      },
+      "value": 8640000.0
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Record the residuals.",
+      "ru": "Запишите остатки."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "pulse_arrival_residuals",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "pulse_arrival_residuals"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "How do planets change pulse arrival times?",
+     "ru": "Как планеты меняют время прихода импульсов?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Roemer delay from pulsar motion only; magnetosphere not modelled.",
+    "ru": "Только задержка Рёмера от движения пульсара; магнитосфера не моделируется."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L20",
+   "theme": "Пульсары и остатки",
+   "title": {
+    "en": "Compact object and model boundary",
+    "ru": "Компактный объект и граница модели"
+   },
+   "scene_id": "real.sirius_ab",
+   "goal": {
+    "en": "Compare a white dwarf with a normal star and see the model boundary.",
+    "ru": "Сравнить белый карлик с обычной звездой и увидеть границу модели."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Select Sirius B and record its radius.",
+      "ru": "Выберите Сириус B и запишите его радиус."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "body_radius",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "body_radius",
+       "body": "sirius_b"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Record the mass of Sirius B.",
+      "ru": "Запишите массу Сириуса B."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "body_mass",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "body_mass",
+       "body": "sirius_b"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Record the surface gravity of Sirius B.",
+      "ru": "Запишите ускорение на поверхности Сириуса B."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "surface_gravity",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "surface_gravity",
+       "body": "sirius_b"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Record the compactness GM/(rc^2) of Sirius B.",
+      "ru": "Запишите компактность GM/(rc^2) Сириуса B."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "compactness",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "compactness",
+       "body": "sirius_b"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Answer the question.",
+      "ru": "Ответьте на вопрос."
+     },
+     "ui_hint": {
+      "panel": "lessons",
+      "control": "question",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "question_answered",
+      "where": {
+       "question": "L20q1",
+       "correct": true
+      }
+     },
+     "question": {
+      "id": "L20q1",
+      "text": {
+       "en": "Sirius B has about the Sun's mass but...",
+       "ru": "У Сириуса B масса около солнечной, но..."
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "Earth's size",
+         "ru": "размер Земли"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "Jupiter's size",
+         "ru": "размер Юпитера"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "the Sun's size",
+         "ru": "размер Солнца"
+        }
+       }
+      ],
+      "correct": "a",
+      "correct_index": 0
+     }
+    }
+   ],
+   "questions": [
+    {
+     "id": "L20q1",
+     "text": {
+      "en": "Sirius B has about the Sun's mass but...",
+      "ru": "У Сириуса B масса около солнечной, но..."
+     },
+     "choices": [
+      {
+       "id": "a",
+       "text": {
+        "en": "Earth's size",
+        "ru": "размер Земли"
+       }
+      },
+      {
+       "id": "b",
+       "text": {
+        "en": "Jupiter's size",
+        "ru": "размер Юпитера"
+       }
+      },
+      {
+       "id": "c",
+       "text": {
+        "en": "the Sun's size",
+        "ru": "размер Солнца"
+       }
+      }
+     ],
+     "correct": "a"
+    }
+   ],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Why is Sirius B so faint despite being hot?",
+     "ru": "Почему Сириус B тусклый, хотя горячий?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "No degenerate-matter physics beyond the given radius; no evolution.",
+    "ru": "Без физики вырожденного вещества сверх заданного радиуса; без эволюции."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L21",
+   "theme": "Чёрные дыры и AGN",
+   "title": {
+    "en": "Mass and optics",
+    "ru": "Масса и оптика"
+   },
+   "scene_id": "real.cygnus_x_1",
+   "goal": {
+    "en": "Separate a black hole's gravity from its light.",
+    "ru": "Разделить гравитацию чёрной дыры и её свет."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open Cygnus X-1.",
+      "ru": "Откройте Лебедь X-1."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "real.cygnus_x_1"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Select the black hole and record its Schwarzschild radius.",
+      "ru": "Выберите чёрную дыру и запишите её радиус Шварцшильда."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "schwarzschild_radius",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "schwarzschild_radius",
+       "body": "cyg_x1_bh"
+      }
+     },
+     "check": {
+      "measurement": "schwarzschild_radius",
+      "op": "in_range",
+      "value": [
+       60000.0,
+       66000.0
+      ],
+      "unit": "m",
+      "lo": 60000.0,
+      "hi": 66000.0,
+      "body": "cyg_x1_bh"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Open the Compact tab: it explains the lens view, and 'View: inner disk' frames the shadow and photon ring.",
+      "ru": "Откройте вкладку «Компактные»: там объяснён вид линзы, а «Вид: внутренний диск» показывает тень и фотонное кольцо."
+     },
+     "ui_hint": {
+      "panel": "compact",
+      "control": "lens",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "panel_opened",
+      "where": {
+       "panel": "compact"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Disable accretion.",
+      "ru": "Отключите аккрецию."
+     },
+     "ui_hint": {
+      "panel": "compact",
+      "control": "accretion",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "accretion_changed",
+      "where": {
+       "body_id": "cyg_x1_bh"
+      }
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Run one day.",
+      "ru": "Прогоните сутки."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 86400.0
+      },
+      "value": 86400.0
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Record the black hole's luminosity.",
+      "ru": "Запишите светимость чёрной дыры."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "accretion_luminosity",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "accretion_luminosity",
+       "body": "cyg_x1_bh"
+      }
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Did switching off accretion change the donor's orbit?",
+     "ru": "Изменило ли отключение аккреции орбиту донора?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Shadow, photon ring and lensed disk use a Schwarzschild (non-spinning) ray table at the drawn size of the hole; the thin disk is idealised; gravity stays Newtonian outside the guard radius.",
+    "ru": "Тень, фотонное кольцо и линзированный диск строятся по таблице лучей Шварцшильда (без вращения) для нарисованного размера дыры; тонкий диск идеализирован; гравитация вне защитного радиуса — ньютоновская."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L22",
+   "theme": "Чёрные дыры и AGN",
+   "title": {
+    "en": "Accretion and finite fuel",
+    "ru": "Аккреция и конечное топливо"
+   },
+   "scene_id": "generated.agn",
+   "goal": {
+    "en": "Follow a finite accretion reservoir until it runs out.",
+    "ru": "Проследить конечный запас аккреции до исчерпания."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Open the AGN lab.",
+      "ru": "Откройте лабораторию AGN."
+     },
+     "ui_hint": {
+      "panel": "world_select",
+      "control": "place_card",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "scene_loaded",
+      "where": {
+       "scene_id": "generated.agn"
+      }
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Record the disk mass of the nucleus.",
+      "ru": "Запишите массу диска ядра."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "disk_mass",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "disk_mass",
+       "body": "core"
+      }
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Record its accretion rate.",
+      "ru": "Запишите темп аккреции ядра."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "accretion_rate",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "accretion_rate",
+       "body": "core"
+      }
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Raise the time rate and wait for depletion.",
+      "ru": "Увеличьте скорость времени и дождитесь исчерпания."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "rate",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "accretion_fuel_depleted"
+     }
+    },
+    {
+     "id": "s5",
+     "instruction": {
+      "en": "Keep the time running one more day, until the last fuel is gone.",
+      "ru": "Продолжайте время ещё сутки, пока не уйдёт последнее топливо."
+     },
+     "ui_hint": {
+      "panel": "time_controls",
+      "control": "play",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "time_elapsed",
+      "where": {
+       "sim_s": 86400.0
+      },
+      "value": 86400.0
+     }
+    },
+    {
+     "id": "s6",
+     "instruction": {
+      "en": "Record the black hole's luminosity after depletion.",
+      "ru": "Запишите светимость чёрной дыры после исчерпания."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "accretion_luminosity",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "accretion_luminosity",
+       "body": "core"
+      }
+     },
+     "check": {
+      "measurement": "accretion_luminosity",
+      "op": "le",
+      "value": 0.0,
+      "body": "core"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "Why does the nucleus fade?",
+     "ru": "Почему ядро гаснет?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Finite fuel, constant efficiency; no GR-MHD.",
+    "ru": "Конечное топливо, постоянная эффективность; без ОТО-МГД."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L23",
+   "theme": "История и свободная экспедиция",
+   "title": {
+    "en": "Saving and transfer",
+    "ru": "Сохранение и перенос"
+   },
+   "scene_id": "real.solar_system",
+   "goal": {
+    "en": "Save, reload and transfer an experiment.",
+    "ru": "Сохранить, загрузить и перенести эксперимент."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Change something and save.",
+      "ru": "Измените что-нибудь и сохраните."
+     },
+     "ui_hint": {
+      "panel": "save_load",
+      "control": "save",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "save_written"
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Load the save.",
+      "ru": "Загрузите сохранение."
+     },
+     "ui_hint": {
+      "panel": "save_load",
+      "control": "load",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "save_loaded"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Check the state hash equals the saved one.",
+      "ru": "Проверьте, что хэш состояния совпадает."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "state_hash",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded",
+      "where": {
+       "measurement": "state_hash"
+      }
+     },
+     "check": {
+      "measurement": "state_hash",
+      "op": "state_equal",
+      "value": "save:last"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "What does a save need to reproduce a result?",
+     "ru": "Что нужно сохранению, чтобы воспроизвести результат?"
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Save files carry schema/core/solver versions; incompatible files open paused with a report.",
+    "ru": "Сохранения содержат версии схемы/ядра/решателя; несовместимые открываются на паузе с отчётом."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "L24",
+   "theme": "История и свободная экспедиция",
+   "title": {
+    "en": "Your own research report",
+    "ru": "Собственный исследовательский отчёт"
+   },
+   "scene_id": "real.solar_system",
+   "goal": {
+    "en": "Write and export your own research report.",
+    "ru": "Написать и экспортировать собственный исследовательский отчёт."
+   },
+   "steps": [
+    {
+     "id": "s1",
+     "instruction": {
+      "en": "Record a research question.",
+      "ru": "Запишите исследовательский вопрос."
+     },
+     "ui_hint": {
+      "panel": "journal",
+      "control": "hypothesis",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "hypothesis_recorded"
+     }
+    },
+    {
+     "id": "s2",
+     "instruction": {
+      "en": "Record a measurement that bears on your question.",
+      "ru": "Запишите измерение, относящееся к вашему вопросу."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "record",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded"
+     }
+    },
+    {
+     "id": "s3",
+     "instruction": {
+      "en": "Record a second measurement.",
+      "ru": "Запишите второе измерение."
+     },
+     "ui_hint": {
+      "panel": "measurements",
+      "control": "record",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "measurement_recorded"
+     }
+    },
+    {
+     "id": "s4",
+     "instruction": {
+      "en": "Export the report.",
+      "ru": "Экспортируйте отчёт."
+     },
+     "ui_hint": {
+      "panel": "journal",
+      "control": "export",
+      "highlight": true
+     },
+     "trigger": {
+      "event": "report_exported"
+     }
+    }
+   ],
+   "questions": [],
+   "completion": {
+    "all_steps": true,
+    "explanation_prompt": {
+     "en": "State your conclusion and its limits.",
+     "ru": "Сформулируйте вывод и его границы."
+    },
+    "min_explanation_chars": 40
+   },
+   "model_limits": {
+    "en": "Reports include model limits and provenance automatically.",
+    "ru": "Отчёт автоматически включает ограничения модели и происхождение данных."
+   },
+   "plan_completion": "Выполнено действие и объяснён один наблюдаемый результат с ограничениями модели",
+   "implementation_state": "data_ready_mechanic_pending"
+  }
+ ]
+}

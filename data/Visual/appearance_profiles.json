@@ -1,0 +1,2946 @@
+{
+ "schema": "aixenix.cosmos.appearance/1",
+ "generator": "prepare_content/1.0.0",
+ "masters": {
+  "M_CosmosPlanet": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosPlanet.M_CosmosPlanet",
+   "domain": "surface",
+   "blend": "opaque",
+   "shading": "default_lit",
+   "scalar": {
+    "Seed": 0,
+    "NoiseScale": 2.0,
+    "Relief": 0.6,
+    "SeaLevel": -1.0,
+    "IceCapLatitude": 1.1,
+    "IceNoise": 0.08,
+    "CloudCoverage": 0.0,
+    "CloudScale": 3.0,
+    "CloudSpeed": 0.003,
+    "CraterDensity": 0.0,
+    "CraterScale": 5.0,
+    "LavaIntensity": 0.0,
+    "NightGlow": 0.0,
+    "NightAmbient": 0.002,
+    "Roughness": 0.85,
+    "OceanRoughness": 0.25,
+    "BandStrength": 0.0,
+    "BandCount": 6.0,
+    "HighlightAmount": 0.0,
+    "HeatmapOpacity": 0.0,
+    "IceAxisMode": 0.0,
+    "UseSurfaceMaps": 0.0,
+    "MapLonOffset": 0.0,
+    "CityLightIntensity": 1.5,
+    "MapDetail": 0.0,
+    "NormalStrength": 0.0,
+    "UseCloudMap": 0.0
+   },
+   "vector": {
+    "LandColorA": [
+     0.42,
+     0.4,
+     0.37,
+     1
+    ],
+    "LandColorB": [
+     0.25,
+     0.23,
+     0.21,
+     1
+    ],
+    "OceanColor": [
+     0.02,
+     0.06,
+     0.14,
+     1
+    ],
+    "IceColor": [
+     0.92,
+     0.94,
+     0.97,
+     1
+    ],
+    "CloudColor": [
+     0.95,
+     0.95,
+     0.95,
+     1
+    ],
+    "LavaColor": [
+     1.0,
+     0.32,
+     0.05,
+     1
+    ],
+    "NightGlowColor": [
+     1.0,
+     0.7,
+     0.35,
+     1
+    ],
+    "HighlightColor": [
+     0.3,
+     0.8,
+     1.0,
+     1
+    ],
+    "SunDirection": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "texture": {
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin",
+    "CellTex": "/Game/Cosmos/Textures/T_Noise_Cells.T_Noise_Cells",
+    "HeatmapTex": "/Game/Cosmos/Textures/T_Heatmap_Default.T_Heatmap_Default",
+    "DayMap": "/Game/Cosmos/Textures/T_Blank_sRGB.T_Blank_sRGB",
+    "NightMap": "/Game/Cosmos/Textures/T_Blank_sRGB.T_Blank_sRGB",
+    "SlopeMap": "/Game/Cosmos/Textures/T_Flat_Slope.T_Flat_Slope",
+    "CloudMap": "/Game/Cosmos/Textures/T_Heatmap_Default.T_Heatmap_Default"
+   }
+  },
+  "M_CosmosGasGiant": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosGasGiant.M_CosmosGasGiant",
+   "domain": "surface",
+   "blend": "opaque",
+   "shading": "default_lit",
+   "scalar": {
+    "Seed": 0,
+    "BandCount": 14.0,
+    "BandContrast": 0.6,
+    "Turbulence": 0.35,
+    "StormIntensity": 0.0,
+    "StormLatitude": -0.35,
+    "StormSize": 0.12,
+    "FlowSpeed": 0.01,
+    "UseBandLUT": 1.0,
+    "Roughness": 0.9,
+    "NightGlow": 0.0,
+    "NightAmbient": 0.004,
+    "HighlightAmount": 0.0,
+    "HeatmapOpacity": 0.0,
+    "UseSurfaceMaps": 0.0,
+    "MapLonOffset": 0.0,
+    "LimbDarkening": 0.3,
+    "RingInnerR": 0.0,
+    "RingOuterR": 0.0,
+    "RingOpacity": 1.0
+   },
+   "vector": {
+    "ColorA": [
+     0.78,
+     0.66,
+     0.5,
+     1
+    ],
+    "ColorB": [
+     0.55,
+     0.38,
+     0.25,
+     1
+    ],
+    "ColorC": [
+     0.9,
+     0.86,
+     0.78,
+     1
+    ],
+    "PolarColor": [
+     0.45,
+     0.42,
+     0.4,
+     1
+    ],
+    "StormColor": [
+     0.75,
+     0.33,
+     0.18,
+     1
+    ],
+    "NightGlowColor": [
+     1.0,
+     0.35,
+     0.1,
+     1
+    ],
+    "HighlightColor": [
+     0.3,
+     0.8,
+     1.0,
+     1
+    ],
+    "SunDirection": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_Jupiter.T_Bands_Jupiter",
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin",
+    "HeatmapTex": "/Game/Cosmos/Textures/T_Heatmap_Default.T_Heatmap_Default",
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_Saturn.T_Ring_Saturn",
+    "DayMap": "/Game/Cosmos/Textures/T_Blank_sRGB.T_Blank_sRGB"
+   }
+  },
+  "M_CosmosAtmosphere": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosAtmosphere.M_CosmosAtmosphere",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Density": 0.6,
+    "FresnelPower": 5.0,
+    "SunsetStrength": 0.5,
+    "HazeAmount": 0.0,
+    "DaySideFloor": 0.03
+   },
+   "vector": {
+    "AtmosphereColor": [
+     0.3,
+     0.55,
+     1.0,
+     1
+    ],
+    "SunsetColor": [
+     1.0,
+     0.45,
+     0.2,
+     1
+    ],
+    "SunDirection": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "texture": {}
+  },
+  "M_CosmosStar": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosStar.M_CosmosStar",
+   "domain": "surface",
+   "blend": "opaque",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 3.5,
+    "LimbDarkening": 0.7,
+    "GranulationScale": 14.0,
+    "GranulationContrast": 0.3,
+    "SpotCoverage": 0.0,
+    "FlowSpeed": 0.02,
+    "Seed": 0,
+    "HighlightAmount": 0.0
+   },
+   "vector": {
+    "StarColor": [
+     1.0,
+     0.93,
+     0.85,
+     1
+    ],
+    "HighlightColor": [
+     0.3,
+     0.8,
+     1.0,
+     1
+    ]
+   },
+   "texture": {
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin",
+    "CellTex": "/Game/Cosmos/Textures/T_Noise_Cells.T_Noise_Cells"
+   }
+  },
+  "M_CosmosStarCorona": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosStarCorona.M_CosmosStarCorona",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 0.6,
+    "Falloff": 3.5,
+    "RayStrength": 0.08,
+    "RayCount": 6.0,
+    "Seed": 0,
+    "FlowSpeed": 0.05
+   },
+   "vector": {
+    "CoronaColor": [
+     1.0,
+     0.9,
+     0.75,
+     1
+    ]
+   },
+   "texture": {
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  },
+  "M_CosmosRing": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosRing.M_CosmosRing",
+   "domain": "surface",
+   "blend": "translucent",
+   "shading": "unlit",
+   "scalar": {
+    "Opacity": 0.85,
+    "BandFrequency": 40.0,
+    "GapStrength": 0.5,
+    "Seed": 0,
+    "Brightness": 1.0,
+    "UseProfileTex": 1.0,
+    "Forward": 0.6,
+    "InnerRadiusFraction": 0.5,
+    "PlanetRadiusFraction": 0.0
+   },
+   "vector": {
+    "RingColorA": [
+     0.5,
+     0.45,
+     0.37,
+     1
+    ],
+    "RingColorB": [
+     0.3,
+     0.27,
+     0.23,
+     1
+    ],
+    "SunDirection": [
+     0,
+     0,
+     1,
+     0
+    ]
+   },
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_Saturn.T_Ring_Saturn",
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  },
+  "M_CosmosAccretionDisk": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosAccretionDisk.M_CosmosAccretionDisk",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 5.0,
+    "RotationSpeed": 0.2,
+    "Turbulence": 0.6,
+    "DopplerBoost": 0.7,
+    "Opacity": 1.0,
+    "TemperatureFalloff": 0.75,
+    "InnerEdgeSoftness": 0.04,
+    "Seed": 0,
+    "SpiralTightness": 6.0,
+    "InnerRadiusFraction": 0.05
+   },
+   "vector": {
+    "InnerColor": [
+     0.75,
+     0.85,
+     1.0,
+     1
+    ],
+    "OuterColor": [
+     1.0,
+     0.45,
+     0.12,
+     1
+    ]
+   },
+   "texture": {
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  },
+  "M_CosmosJet": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosJet.M_CosmosJet",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 0.75,
+    "FlowSpeed": 1.0,
+    "KnotFrequency": 5.0,
+    "Falloff": 1.8,
+    "EdgeSoftness": 0.45,
+    "BaseGap": 0.0,
+    "BaseFade": 0.0
+   },
+   "vector": {
+    "JetColor": [
+     0.45,
+     0.65,
+     1.0,
+     1
+    ]
+   },
+   "texture": {
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  },
+  "M_CosmosBlackHole": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosBlackHole.M_CosmosBlackHole",
+   "domain": "surface",
+   "blend": "opaque",
+   "shading": "unlit",
+   "scalar": {
+    "RimWidth": 0.05,
+    "RimIntensity": 1.6,
+    "HighlightAmount": 0.0
+   },
+   "vector": {
+    "RimColor": [
+     1.0,
+     0.75,
+     0.45,
+     1
+    ],
+    "HighlightColor": [
+     0.3,
+     0.8,
+     1.0,
+     1
+    ]
+   },
+   "texture": {}
+  },
+  "M_CosmosPulsarBeam": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosPulsarBeam.M_CosmosPulsarBeam",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 1.4,
+    "Falloff": 2.2,
+    "EdgeSoftness": 0.35,
+    "FlowSpeed": 0.0
+   },
+   "vector": {
+    "BeamColor": [
+     0.55,
+     0.75,
+     1.0,
+     1
+    ]
+   },
+   "texture": {}
+  },
+  "M_CosmosTrail": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosTrail.M_CosmosTrail",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 0.9,
+    "Opacity": 1.0,
+    "FadeExponent": 1.5,
+    "DashFrequency": 0.0,
+    "UseVertexColor": 0.0,
+    "EdgeSoftness": 1.5
+   },
+   "vector": {
+    "TrailColor": [
+     0.4,
+     0.75,
+     1.0,
+     1
+    ]
+   },
+   "texture": {}
+  },
+  "M_CosmosDebris": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosDebris.M_CosmosDebris",
+   "domain": "surface",
+   "blend": "opaque",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 1.0,
+    "Variation": 0.35
+   },
+   "vector": {
+    "DebrisColor": [
+     0.55,
+     0.5,
+     0.45,
+     1
+    ]
+   },
+   "texture": {}
+  },
+  "M_CosmosSky": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosSky.M_CosmosSky",
+   "domain": "surface",
+   "blend": "opaque",
+   "shading": "unlit",
+   "scalar": {
+    "StarBrightness": 1.0,
+    "GalaxyBandIntensity": 0.9,
+    "NebulaIntensity": 0.12,
+    "Exposure": 1.0,
+    "Seed": 0,
+    "StarDensity": 1.0
+   },
+   "vector": {
+    "GalaxyColor": [
+     1.0,
+     0.92,
+     0.82,
+     1
+    ],
+    "BackgroundColor": [
+     0.0004,
+     0.0005,
+     0.0009,
+     1
+    ],
+    "NebulaColorA": [
+     0.35,
+     0.12,
+     0.45,
+     1
+    ],
+    "NebulaColorB": [
+     0.1,
+     0.3,
+     0.55,
+     1
+    ]
+   },
+   "texture": {
+    "StarfieldTex": "/Game/Cosmos/Textures/T_Starfield.T_Starfield",
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  },
+  "M_CosmosGhost": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosGhost.M_CosmosGhost",
+   "domain": "surface",
+   "blend": "translucent",
+   "shading": "unlit",
+   "scalar": {
+    "Opacity": 0.35,
+    "FresnelPower": 2.0,
+    "FlowSpeed": 1.0
+   },
+   "vector": {
+    "GhostColor": [
+     0.35,
+     0.85,
+     1.0,
+     1
+    ]
+   },
+   "texture": {}
+  },
+  "M_CosmosShell": {
+   "asset": "/Game/Cosmos/Materials/M_CosmosShell.M_CosmosShell",
+   "domain": "surface",
+   "blend": "additive",
+   "shading": "unlit",
+   "scalar": {
+    "Intensity": 5.0,
+    "Progress": 0.0,
+    "Seed": 0,
+    "Thickness": 0.15,
+    "Turbulence": 0.5
+   },
+   "vector": {
+    "ShellColor": [
+     1.0,
+     0.6,
+     0.3,
+     1
+    ]
+   },
+   "texture": {
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  },
+  "PP_CosmosLens": {
+   "asset": "/Game/Cosmos/Materials/PP_CosmosLens.PP_CosmosLens",
+   "domain": "post_process",
+   "blend": "opaque",
+   "shading": "unlit",
+   "scalar": {
+    "LensCount": 0.0,
+    "LensModelVersion": 2.0,
+    "LensLutRc0": 0.0,
+    "LensLutRc1": 0.0,
+    "LensPsiCrit0": 0.0,
+    "LensPsiCrit1": 0.0,
+    "LensPhiMax0": 15.707963,
+    "LensPhiMax1": 15.707963,
+    "LensSkyCaptured": 0.0,
+    "ReducedMotion": 0.0,
+    "LensMaxOrder": 2.0,
+    "DiskExposure": 0.85,
+    "DiskTemperature": 7000.0,
+    "DiskComposeRadius": 0.5,
+    "EdgeAA": 1.0,
+    "DiskRotation": 0.15,
+    "LensSkyDepth": 1e+30,
+    "StarBrightness": 1.0,
+    "GalaxyBandIntensity": 0.9,
+    "NebulaIntensity": 0.12,
+    "Exposure": 1.0,
+    "Seed": 0,
+    "StarDensity": 1.0
+   },
+   "vector": {
+    "Lens0": [
+     0.5,
+     0.5,
+     0,
+     0
+    ],
+    "Lens1": [
+     0.5,
+     0.5,
+     0,
+     0
+    ],
+    "Lens2": [
+     0.5,
+     0.5,
+     0,
+     0
+    ],
+    "Lens3": [
+     0.5,
+     0.5,
+     0,
+     0
+    ],
+    "LensPos0": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "LensPos1": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "LensDisk0": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "LensDisk1": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "LensAxis0": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "LensAxis1": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "GalaxyColor": [
+     1.0,
+     0.92,
+     0.82,
+     1
+    ],
+    "BackgroundColor": [
+     0.0004,
+     0.0005,
+     0.0009,
+     1
+    ],
+    "NebulaColorA": [
+     0.35,
+     0.12,
+     0.45,
+     1
+    ],
+    "NebulaColorB": [
+     0.1,
+     0.3,
+     0.55,
+     1
+    ]
+   },
+   "texture": {
+    "LensLutU0": "/Game/Cosmos/Textures/T_LensLut_Placeholder.T_LensLut_Placeholder",
+    "LensLutU1": "/Game/Cosmos/Textures/T_LensLut_Placeholder.T_LensLut_Placeholder",
+    "LensLutRay0": "/Game/Cosmos/Textures/T_LensLut_Placeholder.T_LensLut_Placeholder",
+    "LensLutRay1": "/Game/Cosmos/Textures/T_LensLut_Placeholder.T_LensLut_Placeholder",
+    "LensSky": "/Engine/EngineResources/DefaultTextureCube.DefaultTextureCube",
+    "StarfieldTex": "/Game/Cosmos/Textures/T_Starfield.T_Starfield",
+    "NoiseTex": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin"
+   }
+  }
+ },
+ "profiles": {
+  "Atmo_Earth": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_Earth.MI_Atmo_Earth",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_GasGiant": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_GasGiant.MI_Atmo_GasGiant",
+   "scalar": {
+    "Density": 0.3,
+    "FresnelPower": 6.0,
+    "SunsetStrength": 0.15,
+    "DaySideFloor": 0.0
+   },
+   "vector": {
+    "AtmosphereColor": [
+     1.0,
+     0.88,
+     0.7,
+     1
+    ],
+    "SunsetColor": [
+     1,
+     0.6,
+     0.35,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "thin warm haze at the limb only"
+  },
+  "Atmo_HotGiant": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_HotGiant.MI_Atmo_HotGiant",
+   "scalar": {
+    "Density": 0.6,
+    "FresnelPower": 3.5
+   },
+   "vector": {
+    "AtmosphereColor": [
+     1,
+     0.55,
+     0.3,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_IceGiant": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_IceGiant.MI_Atmo_IceGiant",
+   "scalar": {
+    "Density": 0.5,
+    "FresnelPower": 4.5,
+    "SunsetStrength": 0.2
+   },
+   "vector": {
+    "AtmosphereColor": [
+     0.5,
+     0.78,
+     1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_Mars": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_Mars.MI_Atmo_Mars",
+   "scalar": {
+    "Density": 0.35
+   },
+   "vector": {
+    "AtmosphereColor": [
+     0.95,
+     0.6,
+     0.45,
+     1
+    ],
+    "SunsetColor": [
+     0.4,
+     0.55,
+     1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_Steam": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_Steam.MI_Atmo_Steam",
+   "scalar": {
+    "Density": 1.2,
+    "HazeAmount": 0.4
+   },
+   "vector": {
+    "AtmosphereColor": [
+     0.85,
+     0.9,
+     1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_Thin": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_Thin.MI_Atmo_Thin",
+   "scalar": {
+    "Density": 0.25
+   },
+   "vector": {
+    "AtmosphereColor": [
+     0.6,
+     0.7,
+     1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_Titan": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_Titan.MI_Atmo_Titan",
+   "scalar": {
+    "Density": 1.1,
+    "HazeAmount": 0.8
+   },
+   "vector": {
+    "AtmosphereColor": [
+     1,
+     0.62,
+     0.25,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Atmo_Venus": {
+   "master": "M_CosmosAtmosphere",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Atmo_Venus.MI_Atmo_Venus",
+   "scalar": {
+    "Density": 1.0,
+    "HazeAmount": 0.5
+   },
+   "vector": {
+    "AtmosphereColor": [
+     1,
+     0.85,
+     0.55,
+     1
+    ],
+    "SunsetColor": [
+     1,
+     0.6,
+     0.3,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Beam_Pulsar": {
+   "master": "M_CosmosPulsarBeam",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Beam_Pulsar.MI_Beam_Pulsar",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "BlackHole_Default": {
+   "master": "M_CosmosBlackHole",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_BlackHole_Default.MI_BlackHole_Default",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Corona_Default": {
+   "master": "M_CosmosStarCorona",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Corona_Default.MI_Corona_Default",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Corona_Faint": {
+   "master": "M_CosmosStarCorona",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Corona_Faint.MI_Corona_Faint",
+   "scalar": {
+    "Intensity": 0.35,
+    "Falloff": 3.0,
+    "RayStrength": 0.12
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Corona_Hot": {
+   "master": "M_CosmosStarCorona",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Corona_Hot.MI_Corona_Hot",
+   "scalar": {
+    "Intensity": 1.2,
+    "Falloff": 2.0,
+    "RayStrength": 0.35
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Debris_Dust": {
+   "master": "M_CosmosDebris",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Debris_Dust.MI_Debris_Dust",
+   "scalar": {
+    "Intensity": 0.8
+   },
+   "vector": {
+    "DebrisColor": [
+     0.9,
+     0.65,
+     0.45,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Debris_Ice": {
+   "master": "M_CosmosDebris",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Debris_Ice.MI_Debris_Ice",
+   "scalar": {
+    "Intensity": 1.2
+   },
+   "vector": {
+    "DebrisColor": [
+     0.75,
+     0.82,
+     0.92,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Debris_Rock": {
+   "master": "M_CosmosDebris",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Debris_Rock.MI_Debris_Rock",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Disk_AGN": {
+   "master": "M_CosmosAccretionDisk",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Disk_AGN.MI_Disk_AGN",
+   "scalar": {
+    "Intensity": 3.5,
+    "Turbulence": 0.7,
+    "SpiralTightness": 9.0
+   },
+   "vector": {
+    "InnerColor": [
+     0.85,
+     0.9,
+     1.0,
+     1
+    ],
+    "OuterColor": [
+     1,
+     0.4,
+     0.1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Disk_Quiescent": {
+   "master": "M_CosmosAccretionDisk",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Disk_Quiescent.MI_Disk_Quiescent",
+   "scalar": {
+    "Intensity": 0.8,
+    "Opacity": 0.5
+   },
+   "vector": {
+    "InnerColor": [
+     1,
+     0.6,
+     0.3,
+     1
+    ],
+    "OuterColor": [
+     0.6,
+     0.2,
+     0.05,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Disk_XRayBinary": {
+   "master": "M_CosmosAccretionDisk",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Disk_XRayBinary.MI_Disk_XRayBinary",
+   "scalar": {
+    "Intensity": 3.0,
+    "TemperatureFalloff": 0.75
+   },
+   "vector": {
+    "InnerColor": [
+     0.7,
+     0.8,
+     1.0,
+     1
+    ],
+    "OuterColor": [
+     1,
+     0.55,
+     0.25,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Ghost_Default": {
+   "master": "M_CosmosGhost",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ghost_Default.MI_Ghost_Default",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Ghost_Invalid": {
+   "master": "M_CosmosGhost",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ghost_Invalid.MI_Ghost_Invalid",
+   "scalar": {
+    "Opacity": 0.45
+   },
+   "vector": {
+    "GhostColor": [
+     1,
+     0.35,
+     0.25,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Giant_BrownDwarfL": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_BrownDwarfL.MI_Giant_BrownDwarfL",
+   "scalar": {
+    "BandCount": 10.0,
+    "Turbulence": 0.7,
+    "NightGlow": 2.0
+   },
+   "vector": {
+    "NightGlowColor": [
+     1,
+     0.28,
+     0.06,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_BrownDwarfL.T_Bands_BrownDwarfL"
+   },
+   "note": ""
+  },
+  "Giant_BrownDwarfT": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_BrownDwarfT.MI_Giant_BrownDwarfT",
+   "scalar": {
+    "BandCount": 12.0,
+    "Turbulence": 0.5,
+    "NightGlow": 0.6
+   },
+   "vector": {
+    "NightGlowColor": [
+     0.8,
+     0.25,
+     0.35,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_BrownDwarfT.T_Bands_BrownDwarfT"
+   },
+   "note": ""
+  },
+  "Giant_HotJupiter": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_HotJupiter.MI_Giant_HotJupiter",
+   "scalar": {
+    "BandCount": 8.0,
+    "BandContrast": 0.45,
+    "Turbulence": 0.6,
+    "NightGlow": 0.6
+   },
+   "vector": {
+    "NightGlowColor": [
+     1,
+     0.3,
+     0.08,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_HotJupiter.T_Bands_HotJupiter"
+   },
+   "note": "dayside dark, thermal nightside glow"
+  },
+  "Giant_Jupiter": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_Jupiter.MI_Giant_Jupiter",
+   "scalar": {
+    "BandCount": 16.0,
+    "StormIntensity": 0.9,
+    "StormLatitude": -0.36,
+    "StormSize": 0.1
+   },
+   "vector": {},
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_Jupiter.T_Bands_Jupiter"
+   },
+   "note": ""
+  },
+  "Giant_Neptune": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_Neptune.MI_Giant_Neptune",
+   "scalar": {
+    "BandCount": 9.0,
+    "BandContrast": 0.3,
+    "Turbulence": 0.25,
+    "StormIntensity": 0.6,
+    "StormLatitude": -0.3
+   },
+   "vector": {
+    "StormColor": [
+     0.08,
+     0.14,
+     0.38,
+     1
+    ],
+    "PolarColor": [
+     0.18,
+     0.3,
+     0.62,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_Neptune.T_Bands_Neptune"
+   },
+   "note": ""
+  },
+  "Giant_Puffy": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_Puffy.MI_Giant_Puffy",
+   "scalar": {
+    "BandCount": 9.0,
+    "BandContrast": 0.2,
+    "Turbulence": 0.2,
+    "NightGlow": 0.2
+   },
+   "vector": {},
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_Puffy.T_Bands_Puffy"
+   },
+   "note": ""
+  },
+  "Giant_Saturn": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_Saturn.MI_Giant_Saturn",
+   "scalar": {
+    "BandCount": 20.0,
+    "BandContrast": 0.35,
+    "Turbulence": 0.15,
+    "StormIntensity": 0.0
+   },
+   "vector": {
+    "PolarColor": [
+     0.55,
+     0.52,
+     0.4,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_Saturn.T_Bands_Saturn"
+   },
+   "note": ""
+  },
+  "Giant_SubNeptune": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_SubNeptune.MI_Giant_SubNeptune",
+   "scalar": {
+    "BandCount": 7.0,
+    "BandContrast": 0.18,
+    "Turbulence": 0.25
+   },
+   "vector": {},
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_SubNeptune.T_Bands_SubNeptune"
+   },
+   "note": "hydrogen-envelope hypothesis"
+  },
+  "Giant_SuperJupiter": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_SuperJupiter.MI_Giant_SuperJupiter",
+   "scalar": {
+    "BandCount": 18.0,
+    "BandContrast": 0.7,
+    "Turbulence": 0.45,
+    "StormIntensity": 0.5,
+    "NightGlow": 0.15
+   },
+   "vector": {},
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_SuperJupiter.T_Bands_SuperJupiter"
+   },
+   "note": ""
+  },
+  "Giant_UltraHot": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_UltraHot.MI_Giant_UltraHot",
+   "scalar": {
+    "BandCount": 6.0,
+    "BandContrast": 0.5,
+    "Turbulence": 0.8,
+    "NightGlow": 1.5
+   },
+   "vector": {
+    "NightGlowColor": [
+     1,
+     0.45,
+     0.15,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_UltraHot.T_Bands_UltraHot"
+   },
+   "note": ""
+  },
+  "Giant_Uranus": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_Uranus.MI_Giant_Uranus",
+   "scalar": {
+    "BandCount": 8.0,
+    "BandContrast": 0.12,
+    "Turbulence": 0.08,
+    "Roughness": 0.7
+   },
+   "vector": {
+    "PolarColor": [
+     0.62,
+     0.82,
+     0.84,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_Uranus.T_Bands_Uranus"
+   },
+   "note": ""
+  },
+  "Giant_WarmNeptune": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_WarmNeptune.MI_Giant_WarmNeptune",
+   "scalar": {
+    "BandCount": 10.0,
+    "BandContrast": 0.25,
+    "Turbulence": 0.3
+   },
+   "vector": {},
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_WarmNeptune.T_Bands_WarmNeptune"
+   },
+   "note": ""
+  },
+  "Giant_YoungHot": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Giant_YoungHot.MI_Giant_YoungHot",
+   "scalar": {
+    "BandCount": 12.0,
+    "BandContrast": 0.5,
+    "Turbulence": 0.7,
+    "NightGlow": 1.2
+   },
+   "vector": {
+    "NightGlowColor": [
+     1,
+     0.38,
+     0.12,
+     1
+    ]
+   },
+   "texture": {
+    "BandLUT": "/Game/Cosmos/Textures/T_Bands_YoungHot.T_Bands_YoungHot"
+   },
+   "note": "self-luminous young giant (directly imaged)"
+  },
+  "Jet_Faint": {
+   "master": "M_CosmosJet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Jet_Faint.MI_Jet_Faint",
+   "scalar": {
+    "Intensity": 0.35
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Jet_Relativistic": {
+   "master": "M_CosmosJet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Jet_Relativistic.MI_Jet_Relativistic",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Lens_Default": {
+   "master": "PP_CosmosLens",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Lens_Default.MI_Lens_Default",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Asteroid": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Asteroid.MI_Planet_Asteroid",
+   "scalar": {
+    "CraterDensity": 1.0,
+    "CraterScale": 4.0,
+    "NoiseScale": 3.5,
+    "Relief": 0.6
+   },
+   "vector": {
+    "LandColorA": [
+     0.35,
+     0.33,
+     0.31,
+     1
+    ],
+    "LandColorB": [
+     0.18,
+     0.17,
+     0.16,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Callisto": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Callisto.MI_Planet_Callisto",
+   "scalar": {
+    "CraterDensity": 1.0,
+    "CraterScale": 9.0,
+    "NoiseScale": 2.5
+   },
+   "vector": {
+    "LandColorA": [
+     0.4,
+     0.36,
+     0.3,
+     1
+    ],
+    "LandColorB": [
+     0.22,
+     0.2,
+     0.17,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Carbon": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Carbon.MI_Planet_Carbon",
+   "scalar": {
+    "Relief": 0.6,
+    "NoiseScale": 2.0,
+    "Roughness": 0.4
+   },
+   "vector": {
+    "LandColorA": [
+     0.12,
+     0.12,
+     0.13,
+     1
+    ],
+    "LandColorB": [
+     0.04,
+     0.04,
+     0.05,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Chthonian": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Chthonian.MI_Planet_Chthonian",
+   "scalar": {
+    "LavaIntensity": 0.35,
+    "Relief": 0.6,
+    "NightGlow": 0.6
+   },
+   "vector": {
+    "LandColorA": [
+     0.25,
+     0.2,
+     0.18,
+     1
+    ],
+    "LandColorB": [
+     0.1,
+     0.08,
+     0.07,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "stripped giant core"
+  },
+  "Planet_ColdDesert": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_ColdDesert.MI_Planet_ColdDesert",
+   "scalar": {
+    "CraterDensity": 0.3,
+    "IceCapLatitude": 0.9,
+    "NoiseScale": 2.0
+   },
+   "vector": {
+    "LandColorA": [
+     0.58,
+     0.36,
+     0.22,
+     1
+    ],
+    "LandColorB": [
+     0.33,
+     0.21,
+     0.13,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_CometNucleus": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_CometNucleus.MI_Planet_CometNucleus",
+   "scalar": {
+    "CraterDensity": 0.4,
+    "NoiseScale": 4.0,
+    "Relief": 0.8
+   },
+   "vector": {
+    "LandColorA": [
+     0.12,
+     0.11,
+     0.1,
+     1
+    ],
+    "LandColorB": [
+     0.05,
+     0.05,
+     0.05,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Desert": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Desert.MI_Planet_Desert",
+   "scalar": {
+    "Relief": 0.75,
+    "NoiseScale": 1.8,
+    "CloudCoverage": 0.1
+   },
+   "vector": {
+    "LandColorA": [
+     0.78,
+     0.6,
+     0.38,
+     1
+    ],
+    "LandColorB": [
+     0.52,
+     0.36,
+     0.22,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Earth": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Earth.MI_Planet_Earth",
+   "scalar": {
+    "UseSurfaceMaps": 1.0,
+    "SeaLevel": 0.53,
+    "Relief": 0.7,
+    "NoiseScale": 1.7,
+    "IceCapLatitude": 1.1,
+    "CloudCoverage": 0.45,
+    "CloudScale": 2.8,
+    "NightGlow": 0.0,
+    "CityLightIntensity": 1.5,
+    "Roughness": 0.85,
+    "OceanRoughness": 0.18,
+    "UseCloudMap": 1.0,
+    "CloudSpeed": 0.0005
+   },
+   "vector": {
+    "LandColorA": [
+     0.12,
+     0.22,
+     0.07,
+     1
+    ],
+    "LandColorB": [
+     0.46,
+     0.37,
+     0.23,
+     1
+    ],
+    "OceanColor": [
+     0.012,
+     0.045,
+     0.15,
+     1
+    ],
+    "NightGlowColor": [
+     1.0,
+     0.72,
+     0.38,
+     1
+    ],
+    "CloudColor": [
+     0.82,
+     0.83,
+     0.85,
+     1
+    ]
+   },
+   "texture": {
+    "DayMap": "/Game/Cosmos/Textures/T_Earth_Day.T_Earth_Day",
+    "NightMap": "/Game/Cosmos/Textures/T_Earth_Night.T_Earth_Night",
+    "CloudMap": "/Game/Cosmos/Textures/T_Earth_Clouds.T_Earth_Clouds"
+   },
+   "note": "NASA Blue Marble day map + Black Marble 2012 city lights (public domain); clouds = one frame of the NASA GEOS-5 atmospheric MODEL (SVS 3837), not observed or current weather; slow drift is artistic"
+  },
+  "Planet_Europa": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Europa.MI_Planet_Europa",
+   "scalar": {
+    "CraterDensity": 0.05,
+    "NoiseScale": 4.0,
+    "Relief": 0.35,
+    "BandStrength": 0.15,
+    "Roughness": 0.4
+   },
+   "vector": {
+    "LandColorA": [
+     0.86,
+     0.82,
+     0.74,
+     1
+    ],
+    "LandColorB": [
+     0.58,
+     0.42,
+     0.3,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "cracked ice crust"
+  },
+  "Planet_Eyeball": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Eyeball.MI_Planet_Eyeball",
+   "scalar": {
+    "SeaLevel": 0.6,
+    "IceCapLatitude": 0.45,
+    "IceAxisMode": 1.0,
+    "NoiseScale": 1.6,
+    "CloudCoverage": 0.3
+   },
+   "vector": {
+    "OceanColor": [
+     0.02,
+     0.08,
+     0.2,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "tidally locked; open water around the substellar point (uses SunDirection), ice elsewhere"
+  },
+  "Planet_Ganymede": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Ganymede.MI_Planet_Ganymede",
+   "scalar": {
+    "CraterDensity": 0.6,
+    "NoiseScale": 2.5,
+    "Relief": 0.5
+   },
+   "vector": {
+    "LandColorA": [
+     0.55,
+     0.52,
+     0.48,
+     1
+    ],
+    "LandColorB": [
+     0.35,
+     0.32,
+     0.28,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Greenhouse": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Greenhouse.MI_Planet_Greenhouse",
+   "scalar": {
+    "CloudCoverage": 1.0,
+    "CloudScale": 1.4,
+    "BandStrength": 0.4,
+    "NightGlow": 0.25
+   },
+   "vector": {
+    "CloudColor": [
+     0.95,
+     0.85,
+     0.62,
+     1
+    ],
+    "NightGlowColor": [
+     1,
+     0.35,
+     0.1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Hazy": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Hazy.MI_Planet_Hazy",
+   "scalar": {
+    "CloudCoverage": 0.85,
+    "CloudScale": 1.5,
+    "BandStrength": 0.25
+   },
+   "vector": {
+    "CloudColor": [
+     0.78,
+     0.7,
+     0.58,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_IceBall": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_IceBall.MI_Planet_IceBall",
+   "scalar": {
+    "IceCapLatitude": -0.5,
+    "IceNoise": 0.02,
+    "NoiseScale": 2.0,
+    "Roughness": 0.35
+   },
+   "vector": {
+    "IceColor": [
+     0.86,
+     0.9,
+     0.96,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "fully frozen"
+  },
+  "Planet_IcyMoon": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_IcyMoon.MI_Planet_IcyMoon",
+   "scalar": {
+    "CraterDensity": 0.5,
+    "NoiseScale": 3.0,
+    "Relief": 0.3,
+    "Roughness": 0.5
+   },
+   "vector": {
+    "LandColorA": [
+     0.9,
+     0.91,
+     0.93,
+     1
+    ],
+    "LandColorB": [
+     0.66,
+     0.68,
+     0.72,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Io": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Io.MI_Planet_Io",
+   "scalar": {
+    "LavaIntensity": 0.6,
+    "CraterDensity": 0.0,
+    "NoiseScale": 3.0,
+    "Relief": 0.8
+   },
+   "vector": {
+    "LandColorA": [
+     0.85,
+     0.78,
+     0.32,
+     1
+    ],
+    "LandColorB": [
+     0.62,
+     0.42,
+     0.18,
+     1
+    ],
+    "LavaColor": [
+     1.0,
+     0.35,
+     0.05,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "volcanic sulfur world"
+  },
+  "Planet_Iron": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Iron.MI_Planet_Iron",
+   "scalar": {
+    "CraterDensity": 0.6,
+    "NoiseScale": 2.0,
+    "Roughness": 0.55
+   },
+   "vector": {
+    "LandColorA": [
+     0.4,
+     0.38,
+     0.37,
+     1
+    ],
+    "LandColorB": [
+     0.22,
+     0.2,
+     0.2,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Lava": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Lava.MI_Planet_Lava",
+   "scalar": {
+    "LavaIntensity": 1.0,
+    "NoiseScale": 2.5,
+    "Relief": 0.7,
+    "NightGlow": 0.0
+   },
+   "vector": {
+    "LandColorA": [
+     0.12,
+     0.1,
+     0.09,
+     1
+    ],
+    "LandColorB": [
+     0.05,
+     0.04,
+     0.04,
+     1
+    ],
+    "LavaColor": [
+     1.0,
+     0.38,
+     0.08,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "magma-ocean/lava world"
+  },
+  "Planet_Mars": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Mars.MI_Planet_Mars",
+   "scalar": {
+    "CraterDensity": 0.35,
+    "Relief": 0.65,
+    "NoiseScale": 2.0,
+    "IceCapLatitude": 0.93,
+    "CloudCoverage": 0.06
+   },
+   "vector": {
+    "LandColorA": [
+     0.4,
+     0.2,
+     0.1,
+     1
+    ],
+    "LandColorB": [
+     0.2,
+     0.1,
+     0.055,
+     1
+    ],
+    "IceColor": [
+     0.85,
+     0.83,
+     0.8,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "Bond albedo ~0.25"
+  },
+  "Planet_Mercury": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Mercury.MI_Planet_Mercury",
+   "scalar": {
+    "CraterDensity": 0.9,
+    "CraterScale": 7.0,
+    "Relief": 0.5,
+    "NoiseScale": 3.0,
+    "Roughness": 0.95
+   },
+   "vector": {
+    "LandColorA": [
+     0.2,
+     0.19,
+     0.18,
+     1
+    ],
+    "LandColorB": [
+     0.1,
+     0.095,
+     0.09,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "airless cratered (Bond albedo ~0.09)"
+  },
+  "Planet_Moon": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Moon.MI_Planet_Moon",
+   "scalar": {
+    "CraterDensity": 1.0,
+    "CraterScale": 6.0,
+    "Relief": 0.45,
+    "NoiseScale": 2.2
+   },
+   "vector": {
+    "LandColorA": [
+     0.19,
+     0.185,
+     0.18,
+     1
+    ],
+    "LandColorB": [
+     0.075,
+     0.075,
+     0.075,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "Bond albedo ~0.11"
+  },
+  "Planet_Ocean": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Ocean.MI_Planet_Ocean",
+   "scalar": {
+    "SeaLevel": 0.85,
+    "NoiseScale": 1.8,
+    "CloudCoverage": 0.6,
+    "IceCapLatitude": 0.92
+   },
+   "vector": {
+    "LandColorA": [
+     0.25,
+     0.3,
+     0.18,
+     1
+    ],
+    "LandColorB": [
+     0.4,
+     0.36,
+     0.26,
+     1
+    ],
+    "OceanColor": [
+     0.01,
+     0.06,
+     0.18,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "global ocean hypothesis"
+  },
+  "Planet_Pluto": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Pluto.MI_Planet_Pluto",
+   "scalar": {
+    "CraterDensity": 0.3,
+    "NoiseScale": 1.6,
+    "Relief": 0.7
+   },
+   "vector": {
+    "LandColorA": [
+     0.85,
+     0.76,
+     0.62,
+     1
+    ],
+    "LandColorB": [
+     0.45,
+     0.28,
+     0.18,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Protoplanet": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Protoplanet.MI_Planet_Protoplanet",
+   "scalar": {
+    "LavaIntensity": 0.9,
+    "CraterDensity": 0.6,
+    "NoiseScale": 2.4
+   },
+   "vector": {
+    "LandColorA": [
+     0.2,
+     0.14,
+     0.12,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Pulsar": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Pulsar.MI_Planet_Pulsar",
+   "scalar": {
+    "CraterDensity": 0.4,
+    "NoiseScale": 2.2,
+    "NightGlow": 0.08,
+    "Relief": 0.6
+   },
+   "vector": {
+    "LandColorA": [
+     0.3,
+     0.28,
+     0.34,
+     1
+    ],
+    "LandColorB": [
+     0.14,
+     0.12,
+     0.17,
+     1
+    ],
+    "NightGlowColor": [
+     0.5,
+     0.6,
+     1.0,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "irradiated by pulsar wind (artistic)"
+  },
+  "Planet_Rogue": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Rogue.MI_Planet_Rogue",
+   "scalar": {
+    "IceCapLatitude": -0.5,
+    "NightGlow": 0.05,
+    "NoiseScale": 2.2
+   },
+   "vector": {
+    "IceColor": [
+     0.45,
+     0.5,
+     0.58,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Snowball": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Snowball.MI_Planet_Snowball",
+   "scalar": {
+    "SeaLevel": 0.5,
+    "IceCapLatitude": 0.25,
+    "CloudCoverage": 0.2
+   },
+   "vector": {
+    "IceColor": [
+     0.93,
+     0.95,
+     0.98,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_SuperEarth": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_SuperEarth.MI_Planet_SuperEarth",
+   "scalar": {
+    "Relief": 0.5,
+    "NoiseScale": 1.3,
+    "CloudCoverage": 0.3,
+    "CraterDensity": 0.1
+   },
+   "vector": {
+    "LandColorA": [
+     0.48,
+     0.44,
+     0.4,
+     1
+    ],
+    "LandColorB": [
+     0.28,
+     0.25,
+     0.23,
+     1
+    ],
+    "CloudColor": [
+     0.88,
+     0.86,
+     0.82,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Planet_Temperate": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Temperate.MI_Planet_Temperate",
+   "scalar": {
+    "SeaLevel": 0.5,
+    "NoiseScale": 1.5,
+    "IceCapLatitude": 0.86,
+    "CloudCoverage": 0.45
+   },
+   "vector": {
+    "LandColorA": [
+     0.28,
+     0.34,
+     0.18,
+     1
+    ],
+    "LandColorB": [
+     0.45,
+     0.38,
+     0.26,
+     1
+    ],
+    "OceanColor": [
+     0.02,
+     0.07,
+     0.17,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "hypothetical temperate"
+  },
+  "Planet_Titan": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Titan.MI_Planet_Titan",
+   "scalar": {
+    "CloudCoverage": 0.95,
+    "CloudScale": 1.2,
+    "BandStrength": 0.2
+   },
+   "vector": {
+    "LandColorA": [
+     0.45,
+     0.32,
+     0.15,
+     1
+    ],
+    "LandColorB": [
+     0.3,
+     0.2,
+     0.1,
+     1
+    ],
+    "CloudColor": [
+     0.82,
+     0.58,
+     0.28,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "orange haze"
+  },
+  "Planet_Venus": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Planet_Venus.MI_Planet_Venus",
+   "scalar": {
+    "CloudCoverage": 1.0,
+    "CloudScale": 1.6,
+    "CloudSpeed": 0.01,
+    "BandStrength": 0.35,
+    "BandCount": 5.0
+   },
+   "vector": {
+    "LandColorA": [
+     0.55,
+     0.42,
+     0.25,
+     1
+    ],
+    "LandColorB": [
+     0.35,
+     0.25,
+     0.15,
+     1
+    ],
+    "CloudColor": [
+     0.8,
+     0.7,
+     0.5,
+     1
+    ]
+   },
+   "texture": {},
+   "note": "global cloud deck (Bond albedo ~0.76)"
+  },
+  "Ring_Dark": {
+   "master": "M_CosmosRing",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ring_Dark.MI_Ring_Dark",
+   "scalar": {
+    "Opacity": 0.5,
+    "Brightness": 0.6
+   },
+   "vector": {
+    "RingColorA": [
+     0.12,
+     0.115,
+     0.11,
+     1
+    ],
+    "RingColorB": [
+     0.07,
+     0.07,
+     0.07,
+     1
+    ]
+   },
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_Narrow.T_Ring_Narrow"
+   },
+   "note": ""
+  },
+  "Ring_DebrisCold": {
+   "master": "M_CosmosRing",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ring_DebrisCold.MI_Ring_DebrisCold",
+   "scalar": {
+    "Opacity": 0.3,
+    "BandFrequency": 6.0,
+    "Brightness": 0.6
+   },
+   "vector": {
+    "RingColorA": [
+     0.7,
+     0.8,
+     1,
+     1
+    ],
+    "RingColorB": [
+     0.4,
+     0.45,
+     0.6,
+     1
+    ]
+   },
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_DebrisDisk.T_Ring_DebrisDisk"
+   },
+   "note": ""
+  },
+  "Ring_DebrisWarm": {
+   "master": "M_CosmosRing",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ring_DebrisWarm.MI_Ring_DebrisWarm",
+   "scalar": {
+    "Opacity": 0.35,
+    "BandFrequency": 8.0,
+    "Brightness": 0.8
+   },
+   "vector": {
+    "RingColorA": [
+     1,
+     0.75,
+     0.5,
+     1
+    ],
+    "RingColorB": [
+     0.6,
+     0.4,
+     0.3,
+     1
+    ]
+   },
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_DebrisDisk.T_Ring_DebrisDisk"
+   },
+   "note": "dust belt (illustrative density profile)"
+  },
+  "Ring_Icy": {
+   "master": "M_CosmosRing",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ring_Icy.MI_Ring_Icy",
+   "scalar": {
+    "Opacity": 0.6
+   },
+   "vector": {
+    "RingColorA": [
+     0.55,
+     0.56,
+     0.58,
+     1
+    ],
+    "RingColorB": [
+     0.38,
+     0.4,
+     0.44,
+     1
+    ]
+   },
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_Icy.T_Ring_Icy"
+   },
+   "note": ""
+  },
+  "Ring_Protoplanetary": {
+   "master": "M_CosmosRing",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ring_Protoplanetary.MI_Ring_Protoplanetary",
+   "scalar": {
+    "Opacity": 0.55,
+    "BandFrequency": 12.0,
+    "GapStrength": 0.8
+   },
+   "vector": {
+    "RingColorA": [
+     1,
+     0.7,
+     0.45,
+     1
+    ],
+    "RingColorB": [
+     0.5,
+     0.3,
+     0.2,
+     1
+    ]
+   },
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_Protoplanetary.T_Ring_Protoplanetary"
+   },
+   "note": ""
+  },
+  "Ring_Saturn": {
+   "master": "M_CosmosRing",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Ring_Saturn.MI_Ring_Saturn",
+   "scalar": {},
+   "vector": {},
+   "texture": {
+    "RingProfile": "/Game/Cosmos/Textures/T_Ring_Saturn.T_Ring_Saturn"
+   },
+   "note": ""
+  },
+  "Shell_Impact": {
+   "master": "M_CosmosShell",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Shell_Impact.MI_Shell_Impact",
+   "scalar": {
+    "Intensity": 2.5,
+    "Thickness": 0.3
+   },
+   "vector": {
+    "ShellColor": [
+     1,
+     0.75,
+     0.45,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Shell_LightFront": {
+   "master": "M_CosmosShell",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Shell_LightFront.MI_Shell_LightFront",
+   "scalar": {
+    "Intensity": 1.5,
+    "Thickness": 0.02,
+    "Turbulence": 0.0
+   },
+   "vector": {
+    "ShellColor": [
+     0.8,
+     0.9,
+     1,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Shell_Supernova": {
+   "master": "M_CosmosShell",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Shell_Supernova.MI_Shell_Supernova",
+   "scalar": {
+    "Intensity": 4.0
+   },
+   "vector": {
+    "ShellColor": [
+     1,
+     0.55,
+     0.25,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Sky_Cluster": {
+   "master": "M_CosmosSky",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Sky_Cluster.MI_Sky_Cluster",
+   "scalar": {
+    "StarBrightness": 1.4,
+    "StarDensity": 2.5,
+    "GalaxyBandIntensity": 1.0
+   },
+   "vector": {},
+   "texture": {},
+   "note": "globular-cluster sky (artistic)"
+  },
+  "Sky_GalacticCenter": {
+   "master": "M_CosmosSky",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Sky_GalacticCenter.MI_Sky_GalacticCenter",
+   "scalar": {
+    "StarBrightness": 1.3,
+    "GalaxyBandIntensity": 2.4,
+    "NebulaIntensity": 0.6,
+    "StarDensity": 1.8
+   },
+   "vector": {
+    "GalaxyColor": [
+     1,
+     0.82,
+     0.6,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Sky_MilkyWay": {
+   "master": "M_CosmosSky",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Sky_MilkyWay.MI_Sky_MilkyWay",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Sky_Sparse": {
+   "master": "M_CosmosSky",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Sky_Sparse.MI_Sky_Sparse",
+   "scalar": {
+    "StarBrightness": 0.8,
+    "GalaxyBandIntensity": 0.5,
+    "NebulaIntensity": 0.2,
+    "StarDensity": 0.6
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Solar_Jupiter": {
+   "master": "M_CosmosGasGiant",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Solar_Jupiter.MI_Solar_Jupiter",
+   "scalar": {
+    "UseSurfaceMaps": 1.0,
+    "Turbulence": 0.15,
+    "FlowSpeed": 0.004
+   },
+   "vector": {},
+   "texture": {
+    "DayMap": "/Game/Cosmos/Textures/T_Jupiter_Day.T_Jupiter_Day"
+   },
+   "note": "Cassini PIA07782 cylindrical map (Dec 2000): a snapshot of cloud features"
+  },
+  "Solar_Mars": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Solar_Mars.MI_Solar_Mars",
+   "scalar": {
+    "UseSurfaceMaps": 1.0,
+    "MapDetail": 0.25,
+    "CraterDensity": 0.3,
+    "CraterScale": 9.0,
+    "NoiseScale": 2.0,
+    "CloudCoverage": 0.04,
+    "Roughness": 0.92,
+    "IceCapLatitude": 1.1
+   },
+   "vector": {},
+   "texture": {
+    "DayMap": "/Game/Cosmos/Textures/T_Mars_Day.T_Mars_Day"
+   },
+   "note": "USGS Viking MDIM2.1 colour mosaic (public domain); fine detail procedural"
+  },
+  "Solar_Moon": {
+   "master": "M_CosmosPlanet",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Solar_Moon.MI_Solar_Moon",
+   "scalar": {
+    "UseSurfaceMaps": 1.0,
+    "MapDetail": 0.35,
+    "CraterDensity": 0.6,
+    "CraterScale": 9.0,
+    "NoiseScale": 2.2,
+    "NormalStrength": 2.0,
+    "Roughness": 0.95,
+    "IceCapLatitude": 1.1
+   },
+   "vector": {},
+   "texture": {
+    "DayMap": "/Game/Cosmos/Textures/T_Moon_Day.T_Moon_Day",
+    "SlopeMap": "/Game/Cosmos/Textures/T_Moon_Slope.T_Moon_Slope"
+   },
+   "note": "NASA SVS CGI Moon Kit LROC colour + LOLA relief (NormalStrength 2 = relief exaggerated x2 for readability); fine crater detail procedural"
+  },
+  "Star_Giant": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_Giant.MI_Star_Giant",
+   "scalar": {
+    "Intensity": 2.8,
+    "LimbDarkening": 0.7,
+    "GranulationScale": 4.0,
+    "GranulationContrast": 0.4
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Star_Hot": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_Hot.MI_Star_Hot",
+   "scalar": {
+    "Intensity": 4.0,
+    "LimbDarkening": 0.35,
+    "GranulationContrast": 0.08
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Star_MainSequence": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_MainSequence.MI_Star_MainSequence",
+   "scalar": {
+    "Intensity": 3.2,
+    "LimbDarkening": 0.6,
+    "GranulationContrast": 0.22
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Star_Neutron": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_Neutron.MI_Star_Neutron",
+   "scalar": {
+    "Intensity": 4.5,
+    "LimbDarkening": 0.15,
+    "GranulationContrast": 0.05,
+    "FlowSpeed": 0.5
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Star_Protostar": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_Protostar.MI_Star_Protostar",
+   "scalar": {
+    "Intensity": 2.4,
+    "LimbDarkening": 0.65,
+    "GranulationScale": 5.0,
+    "GranulationContrast": 0.45,
+    "SpotCoverage": 0.35
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Star_RedDwarf": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_RedDwarf.MI_Star_RedDwarf",
+   "scalar": {
+    "Intensity": 2.6,
+    "LimbDarkening": 0.7,
+    "GranulationScale": 7.0,
+    "SpotCoverage": 0.25
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Star_WhiteDwarf": {
+   "master": "M_CosmosStar",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Star_WhiteDwarf.MI_Star_WhiteDwarf",
+   "scalar": {
+    "Intensity": 4.2,
+    "LimbDarkening": 0.3,
+    "GranulationContrast": 0.0
+   },
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Trail_Orbit": {
+   "master": "M_CosmosTrail",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Trail_Orbit.MI_Trail_Orbit",
+   "scalar": {},
+   "vector": {},
+   "texture": {},
+   "note": ""
+  },
+  "Trail_Predicted": {
+   "master": "M_CosmosTrail",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Trail_Predicted.MI_Trail_Predicted",
+   "scalar": {
+    "DashFrequency": 60.0,
+    "Intensity": 0.8,
+    "FadeExponent": 0.6
+   },
+   "vector": {
+    "TrailColor": [
+     1,
+     0.85,
+     0.4,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  },
+  "Trail_Selected": {
+   "master": "M_CosmosTrail",
+   "mi": "/Game/Cosmos/Materials/Instances/MI_Trail_Selected.MI_Trail_Selected",
+   "scalar": {
+    "Intensity": 1.8
+   },
+   "vector": {
+    "TrailColor": [
+     0.4,
+     1,
+     0.8,
+     1
+    ]
+   },
+   "texture": {},
+   "note": ""
+  }
+ },
+ "meshes": {
+  "sphere": "/Game/Cosmos/Meshes/SM_CosmosSphere.SM_CosmosSphere",
+  "annulus": "/Game/Cosmos/Meshes/SM_CosmosAnnulus.SM_CosmosAnnulus",
+  "annulus_note": "disk radius 50 cm with a 2% hole; U = r / R_outer (0.02..1), V = angle/2pi; set InnerRadiusFraction = inner/outer per ring or disk",
+  "jet_cone": "/Game/Cosmos/Meshes/SM_CosmosJetCone.SM_CosmosJetCone",
+  "fallback_sphere": "/Engine/BasicShapes/Sphere.Sphere",
+  "billboard_plane": "/Engine/BasicShapes/Plane.Plane"
+ },
+ "textures": {
+  "T_Noise_Perlin": {
+   "file": "Scripts/TextureSources/T_Noise_Perlin.png",
+   "asset": "/Game/Cosmos/Textures/T_Noise_Perlin.T_Noise_Perlin",
+   "srgb": false,
+   "compression": "masks",
+   "address": "wrap",
+   "address_y": "wrap",
+   "note": "tileable gradient noise, RGBA = 4 octaves (4,8,16,32 cells)",
+   "generated": true
+  },
+  "T_Noise_Cells": {
+   "file": "Scripts/TextureSources/T_Noise_Cells.png",
+   "asset": "/Game/Cosmos/Textures/T_Noise_Cells.T_Noise_Cells",
+   "srgb": false,
+   "compression": "masks",
+   "address": "wrap",
+   "address_y": "wrap",
+   "note": "tileable Worley: R=F1, G=F2-F1, B=cell id, A=crater height",
+   "generated": true
+  },
+  "T_Heatmap_Default": {
+   "file": "Scripts/TextureSources/T_Heatmap_Default.png",
+   "asset": "/Game/Cosmos/Textures/T_Heatmap_Default.T_Heatmap_Default",
+   "srgb": false,
+   "compression": "grayscale",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "4x4 zero heatmap",
+   "generated": true
+  },
+  "T_Starfield": {
+   "file": "Scripts/TextureSources/T_Starfield.png",
+   "asset": "/Game/Cosmos/Textures/T_Starfield.T_Starfield",
+   "srgb": true,
+   "compression": "bc7",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "procedural soft galactic glow only (stars are drawn procedurally in M_CosmosSky), J2000 ecliptic orientation (artistic)",
+   "generated": true
+  },
+  "T_Blank_sRGB": {
+   "file": "Scripts/TextureSources/T_Blank_sRGB.png",
+   "asset": "/Game/Cosmos/Textures/T_Blank_sRGB.T_Blank_sRGB",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "4x4 black sRGB default for optional colour maps",
+   "generated": true
+  },
+  "T_Flat_Slope": {
+   "file": "Scripts/TextureSources/T_Flat_Slope.png",
+   "asset": "/Game/Cosmos/Textures/T_Flat_Slope.T_Flat_Slope",
+   "srgb": false,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "4x4 zero-slope default for SlopeMap (128,128,128)",
+   "generated": true
+  },
+  "T_LensLut_Placeholder": {
+   "file": "Scripts/TextureSources/T_LensLut_Placeholder.png",
+   "asset": "/Game/Cosmos/Textures/T_LensLut_Placeholder.T_LensLut_Placeholder",
+   "srgb": false,
+   "compression": "hdr",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "4x4 zero default for the lens ray tables (runtime R32F/RGBA32F from lead)",
+   "generated": true
+  },
+  "T_Moon_Day": {
+   "file": "Scripts/TextureSources/Solar/T_Moon_Day.jpg",
+   "asset": "/Game/Cosmos/Textures/T_Moon_Day.T_Moon_Day",
+   "srgb": true,
+   "compression": "default",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "NASA SVS CGI Moon Kit LROC colour 8192x4096 (Solar/SOURCES.json)",
+   "generated": false
+  },
+  "T_Moon_Slope": {
+   "file": "Scripts/TextureSources/Solar/T_Moon_Slope.png",
+   "asset": "/Game/Cosmos/Textures/T_Moon_Slope.T_Moon_Slope",
+   "srgb": false,
+   "compression": "bc7",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "slopes from LOLA LDEM16 (R=east, G=north, x8 encoding; Solar/SOURCES.json)",
+   "generated": false
+  },
+  "T_Mars_Day": {
+   "file": "Scripts/TextureSources/Solar/T_Mars_Day.jpg",
+   "asset": "/Game/Cosmos/Textures/T_Mars_Day.T_Mars_Day",
+   "srgb": true,
+   "compression": "default",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "USGS Viking MDIM2.1 colour 8192x4096 (Solar/SOURCES.json)",
+   "generated": false
+  },
+  "T_Jupiter_Day": {
+   "file": "Scripts/TextureSources/Solar/T_Jupiter_Day.jpg",
+   "asset": "/Game/Cosmos/Textures/T_Jupiter_Day.T_Jupiter_Day",
+   "srgb": true,
+   "compression": "default",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "Cassini PIA07782 cylindrical map 4096x2048 (Solar/SOURCES.json)",
+   "generated": false
+  },
+  "T_Earth_Day": {
+   "file": "Scripts/TextureSources/Earth/T_Earth_Day.jpg",
+   "asset": "/Game/Cosmos/Textures/T_Earth_Day.T_Earth_Day",
+   "srgb": true,
+   "compression": "default",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "NASA Blue Marble cloud-free day map 8192x4096 (public domain; Earth/SOURCES.json)",
+   "generated": false
+  },
+  "T_Earth_Clouds": {
+   "file": "Scripts/TextureSources/Earth/T_Earth_Clouds.png",
+   "asset": "/Game/Cosmos/Textures/T_Earth_Clouds.T_Earth_Clouds",
+   "srgb": false,
+   "compression": "grayscale",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "cloud coverage from one NASA GEOS-5 model frame 2048x1024 (SVS 3837; Earth/SOURCES.json)",
+   "generated": false
+  },
+  "T_Earth_Night": {
+   "file": "Scripts/TextureSources/Earth/T_Earth_Night.jpg",
+   "asset": "/Game/Cosmos/Textures/T_Earth_Night.T_Earth_Night",
+   "srgb": true,
+   "compression": "default",
+   "address": "wrap",
+   "address_y": "clamp",
+   "note": "NASA Black Marble 2012 night lights 8192x4096 (public domain; Earth/SOURCES.json)",
+   "generated": false
+  },
+  "T_Bands_Jupiter": {
+   "file": "Scripts/TextureSources/T_Bands_Jupiter.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_Jupiter.T_Bands_Jupiter",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_Saturn": {
+   "file": "Scripts/TextureSources/T_Bands_Saturn.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_Saturn.T_Bands_Saturn",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_Uranus": {
+   "file": "Scripts/TextureSources/T_Bands_Uranus.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_Uranus.T_Bands_Uranus",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_Neptune": {
+   "file": "Scripts/TextureSources/T_Bands_Neptune.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_Neptune.T_Bands_Neptune",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_HotJupiter": {
+   "file": "Scripts/TextureSources/T_Bands_HotJupiter.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_HotJupiter.T_Bands_HotJupiter",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_UltraHot": {
+   "file": "Scripts/TextureSources/T_Bands_UltraHot.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_UltraHot.T_Bands_UltraHot",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_WarmNeptune": {
+   "file": "Scripts/TextureSources/T_Bands_WarmNeptune.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_WarmNeptune.T_Bands_WarmNeptune",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_SubNeptune": {
+   "file": "Scripts/TextureSources/T_Bands_SubNeptune.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_SubNeptune.T_Bands_SubNeptune",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_SuperJupiter": {
+   "file": "Scripts/TextureSources/T_Bands_SuperJupiter.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_SuperJupiter.T_Bands_SuperJupiter",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_YoungHot": {
+   "file": "Scripts/TextureSources/T_Bands_YoungHot.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_YoungHot.T_Bands_YoungHot",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_BrownDwarfL": {
+   "file": "Scripts/TextureSources/T_Bands_BrownDwarfL.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_BrownDwarfL.T_Bands_BrownDwarfL",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_BrownDwarfT": {
+   "file": "Scripts/TextureSources/T_Bands_BrownDwarfT.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_BrownDwarfT.T_Bands_BrownDwarfT",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Bands_Puffy": {
+   "file": "Scripts/TextureSources/T_Bands_Puffy.png",
+   "asset": "/Game/Cosmos/Textures/T_Bands_Puffy.T_Bands_Puffy",
+   "srgb": true,
+   "compression": "default",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "gas-giant latitude band LUT (x = latitude)",
+   "generated": true
+  },
+  "T_Ring_Saturn": {
+   "file": "Scripts/TextureSources/T_Ring_Saturn.png",
+   "asset": "/Game/Cosmos/Textures/T_Ring_Saturn.T_Ring_Saturn",
+   "srgb": false,
+   "compression": "masks",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "ring radial profile R=density G=brightness B=fine structure",
+   "generated": true
+  },
+  "T_Ring_Icy": {
+   "file": "Scripts/TextureSources/T_Ring_Icy.png",
+   "asset": "/Game/Cosmos/Textures/T_Ring_Icy.T_Ring_Icy",
+   "srgb": false,
+   "compression": "masks",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "ring radial profile R=density G=brightness B=fine structure",
+   "generated": true
+  },
+  "T_Ring_Narrow": {
+   "file": "Scripts/TextureSources/T_Ring_Narrow.png",
+   "asset": "/Game/Cosmos/Textures/T_Ring_Narrow.T_Ring_Narrow",
+   "srgb": false,
+   "compression": "masks",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "ring radial profile R=density G=brightness B=fine structure",
+   "generated": true
+  },
+  "T_Ring_DebrisDisk": {
+   "file": "Scripts/TextureSources/T_Ring_DebrisDisk.png",
+   "asset": "/Game/Cosmos/Textures/T_Ring_DebrisDisk.T_Ring_DebrisDisk",
+   "srgb": false,
+   "compression": "masks",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "ring radial profile R=density G=brightness B=fine structure",
+   "generated": true
+  },
+  "T_Ring_Protoplanetary": {
+   "file": "Scripts/TextureSources/T_Ring_Protoplanetary.png",
+   "asset": "/Game/Cosmos/Textures/T_Ring_Protoplanetary.T_Ring_Protoplanetary",
+   "srgb": false,
+   "compression": "masks",
+   "address": "clamp",
+   "address_y": "clamp",
+   "note": "ring radial profile R=density G=brightness B=fine structure",
+   "generated": true
+  }
+ },
+ "notes": {
+  "en": "Exoplanet surfaces are artistic hypotheses, not observed maps. Material parameters never change physics.",
+  "ru": "Поверхности экзопланет — художественные гипотезы, а не наблюдаемые карты. Параметры материалов не меняют физику."
+ }
+}

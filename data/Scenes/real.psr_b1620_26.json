@@ -1,0 +1,656 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.psr_b1620_26",
+ "name": {
+  "en": "PSR B1620-26",
+  "ru": "PSR B1620-26"
+ },
+ "kind": "real_planetary",
+ "group": "pulsar_planets",
+ "description": {
+  "en": "A circumbinary giant planet around a pulsar-white dwarf pair in the globular cluster M4.",
+  "ru": "Планета-гигант вокруг пары пульсар–белый карлик в шаровом скоплении M4."
+ },
+ "gameplay": "Условный пролёт в окружении шарового скопления",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (no catalogue reference times; phases assumed)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 26527.6,
+  "suggested_horizon_s": 133790000000.0,
+  "time_scale_hint": 827033.0,
+  "guard": {
+   "min_separation_m": 11000.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 10307700000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "planets",
+   "kind": "planet_family",
+   "members": [
+    "psr_b1620_26_b"
+   ],
+   "name": {
+    "en": "Planets",
+    "ru": "Планеты"
+   }
+  },
+  {
+   "id": "inner_binary",
+   "kind": "binary",
+   "members": [
+    "psr_b1620_26_psr",
+    "psr_b1620_26_wd"
+   ],
+   "name": {
+    "en": "Pulsar + white dwarf",
+    "ru": "Пульсар + белый карлик"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "psr_b1620_26_psr",
+   "name": {
+    "en": "PSR B1620-26 A",
+    "ru": "PSR B1620-26 A"
+   },
+   "class": "pulsar",
+   "subclass": "millisecond pulsar",
+   "parent": null,
+   "mass_kg": 2.68435332627732e+30,
+   "radius_m": 11000.0,
+   "position_m": [
+    21085013765.77037,
+    2937604049.694398,
+    3500900179.8426
+   ],
+   "velocity_mps": [
+    10.73127890630545,
+    -7435.067785048808,
+    -5204.881514907299
+   ],
+   "star": {
+    "teff_k": 300000.0,
+    "luminosity_w": 6.9838032e+23,
+    "spectral_type": "millisecond pulsar"
+   },
+   "appearance": {
+    "profile": "Star_Neutron",
+    "seed": 2549293521,
+    "params": {
+     "StarColor": [
+      0.3048,
+      0.4424,
+      1.0,
+      1
+     ],
+     "Seed": 521.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.3048,
+        0.4424,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     },
+     "beam": {
+      "profile": "Beam_Pulsar",
+      "params": {}
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "star.teff_k",
+     "radius_m",
+     "star.teff_k",
+     "compact.beam_axis"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "assumed",
+     "source": "sigurdsson2003",
+     "note": "pulsar mass assumed in the cited timing model (not measured)"
+    },
+    "radius_m": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "canonical neutron-star radius ~11 km (not measured for this pulsar)"
+    },
+    "star.teff_k": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "surface thermal temperature illustrative; planets in the core are not heated by it unless a module adds spin-down power"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "compact.spin_period_s": {
+     "kind": "literature",
+     "source": "thorsett1999",
+     "note": "transcribed from the paper; re-verify before scenario validation"
+    },
+    "compact.spin_epoch_jd": {
+     "kind": "literature",
+     "source": "thorsett1999",
+     "note": "epoch of the published spin period"
+    },
+    "compact.beam_axis": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "beam geometry is not reconstructed from timing; illustrative"
+    },
+    "compact.spin_down_power_w": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "order-of-magnitude spin-down power; not used as irradiation by default"
+    },
+    "compact.beam_power_fraction": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "share of the luminosity in the two rotation-averaged beams; order of radio efficiency (1e-2), illustrative"
+    }
+   },
+   "catalogue_name": "PSR B1620-26",
+   "compact": {
+    "spin_period_s": 0.0110757509142025,
+    "beam_half_angle_deg": 10.0,
+    "beam_axis": [
+     0.0,
+     0.34,
+     0.94
+    ],
+    "magnetic_inclination_deg": 20.0,
+    "spin_down_power_w": 1e+27,
+    "beam_power_fraction": 0.01,
+    "spin_epoch_jd": 2448725.5
+   }
+  },
+  {
+   "id": "psr_b1620_26_wd",
+   "name": {
+    "en": "PSR B1620-26 B (white dwarf)",
+    "ru": "PSR B1620-26 B (белый карлик)"
+   },
+   "class": "white_dwarf",
+   "subclass": "He white dwarf",
+   "parent": "psr_b1620_26_psr",
+   "mass_kg": 6.76059356247622e+29,
+   "radius_m": 13914000.0,
+   "position_m": [
+    -91819720038.04585,
+    2937604049.694398,
+    3500900179.8426
+   ],
+   "velocity_mps": [
+    10.73127890630545,
+    29533.81821956186,
+    20681.01114473654
+   ],
+   "star": {
+    "teff_k": 25000.0,
+    "luminosity_w": 5.3887202e+25,
+    "spectral_type": "He white dwarf"
+   },
+   "appearance": {
+    "profile": "Star_WhiteDwarf",
+    "seed": 3089066297,
+    "params": {
+     "StarColor": [
+      0.3798,
+      0.5119,
+      1.0,
+      1
+     ],
+     "Seed": 297.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.3798,
+        0.5119,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "star.teff_k"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "sigurdsson2003",
+     "note": "timing + optical constraints; transcribed from the paper, re-verify before scenario validation"
+    },
+    "radius_m": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "He-WD mass-radius typical value"
+    },
+    "star.teff_k": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "illustrative"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "elements.period_s": {
+     "kind": "literature",
+     "source": "thorsett1999",
+     "note": "inner P/e from the cited timing table"
+    },
+    "state": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "binary period/e from timing literature; inclination and phase assumed"
+    }
+   },
+   "elements": {
+    "a_m": 115837204769.293,
+    "e": 0.02531545,
+    "i_deg": 55.0,
+    "node_deg": 0.0,
+    "omega_deg": 0.0,
+    "mean_anomaly_deg": 0.0,
+    "period_s": 16540658.784,
+    "reference": "binary",
+    "convention": "sky"
+   }
+  },
+  {
+   "id": "psr_b1620_26_b",
+   "name": {
+    "en": "Methuselah (PSR B1620-26 b)",
+    "ru": "Мафусаил (PSR B1620-26 b)"
+   },
+   "catalogue_name": "PSR B1620-26 b",
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "inner_binary",
+   "mass_kg": 4.74533570626095e+27,
+   "radius_m": 84341050.1391887,
+   "position_m": [
+    1153965561548.042,
+    -2080266290076.22,
+    -2479164824750.964
+   ],
+   "velocity_mps": [
+    -7599.362398930385,
+    -1741.750988716525,
+    -2075.737998207438
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.mean_anomaly_deg",
+     "elements.i_deg",
+     "elements.e",
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "inclination 40.0 deg assumed (literature range)"
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 794.575,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.a_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 23.0,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.period_s": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from catalogue semi-major axis"
+    },
+    "elements.e": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "eccentricity not in default row; circular assumed"
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "no epoch in default row; deterministic spread (golden angle + seeded jitter)"
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     1.89813e+27,
+     1.89813e+27
+    ]
+   },
+   "elements": {
+    "a_m": 3440751026100.0,
+    "e": 0.0,
+    "i_deg": 40.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 160.375432,
+    "period_s": 2675803068.84857,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 32.516
+   },
+   "appearance": {
+    "profile": "Giant_SuperJupiter",
+    "seed": 2892650891,
+    "params": {
+     "Seed": 794.0,
+     "ColorA": [
+      0.709,
+      0.6104,
+      0.5573,
+      1
+     ],
+     "ColorB": [
+      0.6002,
+      0.42,
+      0.2776,
+      1
+     ],
+     "ColorC": [
+      0.8305,
+      0.8124,
+      0.7115,
+      1
+     ],
+     "BandCount": 12.9,
+     "Turbulence": 0.482,
+     "StormIntensity": 0.411,
+     "StormLatitude": -0.277
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "psr_inner_binary",
+   "text": {
+    "en": "Pulsar-white dwarf inner orbit uses literature period/eccentricity; inclination 55 deg and phase are assumed.",
+    "ru": "Внутренняя орбита пульсар–белый карлик: период/эксцентриситет из литературы; наклон 55° и фаза приняты."
+   },
+   "affects": [
+    "psr_b1620_26_wd.state"
+   ]
+  },
+  {
+   "id": "coplanar_inclination",
+   "text": {
+    "en": "Planets without a published inclination are placed coplanar with the measured ones.",
+    "ru": "Планеты без опубликованного наклонения размещены компланарно с измеренными."
+   },
+   "affects": [
+    "psr_b1620_26_b.elements.i_deg"
+   ]
+  },
+  {
+   "id": "mr_radius",
+   "text": {
+    "en": "Planets without a measured radius (RV, timing, imaging) get a mass-radius relation estimate.",
+    "ru": "Планетам без измеренного радиуса присвоена оценка по соотношению масса–радиус."
+   },
+   "affects": [
+    "psr_b1620_26_b.radius_m"
+   ]
+  },
+  {
+   "id": "circular_default",
+   "text": {
+    "en": "Orbits without a published eccentricity start circular.",
+    "ru": "Орбиты без опубликованного эксцентриситета начинаются круговыми."
+   },
+   "affects": [
+    "psr_b1620_26_b.elements.e"
+   ]
+  },
+  {
+   "id": "node_zero",
+   "text": {
+    "en": "Sky-plane node angles are not measured for transit/RV planets; all are set to 0, so mutual inclinations may be underestimated.",
+    "ru": "Углы узлов в картинной плоскости не измерены для транзитных/RV планет; все приняты 0, взаимные наклоны могут быть занижены."
+   },
+   "affects": [
+    "psr_b1620_26_b.elements.node_deg"
+   ]
+  },
+  {
+   "id": "phase_assumed",
+   "text": {
+    "en": "Planets without a transit time or periastron time get an arbitrary but fixed starting phase.",
+    "ru": "Планетам без времени транзита/перицентра задана произвольная, но фиксированная начальная фаза."
+   },
+   "affects": [
+    "psr_b1620_26_b.elements.mean_anomaly_deg"
+   ]
+  },
+  {
+   "id": "not_coherent_fit",
+   "text": {
+    "en": "Elements come from independently published solutions; the scene is a reconstruction, not a coherent photodynamical fit, and will not reproduce exact future transit times.",
+    "ru": "Элементы взяты из независимо опубликованных решений; сцена — реконструкция, а не согласованный фотодинамический fit, и не воспроизведёт точные будущие транзиты."
+   },
+   "affects": [
+    "bodies.state"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 2,
+  "derived": 7,
+  "reconstructed": 2,
+  "assumed": 14,
+  "literature": 4,
+  "authored": 1
+ },
+ "sources": [
+  {
+   "id": "nasa_ps_default",
+   "title": "NASA Exoplanet Archive, Planetary Systems (PS) table, default_flag=1 snapshot",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync (query in Atlas/atlas_hosts.json)",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_d4b677fe",
+   "title": "NASA Hubble",
+   "url": "https://science.nasa.gov/missions/hubble/oldest-known-planet-identified/",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "thorsett1999",
+   "title": "Thorsett et al. 1999, ApJ 523, 763 (timing)",
+   "url": "https://arxiv.org/abs/astro-ph/9903227",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "sigurdsson2003",
+   "title": "Sigurdsson et al. 2003, Science 301, 193",
+   "url": "https://arxiv.org/abs/astro-ph/0307339",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E58"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 8.11e+03)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 2.8e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_Cluster",
+ "data_version": {
+  "catalogue": "NASA PS default snapshot",
+  "retrieved_utc": "2026-11-02T19:04:00.627107+00:00",
+  "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+ },
+ "plan": {
+  "research_id": "CS31",
+  "gameplay": "Условный пролёт в окружении шарового скопления"
+ }
+}

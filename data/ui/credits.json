@@ -1,0 +1,80 @@
+{
+ "schema": "aixenix.cosmos.credits/1",
+ "source": "Scripts/TextureSources/*/SOURCES.json",
+ "notes": [
+  "Observed maps are used only for Solar System bodies: Earth (this file) and the Moon, Mars and Jupiter (Solar/SOURCES.json). Every exoplanet and authored world keeps procedural, artistic surfaces. Earth clouds come from one frame of the NASA GEOS-5 atmospheric model (a model visualization, not observed or current weather).",
+  "Observed maps for the Moon, Mars and Jupiter, used only by the Solar System scene; Earth's maps are in Earth/SOURCES.json. Exoplanets and authored worlds keep procedural surfaces."
+ ],
+ "images": [
+  {
+   "group": "Earth",
+   "file": "T_Earth_Day.jpg",
+   "summary": {
+    "en": "Earth surface colour: NASA Blue Marble (cloud-free). Public domain.",
+    "ru": "Цвет поверхности Земли: NASA Blue Marble (без облаков). Общественное достояние."
+   },
+   "content": "NASA Blue Marble land surface and oceans, cloud-free composite",
+   "credit": "NASA Visible Earth / NASA Goddard Space Flight Center (Blue Marble). Public domain."
+  },
+  {
+   "group": "Earth",
+   "file": "T_Earth_Night.jpg",
+   "summary": {
+    "en": "Earth city lights: NASA Black Marble 2012 (Suomi NPP). Public domain.",
+    "ru": "Огни городов Земли: NASA Black Marble 2012 (Suomi NPP). Общественное достояние."
+   },
+   "content": "Earth at night 2012 (Suomi NPP VIIRS day-night band composite, 'Black Marble')",
+   "credit": "NASA Earth Observatory / NOAA NGDC, Suomi NPP. Public domain."
+  },
+  {
+   "group": "Earth",
+   "file": "T_Earth_Clouds.png",
+   "summary": {
+    "en": "Earth clouds: one frame of the NASA GEOS-5 atmospheric model (NASA SVS 3837). A model visualization, not observed weather.",
+    "ru": "Облака Земли: один кадр атмосферной модели NASA GEOS-5 (NASA SVS 3837). Модельная визуализация, не наблюдаемая погода."
+   },
+   "content": "Global cloud cover from the NASA GEOS-5 atmospheric model (14 km), one frame of SVS animation 3837",
+   "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio (GEOS-5). NASA media, no usage restrictions listed."
+  },
+  {
+   "group": "Solar",
+   "file": "T_Moon_Day.jpg",
+   "summary": {
+    "en": "Moon colour: NASA SVS CGI Moon Kit from LRO LROC images. Public domain.",
+    "ru": "Цвет Луны: NASA SVS CGI Moon Kit по снимкам LRO LROC. Общественное достояние."
+   },
+   "content": "LROC WAC colour mosaic with poles (CGI Moon Kit, 2019)",
+   "credit": "NASA Scientific Visualization Studio, CGI Moon Kit (SVS 4720), data LRO LROC (NASA/GSFC/Arizona State University). Public domain (NASA)."
+  },
+  {
+   "group": "Solar",
+   "file": "T_Moon_Slope.png",
+   "summary": {
+    "en": "Moon relief shading: slopes computed from the NASA LRO LOLA elevation map (CGI Moon Kit); relief shown twice as strong for readability. Public domain.",
+    "ru": "Рельеф Луны: наклоны рассчитаны по карте высот NASA LRO LOLA (CGI Moon Kit); рельеф усилен вдвое для наглядности. Общественное достояние."
+   },
+   "content": "surface slopes from LOLA elevation: R = dh/d(east), G = dh/d(north), each clamp(slope*8, -1, 1)*0.5+0.5; B unused",
+   "credit": "NASA SVS CGI Moon Kit ldem_16_uint.tif (LRO LOLA). Public domain (NASA)."
+  },
+  {
+   "group": "Solar",
+   "file": "T_Mars_Day.jpg",
+   "summary": {
+    "en": "Mars colour: USGS Viking MDIM2.1 mosaic (NASA/JPL/USGS). Public domain.",
+    "ru": "Цвет Марса: мозаика USGS Viking MDIM2.1 (NASA/JPL/USGS). Общественное достояние."
+   },
+   "content": "Viking MDIM 2.1 colour mosaic",
+   "credit": "NASA/JPL/USGS Astrogeology Science Center, Viking MDIM2.1. Public domain."
+  },
+  {
+   "group": "Solar",
+   "file": "T_Jupiter_Day.jpg",
+   "summary": {
+    "en": "Jupiter clouds: Cassini map PIA07782 from December 2000 (NASA/JPL/Space Science Institute). A snapshot, not today's Jupiter. Public domain.",
+    "ru": "Облака Юпитера: карта Cassini PIA07782, декабрь 2000 года (NASA/JPL/Space Science Institute). Снимок, а не сегодняшний Юпитер. Общественное достояние."
+   },
+   "content": "Cassini cylindrical map, December 2000 (PIA07782)",
+   "credit": "NASA/JPL/Space Science Institute. Public domain."
+  }
+ ]
+}

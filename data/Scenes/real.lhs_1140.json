@@ -1,0 +1,707 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.lhs_1140",
+ "name": {
+  "en": "LHS 1140",
+  "ru": "LHS 1140"
+ },
+ "kind": "real_planetary",
+ "group": "habitable_zone",
+ "description": {
+  "en": "A dense temperate super-Earth/water-world candidate and an inner rocky planet around a quiet M dwarf.",
+  "ru": "Плотная умеренная суперземля/кандидат в водные миры и внутренняя каменная планета у спокойного M-карлика."
+ },
+ "gameplay": "Несколько интерпретаций массы, радиуса и спектра",
+ "epoch": {
+  "jd_tdb": 2458399.5,
+  "label": "JD 2458399.5 TDB (median of catalogue reference times, to limit propagation)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 544.023,
+  "suggested_horizon_s": 106865000.0,
+  "time_scale_hint": 16320.7,
+  "guard": {
+   "min_separation_m": 8112940.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 42440500000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "planets",
+   "kind": "planet_family",
+   "members": [
+    "lhs_1140_c",
+    "lhs_1140_b"
+   ],
+   "name": {
+    "en": "Planets",
+    "ru": "Планеты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "lhs_1140_star",
+   "name": {
+    "en": "LHS 1140",
+    "ru": "LHS 1140"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 3.66662780270769e+29,
+   "radius_m": 150201630.0,
+   "position_m": [
+    260603.0580095846,
+    -1244900.829221851,
+    -3002.36084758727
+   ],
+   "velocity_mps": [
+    -3.044381414429243,
+    -2.72249699163209,
+    -0.00907035537399587
+   ],
+   "star": {
+    "teff_k": 3096.0,
+    "luminosity_w": 1.4769803e+24,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_RedDwarf",
+    "seed": 1851503784,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.5026,
+      0.1736,
+      1
+     ],
+     "Seed": 784.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Faint",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.5026,
+        0.1736,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.1844,
+      "unit": "M_sun",
+      "column": "st_mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.2159,
+      "unit": "R_sun",
+      "column": "st_rad"
+     }
+    },
+    "star.teff_k": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 3096.0,
+      "unit": "K",
+      "column": "st_teff"
+     }
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    }
+   },
+   "catalogue_name": "LHS 1140"
+  },
+  {
+   "id": "lhs_1140_c",
+   "name": {
+    "en": "LHS 1140 c",
+    "ru": "LHS 1140 c"
+   },
+   "catalogue_name": "LHS 1140 c",
+   "class": "planet",
+   "subclass": "super_earth",
+   "parent": "lhs_1140_star",
+   "mass_kg": 1.14068416435936e+25,
+   "radius_m": 8112943.2,
+   "position_m": [
+    -3855722961.859367,
+    -1214100109.398194,
+    -4236682.9041311
+   ],
+   "velocity_mps": [
+    -23349.59226300512,
+    74221.14807174378,
+    259.0821669612515
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.e",
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 89.8,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.91,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.272,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 3.77794,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.027,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "assumed",
+     "source": "this_script",
+     "method": "circular orbit assumed; catalogue value is a limit",
+     "original": {
+      "value": 0.05,
+      "column": "pl_orbeccen"
+     },
+     "limit_flag": 1
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 3 orbits; period uncertainty alone shifts timing by ~0.00013 h",
+     "original": {
+      "value": 2458389.2939,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     3.5833e+23,
+     3.5833e+23
+    ],
+    "radius_m": [
+     165831.0,
+     165831.0
+    ]
+   },
+   "elements": {
+    "a_m": 4042232666.96967,
+    "e": 0.0,
+    "i_deg": 89.8,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 252.5395321,
+    "period_s": 326414.015999999,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 386.0
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 1610792761,
+    "params": {
+     "Seed": 105.0,
+     "LandColorA": [
+      0.787,
+      0.5778,
+      0.3762,
+      1
+     ],
+     "LandColorB": [
+      0.4794,
+      0.3859,
+      0.2334,
+      1
+     ],
+     "OceanColor": [
+      0.02128,
+      0.05951,
+      0.1354,
+      1
+     ],
+     "NoiseScale": 1.342,
+     "CloudCoverage": 0.0887
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "lhs_1140_b",
+   "name": {
+    "en": "LHS 1140 b",
+    "ru": "LHS 1140 b"
+   },
+   "catalogue_name": "LHS 1140 b",
+   "class": "planet",
+   "subclass": "water_world_hypothesis",
+   "parent": "lhs_1140_star",
+   "mass_kg": 3.34441430388086e+25,
+   "radius_m": 11034113.0,
+   "position_m": [
+    -1542028464.880003,
+    14062487603.4497,
+    34361207.74272745
+   ],
+   "velocity_mps": [
+    41340.76491065963,
+    4533.213286242832,
+    11.07675170020919
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.e",
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 89.86,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 5.6,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.73,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 24.73723,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.0946,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "assumed",
+     "source": "this_script",
+     "method": "circular orbit assumed; catalogue value is a limit",
+     "original": {
+      "value": 0.043,
+      "column": "pl_orbeccen"
+     },
+     "limit_flag": 1
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 0 orbits; period uncertainty alone shifts timing by ~8.3e-06 h",
+     "original": {
+      "value": 2458399.93,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    },
+    "surface.atmosphere": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "competing hypotheses with illustrative numbers; none is presented as observed"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     1.13471e+24,
+     1.13471e+24
+    ],
+    "radius_m": [
+     159452.0,
+     159452.0
+    ]
+   },
+   "elements": {
+    "a_m": 14148112937.7569,
+    "e": 0.0,
+    "i_deg": 89.86,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 353.7422258,
+    "period_s": 2137296.672,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown",
+     "hypotheses": [
+      "water_rich_ocean_world",
+      "rocky_with_n2_atmosphere",
+      "snowball"
+     ],
+     "hypothesis_params": {
+      "water_rich_ocean_world": {
+       "present": true,
+       "surface_pressure_pa": 200000.0,
+       "mean_molar_mass_kg_mol": 0.028,
+       "specific_heat_j_kg_k": 1040.0,
+       "greenhouse_k": 30.0,
+       "albedo_bond": 0.3,
+       "ocean_fraction": 1.0
+      },
+      "rocky_with_n2_atmosphere": {
+       "present": true,
+       "surface_pressure_pa": 100000.0,
+       "mean_molar_mass_kg_mol": 0.028,
+       "specific_heat_j_kg_k": 1040.0,
+       "greenhouse_k": 15.0,
+       "albedo_bond": 0.3
+      },
+      "snowball": {
+       "present": true,
+       "surface_pressure_pa": 100000.0,
+       "mean_molar_mass_kg_mol": 0.028,
+       "specific_heat_j_kg_k": 1040.0,
+       "greenhouse_k": 10.0,
+       "albedo_bond": 0.6,
+       "ice_fraction": 0.95
+      }
+     }
+    },
+    "equilibrium_temp_k": 206.32
+   },
+   "appearance": {
+    "profile": "Planet_Ocean",
+    "seed": 2816321012,
+    "params": {
+     "Seed": 466.0,
+     "LandColorA": [
+      0.2662,
+      0.2807,
+      0.1771,
+      1
+     ],
+     "LandColorB": [
+      0.3773,
+      0.3777,
+      0.2581,
+      1
+     ],
+     "OceanColor": [
+      0.009561,
+      0.05521,
+      0.1783,
+      1
+     ],
+     "NoiseScale": 1.271,
+     "CloudCoverage": 0.485
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "circular_default",
+   "text": {
+    "en": "Orbits without a published eccentricity start circular.",
+    "ru": "Орбиты без опубликованного эксцентриситета начинаются круговыми."
+   },
+   "affects": [
+    "lhs_1140_c.elements.e",
+    "lhs_1140_b.elements.e"
+   ]
+  },
+  {
+   "id": "node_zero",
+   "text": {
+    "en": "Sky-plane node angles are not measured for transit/RV planets; all are set to 0, so mutual inclinations may be underestimated.",
+    "ru": "Углы узлов в картинной плоскости не измерены для транзитных/RV планет; все приняты 0, взаимные наклоны могут быть занижены."
+   },
+   "affects": [
+    "lhs_1140_c.elements.node_deg",
+    "lhs_1140_b.elements.node_deg"
+   ]
+  },
+  {
+   "id": "not_coherent_fit",
+   "text": {
+    "en": "Elements come from independently published solutions; the scene is a reconstruction, not a coherent photodynamical fit, and will not reproduce exact future transit times.",
+    "ru": "Элементы взяты из независимо опубликованных решений; сцена — реконструкция, а не согласованный фотодинамический fit, и не воспроизведёт точные будущие транзиты."
+   },
+   "affects": [
+    "bodies.state"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 11,
+  "derived": 10,
+  "reconstructed": 0,
+  "assumed": 8,
+  "literature": 0,
+  "authored": 3
+ },
+ "sources": [
+  {
+   "id": "nasa_ps_default",
+   "title": "NASA Exoplanet Archive, Planetary Systems (PS) table, default_flag=1 snapshot",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync (query in Atlas/atlas_hosts.json)",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_f4d8372b",
+   "title": "JWST-исследование",
+   "url": "https://arxiv.org/abs/2403.13265",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_3f81aba8",
+   "title": "ограничения интерпретации NASA",
+   "url": "https://science.nasa.gov/blogs/webb/2024/06/05/reconnaissance-of-potentially-habitable-worlds-with-nasas-webb/",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E10"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 25.5)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 2.3e-05 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "data_version": {
+  "catalogue": "NASA PS default snapshot",
+  "retrieved_utc": "2026-11-02T19:04:00.627107+00:00",
+  "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+ },
+ "plan": {
+  "research_id": "CS14",
+  "gameplay": "Несколько интерпретаций массы, радиуса и спектра"
+ }
+}

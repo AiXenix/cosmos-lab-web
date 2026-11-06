@@ -1,0 +1,476 @@
+{
+ "schema": "aixenix.cosmos.manifest/1",
+ "generator": "prepare_content/1.0.0",
+ "contract_version": 1,
+ "brand": "AiXenix",
+ "inputs": {
+  "content_plan": {
+   "path": "research/cosmic-sandbox/content-plan.json",
+   "sha256": "73d41d40e752ddf5bf2048f44354df7e30b8917c1d8d67e2a88a076f43e693cc"
+  },
+  "nasa_raw": {
+   "path": "research/cosmic-sandbox/sources/nasa-exoplanet-ps-default.json",
+   "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+  },
+  "nasa_meta": {
+   "path": "research/cosmic-sandbox/data/exoplanet-catalogue-meta.json",
+   "sha256": "9db576182bb63fe22fb9cac765dd11867d1860994d1542de0222263b1fb5ba11"
+  },
+  "curated": {
+   "path": "research/cosmic-sandbox/data/curated-system-research.json",
+   "sha256": "05802669c8d3ed2edf298641618c16c2be130fb952ca24e541addd046fdea151"
+  },
+  "jpl_vectors": {
+   "path": "research/cosmic-sandbox/data/solar-system-j2000-vectors.json",
+   "sha256": "605b7595be8c0160752eaf9094a116489190bf306c1aa476d415efa3d911a06f"
+  }
+ },
+ "generated_from": {
+  "sha256": "534c13525c3bc656624e98b1022bf69384c7efb193764a60b41b0505d728b9ee",
+  "generator": "prepare_content/1.0.0"
+ },
+ "counts": {
+  "scenes": 40,
+  "scene_kinds": {
+   "real_planetary": 24,
+   "real_stellar_or_compact": 4,
+   "solar": 1,
+   "authored_procedural": 11
+  },
+  "bodies_in_start_states": 199,
+  "optional_bodies": 6,
+  "presets": 160,
+  "preset_families": {
+   "solar_bodies": 40,
+   "planet_archetypes": 32,
+   "stellar_configurations": 24,
+   "compact_and_agn": 16,
+   "surface_and_material_configurations": 16,
+   "generator_archetypes": 12,
+   "experimental_tools_and_receivers": 20
+  },
+  "archetypes": 12,
+  "lessons": 24,
+  "experiments": 72,
+  "atlas_hosts": 4847,
+  "atlas_planets": 6451,
+  "appearance_profiles": 95,
+  "masters": 16,
+  "textures": 32,
+  "events": 60,
+  "actions": 44,
+  "measurements": 81
+ },
+ "status": {
+  "scenes_validated_by_core": 0,
+  "lessons_mechanics_implemented": 0,
+  "experiments_mechanics_implemented": 0,
+  "note": "Data prepared and checked; gameplay validation pending in the native game."
+ },
+ "files": {
+  "Atlas/atlas_hosts.json": {
+   "sha256": "f6bf0f419d89dcb7acd87026ed4a005e3b1790053a16ce2d44348ef989fd63ae",
+   "bytes": 496011
+  },
+  "Atlas/atlas_planets.json": {
+   "sha256": "b6ccae91c05c18431dbc5be50fbabd3b611db0b8a25d8a23cc2218f854bb990e",
+   "bytes": 1713909
+  },
+  "Catalogue/archetypes.json": {
+   "sha256": "6a93144cf6524c6b74a2e342e680028aa42c12c686e136ce39052119e89697b7",
+   "bytes": 9868
+  },
+  "Catalogue/presets.json": {
+   "sha256": "9b7e33eb746de11d184b2bd1de474e901df3b039a7821731624194f5394f74db",
+   "bytes": 299296
+  },
+  "Learning/events.json": {
+   "sha256": "49b90b3d43310ebc6153677bf172cfeb982510862f573b6a26edb450f8917842",
+   "bytes": 47814
+  },
+  "Learning/experiments.json": {
+   "sha256": "30e053d925855da3318dff6f199a54571e5e399664eaf3101564a77a9bbd85fe",
+   "bytes": 221806
+  },
+  "Learning/lessons.json": {
+   "sha256": "318652e0f8485e8f0dff55bff90a47313a34454b3d1952ac307e6b8c651b5b8b",
+   "bytes": 98187
+  },
+  "Scenes/generated.agn.json": {
+   "sha256": "1de4191559fdab7c45c8997d7f496cbdd4b962130a6f01dbc163d562b192d3d0",
+   "bytes": 17535
+  },
+  "Scenes/generated.binary_p.json": {
+   "sha256": "42fe1e69c3dcfb4ae8f996ef5da0832a7ed5fcc38c17972066325bcfcde824ff",
+   "bytes": 12281
+  },
+  "Scenes/generated.binary_s.json": {
+   "sha256": "3a11c09bbc8178987259d553f8bf488fe3217d4f2eeab52b056538bcef48a0ea",
+   "bytes": 14984
+  },
+  "Scenes/generated.climate.json": {
+   "sha256": "97752c14da67756b005249739e4a6535f472b172a9f727b1ace5e6ef4310b426",
+   "bytes": 17336
+  },
+  "Scenes/generated.hot_jupiter.json": {
+   "sha256": "83694969a444586fa5e213eb85ec02502fa6e03da11200f3545a7c0655929fc4",
+   "bytes": 12213
+  },
+  "Scenes/generated.moon_lab.json": {
+   "sha256": "6c88b32844416d3d17870a956330c5b67fc352f8433510f8c7038450100e8834",
+   "bytes": 18177
+  },
+  "Scenes/generated.red_chain.json": {
+   "sha256": "9e65675fc45de2e4f672c5779a5d6977709ae95f4ad9b9e30a2de4d9da163b7c",
+   "bytes": 27510
+  },
+  "Scenes/generated.remnant.json": {
+   "sha256": "8a4263de5cb6f4ee8b13d1014e9d373a23f86f128d068885819598a46b94bd0c",
+   "bytes": 15753
+  },
+  "Scenes/generated.rogue.json": {
+   "sha256": "cf13d058a9c355fb2dceb565aed625365f411586c5355300531dc78d63385737",
+   "bytes": 15328
+  },
+  "Scenes/generated.triple.json": {
+   "sha256": "1b7a8652b6ef0c1cf5f4436c1da09f7ba8efe0a3e6095377a11901bff562de86",
+   "bytes": 14520
+  },
+  "Scenes/generated.wide_giants.json": {
+   "sha256": "76cf403bcf3ee43eea728a8cb0a961db074d534d5f1fbb1a234e7ddb6087dd29",
+   "bytes": 22175
+  },
+  "Scenes/index.json": {
+   "sha256": "8ac5ccc2518b2f2a99b59be3005789ac425909bfacac7d6c6a988e0d716a84b8",
+   "bytes": 42354
+  },
+  "Scenes/real.55_cancri_ab.json": {
+   "sha256": "7de960835a63cdc447fd5d79721452c5be4871b823d2d5b290021e97a4adfd74",
+   "bytes": 46950
+  },
+  "Scenes/real.alpha_centauri_ab.json": {
+   "sha256": "7b040b68993b54bb734991bceb4124e930d9fd5e25f15176338ac1f3a116ca7f",
+   "bytes": 16001
+  },
+  "Scenes/real.beta_pictoris.json": {
+   "sha256": "5bffe01d9f8498479afabdf3d1f3dd0d0d94e20d4a7be646ab337db807a51fdf",
+   "bytes": 25635
+  },
+  "Scenes/real.cygnus_x_1.json": {
+   "sha256": "9e9cceec771ecf71e665abab7593e8dc41913dbbbe482e664dd981e17d55aad0",
+   "bytes": 11015
+  },
+  "Scenes/real.gj_876.json": {
+   "sha256": "64c0c02edee0e0a63ef0e536ffdbef2ec44625d7693654ca1871e6ead82497c1",
+   "bytes": 28043
+  },
+  "Scenes/real.hd_10180.json": {
+   "sha256": "a45d8c718a46c444cd5d167771e77171335344bfed3521182024ecabdf841ed2",
+   "bytes": 53153
+  },
+  "Scenes/real.hd_110067.json": {
+   "sha256": "647c2b947c9af8bab3c353cbe45ba2f6fd36a2d03cc276f0db7177724d17ef3a",
+   "bytes": 37346
+  },
+  "Scenes/real.hd_158259.json": {
+   "sha256": "8de18b3a974c77b7bb333a36348ec15c9d3174d9e25d1beb2c59ff7365bae63c",
+   "bytes": 32499
+  },
+  "Scenes/real.hd_69830.json": {
+   "sha256": "12ca91b7ed3f16d12ca0ec2774b67fe1de671d66124c6ed619bc454b10c93f38",
+   "bytes": 25230
+  },
+  "Scenes/real.hd_80606_80607.json": {
+   "sha256": "e5b110230cb7e69c8cbb1f8237052ad46dc38b6e29566e1ddd90fd97311d950e",
+   "bytes": 16274
+  },
+  "Scenes/real.hr_8799.json": {
+   "sha256": "45bac55f9ad67b862d732f36e95ef0fe9d61e5d6defdf0918d1425407050ae59",
+   "bytes": 32930
+  },
+  "Scenes/real.k2_138.json": {
+   "sha256": "892709f6f9296c07d2a8bf6e8473849250ac28b41c2b7129e565de1801cfdffc",
+   "bytes": 36784
+  },
+  "Scenes/real.kepler_11.json": {
+   "sha256": "050e1757d8d6d44024dbbf27c9d85f7412af12bdf712fc231b34b85b00b03094",
+   "bytes": 36613
+  },
+  "Scenes/real.kepler_16.json": {
+   "sha256": "5e7c505daaaa8abd6e2a097a6e6a0ae71ca2194bf4c044c452d5c3c90056c164",
+   "bytes": 14937
+  },
+  "Scenes/real.kepler_223.json": {
+   "sha256": "cd93873099a991e989345a90b3267db075b4e8060dacef1f11bbd28f96e89ebe",
+   "bytes": 26162
+  },
+  "Scenes/real.kepler_34.json": {
+   "sha256": "bd4268ee84831c08474fa6c84353a3a191ce1ffae112e0238e7afc011a863e12",
+   "bytes": 14962
+  },
+  "Scenes/real.kepler_47.json": {
+   "sha256": "f10b2a612cba7186b3fc1b1cdfb5a85b5a4678b885345b24a4af7d28557d82d1",
+   "bytes": 25334
+  },
+  "Scenes/real.kepler_62.json": {
+   "sha256": "3332b87189d4bc2d108f14a471ae15e87d9d2207b1a1edef13e910fee86327eb",
+   "bytes": 32300
+  },
+  "Scenes/real.kepler_90.json": {
+   "sha256": "575ff64e2e566cce1f1e30f914de9ea397a5cdb5b26748a71ac2710e0d7c5354",
+   "bytes": 47550
+  },
+  "Scenes/real.lhs_1140.json": {
+   "sha256": "b0ff0c3d3e9d72ca6b3d65fd652a1c77a53080feeea5d62edcc611891f400b2b",
+   "bytes": 18649
+  },
+  "Scenes/real.proxima_centauri.json": {
+   "sha256": "91a5fda6ebbcf6b1ac13d4982de64cd02a09bb6b2b560296cfe5407fdbfc2043",
+   "bytes": 24904
+  },
+  "Scenes/real.psr_b1257_12.json": {
+   "sha256": "f253f09e0366bd5bc3b200ce944bf31cb1e1b4e4fa6ef574bc325600594bbef2",
+   "bytes": 23978
+  },
+  "Scenes/real.psr_b1620_26.json": {
+   "sha256": "230c71018982d4037631d9066dceff9d9cc4b2aa556856c54c2360e260f57f1e",
+   "bytes": 18305
+  },
+  "Scenes/real.sgr_a_s2.json": {
+   "sha256": "f8a880118c7f33159f1e61973b34c27162751438c28227da62a864e16bddce8e",
+   "bytes": 10836
+  },
+  "Scenes/real.sirius_ab.json": {
+   "sha256": "63c1bc6e98ef6e6c8746edff8e3b01cab89709e43372d8c34b7836b48a052466",
+   "bytes": 8635
+  },
+  "Scenes/real.solar_system.json": {
+   "sha256": "11859584ebfc89e7377ef08758ccde30fec4b9d0d0267de97aee2b8a9f1937f5",
+   "bytes": 36126
+  },
+  "Scenes/real.toi_178.json": {
+   "sha256": "8126893808b332400fdace3c0a90d12b7121baaeead2d5e00659f2c9ba352973",
+   "bytes": 37481
+  },
+  "Scenes/real.toi_700.json": {
+   "sha256": "a5064a1c2eb3fcdc7866c6bc2b28962f3714e9de4eb0bbf6cefcde152d7cd895",
+   "bytes": 27208
+  },
+  "Scenes/real.trappist_1.json": {
+   "sha256": "2267f8e4f1c7a246aa06556ba30f8e0449a02df6fd19f8efe9966bb85f475705",
+   "bytes": 41768
+  },
+  "Visual/appearance_profiles.json": {
+   "sha256": "4c4bdab2010fec5e8d8a909c20f520879fab1ff2796ff5637103f4d1731d8d90",
+   "bytes": 61695
+  },
+  "Visual/asset_list.json": {
+   "sha256": "91983207327777f2b802f870129d3f5cf7686e303242f740d19b9504a3433adc",
+   "bytes": 58652
+  }
+ },
+ "texture_sources": {
+  "T_Noise_Perlin": {
+   "sha256": "db43cf3f4778ab8eb977f7a3eea977bb4d811451c65194fe7c383e954666e27c",
+   "bytes": 945770
+  },
+  "T_Noise_Cells": {
+   "sha256": "72d52297c16b9c757e12c261d05487da8f36b889b9b49961c877506aff85bd01",
+   "bytes": 884622
+  },
+  "T_Heatmap_Default": {
+   "sha256": "a234d5ed0a0b5494e90f1f67c4651714b64e65d8789c071895e432970fd5fdf5",
+   "bytes": 68
+  },
+  "T_Blank_sRGB": {
+   "sha256": "cc869d27fd1d485d6de2db1c9a668414c961e02e5b239925501396ef38f03984",
+   "bytes": 69
+  },
+  "T_Flat_Slope": {
+   "sha256": "b2a0451a4591e65bffc98d405992a29fdd8be82aa7f83129673db487ad754139",
+   "bytes": 71
+  },
+  "T_LensLut_Placeholder": {
+   "sha256": "cc869d27fd1d485d6de2db1c9a668414c961e02e5b239925501396ef38f03984",
+   "bytes": 69
+  },
+  "T_Bands_Jupiter": {
+   "sha256": "bf7713e2b7c7e0f11915fdf28c195345edea5111ee479d465d0fc0e8e2088b86",
+   "bytes": 1118
+  },
+  "T_Bands_Saturn": {
+   "sha256": "d5806a8879f07cbe3e792243cfbb69844f008f3fa762a28348f4cb9001e4e0b0",
+   "bytes": 733
+  },
+  "T_Bands_Uranus": {
+   "sha256": "990d295d8dceb219b5ecfc7b42c5df352bf7ff9ff1e5845350b13f0861009e1b",
+   "bytes": 410
+  },
+  "T_Bands_Neptune": {
+   "sha256": "d327b13886beae4adeb0d7b579ace803af42b81791afee94cecea89337f9c74c",
+   "bytes": 784
+  },
+  "T_Bands_HotJupiter": {
+   "sha256": "f6ad7d577626a183038a4bb587ac8924387a60f51a9684e0d5f8dd0099af35c0",
+   "bytes": 920
+  },
+  "T_Bands_UltraHot": {
+   "sha256": "49bf7e8418e351009bdec78ca5a28f12623cb447e7ed4eff1f4ba9e9670da0df",
+   "bytes": 1224
+  },
+  "T_Bands_WarmNeptune": {
+   "sha256": "9c80e727e7245abd813980232bbce743508d0f7e67c3f0e0f960f5db65a02036",
+   "bytes": 756
+  },
+  "T_Bands_SubNeptune": {
+   "sha256": "4d9bf02aa1ba9b134843c53c837a90a6c8f4b08f27d8392178d05dcf047ab608",
+   "bytes": 634
+  },
+  "T_Bands_SuperJupiter": {
+   "sha256": "a3b9fb59c257351df7acbc65b84faacf974af428c8cf036648b3e30df6bc1759",
+   "bytes": 1068
+  },
+  "T_Bands_YoungHot": {
+   "sha256": "3059739da8424072e57e665e259b296d4548e0a0db3507a018a3e47c8f3d73dc",
+   "bytes": 1118
+  },
+  "T_Bands_BrownDwarfL": {
+   "sha256": "a6e57d1a3d85cdb8e0a0a91fe49e54d841d4af140113d185428ea200f6e672c2",
+   "bytes": 865
+  },
+  "T_Bands_BrownDwarfT": {
+   "sha256": "4624c64016ea971790d7e1c351dfd07d65e70867fc0c989ba6fd4fa3cfa723d0",
+   "bytes": 781
+  },
+  "T_Bands_Puffy": {
+   "sha256": "badc875c69c4859273e256f8c10f465506542d4f128420f12b3f670a5ea739dd",
+   "bytes": 629
+  },
+  "T_Ring_Saturn": {
+   "sha256": "22ba8817081621ec4214891d652dcdeb14c1b0ba464be1f7c8ea0c5394e93482",
+   "bytes": 3349
+  },
+  "T_Ring_Icy": {
+   "sha256": "bec9153be7c97371c1332583937b0b921659e3413e037e2c960e9187b339795c",
+   "bytes": 3337
+  },
+  "T_Ring_Narrow": {
+   "sha256": "2a888469b45692f93bf919329dbb3d4e89bd9b75549c9a49de6a721b52b7927d",
+   "bytes": 1842
+  },
+  "T_Ring_DebrisDisk": {
+   "sha256": "13d9b09e4305fb02737499925868c483a5ad46fbc76ac14c226c65538a85ed30",
+   "bytes": 3319
+  },
+  "T_Ring_Protoplanetary": {
+   "sha256": "4b4c01825007dfaf7793421fb1fe6750c986a4fd21b9daded18039dbd0ce58e7",
+   "bytes": 3324
+  },
+  "T_Starfield": {
+   "sha256": "0d439e4cf40a3eeba8f433c49a8bfe66cef37d6e5dc1803da5db10e35fc15a03",
+   "bytes": 445801
+  },
+  "T_Moon_Day": {
+   "sha256": "7888f50e5708d17d500bb18277f466ebaeaa510b40baf524c1d72392f1552f9d",
+   "bytes": 7232823,
+   "external_source": "Scripts/TextureSources/Solar/SOURCES.json"
+  },
+  "T_Moon_Slope": {
+   "sha256": "3d9d7d22776b557efb934b9ced0e5e770d3eedfb3f03635939a218e260fed195",
+   "bytes": 17538174,
+   "external_source": "Scripts/TextureSources/Solar/SOURCES.json"
+  },
+  "T_Mars_Day": {
+   "sha256": "52ffef260aae9cee825bd1bc0222405078d5adcd6aaa10567780b3dfb65cfb5c",
+   "bytes": 9454851,
+   "external_source": "Scripts/TextureSources/Solar/SOURCES.json"
+  },
+  "T_Jupiter_Day": {
+   "sha256": "8c3dff8d934f2bf01fe5c3ec65c511b87c5ec8c8c06bbf9a6f13a7900887f37e",
+   "bytes": 648847,
+   "external_source": "Scripts/TextureSources/Solar/SOURCES.json"
+  },
+  "T_Earth_Day": {
+   "sha256": "e833dd6056a22de0ebcb84d4f09f5a62723a9feeeba4f611ecbcc2c5a66a9777",
+   "bytes": 5407472,
+   "external_source": "Scripts/TextureSources/Earth/SOURCES.json"
+  },
+  "T_Earth_Clouds": {
+   "sha256": "52c07302982bfc58484b0fe4b6ec6e49b306ea121e5077eaf1b6ee33f3f6fa9a",
+   "bytes": 1517479,
+   "external_source": "Scripts/TextureSources/Earth/SOURCES.json"
+  },
+  "T_Earth_Night": {
+   "sha256": "c3c7cf31d1a3f82eb2e89ea320c45a0386359ee590ee858cad19d3539b54c44b",
+   "bytes": 3902880,
+   "external_source": "Scripts/TextureSources/Earth/SOURCES.json"
+  }
+ },
+ "audio_sources": {
+  "SW_UI_Select": {
+   "sha256": "9946751f3d09d8428554f7a23d0aae5628c978bce1b0003cd0e2e03c84b84cbf",
+   "bytes": 8684,
+   "seconds": 0.09
+  },
+  "SW_UI_Confirm": {
+   "sha256": "2d7ec832cd99fbb5019765860cf5ce4c89ff8e59dd8099ff845b4bd57107546c",
+   "bytes": 30764,
+   "seconds": 0.32
+  },
+  "SW_UI_Cancel": {
+   "sha256": "30b92f215eeba5a6836e0204c6b2e85596f2f7e92a230e330788b7b05ecb141d",
+   "bytes": 25004,
+   "seconds": 0.26
+  },
+  "SW_UI_Hover": {
+   "sha256": "419c1066fa4e7882d705c065ae3bce00a38d4a599cf3d51a92acf7c051cac314",
+   "bytes": 4844,
+   "seconds": 0.05
+  },
+  "SW_UI_Error": {
+   "sha256": "4f0a9281ff6d8038bcbb2b761122dee41b8c5f4992ef70a8fbf39e2ed00c0b05",
+   "bytes": 33644,
+   "seconds": 0.35
+  },
+  "SW_Event_Impact": {
+   "sha256": "a5d07c5c4c9a04e1c08bcce76d0dc7e1e13d8c9b48165db280ad52add3664ac0",
+   "bytes": 153644,
+   "seconds": 1.6
+  },
+  "SW_Event_Alert": {
+   "sha256": "9e624294cbf01383a1c56db90a317d8a0dc82c2e8e06675aefb396095ac79c2e",
+   "bytes": 86444,
+   "seconds": 0.9
+  },
+  "SW_Event_Discovery": {
+   "sha256": "0a53fe1ec7afd9d6ee6804f20643053ab739657709ae62f7d5699c8b8b3b632a",
+   "bytes": 134444,
+   "seconds": 1.4
+  },
+  "SW_Event_Supernova": {
+   "sha256": "603548793c7ff4e319907276ca6008d3d8001c456c9b6c114c7592ec429e036a",
+   "bytes": 384044,
+   "seconds": 4.0
+  },
+  "SW_Data_Pulse": {
+   "sha256": "f55449dbb41d2637c0433b7ad8b8035705dd1bd09c36a5d1d0215615b0c709ce",
+   "bytes": 5804,
+   "seconds": 0.06
+  },
+  "SW_Ambient_Space": {
+   "sha256": "1bd6f5c80f57c67ec3e0abed84fc81ff6dba132dbe5e949c79ea063c7031430d",
+   "bytes": 2304044,
+   "seconds": 24.0
+  },
+  "SW_Ambient_Deep": {
+   "sha256": "8171ba3da46ccd7e967433a302585e4c62dc11926e422f7b9b35921dfce13389",
+   "bytes": 2304044,
+   "seconds": 24.0
+  },
+  "SW_Ambient_Accretion": {
+   "sha256": "31a788a22a8ca58cf5cab25ad57f33415a78b2431dcc7d1cc13ab0fd03fb59bc",
+   "bytes": 1536044,
+   "seconds": 16.0
+  }
+ }
+}

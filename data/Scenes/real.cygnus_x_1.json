@@ -1,0 +1,382 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.cygnus_x_1",
+ "name": {
+  "en": "Cygnus X-1",
+  "ru": "Лебедь X-1"
+ },
+ "kind": "real_stellar_or_compact",
+ "group": "x_ray_binary",
+ "description": {
+  "en": "A 21-solar-mass black hole feeding on the wind of a blue supergiant every 5.6 days; finite-fuel accretion model.",
+  "ru": "Чёрная дыра массой 21 Солнце, питающаяся ветром голубого сверхгиганта с периодом 5,6 суток; модель аккреции с конечным запасом."
+ },
+ "gameplay": "Изменение активности при заданной массе и конечном топливе",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (orbital phase assumed)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 784.702,
+  "suggested_horizon_s": 9676500.0,
+  "time_scale_hint": 24191.3,
+  "guard": {
+   "min_separation_m": 62608.9,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Pause when a body comes within 10 r_s of the black hole or exceeds 0.1 c: the Newtonian model is invalid there.",
+    "ru": "Пауза при сближении ближе 10 r_s к чёрной дыре или скорости выше 0,1 c: ньютоновская модель там неприменима."
+   },
+   "schwarzschild_guard_factor": 10.0,
+   "max_speed_fraction_c": 0.1
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 155141000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "xrb",
+   "kind": "binary",
+   "members": [
+    "cyg_x1_bh",
+    "hde_226868"
+   ],
+   "name": {
+    "en": "X-ray binary",
+    "ru": "Рентгеновская двойная"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "cyg_x1_bh",
+   "name": {
+    "en": "Cygnus X-1 black hole",
+    "ru": "Чёрная дыра Лебедь X-1"
+   },
+   "class": "black_hole",
+   "subclass": "stellar_mass",
+   "parent": null,
+   "mass_kg": 4.21542892719105e+31,
+   "radius_m": 62608.9016327994,
+   "position_m": [
+    14367725287.74503,
+    8617672748.67772,
+    16547343354.17303
+   ],
+   "velocity_mps": [
+    251209.9512042584,
+    -89358.77577072619,
+    -171583.4875040533
+   ],
+   "compact": {
+    "schwarzschild_radius_m": 62608.9016327994,
+    "accretion": {
+     "enabled": true,
+     "disk_mass_kg": 1e+22,
+     "mdot_kg_s": 222530000000000.0,
+     "efficiency": 0.1,
+     "luminosity_w": 2e+30,
+     "fuel_finite": true,
+     "inner_radius_m": 187826.704898398,
+     "outer_radius_m": 5000000000.0
+    },
+    "jet": {
+     "enabled": true,
+     "power_w": 1e+30,
+     "half_opening_deg": 2.0,
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "appearance": {
+    "profile": "BlackHole_Default",
+    "seed": 124197767,
+    "params": {},
+    "layers": {
+     "disk": {
+      "profile": "Disk_XRayBinary",
+      "params": {}
+     },
+     "jet": {
+      "profile": "Jet_Relativistic",
+      "params": {}
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "compact.accretion",
+     "compact.jet"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "millerjones2021"
+    },
+    "radius_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Schwarzschild radius 2GM/c^2 (spin ignored)"
+    },
+    "compact.accretion": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "finite reservoir only (core has no resupply): 1e22 kg lasts ~1.4 yr at mdot = L/(eta c^2) with L ~ 2e30 W and eta = 0.1; the donor wind that feeds the real system is not simulated"
+    },
+    "compact.jet": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "jet power order of magnitude; axis assumed along orbital angular momentum"
+    }
+   }
+  },
+  {
+   "id": "hde_226868",
+   "name": {
+    "en": "HDE 226868 (donor supergiant)",
+    "ru": "HDE 226868 (сверхгигант-донор)"
+   },
+   "class": "star",
+   "subclass": "O9.7Iab",
+   "parent": "cyg_x1_bh",
+   "mass_kg": 8.07294407754513e+31,
+   "radius_m": 15514110000.0,
+   "position_m": [
+    -7502359017.246165,
+    -4499868528.866194,
+    -8640484707.105122
+   ],
+   "velocity_mps": [
+    -131173.6691017309,
+    46660.24744678309,
+    89595.31859817555
+   ],
+   "star": {
+    "teff_k": 31000.0,
+    "luminosity_w": 1.5838794e+32,
+    "spectral_type": "O9.7Iab"
+   },
+   "appearance": {
+    "profile": "Star_Giant",
+    "seed": 1203870677,
+    "params": {
+     "StarColor": [
+      0.3607,
+      0.4948,
+      1.0,
+      1
+     ],
+     "Seed": 677.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.3607,
+        0.4948,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "millerjones2021",
+     "note": "mass from Miller-Jones 2021; radius/Teff from Orosz 2011"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "millerjones2021",
+     "note": "mass from Miller-Jones 2021; radius/Teff from Orosz 2011"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "millerjones2021",
+     "note": "mass from Miller-Jones 2021; radius/Teff from Orosz 2011"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "literature",
+     "source": "orosz2011",
+     "method": "period/e/omega from Orosz 2011, inclination from Miller-Jones 2021; phase assumed"
+    }
+   },
+   "elements": {
+    "a_m": 36501086842.422,
+    "e": 0.018,
+    "i_deg": 27.51,
+    "node_deg": 0.0,
+    "omega_deg": 307.6,
+    "mean_anomaly_deg": 0.0,
+    "period_s": 483825.225599999,
+    "reference": "binary",
+    "convention": "sky"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "no_gr_mhd",
+   "text": {
+    "en": "Accretion is a finite reservoir with a supply rate and radiative efficiency, not GR-MHD; the disk is not a hydrodynamic object.",
+    "ru": "Аккреция — конечный резервуар с подачей и радиационной эффективностью, а не ОТО-МГД; диск не является гидродинамическим объектом."
+   },
+   "affects": [
+    "cyg_x1_bh.compact"
+   ]
+  },
+  {
+   "id": "finite_reservoir",
+   "text": {
+    "en": "The disk is a finite reservoir with no resupply (the donor's wind is not simulated); it runs out after ~1.4 years of simulated time.",
+    "ru": "Диск — конечный запас без пополнения (ветер донора не моделируется); он исчерпывается примерно через 1,4 года модельного времени."
+   },
+   "affects": [
+    "cyg_x1_bh.compact.accretion"
+   ]
+  },
+  {
+   "id": "donor_roche",
+   "text": {
+    "en": "The donor nearly fills its Roche lobe; tidal distortion and wind are not simulated (spherical point mass).",
+    "ru": "Донор почти заполняет полость Роша; приливная деформация и ветер не моделируются (сферическая точечная масса)."
+   },
+   "affects": [
+    "hde_226868"
+   ]
+  },
+  {
+   "id": "bh_spin_ignored",
+   "text": {
+    "en": "Black-hole spin (a* > 0.95 in the literature) does not enter the Newtonian dynamics.",
+    "ru": "Спин чёрной дыры (a* > 0,95 по литературе) не входит в ньютоновскую динамику."
+   },
+   "affects": [
+    "cyg_x1_bh"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 3,
+  "reconstructed": 0,
+  "assumed": 2,
+  "literature": 5,
+  "authored": 0
+ },
+ "sources": [
+  {
+   "id": "millerjones2021",
+   "title": "Miller-Jones et al. 2021, Science 371, 1046 (Cygnus X-1 mass and distance)",
+   "url": "https://arxiv.org/abs/2102.09091",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "orosz2011",
+   "title": "Orosz et al. 2011, ApJ 742, 84 (Cygnus X-1 orbit)",
+   "url": "https://arxiv.org/abs/1106.3689",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_456e8e48",
+   "title": "NASA IXPE",
+   "url": "https://www.nasa.gov/universe/nasas-ixpe-reveals-shape-orientation-of-hot-matter-around-black-hole/",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_d398d5fc",
+   "title": "масса/расстояние",
+   "url": "https://arxiv.org/abs/2102.09091",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L21"
+ ],
+ "experiment_ids": [
+  "E61",
+  "E62"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 2.31)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 3.6e-16 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": "CS35",
+  "gameplay": "Изменение активности при заданной массе и конечном топливе"
+ }
+}

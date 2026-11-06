@@ -1,0 +1,893 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.wide_giants",
+ "name": {
+  "en": "Distant giants and belts",
+  "ru": "Далёкие гиганты и пояс"
+ },
+ "kind": "authored_procedural",
+ "group": "wide_giants",
+ "description": {
+  "en": "Young giant planets far from an A-type star, between warm and cold debris belts.",
+  "ru": "Молодые гиганты далеко от звезды класса A между тёплым и холодным поясами."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 976853.0,
+  "suggested_horizon_s": 625157000000.0,
+  "time_scale_hint": 30175500.0,
+  "guard": {
+   "min_separation_m": 79745900.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 38688300000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [],
+ "bodies": [
+  {
+   "id": "star",
+   "name": {
+    "en": "Osnovo",
+    "ru": "Osnovo"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 3.25699897978078e+30,
+   "radius_m": 921678971.981436,
+   "position_m": [
+    -91120699167.45953,
+    -16470187507.47633,
+    302582692.4768685
+   ],
+   "velocity_mps": [
+    11.42417731132672,
+    -119.3670714148018,
+    -1.210159812929301
+   ],
+   "star": {
+    "teff_k": 8214.09,
+    "luminosity_w": 2.75561e+27,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 499801682,
+    "params": {
+     "StarColor": [
+      0.7432,
+      0.7868,
+      1.0,
+      1
+     ],
+     "Seed": 682.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        0.7432,
+        0.7868,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 2202"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 2202"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 2202"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Osnovo b",
+    "ru": "Osnovo b"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 8.63338340044455e+27,
+   "radius_m": 82149095.1888644,
+   "position_m": [
+    1191712824131.201,
+    -97807369499.0685,
+    -3954031595.477839
+   ],
+   "velocity_mps": [
+    752.5091222922621,
+    12759.41660724506,
+    174.3867366640233
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 1262198220334.96,
+    "e": 0.01931308302,
+    "i_deg": 0.801545289,
+    "node_deg": 10.06361312,
+    "omega_deg": 148.9053493,
+    "mean_anomaly_deg": 198.0729423,
+    "period_s": 603510327.202278,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 143.56
+   },
+   "appearance": {
+    "profile": "Giant_YoungHot",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 830.0,
+     "ColorA": [
+      0.8395,
+      0.6767,
+      0.5584,
+      1
+     ],
+     "ColorB": [
+      0.5527,
+      0.3372,
+      0.2553,
+      1
+     ],
+     "ColorC": [
+      0.8621,
+      0.7905,
+      0.8395,
+      1
+     ],
+     "BandCount": 13.3,
+     "Turbulence": 0.228
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "p2",
+   "name": {
+    "en": "Osnovo c",
+    "ru": "Osnovo c"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 9.19444604406654e+27,
+   "radius_m": 81921826.1160118,
+   "position_m": [
+    1058743588706.66,
+    1753562082604.977,
+    -428353581.6779462
+   ],
+   "velocity_mps": [
+    -8494.877507948508,
+    5599.628356671984,
+    -10.65976921569612
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 2131177452304.79,
+    "e": 0.01769053816,
+    "i_deg": 0.058593673,
+    "node_deg": 217.5796119,
+    "omega_deg": 144.5670845,
+    "mean_anomaly_deg": 53.27840978,
+    "period_s": 1322245985.3258,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 110.48
+   },
+   "appearance": {
+    "profile": "Giant_YoungHot",
+    "seed": 1690977849,
+    "params": {
+     "Seed": 611.0,
+     "ColorA": [
+      0.7322,
+      0.6956,
+      0.5273,
+      1
+     ],
+     "ColorB": [
+      0.4923,
+      0.3667,
+      0.238,
+      1
+     ],
+     "ColorC": [
+      0.9389,
+      0.8735,
+      0.765,
+      1
+     ],
+     "BandCount": 13.2,
+     "Turbulence": 0.654
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "p3",
+   "name": {
+    "en": "Osnovo d",
+    "ru": "Osnovo d"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 1.695247528222e+28,
+   "radius_m": 79745923.6017437,
+   "position_m": [
+    3324418434652.422,
+    -1463744998161.7,
+    47055309278.0565
+   ],
+   "velocity_mps": [
+    2868.140840239453,
+    7316.681927015692,
+    179.667229808316
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 3943927955150.55,
+    "e": 0.06777589099,
+    "i_deg": 1.511136994,
+    "node_deg": 308.3450152,
+    "omega_deg": 57.3252442,
+    "mean_anomaly_deg": 334.83946,
+    "period_s": 3320130177.12498,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 81.216
+   },
+   "appearance": {
+    "profile": "Giant_YoungHot",
+    "seed": 3489708867,
+    "params": {
+     "Seed": 411.0,
+     "ColorA": [
+      0.8461,
+      0.721,
+      0.4907,
+      1
+     ],
+     "ColorB": [
+      0.5001,
+      0.3526,
+      0.2209,
+      1
+     ],
+     "ColorC": [
+      0.9073,
+      0.9143,
+      0.85,
+      1
+     ],
+     "BandCount": 13.5,
+     "Turbulence": 0.619
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "p4",
+   "name": {
+    "en": "Osnovo e",
+    "ru": "Osnovo e"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 8.50227318833279e+27,
+   "radius_m": 82204427.1319102,
+   "position_m": [
+    6503057194466.248,
+    -437935604161.2548,
+    -1202646498.233937
+   ],
+   "velocity_mps": [
+    755.8533334921514,
+    5763.691727260974,
+    -92.11228723773212
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 6723338693845.91,
+    "e": 0.0684941903,
+    "i_deg": 0.9056803725,
+    "node_deg": 175.3991444,
+    "omega_deg": 104.8711205,
+    "mean_anomaly_deg": 68.56318446,
+    "period_s": 7380384615.66816,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 62.204
+   },
+   "appearance": {
+    "profile": "Giant_YoungHot",
+    "seed": 1291612587,
+    "params": {
+     "Seed": 134.0,
+     "ColorA": [
+      0.7953,
+      0.7382,
+      0.4844,
+      1
+     ],
+     "ColorB": [
+      0.5193,
+      0.3548,
+      0.2409,
+      1
+     ],
+     "ColorC": [
+      0.8527,
+      0.8257,
+      0.8272,
+      1
+     ],
+     "BandCount": 8.3,
+     "Turbulence": 0.45
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "p5",
+   "name": {
+    "en": "Osnovo f",
+    "ru": "Osnovo f"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 1.38147971141018e+28,
+   "radius_m": 80467329.9882072,
+   "position_m": [
+    11951609435803.09,
+    4842800728031.271,
+    -125583828708.2961
+   ],
+   "velocity_mps": [
+    -1494.63642327329,
+    3915.776821616294,
+    19.63922791710727
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 13449798991343.5,
+    "e": 0.04233387606,
+    "i_deg": 0.6242159011,
+    "node_deg": 85.41939991,
+    "omega_deg": 266.8112747,
+    "mean_anomaly_deg": 27.47807581,
+    "period_s": 20838580486.7827,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 43.98
+   },
+   "appearance": {
+    "profile": "Giant_YoungHot",
+    "seed": 439708755,
+    "params": {
+     "Seed": 877.0,
+     "ColorA": [
+      0.7572,
+      0.6493,
+      0.4903,
+      1
+     ],
+     "ColorB": [
+      0.5559,
+      0.3449,
+      0.273,
+      1
+     ],
+     "ColorC": [
+      0.9582,
+      0.9398,
+      0.7296,
+      1
+     ],
+     "BandCount": 9.64,
+     "Turbulence": 0.32
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [
+  {
+   "id": "warm_belt",
+   "type": "debris_belt",
+   "parent": "star",
+   "inner_radius_m": 504879288133.985,
+   "outer_radius_m": 1009758576267.97,
+   "thickness_m": 50487928813.3985,
+   "total_mass_kg": 0.0,
+   "massless": true,
+   "test_particle_count": 512,
+   "seed": 2637584501,
+   "eccentricity_max": 0.05,
+   "inclination_max_deg": 3.0,
+   "appearance": {
+    "profile": "Ring_DebrisWarm",
+    "params": {}
+   },
+   "provenance": {
+    "geometry": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator belt; massless tracers"
+    }
+   },
+   "note": {
+    "en": "Massless tracers.",
+    "ru": "Безмассовые трассеры."
+   },
+   "visual_particle_count": 1500,
+   "particle_note": {
+    "en": "test_particle_count are integrated massless tracers (Portable64 total <= 1024); visual_particle_count may be drawn as decoration only.",
+    "ru": "test_particle_count — интегрируемые безмассовые трассеры (Portable64: всего <= 1024); visual_particle_count — только декоративные частицы."
+   }
+  },
+  {
+   "id": "cold_belt",
+   "type": "debris_belt",
+   "parent": "star",
+   "inner_radius_m": 20174698487015.2,
+   "outer_radius_m": 33624497478358.7,
+   "thickness_m": 1681224873917.94,
+   "total_mass_kg": 0.0,
+   "massless": true,
+   "test_particle_count": 512,
+   "seed": 2347048591,
+   "eccentricity_max": 0.05,
+   "inclination_max_deg": 3.0,
+   "appearance": {
+    "profile": "Ring_DebrisCold",
+    "params": {}
+   },
+   "provenance": {
+    "geometry": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator belt; massless tracers"
+    }
+   },
+   "note": {
+    "en": "Massless tracers.",
+    "ru": "Безмассовые трассеры."
+   },
+   "visual_particle_count": 1500,
+   "particle_note": {
+    "en": "test_particle_count are integrated massless tracers (Portable64 total <= 1024); visual_particle_count may be drawn as decoration only.",
+    "ru": "test_particle_count — интегрируемые безмассовые трассеры (Portable64: всего <= 1024); visual_particle_count — только декоративные частицы."
+   }
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 7,
+  "reconstructed": 0,
+  "assumed": 5,
+  "literature": 0,
+  "authored": 24
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 1.28e+03)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.13 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "wide_giants",
+  "seed": 2202,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Osnovo"
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

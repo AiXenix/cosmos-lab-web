@@ -1,0 +1,1163 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.red_chain",
+ "name": {
+  "en": "Red dwarf chain",
+  "ru": "Цепочка у красного карлика"
+ },
+ "kind": "authored_procedural",
+ "group": "red_dwarf_chain",
+ "description": {
+  "en": "A compact chain of rocky worlds near period commensurabilities around a cool red dwarf.",
+  "ru": "Компактная цепочка каменных миров у соизмеримостей периодов вокруг холодного красного карлика."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 342.35,
+  "suggested_horizon_s": 98130900.0,
+  "time_scale_hint": 10374.5,
+  "guard": {
+   "min_separation_m": 4663420.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 50237800000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [],
+ "bodies": [
+  {
+   "id": "star",
+   "name": {
+    "en": "Renri",
+    "ru": "Renri"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 2.54963034275829e+29,
+   "radius_m": 134523776.29173,
+   "position_m": [
+    -676321.529588601,
+    -664738.5050056849,
+    -696.6842249094223
+   ],
+   "velocity_mps": [
+    2.549163963976504,
+    -3.626866161393638,
+    -0.00217565327949111
+   ],
+   "star": {
+    "teff_k": 2790.32,
+    "luminosity_w": 7.8168674e+23,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_RedDwarf",
+    "seed": 499801682,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.4418,
+      0.1153,
+      1
+     ],
+     "Seed": 682.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Faint",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.4418,
+        0.1153,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 1101"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 1101"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 1101"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Renri b",
+    "ru": "Renri b"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 4.03071230334675e+24,
+   "radius_m": 5761194.50893348,
+   "position_m": [
+    2128698881.599819,
+    1557698993.864044,
+    5327021.804735087
+   ],
+   "velocity_mps": [
+    -47879.74645570658,
+    64632.47548678,
+    220.97509069812
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 2647527819.54143,
+    "e": 0.006691378024,
+    "i_deg": 0.1958814802,
+    "node_deg": 0.0,
+    "omega_deg": 96.66234897,
+    "mean_anomaly_deg": 300.2014795,
+    "period_s": 207489.327256839,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 406.81
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 934.0,
+     "LandColorA": [
+      0.7849,
+      0.5638,
+      0.3811,
+      1
+     ],
+     "LandColorB": [
+      0.4939,
+      0.3882,
+      0.2258,
+      1
+     ],
+     "OceanColor": [
+      0.01992,
+      0.05744,
+      0.13,
+      1
+     ],
+     "NoiseScale": 1.524,
+     "CloudCoverage": 0.109
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "p2",
+   "name": {
+    "en": "Renri c",
+    "ru": "Renri c"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 1.88939034242518e+24,
+   "radius_m": 4663422.53955623,
+   "position_m": [
+    -2123566685.730492,
+    -2762883579.673322,
+    -15242062.98945618
+   ],
+   "velocity_mps": [
+    55521.71864605759,
+    -42488.78384671317,
+    -234.4280501940291
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 3485896341.62002,
+    "e": 0.002152419231,
+    "i_deg": 0.3161422713,
+    "node_deg": 0.0,
+    "omega_deg": 306.539301,
+    "mean_anomaly_deg": 286.1541054,
+    "period_s": 313476.549612774,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 354.53
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 1690977849,
+    "params": {
+     "Seed": 439.0,
+     "LandColorA": [
+      0.7399,
+      0.5859,
+      0.3919,
+      1
+     ],
+     "LandColorB": [
+      0.504,
+      0.3488,
+      0.2312,
+      1
+     ],
+     "OceanColor": [
+      0.02033,
+      0.06023,
+      0.1399,
+      1
+     ],
+     "NoiseScale": 1.587,
+     "CloudCoverage": 0.0834
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "p3",
+   "name": {
+    "en": "Renri d",
+    "ru": "Renri d"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 3.37968231226189e+24,
+   "radius_m": 5484883.22581068,
+   "position_m": [
+    -4245379076.298583,
+    1694144660.115388,
+    11267005.4571647
+   ],
+   "velocity_mps": [
+    -22771.97866249869,
+    -56783.38565311676,
+    -377.4992579081028
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 4594670797.02989,
+    "e": 0.005469340029,
+    "i_deg": 0.3809192343,
+    "node_deg": 0.0,
+    "omega_deg": 141.6607032,
+    "mean_anomaly_deg": 16.39526312,
+    "period_s": 474364.387101365,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 308.81
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 3489708867,
+    "params": {
+     "Seed": 510.0,
+     "LandColorA": [
+      0.3018,
+      0.3357,
+      0.1853,
+      1
+     ],
+     "LandColorB": [
+      0.4232,
+      0.3558,
+      0.2609,
+      1
+     ],
+     "OceanColor": [
+      0.02159,
+      0.0656,
+      0.1716,
+      1
+     ],
+     "NoiseScale": 1.627,
+     "CloudCoverage": 0.493
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "p4",
+   "name": {
+    "en": "Renri e",
+    "ru": "Renri e"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 8.06631873342465e+24,
+   "radius_m": 6991549.65278482,
+   "position_m": [
+    5568765091.969807,
+    -397706967.2538158,
+    -813061.5473377446
+   ],
+   "velocity_mps": [
+    3895.560041559682,
+    55135.64016299677,
+    112.8210823266379
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 5597653779.29878,
+    "e": 0.0025972059,
+    "i_deg": 0.1172389218,
+    "node_deg": 0.0,
+    "omega_deg": 11.04013229,
+    "mean_anomaly_deg": 344.9594061,
+    "period_s": 637870.705234317,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 279.78
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 1291612587,
+    "params": {
+     "Seed": 954.0,
+     "LandColorA": [
+      0.2745,
+      0.3287,
+      0.1721,
+      1
+     ],
+     "LandColorB": [
+      0.4595,
+      0.3692,
+      0.2808,
+      1
+     ],
+     "OceanColor": [
+      0.01842,
+      0.07022,
+      0.1788,
+      1
+     ],
+     "NoiseScale": 1.488,
+     "CloudCoverage": 0.479
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "p5",
+   "name": {
+    "en": "Renri f",
+    "ru": "Renri f"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 3.94715177829218e+24,
+   "radius_m": 5727620.08288037,
+   "position_m": [
+    6570293137.85321,
+    1683611167.343965,
+    392406.1874664036
+   ],
+   "velocity_mps": [
+    -12525.21354637511,
+    48553.44901348252,
+    11.32812352571588
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 6798620858.19602,
+    "e": 0.002752392975,
+    "i_deg": 0.01336947458,
+    "node_deg": 0.0,
+    "omega_deg": 49.27318461,
+    "mean_anomaly_deg": 325.2837071,
+    "period_s": 853790.816639368,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 253.86
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 439708755,
+    "params": {
+     "Seed": 5.0,
+     "LandColorA": [
+      0.2743,
+      0.3337,
+      0.1667,
+      1
+     ],
+     "LandColorB": [
+      0.452,
+      0.3812,
+      0.2709,
+      1
+     ],
+     "OceanColor": [
+      0.01901,
+      0.06461,
+      0.1576,
+      1
+     ],
+     "NoiseScale": 1.406,
+     "CloudCoverage": 0.492
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "p6",
+   "name": {
+    "en": "Renri g",
+    "ru": "Renri g"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 2.34759755852214e+24,
+   "radius_m": 4954673.19005271,
+   "position_m": [
+    4772156099.926952,
+    7616629559.908527,
+    10359878.52940737
+   ],
+   "velocity_mps": [
+    -36855.5976529107,
+    22956.08616894108,
+    31.2232383059521
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 8952106839.04728,
+    "e": 0.004889518412,
+    "i_deg": 0.0779297982,
+    "node_deg": 0.0,
+    "omega_deg": 205.2813237,
+    "mean_anomaly_deg": 212.952702,
+    "period_s": 1290048.77721387,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.5,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 203.38
+   },
+   "appearance": {
+    "profile": "Planet_Snowball",
+    "seed": 779749501,
+    "params": {
+     "Seed": 853.0,
+     "LandColorA": [
+      0.439,
+      0.4175,
+      0.3676,
+      1
+     ],
+     "LandColorB": [
+      0.2615,
+      0.2369,
+      0.2013,
+      1
+     ],
+     "OceanColor": [
+      0.01967,
+      0.06379,
+      0.141,
+      1
+     ],
+     "NoiseScale": 2.167,
+     "CloudCoverage": 0.23
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "p7",
+   "name": {
+    "en": "Renri h",
+    "ru": "Renri h"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 9.90873931082059e+24,
+   "radius_m": 7404575.23128193,
+   "position_m": [
+    5672929755.341078,
+    11306168239.79739,
+    579425.8900583818
+   ],
+   "velocity_mps": [
+    -32769.87040227249,
+    16415.05957331123,
+    0.8405931389867223
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 12632204784.2511,
+    "e": 0.001577471589,
+    "i_deg": 0.002938722641,
+    "node_deg": 0.0,
+    "omega_deg": 218.2235807,
+    "mean_anomaly_deg": 205.2073539,
+    "period_s": 2162362.71642573,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.5,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 171.21
+   },
+   "appearance": {
+    "profile": "Planet_Snowball",
+    "seed": 1825831683,
+    "params": {
+     "Seed": 540.0,
+     "LandColorA": [
+      0.441,
+      0.4226,
+      0.3878,
+      1
+     ],
+     "LandColorB": [
+      0.2578,
+      0.2205,
+      0.2044,
+      1
+     ],
+     "OceanColor": [
+      0.01911,
+      0.06113,
+      0.1471,
+      1
+     ],
+     "NoiseScale": 2.349,
+     "CloudCoverage": 0.207
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "p8",
+   "name": {
+    "en": "Renri i",
+    "ru": "Renri i"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 3.15594515077453e+24,
+   "radius_m": 5381063.67607346,
+   "position_m": [
+    13925791136.71044,
+    9300387313.70818,
+    38601323.69063602
+   ],
+   "velocity_mps": [
+    -17632.41587900192,
+    26444.03106153921,
+    109.7561389929591
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 16646318672.322,
+    "e": 0.006043347931,
+    "i_deg": 0.2378051748,
+    "node_deg": 0.0,
+    "omega_deg": 220.8133903,
+    "mean_anomaly_deg": 172.8382597,
+    "period_s": 3271029.24817846,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.6,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 141.06
+   },
+   "appearance": {
+    "profile": "Planet_IceBall",
+    "seed": 2193655195,
+    "params": {
+     "Seed": 689.0,
+     "LandColorA": [
+      0.4512,
+      0.4269,
+      0.3886,
+      1
+     ],
+     "LandColorB": [
+      0.2374,
+      0.2479,
+      0.199,
+      1
+     ],
+     "OceanColor": [
+      0.01902,
+      0.05967,
+      0.1449,
+      1
+     ],
+     "NoiseScale": 2.12
+    },
+    "layers": {}
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 10,
+  "reconstructed": 0,
+  "assumed": 8,
+  "literature": 0,
+  "authored": 36
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L07"
+ ],
+ "experiment_ids": [
+  "E19",
+  "E23",
+  "E35",
+  "E69"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 18.8)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.00077 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "red_dwarf_chain",
+  "seed": 1101,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Renri"
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

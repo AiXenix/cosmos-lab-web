@@ -1,0 +1,585 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.triple",
+ "name": {
+  "en": "Hierarchical triple",
+  "ru": "Иерархическая тройная"
+ },
+ "kind": "authored_procedural",
+ "group": "hierarchical_triple",
+ "description": {
+  "en": "An inner stellar pair, a distant third star and a planet around the third.",
+  "ru": "Внутренняя пара звёзд, далёкая третья звезда и планета у неё."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 909.318,
+  "suggested_horizon_s": 2009570000.0,
+  "time_scale_hint": 28118.9,
+  "guard": {
+   "min_separation_m": 9098780.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 937127000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "inner_pair",
+   "kind": "binary",
+   "members": [
+    "star_a",
+    "star_b"
+   ],
+   "name": {
+    "en": "Inner pair",
+    "ru": "Внутренняя пара"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "star_a",
+   "name": {
+    "en": "Drael A",
+    "ru": "Drael A"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 1.68843941508766e+30,
+   "radius_m": 610387541.03949,
+   "position_m": [
+    -70726017160.10432,
+    57464052161.76582,
+    4649637292.25759
+   ],
+   "velocity_mps": [
+    31469.4591161263,
+    -36610.24585001208,
+    1515.662848644086
+   ],
+   "star": {
+    "teff_k": 5232.56,
+    "luminosity_w": 1.9901654e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 1423020471,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8224,
+      0.6883,
+      1
+     ],
+     "Seed": 471.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8224,
+        0.6883,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "star_b",
+   "name": {
+    "en": "Drael B",
+    "ru": "Drael B"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "star_a",
+   "mass_kg": 1.796101737492e+30,
+   "radius_m": 641330687.594074,
+   "position_m": [
+    -56645949866.98399,
+    73944621934.46216,
+    4649637292.25759
+   ],
+   "velocity_mps": [
+    -37583.78804037305,
+    27921.17866739718,
+    1515.662848644086
+   ],
+   "star": {
+    "teff_k": 5430.27,
+    "luminosity_w": 2.5484199e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 4193922392,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8441,
+      0.7376,
+      1
+     ],
+     "Seed": 392.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8441,
+        0.7376,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 18567191636.3087,
+    "e": 0.1731070987,
+    "i_deg": 0.0,
+    "node_deg": 0,
+    "omega_deg": 241.8471724,
+    "mean_anomaly_deg": 162.7910969,
+    "period_s": 1042373.92126999,
+    "reference": "binary",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "star_c",
+   "name": {
+    "en": "Drael C",
+    "ru": "Drael C"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "inner_pair",
+   "mass_kg": 1.03632530475145e+30,
+   "radius_m": 413060966.787618,
+   "position_m": [
+    213403083397.9303,
+    -221777065885.9268,
+    -15633715863.25153
+   ],
+   "velocity_mps": [
+    13866.4413760242,
+    11254.5297233278,
+    -5096.569095271647
+   ],
+   "star": {
+    "teff_k": 3904.1,
+    "luminosity_w": 2.8244355e+25,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 3909588205,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.644,
+      0.3555,
+      1
+     ],
+     "Seed": 205.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.644,
+        0.3555,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 6606"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 324895764941.495,
+    "e": 0.2483853557,
+    "i_deg": 15.99283731,
+    "node_deg": 123.6892116,
+    "omega_deg": 27.60290373,
+    "mean_anomaly_deg": 152.921149,
+    "period_s": 66985721.9959727,
+    "reference": "hierarchical",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Drael C b",
+    "ru": "Drael C b"
+   },
+   "class": "planet",
+   "subclass": "super_earth",
+   "parent": "star_c",
+   "mass_kg": 1.56777564579343e+25,
+   "radius_m": 9098779.39492273,
+   "position_m": [
+    221242497998.823,
+    -220003681586.0298,
+    -15125446013.16383
+   ],
+   "velocity_mps": [
+    -7158.367265341392,
+    98906.14868513934,
+    20025.27010915333
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 8213622735.20878,
+    "e": 0.02,
+    "i_deg": 15.99283731,
+    "node_deg": 0,
+    "omega_deg": 0,
+    "mean_anomaly_deg": 12.72461017,
+    "period_s": 562377.318737197,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 566.26
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 773.0,
+     "LandColorA": [
+      0.7712,
+      0.5557,
+      0.3639,
+      1
+     ],
+     "LandColorB": [
+      0.4799,
+      0.3506,
+      0.2268,
+      1
+     ],
+     "OceanColor": [
+      0.02114,
+      0.06333,
+      0.1389,
+      1
+     ],
+     "NoiseScale": 1.845,
+     "CloudCoverage": 0.0916
+    },
+    "layers": {}
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 7,
+  "reconstructed": 0,
+  "assumed": 1,
+  "literature": 0,
+  "authored": 16
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E41"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 17.3)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 3.3e-05 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "hierarchical_triple",
+  "seed": 6606,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Drael",
+   "stability": {
+    "mardling_aarseth_ratio_required": 4.656,
+    "actual_ratio": 13.15
+   }
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

@@ -1,0 +1,2280 @@
+{
+ "schema": "aixenix.cosmos.events/1",
+ "generator": "prepare_content/1.0.0",
+ "rule": {
+  "en": "Lessons and experiments complete only from these runtime events and measured values. An id the build does not implement must be shown as unavailable; the task stays incomplete.",
+  "ru": "Уроки и эксперименты засчитываются только по этим событиям и измеренным значениям. Если id не реализован в сборке, задание показывается недоступным и не засчитывается."
+ },
+ "events": [
+  {
+   "id": "scene_loaded",
+   "payload": {
+    "scene_id": "string"
+   },
+   "description": {
+    "en": "A start scene or save finished loading",
+    "ru": "Сцена или сохранение загружены"
+   }
+  },
+  {
+   "id": "sim_started",
+   "payload": {},
+   "description": {
+    "en": "Simulation time is running",
+    "ru": "Время симуляции запущено"
+   }
+  },
+  {
+   "id": "sim_paused",
+   "payload": {
+    "reason": "user|guard|event|lesson"
+   },
+   "description": {
+    "en": "Simulation paused",
+    "ru": "Симуляция на паузе"
+   }
+  },
+  {
+   "id": "time_rate_changed",
+   "payload": {
+    "requested": "number",
+    "achieved": "number"
+   },
+   "description": {
+    "en": "Requested time rate changed",
+    "ru": "Изменена запрошенная скорость времени"
+   }
+  },
+  {
+   "id": "time_elapsed",
+   "payload": {
+    "sim_s": "number"
+   },
+   "description": {
+    "en": "Simulated time passed since the step became active (checked against value)",
+    "ru": "Прошло симуляционное время с начала шага"
+   }
+  },
+  {
+   "id": "body_selected",
+   "payload": {
+    "body_id": "string",
+    "class": "string"
+   },
+   "description": {
+    "en": "A body was selected",
+    "ru": "Выбрано тело"
+   }
+  },
+  {
+   "id": "camera_focused",
+   "payload": {
+    "body_id": "string"
+   },
+   "description": {
+    "en": "Camera focused on a body",
+    "ru": "Камера сфокусирована на теле"
+   }
+  },
+  {
+   "id": "view_scale_changed",
+   "payload": {
+    "mode": "true_scale|enhanced_bodies|enhanced_orbits"
+   },
+   "description": {
+    "en": "Visual scale mode changed (no physics change)",
+    "ru": "Изменён визуальный масштаб (физика не меняется)"
+   }
+  },
+  {
+   "id": "camera_view_changed",
+   "payload": {
+    "preset": "free|top|edge_on|observer|follow"
+   },
+   "description": {
+    "en": "Camera viewpoint changed",
+    "ru": "Изменён ракурс камеры"
+   }
+  },
+  {
+   "id": "panel_opened",
+   "payload": {
+    "panel": "ui_target id"
+   },
+   "description": {
+    "en": "A UI panel was opened",
+    "ru": "Открыта панель интерфейса"
+   }
+  },
+  {
+   "id": "property_edited",
+   "payload": {
+    "body_id": "string",
+    "field": "string",
+    "old": "number",
+    "new": "number",
+    "transaction": "string"
+   },
+   "description": {
+    "en": "A body property was committed",
+    "ru": "Свойство тела изменено"
+   }
+  },
+  {
+   "id": "preset_placed",
+   "payload": {
+    "preset_id": "string",
+    "body_ids": "array"
+   },
+   "description": {
+    "en": "A preset was placed into the scene",
+    "ru": "Пресет добавлен в сцену"
+   }
+  },
+  {
+   "id": "system_inserted",
+   "payload": {
+    "source_id": "string",
+    "body_ids": "array"
+   },
+   "description": {
+    "en": "A whole system was inserted atomically",
+    "ru": "Целая система вставлена атомарно"
+   }
+  },
+  {
+   "id": "body_removed",
+   "payload": {
+    "body_id": "string"
+   },
+   "description": {
+    "en": "A body was removed",
+    "ru": "Тело удалено"
+   }
+  },
+  {
+   "id": "velocity_kick",
+   "payload": {
+    "body_id": "string",
+    "dv_mps": "vector"
+   },
+   "description": {
+    "en": "A velocity impulse was applied",
+    "ru": "Применён импульс скорости"
+   }
+  },
+  {
+   "id": "rigid_move",
+   "payload": {
+    "body_ids": "array",
+    "dx_m": "vector",
+    "dv_mps": "vector"
+   },
+   "description": {
+    "en": "A subsystem was moved rigidly",
+    "ru": "Подсистема перенесена как целое"
+   }
+  },
+  {
+   "id": "body_converted",
+   "payload": {
+    "body_id": "string",
+    "from": "class",
+    "to": "class"
+   },
+   "description": {
+    "en": "A body changed class with conserved mass ledger",
+    "ru": "Тело сменило класс с учётом массы"
+   }
+  },
+  {
+   "id": "collision",
+   "payload": {
+    "participants": "array",
+    "outcome": "merge|fragment|graze",
+    "remnant_ids": "array",
+    "ejecta_mass_kg": "number"
+   },
+   "description": {
+    "en": "Bodies collided",
+    "ru": "Произошло столкновение"
+   }
+  },
+  {
+   "id": "close_encounter",
+   "payload": {
+    "a": "string",
+    "b": "string",
+    "min_separation_m": "number"
+   },
+   "description": {
+    "en": "Two bodies passed closer than the encounter threshold",
+    "ru": "Тесное сближение"
+   }
+  },
+  {
+   "id": "body_escaped",
+   "payload": {
+    "body_id": "string",
+    "specific_energy": "number"
+   },
+   "description": {
+    "en": "A body became unbound and left the reference region",
+    "ru": "Тело стало несвязанным и ушло"
+   }
+  },
+  {
+   "id": "domain_guard",
+   "payload": {
+    "reason": "strong_field|relativistic_speed|min_separation|integrator_error",
+    "body_ids": "array"
+   },
+   "description": {
+    "en": "The model left its validity domain; simulation pauses with a reason",
+    "ru": "Модель вышла за область применимости: пауза с причиной"
+   }
+  },
+  {
+   "id": "transaction_undone",
+   "payload": {
+    "transaction": "string"
+   },
+   "description": {
+    "en": "Undo restored the checkpoint before a transaction",
+    "ru": "Отмена восстановила контрольную точку"
+   }
+  },
+  {
+   "id": "transaction_redone",
+   "payload": {
+    "transaction": "string"
+   },
+   "description": {
+    "en": "Redo",
+    "ru": "Повтор действия"
+   }
+  },
+  {
+   "id": "checkpoint_restored",
+   "payload": {
+    "checkpoint": "string"
+   },
+   "description": {
+    "en": "A checkpoint was restored",
+    "ru": "Восстановлена контрольная точка"
+   }
+  },
+  {
+   "id": "branch_created",
+   "payload": {
+    "branch": "A|B|string"
+   },
+   "description": {
+    "en": "An A/B branch copy was created",
+    "ru": "Создана ветка A/B"
+   }
+  },
+  {
+   "id": "branch_compared",
+   "payload": {
+    "metric": "measurement id",
+    "body": "id",
+    "body2": "id?",
+    "value": "number",
+    "other_value": "number",
+    "unit": "string",
+    "branch": "string",
+    "other_branch": "string",
+    "sim_s": "number",
+    "other_sim_s": "number"
+   },
+   "description": {
+    "en": "Two branches were compared on a metric (both values recorded)",
+    "ru": "Ветки сравнены по метрике (оба значения записаны)"
+   }
+  },
+  {
+   "id": "save_written",
+   "payload": {
+    "file": "string"
+   },
+   "description": {
+    "en": "A save file was written",
+    "ru": "Сохранение записано"
+   }
+  },
+  {
+   "id": "save_loaded",
+   "payload": {
+    "file": "string",
+    "platform_origin": "string"
+   },
+   "description": {
+    "en": "A save file was loaded",
+    "ru": "Сохранение загружено"
+   }
+  },
+  {
+   "id": "measurement_recorded",
+   "payload": {
+    "measurement": "id",
+    "value": "number",
+    "unit": "string",
+    "body": "id?",
+    "body2": "id?",
+    "series": "string?"
+   },
+   "description": {
+    "en": "A measurement value was recorded to the journal",
+    "ru": "Измерение записано в журнал"
+   }
+  },
+  {
+   "id": "graph_opened",
+   "payload": {
+    "measurement": "id"
+   },
+   "description": {
+    "en": "A measurement graph was opened",
+    "ru": "Открыт график измерения"
+   }
+  },
+  {
+   "id": "observer_placed",
+   "payload": {
+    "direction": "vector",
+    "instrument": "id"
+   },
+   "description": {
+    "en": "Observer/instrument placed",
+    "ru": "Наблюдатель/прибор размещён"
+   }
+  },
+  {
+   "id": "observation_completed",
+   "payload": {
+    "instrument": "id",
+    "samples": "int"
+   },
+   "description": {
+    "en": "An instrument series finished",
+    "ru": "Серия прибора завершена"
+   }
+  },
+  {
+   "id": "transit_detected",
+   "payload": {
+    "body_id": "string",
+    "depth": "number",
+    "time_s": "number"
+   },
+   "description": {
+    "en": "A transit was detected in the photometric series",
+    "ru": "В ряду фотометрии найден транзит"
+   }
+  },
+  {
+   "id": "eclipse_detected",
+   "payload": {
+    "occulter": "string",
+    "occulted": "string"
+   },
+   "description": {
+    "en": "An eclipse (star-star or planet-star) occurred for the observer",
+    "ru": "Наблюдатель зафиксировал затмение"
+   }
+  },
+  {
+   "id": "series_run_completed",
+   "payload": {
+    "run": "int",
+    "status": "ok|stopped|failed|domain_exceeded"
+   },
+   "description": {
+    "en": "One run of a sweep finished",
+    "ru": "Завершён прогон серии"
+   }
+  },
+  {
+   "id": "series_completed",
+   "payload": {
+    "runs_total": "int",
+    "runs_ok": "int"
+   },
+   "description": {
+    "en": "A sweep finished",
+    "ru": "Серия завершена"
+   }
+  },
+  {
+   "id": "series_resumed",
+   "payload": {
+    "runs_done": "int"
+   },
+   "description": {
+    "en": "An interrupted sweep was resumed",
+    "ru": "Прерванная серия продолжена"
+   }
+  },
+  {
+   "id": "surface_brush_applied",
+   "payload": {
+    "body_id": "string",
+    "field": "albedo|height|water|ice|heat",
+    "area_fraction": "number",
+    "energy_j": "number"
+   },
+   "description": {
+    "en": "A surface brush stroke was committed",
+    "ru": "Применена кисть поверхности"
+   }
+  },
+  {
+   "id": "heater_finished",
+   "payload": {
+    "body_id": "string",
+    "energy_j": "number"
+   },
+   "description": {
+    "en": "A finite-power local heater finished",
+    "ru": "Локальный нагреватель отработал"
+   }
+  },
+  {
+   "id": "resonance_monitor_added",
+   "payload": {
+    "body_id": "string",
+    "body2_id": "string",
+    "p": "int",
+    "q": "int"
+   },
+   "description": {
+    "en": "A resonance-angle monitor was started for two planets",
+    "ru": "Запущен монитор резонансного угла для двух планет"
+   }
+  },
+  {
+   "id": "surface_grid_enabled",
+   "payload": {
+    "body_id": "string",
+    "bands": "int",
+    "cells": "int"
+   },
+   "description": {
+    "en": "A surface grid was enabled on a body",
+    "ru": "Включена сетка поверхности"
+   }
+  },
+  {
+   "id": "phase_change",
+   "payload": {
+    "body_id": "string",
+    "from": "ice|water|vapor",
+    "to": "ice|water|vapor",
+    "mass_kg": "number"
+   },
+   "description": {
+    "en": "Water changed phase in the surface model",
+    "ru": "Фазовый переход воды в модели поверхности"
+   }
+  },
+  {
+   "id": "star_switched_off",
+   "payload": {
+    "body_id": "string"
+   },
+   "description": {
+    "en": "A star's luminosity was set to zero",
+    "ru": "Светимость звезды обнулена"
+   }
+  },
+  {
+   "id": "supernova_triggered",
+   "payload": {
+    "body_id": "string",
+    "ejecta_mass_kg": "number",
+    "energy_j": "number"
+   },
+   "description": {
+    "en": "A scripted supernova was triggered",
+    "ru": "Запущен сценарный взрыв сверхновой"
+   }
+  },
+  {
+   "id": "light_front_arrived",
+   "payload": {
+    "source": "string",
+    "target": "string"
+   },
+   "description": {
+    "en": "Light from an event reached a body",
+    "ru": "Свет события достиг тела"
+   }
+  },
+  {
+   "id": "shell_arrived",
+   "payload": {
+    "source": "string",
+    "target": "string"
+   },
+   "description": {
+    "en": "Ejecta shell reached a body",
+    "ru": "Оболочка выброса достигла тела"
+   }
+  },
+  {
+   "id": "accretion_changed",
+   "payload": {
+    "body_id": "string",
+    "mdot_kg_s": "number"
+   },
+   "description": {
+    "en": "Accretion supply changed",
+    "ru": "Изменена подача аккреции"
+   }
+  },
+  {
+   "id": "accretion_fuel_depleted",
+   "payload": {
+    "body_id": "string"
+   },
+   "description": {
+    "en": "Finite accretion reservoir ran out",
+    "ru": "Конечный запас аккреции исчерпан"
+   }
+  },
+  {
+   "id": "jet_axis_changed",
+   "payload": {
+    "body_id": "string",
+    "axis": "vector"
+   },
+   "description": {
+    "en": "Jet axis changed",
+    "ru": "Изменена ось джета"
+   }
+  },
+  {
+   "id": "pulsar_beam_changed",
+   "payload": {
+    "body_id": "string",
+    "axis": "vector"
+   },
+   "description": {
+    "en": "Pulsar beam axis changed",
+    "ru": "Изменена ось луча пульсара"
+   }
+  },
+  {
+   "id": "pulse_received",
+   "payload": {
+    "pulsar": "string",
+    "receiver": "string"
+   },
+   "description": {
+    "en": "A pulse reached the receiver",
+    "ru": "Импульс достиг приёмника"
+   }
+  },
+  {
+   "id": "passport_opened",
+   "payload": {
+    "body_id": "string"
+   },
+   "description": {
+    "en": "The assumption/provenance passport was opened",
+    "ru": "Открыт паспорт допущений"
+   }
+  },
+  {
+   "id": "catalogue_card_opened",
+   "payload": {
+    "record": "string"
+   },
+   "description": {
+    "en": "An atlas/catalogue card was opened",
+    "ru": "Открыта карточка атласа"
+   }
+  },
+  {
+   "id": "bookmark_added",
+   "payload": {
+    "scene_id": "string"
+   },
+   "description": {
+    "en": "A place was bookmarked",
+    "ru": "Место добавлено в закладки"
+   }
+  },
+  {
+   "id": "route_completed",
+   "payload": {
+    "scene_ids": "array"
+   },
+   "description": {
+    "en": "A route of bookmarked places was visited",
+    "ru": "Маршрут пройден"
+   }
+  },
+  {
+   "id": "generator_run",
+   "payload": {
+    "archetype": "id",
+    "seed": "uint32",
+    "generator_version": "string"
+   },
+   "description": {
+    "en": "The generator produced a system",
+    "ru": "Генератор создал систему"
+   }
+  },
+  {
+   "id": "question_answered",
+   "payload": {
+    "question": "id",
+    "choice": "id",
+    "correct": "bool"
+   },
+   "description": {
+    "en": "A comprehension question was answered",
+    "ru": "Дан ответ на вопрос"
+   }
+  },
+  {
+   "id": "explanation_written",
+   "payload": {
+    "chars": "int"
+   },
+   "description": {
+    "en": "The player wrote an explanation in the journal",
+    "ru": "Игрок записал объяснение"
+   }
+  },
+  {
+   "id": "report_exported",
+   "payload": {
+    "file": "string"
+   },
+   "description": {
+    "en": "A research report was exported",
+    "ru": "Отчёт экспортирован"
+   }
+  },
+  {
+   "id": "hypothesis_recorded",
+   "payload": {
+    "text_chars": "int"
+   },
+   "description": {
+    "en": "A research question/hypothesis was recorded",
+    "ru": "Записан вопрос/гипотеза"
+   }
+  }
+ ],
+ "actions": [
+  {
+   "id": "load_scene",
+   "args": {
+    "scene": "scene id"
+   },
+   "description": {
+    "en": "Load a start scene",
+    "ru": "Load a start scene"
+   }
+  },
+  {
+   "id": "load_branch_of",
+   "args": {
+    "scene": "scene id",
+    "branch": "A|B"
+   },
+   "description": {
+    "en": "Load a scene into a named branch",
+    "ru": "Load a scene into a named branch"
+   }
+  },
+  {
+   "id": "pause",
+   "args": {},
+   "description": {
+    "en": "Pause",
+    "ru": "Pause"
+   }
+  },
+  {
+   "id": "set_time_rate",
+   "args": {
+    "rate": "sim s per real s"
+   },
+   "description": {
+    "en": "Set requested time rate",
+    "ru": "Set requested time rate"
+   }
+  },
+  {
+   "id": "run_for",
+   "args": {
+    "sim_s": "number"
+   },
+   "description": {
+    "en": "Advance physical time by an interval",
+    "ru": "Advance physical time by an interval"
+   }
+  },
+  {
+   "id": "select_body",
+   "args": {
+    "body": "id"
+   },
+   "description": {
+    "en": "Select body",
+    "ru": "Select body"
+   }
+  },
+  {
+   "id": "set_base_step",
+   "args": {
+    "base_step_s": "number"
+   },
+   "description": {
+    "en": "Set the solver's base step explicitly (versioned profile change; setup only, before any branch)",
+    "ru": "Set the solver's base step explicitly (versioned profile change; setup only, before any branch)"
+   }
+  },
+  {
+   "id": "resume_series",
+   "args": {},
+   "description": {
+    "en": "Resume an interrupted series (the Series panel's Resume)",
+    "ru": "Resume an interrupted series (the Series panel's Resume)"
+   }
+  },
+  {
+   "id": "enable_surface_grid",
+   "args": {
+    "body": "id"
+   },
+   "description": {
+    "en": "Turn on the body's energy-balance surface grid (24 x 48), as the Surface tab does",
+    "ru": "Turn on the body's energy-balance surface grid (24 x 48), as the Surface tab does"
+   }
+  },
+  {
+   "id": "focus_camera",
+   "args": {
+    "body": "id",
+    "view": "free|top|edge_on|observer|follow"
+   },
+   "description": {
+    "en": "Camera focus/view (no physics)",
+    "ru": "Camera focus/view (no physics)"
+   }
+  },
+  {
+   "id": "set_view_scale",
+   "args": {
+    "mode": "true_scale|enhanced_bodies|enhanced_orbits"
+   },
+   "description": {
+    "en": "Visual scale (no physics)",
+    "ru": "Visual scale (no physics)"
+   }
+  },
+  {
+   "id": "set_body_field",
+   "args": {
+    "body": "id",
+    "field": "mass_kg|radius_m|luminosity_w|teff_k|albedo_bond|...",
+    "value": "number"
+   },
+   "description": {
+    "en": "Set a body field (committed transaction)",
+    "ru": "Set a body field (committed transaction)"
+   }
+  },
+  {
+   "id": "scale_body_field",
+   "args": {
+    "body": "id",
+    "field": "string",
+    "factor": "number"
+   },
+   "description": {
+    "en": "Multiply a body field",
+    "ru": "Multiply a body field"
+   }
+  },
+  {
+   "id": "set_orbit_distance",
+   "args": {
+    "body": "id",
+    "primary": "id",
+    "a_m": "number",
+    "keep": "circular_velocity|current_velocity"
+   },
+   "description": {
+    "en": "Move a body to a new orbital distance",
+    "ru": "Move a body to a new orbital distance"
+   }
+  },
+  {
+   "id": "apply_velocity_kick",
+   "args": {
+    "body": "id",
+    "dv_mps": "number",
+    "direction": "prograde|retrograde|radial|normal|vector"
+   },
+   "description": {
+    "en": "Impulse",
+    "ru": "Impulse"
+   }
+  },
+  {
+   "id": "rotate_orbit",
+   "args": {
+    "body": "id",
+    "axis": "line_of_nodes|vector",
+    "angle_deg": "number"
+   },
+   "description": {
+    "en": "Rotate an orbit (state rotation about primary)",
+    "ru": "Rotate an orbit (state rotation about primary)"
+   }
+  },
+  {
+   "id": "add_preset",
+   "args": {
+    "preset": "preset id",
+    "placement": "orbit_selected|free|replace_selected|attach_surface|receiver",
+    "params": "object"
+   },
+   "description": {
+    "en": "Place a preset",
+    "ru": "Place a preset"
+   }
+  },
+  {
+   "id": "insert_system",
+   "args": {
+    "source": "scene or preset id",
+    "offset_m": "vector",
+    "velocity_mps": "vector"
+   },
+   "description": {
+    "en": "Insert a whole system atomically",
+    "ru": "Insert a whole system atomically"
+   }
+  },
+  {
+   "id": "remove_body",
+   "args": {
+    "body": "id"
+   },
+   "description": {
+    "en": "Remove a body",
+    "ru": "Remove a body"
+   }
+  },
+  {
+   "id": "rigid_move",
+   "args": {
+    "bodies": "ids|all",
+    "dx_m": "vector",
+    "dv_mps": "vector"
+   },
+   "description": {
+    "en": "Galilean transform of a set of bodies",
+    "ru": "Galilean transform of a set of bodies"
+   }
+  },
+  {
+   "id": "convert_to_black_hole",
+   "args": {
+    "body": "id"
+   },
+   "description": {
+    "en": "Replace star by black hole of the same mass",
+    "ru": "Replace star by black hole of the same mass"
+   }
+  },
+  {
+   "id": "set_luminosity",
+   "args": {
+    "body": "id",
+    "luminosity_w": "number"
+   },
+   "description": {
+    "en": "Set luminosity (0 = switched off)",
+    "ru": "Set luminosity (0 = switched off)"
+   }
+  },
+  {
+   "id": "set_accretion",
+   "args": {
+    "body": "id",
+    "mdot_kg_s": "number",
+    "disk_mass_kg": "number",
+    "enabled": "bool"
+   },
+   "description": {
+    "en": "Accretion supply / reservoir",
+    "ru": "Accretion supply / reservoir"
+   }
+  },
+  {
+   "id": "set_jet_axis",
+   "args": {
+    "body": "id",
+    "axis": "vector"
+   },
+   "description": {
+    "en": "Jet orientation",
+    "ru": "Jet orientation"
+   }
+  },
+  {
+   "id": "set_beam_axis",
+   "args": {
+    "body": "id",
+    "axis": "vector",
+    "half_angle_deg": "number"
+   },
+   "description": {
+    "en": "Pulsar beam",
+    "ru": "Pulsar beam"
+   }
+  },
+  {
+   "id": "trigger_supernova",
+   "args": {
+    "body": "id",
+    "ejecta_fraction": "number",
+    "energy_j": "number",
+    "remnant": "neutron_star|black_hole|none"
+   },
+   "description": {
+    "en": "Scripted explosion with mass ledger",
+    "ru": "Scripted explosion with mass ledger"
+   }
+  },
+  {
+   "id": "place_observer",
+   "args": {
+    "direction": "scene frame.observer_direction|vector",
+    "instrument": "photometer|rv_spectrograph|pulsar_receiver|flux_meter|jet_receiver"
+   },
+   "description": {
+    "en": "Place an observer/instrument",
+    "ru": "Place an observer/instrument"
+   }
+  },
+  {
+   "id": "start_observation",
+   "args": {
+    "instrument": "id",
+    "duration_s": "number",
+    "cadence_s": "number",
+    "exposure_s": "number",
+    "noise": "number",
+    "seed": "uint32"
+   },
+   "description": {
+    "en": "Record an instrument series",
+    "ru": "Record an instrument series"
+   }
+  },
+  {
+   "id": "start_series",
+   "args": {
+    "parameter": "path",
+    "values": "array",
+    "parameter2?": "path",
+    "values2?": "array",
+    "horizon_s": "number",
+    "metrics": "measurement ids",
+    "step_budget_per_run?": "integer (whole base steps per run; absent = 400 000)",
+    "substep_budget_per_run?": "integer (adaptive sub-steps per run; absent = 20 000 000)"
+   },
+   "description": {
+    "en": "Sequential sweep (<=16 runs)",
+    "ru": "Sequential sweep (<=16 runs)"
+   }
+  },
+  {
+   "id": "create_branch",
+   "args": {
+    "name": "A|B"
+   },
+   "description": {
+    "en": "Copy world into a branch",
+    "ru": "Copy world into a branch"
+   }
+  },
+  {
+   "id": "restore_checkpoint",
+   "args": {
+    "checkpoint": "id|before_last_transaction"
+   },
+   "description": {
+    "en": "Restore checkpoint",
+    "ru": "Restore checkpoint"
+   }
+  },
+  {
+   "id": "surface_brush",
+   "args": {
+    "body": "id",
+    "field": "albedo|height|water|ice",
+    "value": "number",
+    "region": "lat/lon cap"
+   },
+   "description": {
+    "en": "Surface brush",
+    "ru": "Surface brush"
+   }
+  },
+  {
+   "id": "local_heater",
+   "args": {
+    "body": "id",
+    "power_w": "number",
+    "duration_s": "number",
+    "region": "lat/lon cap"
+   },
+   "description": {
+    "en": "Finite heater",
+    "ru": "Finite heater"
+   }
+  },
+  {
+   "id": "add_water",
+   "args": {
+    "body": "id",
+    "mass_kg": "number",
+    "source": "external_delivery"
+   },
+   "description": {
+    "en": "Add water with explicit external source",
+    "ru": "Add water with explicit external source"
+   }
+  },
+  {
+   "id": "set_spin",
+   "args": {
+    "body": "id",
+    "period_s": "number",
+    "locked": "bool"
+   },
+   "description": {
+    "en": "Rotation profile",
+    "ru": "Rotation profile"
+   }
+  },
+  {
+   "id": "set_generator",
+   "args": {
+    "archetype": "id",
+    "seed": "uint32",
+    "params": "object"
+   },
+   "description": {
+    "en": "Run generator",
+    "ru": "Run generator"
+   }
+  },
+  {
+   "id": "save_game",
+   "args": {
+    "slot": "string"
+   },
+   "description": {
+    "en": "Save",
+    "ru": "Save"
+   }
+  },
+  {
+   "id": "load_game",
+   "args": {
+    "slot": "string"
+   },
+   "description": {
+    "en": "Load",
+    "ru": "Load"
+   }
+  },
+  {
+   "id": "export_report",
+   "args": {
+    "format": "json|md"
+   },
+   "description": {
+    "en": "Export report",
+    "ru": "Export report"
+   }
+  },
+  {
+   "id": "open_passport",
+   "args": {
+    "body": "id"
+   },
+   "description": {
+    "en": "Open provenance passport",
+    "ru": "Open provenance passport"
+   }
+  },
+  {
+   "id": "open_atlas_card",
+   "args": {
+    "record": "pl_name|hostname"
+   },
+   "description": {
+    "en": "Open atlas card",
+    "ru": "Open atlas card"
+   }
+  },
+  {
+   "id": "add_bookmark",
+   "args": {
+    "scene": "id"
+   },
+   "description": {
+    "en": "Bookmark place",
+    "ru": "Bookmark place"
+   }
+  },
+  {
+   "id": "ask_question",
+   "args": {
+    "question": "id",
+    "choices": "array",
+    "correct": "id"
+   },
+   "description": {
+    "en": "Comprehension question",
+    "ru": "Comprehension question"
+   }
+  },
+  {
+   "id": "write_explanation",
+   "args": {
+    "min_chars": "int"
+   },
+   "description": {
+    "en": "Free text explanation into journal",
+    "ru": "Free text explanation into journal"
+   }
+  }
+ ],
+ "measurements": [
+  {
+   "id": "orbital_period",
+   "unit": "s",
+   "args": [
+    "body",
+    "primary?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Osculating orbital period vs primary",
+    "ru": "Оскулирующий период относительно главного тела"
+   }
+  },
+  {
+   "id": "observed_period",
+   "unit": "s",
+   "args": [
+    "body"
+   ],
+   "kind": "series",
+   "description": {
+    "en": "Period measured from successive crossings over an interval",
+    "ru": "Период по последовательным прохождениям за интервал"
+   }
+  },
+  {
+   "id": "semi_major_axis",
+   "unit": "m",
+   "args": [
+    "body",
+    "primary?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Osculating semi-major axis",
+    "ru": "Большая полуось"
+   }
+  },
+  {
+   "id": "eccentricity",
+   "unit": "1",
+   "args": [
+    "body",
+    "primary?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Osculating eccentricity",
+    "ru": "Эксцентриситет"
+   }
+  },
+  {
+   "id": "inclination",
+   "unit": "deg",
+   "args": [
+    "body",
+    "reference?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Inclination vs scene reference plane or another orbit",
+    "ru": "Наклонение"
+   }
+  },
+  {
+   "id": "mutual_inclination",
+   "unit": "deg",
+   "args": [
+    "body",
+    "body2"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Angle between two orbit normals",
+    "ru": "Взаимное наклонение орбит"
+   }
+  },
+  {
+   "id": "periapsis_distance",
+   "unit": "m",
+   "args": [
+    "body",
+    "primary?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Periapsis distance",
+    "ru": "Расстояние перицентра"
+   }
+  },
+  {
+   "id": "apoapsis_distance",
+   "unit": "m",
+   "args": [
+    "body",
+    "primary?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Apoapsis distance",
+    "ru": "Расстояние апоцентра"
+   }
+  },
+  {
+   "id": "specific_orbital_energy",
+   "unit": "J/kg",
+   "args": [
+    "body",
+    "primary?"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Two-body specific orbital energy (sign = bound/unbound)",
+    "ru": "Удельная орбитальная энергия"
+   }
+  },
+  {
+   "id": "total_energy",
+   "unit": "J",
+   "args": [],
+   "kind": "diagnostic",
+   "description": {
+    "en": "Total mechanical energy of the world",
+    "ru": "Полная механическая энергия"
+   }
+  },
+  {
+   "id": "energy_rel_error",
+   "unit": "1",
+   "args": [],
+   "kind": "diagnostic",
+   "description": {
+    "en": "|dE|/(K+|U|) since load",
+    "ru": "Относительная ошибка энергии"
+   }
+  },
+  {
+   "id": "linear_momentum",
+   "unit": "kg m/s",
+   "args": [
+    "bodies?"
+   ],
+   "kind": "diagnostic",
+   "description": {
+    "en": "Total linear momentum",
+    "ru": "Полный импульс"
+   }
+  },
+  {
+   "id": "angular_momentum",
+   "unit": "kg m^2/s",
+   "args": [
+    "bodies?"
+   ],
+   "kind": "diagnostic",
+   "description": {
+    "en": "Total angular momentum",
+    "ru": "Полный момент импульса"
+   }
+  },
+  {
+   "id": "internal_energy_subsystem",
+   "unit": "J",
+   "args": [
+    "bodies"
+   ],
+   "kind": "diagnostic",
+   "description": {
+    "en": "Energy of a subsystem in its own barycentric frame",
+    "ru": "Внутренняя энергия подсистемы"
+   }
+  },
+  {
+   "id": "distance",
+   "unit": "m",
+   "args": [
+    "body",
+    "body2"
+   ],
+   "kind": "geometry",
+   "description": {
+    "en": "Instantaneous distance",
+    "ru": "Расстояние"
+   }
+  },
+  {
+   "id": "min_separation",
+   "unit": "m",
+   "args": [
+    "body",
+    "body2",
+    "interval"
+   ],
+   "kind": "series",
+   "description": {
+    "en": "Minimum separation over an interval",
+    "ru": "Минимальное сближение за интервал"
+   }
+  },
+  {
+   "id": "position",
+   "unit": "m",
+   "args": [
+    "body",
+    "frame?"
+   ],
+   "kind": "geometry",
+   "description": {
+    "en": "Position in scene frame",
+    "ru": "Положение в системе сцены"
+   }
+  },
+  {
+   "id": "velocity",
+   "unit": "m/s",
+   "args": [
+    "body",
+    "frame?"
+   ],
+   "kind": "geometry",
+   "description": {
+    "en": "Velocity",
+    "ru": "Скорость"
+   }
+  },
+  {
+   "id": "barycenter_position",
+   "unit": "m",
+   "args": [
+    "bodies?"
+   ],
+   "kind": "geometry",
+   "description": {
+    "en": "Barycentre position",
+    "ru": "Положение барицентра"
+   }
+  },
+  {
+   "id": "body_radius",
+   "unit": "m",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "Physical radius",
+    "ru": "Физический радиус"
+   }
+  },
+  {
+   "id": "body_mass",
+   "unit": "kg",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "Mass",
+    "ru": "Масса"
+   }
+  },
+  {
+   "id": "visual_radius_scale",
+   "unit": "1",
+   "args": [
+    "body"
+   ],
+   "kind": "view",
+   "description": {
+    "en": "Current render enlargement factor (view only)",
+    "ru": "Визуальное увеличение (только вид)"
+   }
+  },
+  {
+   "id": "surface_gravity",
+   "unit": "m/s^2",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "GM/R^2",
+    "ru": "Ускорение на поверхности"
+   }
+  },
+  {
+   "id": "escape_velocity",
+   "unit": "m/s",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "sqrt(2GM/R)",
+    "ru": "Вторая космическая"
+   }
+  },
+  {
+   "id": "mean_density",
+   "unit": "kg/m^3",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "Mean density",
+    "ru": "Средняя плотность"
+   }
+  },
+  {
+   "id": "luminosity",
+   "unit": "W",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "Luminosity of a star/compact source",
+    "ru": "Светимость"
+   }
+  },
+  {
+   "id": "stellar_flux_at_body",
+   "unit": "W/m^2",
+   "args": [
+    "body",
+    "sources?"
+   ],
+   "kind": "radiation",
+   "description": {
+    "en": "Summed instantaneous flux from all luminous bodies",
+    "ru": "Суммарный мгновенный поток от светил"
+   }
+  },
+  {
+   "id": "flux_series",
+   "unit": "W/m^2",
+   "args": [
+    "body",
+    "interval",
+    "cadence"
+   ],
+   "kind": "series",
+   "description": {
+    "en": "Flux at a body over time",
+    "ru": "Поток во времени"
+   }
+  },
+  {
+   "id": "equilibrium_temperature",
+   "unit": "K",
+   "args": [
+    "body",
+    "albedo?"
+   ],
+   "kind": "radiation",
+   "description": {
+    "en": "Blackbody equilibrium temperature (full redistribution)",
+    "ru": "Равновесная температура"
+   }
+  },
+  {
+   "id": "surface_temperature_map",
+   "unit": "K",
+   "args": [
+    "body"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Surface-grid temperature field (lat-lon)",
+    "ru": "Карта температуры поверхности"
+   }
+  },
+  {
+   "id": "surface_temperature_mean",
+   "unit": "K",
+   "args": [
+    "body"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Area-weighted mean surface temperature",
+    "ru": "Средняя температура поверхности"
+   }
+  },
+  {
+   "id": "surface_temperature_range",
+   "unit": "K",
+   "args": [
+    "body"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Min/max grid temperature",
+    "ru": "Диапазон температуры поверхности"
+   }
+  },
+  {
+   "id": "absorbed_energy",
+   "unit": "J",
+   "args": [
+    "body",
+    "interval"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Absorbed stellar energy over interval",
+    "ru": "Поглощённая энергия за интервал"
+   }
+  },
+  {
+   "id": "radiated_energy",
+   "unit": "J",
+   "args": [
+    "body",
+    "interval"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Thermally radiated energy over interval",
+    "ru": "Излучённая энергия за интервал"
+   }
+  },
+  {
+   "id": "water_phase_masses",
+   "unit": "kg",
+   "args": [
+    "body"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Ice / liquid / vapour reservoir masses",
+    "ru": "Массы льда, воды и пара"
+   }
+  },
+  {
+   "id": "flooded_area_fraction",
+   "unit": "1",
+   "args": [
+    "body"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Fraction of surface below water level",
+    "ru": "Доля затопленной поверхности"
+   }
+  },
+  {
+   "id": "regional_liquid_mass",
+   "unit": "kg",
+   "args": [
+    "body",
+    "region"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Liquid water in the grid cells of a named region",
+    "ru": "Масса жидкой воды в ячейках региона"
+   }
+  },
+  {
+   "id": "atmosphere_pressure_model",
+   "unit": "Pa",
+   "args": [
+    "body"
+   ],
+   "kind": "surface",
+   "description": {
+    "en": "Model surface pressure from atmosphere mass parameter",
+    "ru": "Модельное давление атмосферы"
+   }
+  },
+  {
+   "id": "period_ratio",
+   "unit": "1",
+   "args": [
+    "body",
+    "body2"
+   ],
+   "kind": "resonance",
+   "description": {
+    "en": "Ratio of observed periods",
+    "ru": "Отношение периодов"
+   }
+  },
+  {
+   "id": "resonance_angle_series",
+   "unit": "deg",
+   "args": [
+    "bodies",
+    "p",
+    "q",
+    "interval"
+   ],
+   "kind": "resonance",
+   "description": {
+    "en": "Critical resonant angle time series",
+    "ru": "Ряд критического резонансного угла"
+   }
+  },
+  {
+   "id": "resonance_angle_state",
+   "unit": "enum",
+   "args": [
+    "bodies",
+    "p",
+    "q",
+    "interval"
+   ],
+   "kind": "resonance",
+   "description": {
+    "en": "librating / circulating / undetermined over interval T",
+    "ru": "Либрация / циркуляция / не определено за T"
+   }
+  },
+  {
+   "id": "transit_times",
+   "unit": "s",
+   "args": [
+    "body",
+    "observer"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Mid-transit times for the observer",
+    "ru": "Моменты середины транзитов"
+   }
+  },
+  {
+   "id": "transit_timing_variation",
+   "unit": "s",
+   "args": [
+    "body",
+    "observer"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "O-C residuals of transit times vs linear ephemeris",
+    "ru": "Отклонения времён транзита (TTV)"
+   }
+  },
+  {
+   "id": "transit_depth",
+   "unit": "1",
+   "args": [
+    "body",
+    "observer"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Fractional flux drop",
+    "ru": "Глубина транзита"
+   }
+  },
+  {
+   "id": "transit_duration",
+   "unit": "s",
+   "args": [
+    "body",
+    "observer"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Transit duration",
+    "ru": "Длительность транзита"
+   }
+  },
+  {
+   "id": "transit_occurs",
+   "unit": "bool",
+   "args": [
+    "body",
+    "observer"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Whether the geometry produces a transit",
+    "ru": "Есть ли транзит при данной геометрии"
+   }
+  },
+  {
+   "id": "normalized_flux_series",
+   "unit": "1",
+   "args": [
+    "observer",
+    "cadence",
+    "exposure",
+    "noise"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Synthetic photometric light curve",
+    "ru": "Синтетическая кривая блеска"
+   }
+  },
+  {
+   "id": "rv_series",
+   "unit": "m/s",
+   "args": [
+    "star",
+    "observer",
+    "cadence",
+    "noise"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Synthetic radial-velocity series",
+    "ru": "Синтетический ряд лучевых скоростей"
+   }
+  },
+  {
+   "id": "rv_semi_amplitude",
+   "unit": "m/s",
+   "args": [
+    "star",
+    "body?"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Fitted/derived RV semi-amplitude K",
+    "ru": "Полуамплитуда лучевой скорости K"
+   }
+  },
+  {
+   "id": "periodogram_peaks",
+   "unit": "s",
+   "args": [
+    "series"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "Strongest periods in a series",
+    "ru": "Главные периоды ряда"
+   }
+  },
+  {
+   "id": "fit_residuals_rms",
+   "unit": "series unit",
+   "args": [
+    "series",
+    "model"
+   ],
+   "kind": "observatory",
+   "description": {
+    "en": "RMS of residuals after model",
+    "ru": "СКО остатков модели"
+   }
+  },
+  {
+   "id": "pulse_arrival_residuals",
+   "unit": "s",
+   "args": [
+    "pulsar",
+    "receiver"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "Pulse timing residuals (Roemer delay of pulsar motion)",
+    "ru": "Остатки времён прихода импульсов"
+   }
+  },
+  {
+   "id": "pulse_frequency",
+   "unit": "Hz",
+   "args": [
+    "pulsar",
+    "receiver"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "Observed pulse frequency",
+    "ru": "Наблюдаемая частота импульсов"
+   }
+  },
+  {
+   "id": "receiver_flux_series",
+   "unit": "W/m^2",
+   "args": [
+    "receiver"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "Flux series at a placed receiver (beam/jet/source)",
+    "ru": "Поток на приёмнике во времени"
+   }
+  },
+  {
+   "id": "accretion_rate",
+   "unit": "kg/s",
+   "args": [
+    "body"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "Current accretion rate",
+    "ru": "Темп аккреции"
+   }
+  },
+  {
+   "id": "disk_mass",
+   "unit": "kg",
+   "args": [
+    "body"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "Remaining finite disk reservoir",
+    "ru": "Остаток запаса диска"
+   }
+  },
+  {
+   "id": "accretion_luminosity",
+   "unit": "W",
+   "args": [
+    "body"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "eta*mdot*c^2 radiative output",
+    "ru": "Светимость аккреции"
+   }
+  },
+  {
+   "id": "schwarzschild_radius",
+   "unit": "m",
+   "args": [
+    "body"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "2GM/c^2",
+    "ru": "Радиус Шварцшильда"
+   }
+  },
+  {
+   "id": "compactness",
+   "unit": "1",
+   "args": [
+    "body",
+    "body2?"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "GM/(r c^2) at a body (domain guard metric)",
+    "ru": "Компактность GM/(rc^2)"
+   }
+  },
+  {
+   "id": "speed_fraction_c",
+   "unit": "1",
+   "args": [
+    "body"
+   ],
+   "kind": "compact",
+   "description": {
+    "en": "|v|/c",
+    "ru": "Скорость в долях c"
+   }
+  },
+  {
+   "id": "periapsis_precession",
+   "unit": "deg/orbit",
+   "args": [
+    "body",
+    "primary",
+    "interval"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Measured periapsis advance per orbit",
+    "ru": "Смещение перицентра за оборот"
+   }
+  },
+  {
+   "id": "domain_status",
+   "unit": "enum",
+   "args": [],
+   "kind": "diagnostic",
+   "description": {
+    "en": "ok / warning / exceeded with reason",
+    "ru": "Статус области применимости"
+   }
+  },
+  {
+   "id": "mass_ledger",
+   "unit": "kg",
+   "args": [],
+   "kind": "ledger",
+   "description": {
+    "en": "Mass ledger: bodies, ejecta, accreted, external additions",
+    "ru": "Баланс масс"
+   }
+  },
+  {
+   "id": "momentum_ledger",
+   "unit": "kg m/s",
+   "args": [],
+   "kind": "ledger",
+   "description": {
+    "en": "Momentum ledger including ejecta",
+    "ru": "Баланс импульса"
+   }
+  },
+  {
+   "id": "angular_momentum_ledger",
+   "unit": "kg m^2/s",
+   "args": [],
+   "kind": "ledger",
+   "description": {
+    "en": "Angular momentum ledger incl. spin",
+    "ru": "Баланс момента импульса"
+   }
+  },
+  {
+   "id": "ejecta_mass",
+   "unit": "kg",
+   "args": [
+    "event"
+   ],
+   "kind": "ledger",
+   "description": {
+    "en": "Ejecta mass of a collision/explosion",
+    "ru": "Масса выброса"
+   }
+  },
+  {
+   "id": "remnant_mass",
+   "unit": "kg",
+   "args": [
+    "event"
+   ],
+   "kind": "ledger",
+   "description": {
+    "en": "Remnant mass",
+    "ru": "Масса остатка"
+   }
+  },
+  {
+   "id": "fragment_ids",
+   "unit": "list",
+   "args": [
+    "event"
+   ],
+   "kind": "ledger",
+   "description": {
+    "en": "Physical fragment ids (stable across platforms)",
+    "ru": "Идентификаторы фрагментов"
+   }
+  },
+  {
+   "id": "body_count",
+   "unit": "int",
+   "args": [
+    "class?"
+   ],
+   "kind": "world",
+   "description": {
+    "en": "Number of bodies",
+    "ru": "Число тел"
+   }
+  },
+  {
+   "id": "state_hash",
+   "unit": "hex",
+   "args": [],
+   "kind": "world",
+   "description": {
+    "en": "Hash of the quantised world state (cross-platform equality within tolerance)",
+    "ru": "Хэш квантованного состояния"
+   }
+  },
+  {
+   "id": "hill_radius",
+   "unit": "m",
+   "args": [
+    "body",
+    "primary"
+   ],
+   "kind": "stability",
+   "description": {
+    "en": "Hill radius",
+    "ru": "Радиус Хилла"
+   }
+  },
+  {
+   "id": "roche_limit",
+   "unit": "m",
+   "args": [
+    "body",
+    "primary"
+   ],
+   "kind": "stability",
+   "description": {
+    "en": "Fluid Roche limit",
+    "ru": "Предел Роша"
+   }
+  },
+  {
+   "id": "mutual_hill_spacing",
+   "unit": "1",
+   "args": [
+    "body",
+    "body2"
+   ],
+   "kind": "stability",
+   "description": {
+    "en": "Separation in mutual Hill radii",
+    "ru": "Разнос в взаимных радиусах Хилла"
+   }
+  },
+  {
+   "id": "light_travel_time",
+   "unit": "s",
+   "args": [
+    "body",
+    "body2"
+   ],
+   "kind": "radiation",
+   "description": {
+    "en": "Light travel time between two bodies",
+    "ru": "Время прохождения света"
+   }
+  },
+  {
+   "id": "bound_to",
+   "unit": "J/kg",
+   "args": [
+    "body",
+    "primary"
+   ],
+   "kind": "elements",
+   "description": {
+    "en": "Two-body specific energy relative to a primary (or primary group); largest value over the run",
+    "ru": "Удельная энергия двух тел относительно главного тела (или группы); максимум за прогон"
+   }
+  },
+  {
+   "id": "rotation_period",
+   "unit": "s",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "Rotation period from the model spin",
+    "ru": "Период вращения по спину модели"
+   }
+  },
+  {
+   "id": "spin_angular_momentum",
+   "unit": "kg m^2/s",
+   "args": [
+    "body"
+   ],
+   "kind": "body",
+   "description": {
+    "en": "Spin angular momentum k M R^2 2 pi / P",
+    "ru": "Спиновый момент импульса k M R^2 2 pi / P"
+   }
+  },
+  {
+   "id": "series_table",
+   "unit": "table",
+   "args": [
+    "series"
+   ],
+   "kind": "series",
+   "description": {
+    "en": "Sweep result table with statuses",
+    "ru": "Таблица результатов серии"
+   }
+  },
+  {
+   "id": "journal_entries",
+   "unit": "int",
+   "args": [],
+   "kind": "journal",
+   "description": {
+    "en": "Number of journal entries/bookmarks",
+    "ru": "Число записей журнала/закладок"
+   }
+  },
+  {
+   "id": "data_version",
+   "unit": "string",
+   "args": [
+    "scene"
+   ],
+   "kind": "data",
+   "description": {
+    "en": "Catalogue snapshot/version used by a scene",
+    "ru": "Версия данных сцены"
+   }
+  },
+  {
+   "id": "provenance_kind",
+   "unit": "enum",
+   "args": [
+    "body",
+    "field"
+   ],
+   "kind": "data",
+   "description": {
+    "en": "Provenance kind of a field",
+    "ru": "Происхождение значения поля"
+   }
+  }
+ ],
+ "ui_targets": [
+  {
+   "id": "main_menu",
+   "description": "Main menu"
+  },
+  {
+   "id": "world_select",
+   "description": "World/place selection"
+  },
+  {
+   "id": "time_controls",
+   "description": "Pause / rate / step"
+  },
+  {
+   "id": "catalogue",
+   "description": "Preset catalogue"
+  },
+  {
+   "id": "placement",
+   "description": "Placement preview/commit"
+  },
+  {
+   "id": "properties",
+   "description": "Selected body properties"
+  },
+  {
+   "id": "tree",
+   "description": "Hierarchy tree"
+  },
+  {
+   "id": "measurements",
+   "description": "Measurements panel"
+  },
+  {
+   "id": "graphs",
+   "description": "Graphs"
+  },
+  {
+   "id": "observatory",
+   "description": "Observatory (transit/RV/receivers)"
+  },
+  {
+   "id": "series",
+   "description": "Series runner"
+  },
+  {
+   "id": "surface",
+   "description": "Surface grid and brushes"
+  },
+  {
+   "id": "history",
+   "description": "Undo/redo/checkpoints/branches"
+  },
+  {
+   "id": "passport",
+   "description": "Provenance/assumption passport"
+  },
+  {
+   "id": "atlas",
+   "description": "Exoplanet atlas"
+  },
+  {
+   "id": "view",
+   "description": "View/scale/camera"
+  },
+  {
+   "id": "journal",
+   "description": "Journal/report"
+  },
+  {
+   "id": "generator",
+   "description": "Generator"
+  },
+  {
+   "id": "compact",
+   "description": "Compact object controls (beam/jet/accretion)"
+  },
+  {
+   "id": "save_load",
+   "description": "Save/load/export"
+  },
+  {
+   "id": "lessons",
+   "description": "Lessons/experiments"
+  },
+  {
+   "id": "settings",
+   "description": "Settings/accessibility"
+  }
+ ],
+ "check_ops": {
+  "event": "the step completes when `event` is received (optional `where` payload filter)",
+  "lt|le|gt|ge|eq": "compare measurement (after optional reduce) to value",
+  "in_range": "value within [lo, hi]",
+  "changed_by_fraction": "|new-old|/|old| >= value comparing sample 'start' vs 'end' (or branch A vs B)",
+  "unchanged_within": "|new-old|/|old| <= value",
+  "sign": "sign of value equals expected (+1/-1)",
+  "differs": "two compared values differ by > tolerance",
+  "exists": "measurement available and recorded",
+  "count_ge": "number of events/rows >= value",
+  "state_equal": "state_hash equality within quantisation",
+  "answer": "question answered with the correct choice"
+ }
+}

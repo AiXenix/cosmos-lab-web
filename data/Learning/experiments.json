@@ -1,0 +1,8051 @@
+{
+ "schema": "aixenix.cosmos.experiments/1",
+ "experiments": [
+  {
+   "id": "E01",
+   "theme": "Орбиты и измерения",
+   "mode": "D",
+   "title": {
+    "en": "Double the Sun's mass",
+    "ru": "Удвоить массу Солнца"
+   },
+   "question": {
+    "en": "Compare period and eccentricity after an explicit edit",
+    "ru": "Сравнить период и эксцентриситет после явной правки"
+   },
+   "plan_measurement": "период, энергия",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "scale_body_field",
+     "args": {
+      "body": "sun",
+      "field": "mass_kg",
+      "factor": 2.0
+     }
+    }
+   ],
+   "horizon_s": 63115200.0,
+   "measurements": [
+    {
+     "id": "p0",
+     "measurement": "orbital_period",
+     "sample": "start",
+     "args": {
+      "body": "earth",
+      "primary": "sun",
+      "relative_to": "sun"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "p1",
+     "measurement": "observed_period",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "e1",
+     "measurement": "eccentricity",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "en",
+     "measurement": "total_energy",
+     "sample": "series",
+     "args": {},
+     "unit": "J"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "p1/p0",
+     "value": [
+      0.33,
+      0.44
+     ],
+     "lo": 0.33,
+     "hi": 0.44,
+     "text": {
+      "en": "Period shrinks to ~0.385 of the original (a' = 2/3 au).",
+      "ru": "Период сокращается до ~0,385 исходного (a' = 2/3 а.е.)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "in_range",
+     "a": "e1",
+     "value": [
+      0.45,
+      0.55
+     ],
+     "lo": 0.45,
+     "hi": 0.55,
+     "text": {
+      "en": "Eccentricity jumps to ~0.5: Earth starts at aphelion.",
+      "ru": "Эксцентриситет ~0,5: Земля оказывается в афелии."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "The orbit tightens and becomes eccentric; energy jumps once at the edit (ledgered as external).",
+      "ru": "Орбита сжимается и вытягивается; энергия меняется один раз при правке (внешнее воздействие в журнале)."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Doubling mass instantly is not physical for a star.",
+      "ru": "Мгновенное удвоение массы звезды нефизично."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending",
+   "series_samples": 256
+  },
+  {
+   "id": "E02",
+   "theme": "Орбиты и измерения",
+   "mode": "D",
+   "title": {
+    "en": "A black hole of the same mass",
+    "ru": "Чёрная дыра той же массы"
+   },
+   "question": {
+    "en": "Separate gravity from the light that disappeared",
+    "ru": "Разделить гравитацию и исчезнувший свет"
+   },
+   "plan_measurement": "орбита, поток",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "convert_to_black_hole",
+     "args": {
+      "body": "sun"
+     }
+    }
+   ],
+   "horizon_s": 34713360.0,
+   "measurements": [
+    {
+     "id": "p0",
+     "measurement": "orbital_period",
+     "sample": "start",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "p1",
+     "measurement": "observed_period",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "f1",
+     "measurement": "stellar_flux_at_body",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "W/m^2"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "p1/p0",
+     "value": 0.01,
+     "text": {
+      "en": "Same mass: Earth's orbit is unchanged.",
+      "ru": "Масса та же: орбита Земли не меняется."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "le",
+     "a": "f1",
+     "value": 0.001,
+     "text": {
+      "en": "Light is gone: flux drops to ~0.",
+      "ru": "Света нет: поток падает почти до нуля."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Gravity is identical; only light disappears.",
+      "ru": "Гравитация та же; исчезает лишь свет."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "The black hole radius is ~3 km; nothing falls in.",
+      "ru": "Радиус чёрной дыры ~3 км; ничего не падает внутрь."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "compact_objects",
+    "measurements",
+    "radiation",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E03",
+   "theme": "Орбиты и измерения",
+   "mode": "D",
+   "title": {
+    "en": "Move the Earth",
+    "ru": "Переместить Землю"
+   },
+   "question": {
+    "en": "Compare 0.8/1/1.2 au in the same model",
+    "ru": "Сравнить 0,8/1/1,2 а.е. при одинаковой модели"
+   },
+   "plan_measurement": "период, температура",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [
+    "generated.climate"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "earth.a_m",
+      "values": [
+       119678296560.0,
+       149597870700.0,
+       179517444840.0
+      ],
+      "horizon_s": 31557600.0,
+      "metrics": [
+       "orbital_period",
+       "equilibrium_temperature"
+      ]
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "tab.rows_ok",
+     "value": 3,
+     "text": {
+      "en": "All three runs complete.",
+      "ru": "Все три прогона завершены."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "sign",
+     "a": "d(equilibrium_temperature)/d(a)",
+     "value": -1,
+     "text": {
+      "en": "Farther means colder (T ~ a^-1/2).",
+      "ru": "Дальше — холоднее (T ~ a^-1/2)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Period grows as a^1.5, temperature falls as a^-0.5.",
+      "ru": "Период растёт как a^1,5, температура падает как a^-0,5."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Use set_orbit_distance with circular velocity.",
+      "ru": "Используйте перенос на круговую скорость."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E04",
+   "theme": "Орбиты и измерения",
+   "mode": "D",
+   "title": {
+    "en": "Change the speed",
+    "ru": "Сдвинуть скорость"
+   },
+   "question": {
+    "en": "Tell a bound orbit from escape",
+    "ru": "Различить связанную орбиту и уход"
+   },
+   "plan_measurement": "удельная энергия",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "select_body",
+     "args": {
+      "body": "earth"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "apply_velocity_kick",
+     "args": {
+      "body": "earth",
+      "dv_mps": 12500.0,
+      "direction": "prograde"
+     }
+    }
+   ],
+   "horizon_s": 63115200.0,
+   "measurements": [
+    {
+     "id": "eps0",
+     "measurement": "specific_orbital_energy",
+     "sample": "start",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "eps1",
+     "measurement": "specific_orbital_energy",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "J/kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "sign",
+     "a": "eps0",
+     "value": -1,
+     "text": {
+      "en": "Initially bound (energy < 0).",
+      "ru": "Сначала связана (энергия < 0)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "sign",
+     "a": "eps1",
+     "value": 1,
+     "text": {
+      "en": "After +12.5 km/s Earth exceeds escape speed (42.1 km/s) and leaves.",
+      "ru": "После +12,5 км/с Земля превышает скорость убегания (42,1 км/с) и уходит."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "The sign of specific energy separates bound and escaping orbits.",
+      "ru": "Знак удельной энергии разделяет связанные и уходящие орбиты."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Try +10 km/s too: still bound.",
+      "ru": "Попробуйте и +10 км/с: ещё связана."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements",
+    "orbit_edit"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E05",
+   "theme": "Орбиты и измерения",
+   "mode": "D",
+   "title": {
+    "en": "Change the viewpoint",
+    "ru": "Изменить ракурс"
+   },
+   "question": {
+    "en": "Separate the camera view from the state",
+    "ru": "Отделить вид камеры от состояния"
+   },
+   "plan_measurement": "позиции в frame",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "focus_camera",
+     "args": {
+      "body": "jupiter",
+      "view": "edge_on"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "x0",
+     "measurement": "position",
+     "sample": "start",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "x1",
+     "measurement": "position",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "h",
+     "measurement": "state_hash",
+     "sample": "end",
+     "args": {},
+     "unit": "hex"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "state_equal",
+     "a": "h",
+     "value": "start",
+     "text": {
+      "en": "Changing the camera does not change the state.",
+      "ru": "Смена камеры не меняет состояние."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Camera and physics are separate.",
+      "ru": "Камера и физика разделены."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Compare positions in the scene frame, not on screen.",
+      "ru": "Сравнивайте положения в системе сцены, а не на экране."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E06",
+   "theme": "Орбиты и измерения",
+   "mode": "D",
+   "title": {
+    "en": "Check the scale",
+    "ru": "Проверить масштаб"
+   },
+   "question": {
+    "en": "Compare real and enlarged body sizes",
+    "ru": "Сравнить реальный и увеличенный размер тел"
+   },
+   "plan_measurement": "расстояния, радиусы",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_view_scale",
+     "args": {
+      "mode": "true_scale"
+     }
+    },
+    {
+     "action": "set_view_scale",
+     "args": {
+      "mode": "enhanced_bodies"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "r",
+     "measurement": "body_radius",
+     "sample": "end",
+     "args": {
+      "body": "jupiter"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "v",
+     "measurement": "visual_radius_scale",
+     "sample": "end",
+     "args": {
+      "body": "jupiter"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "d",
+     "measurement": "distance",
+     "sample": "end",
+     "args": {
+      "body": "earth",
+      "body2": "sun",
+      "other": "sun"
+     },
+     "unit": "m"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "gt",
+     "a": "v",
+     "value": 1.0,
+     "text": {
+      "en": "Enhanced view enlarges bodies visually.",
+      "ru": "Режим увеличения визуально увеличивает тела."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "unchanged_within",
+     "a": "r",
+     "value": 0.0,
+     "text": {
+      "en": "Physical radius is unchanged.",
+      "ru": "Физический радиус не меняется."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "At true scale planets are sub-pixel dots.",
+      "ru": "В истинном масштабе планеты меньше пикселя."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements",
+    "view"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E07",
+   "theme": "Экзосистемы и данные",
+   "mode": "A/D",
+   "title": {
+    "en": "Seven worlds of TRAPPIST-1",
+    "ru": "Семь миров TRAPPIST-1"
+   },
+   "question": {
+    "en": "Change one planet's mass and measure the response",
+    "ru": "Изменить массу одной планеты и измерить отклик"
+   },
+   "plan_measurement": "критический угол, TTV",
+   "scene_id": "real.trappist_1",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.trappist_1"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "photometer"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "scale_body_field",
+     "args": {
+      "body": "trappist_1_e",
+      "field": "mass_kg",
+      "factor": 3.0
+     }
+    }
+   ],
+   "horizon_s": 25920000.0,
+   "measurements": [
+    {
+     "id": "ttvA",
+     "measurement": "transit_timing_variation",
+     "sample": "series",
+     "args": {
+      "body": "trappist_1_f",
+      "observer": "photometer",
+      "branch": "A"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "ttvB",
+     "measurement": "transit_timing_variation",
+     "sample": "series",
+     "args": {
+      "body": "trappist_1_f",
+      "observer": "photometer",
+      "branch": "B"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "ang",
+     "measurement": "resonance_angle_state",
+     "sample": "end",
+     "args": {
+      "bodies": [
+       "trappist_1_e",
+       "trappist_1_f",
+       "trappist_1_g"
+      ],
+      "p": 3,
+      "q": 2,
+      "interval": 25920000.0
+     },
+     "unit": "enum"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "ttvB",
+     "b": "ttvA",
+     "value": 60.0,
+     "text": {
+      "en": "Tripling e's mass changes f's TTVs by more than a minute.",
+      "ru": "Утроение массы e меняет TTV планеты f более чем на минуту."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "exists",
+     "a": "ang",
+     "text": {
+      "en": "Report the three-body angle state over the interval.",
+      "ru": "Сообщите состояние трёхтельного угла на интервале."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Neighbours feel the mass change through transit timing.",
+      "ru": "Соседи ощущают изменение массы через тайминг транзитов."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Start phases are reconstructed; compare branches, not real dates.",
+      "ru": "Фазы восстановлены; сравнивайте ветки, не реальные даты."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "observatory",
+    "resonance_tools"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E08",
+   "theme": "Экзосистемы и данные",
+   "mode": "A/D",
+   "title": {
+    "en": "Kepler-90 versus the Sun",
+    "ru": "Kepler-90 против Солнца"
+   },
+   "question": {
+    "en": "Compare architectures without equalising unknown masses",
+    "ru": "Сравнить архитектуры без уравнивания неизвестных масс"
+   },
+   "plan_measurement": "периоды, полуоси",
+   "scene_id": "real.kepler_90",
+   "alt_scene_ids": [
+    "real.solar_system"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.kepler_90"
+     }
+    },
+    {
+     "action": "load_branch_of",
+     "args": {
+      "scene": "real.solar_system",
+      "branch": "B"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "aA",
+     "measurement": "semi_major_axis",
+     "sample": "start",
+     "args": {
+      "body": "*"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "pA",
+     "measurement": "orbital_period",
+     "sample": "start",
+     "args": {
+      "body": "*"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "aH",
+     "measurement": "semi_major_axis",
+     "sample": "start",
+     "args": {
+      "body": "kepler_90_h"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "aN",
+     "measurement": "semi_major_axis",
+     "sample": "start",
+     "args": {
+      "body": "neptune",
+      "branch": "B"
+     },
+     "unit": "m"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "le",
+     "a": "aH",
+     "value": 179517444840.0,
+     "text": {
+      "en": "All eight Kepler-90 planets lie inside ~1 au (outermost: 1.01 au).",
+      "ru": "Все восемь планет Kepler-90 внутри ~1 а.е. (самая дальняя — 1,01 а.е.)."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "gt",
+     "a": "aN/aH",
+     "value": 20.0,
+     "text": {
+      "en": "The Solar System spreads ~30 times wider (Neptune 30 au).",
+      "ru": "Солнечная система шире примерно в 30 раз (Нептун — 30 а.е.)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "answer",
+     "a": "q_unknown_masses",
+     "value": "b",
+     "text": {
+      "en": "Masses of most Kepler-90 planets are reconstructed, not measured.",
+      "ru": "Массы большинства планет Kepler-90 восстановлены, а не измерены."
+     },
+     "question": {
+      "id": "q_unknown_masses",
+      "text": {
+       "en": "How were the masses of most Kepler-90 planets obtained in this scene?",
+       "ru": "Как в этой сцене получены массы большинства планет Kepler-90?"
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "Measured by radial velocity",
+         "ru": "Измерены по лучевым скоростям"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "Reconstructed from radius with a mass-radius relation",
+         "ru": "Восстановлены по радиусу через соотношение масса–радиус"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "Copied from the Solar System planets",
+         "ru": "Скопированы с планет Солнечной системы"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Eight planets inside ~1 au versus eight spread to 30 au.",
+      "ru": "Восемь планет в ~1 а.е. против восьми до 30 а.е."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Do not equalise unknown masses: check provenance.",
+      "ru": "Не уравнивайте неизвестные массы: смотрите происхождение."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E09",
+   "theme": "Экзосистемы и данные",
+   "mode": "A/D",
+   "title": {
+    "en": "Six planets of Kepler-11",
+    "ru": "Шесть планет Kepler-11"
+   },
+   "question": {
+    "en": "Add an outer perturber",
+    "ru": "Добавить внешний возмутитель"
+   },
+   "plan_measurement": "наклонения, сближения",
+   "scene_id": "real.kepler_11",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.kepler_11"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "solar.jupiter",
+      "placement": "orbit_selected",
+      "params": {
+       "primary": "kepler_11_star",
+       "a_m": 134638083630.0,
+       "i_deg": 60.0
+      }
+     }
+    }
+   ],
+   "horizon_s": 3155760000.0,
+   "measurements": [
+    {
+     "id": "miA",
+     "measurement": "mutual_inclination",
+     "sample": "end",
+     "args": {
+      "body": "kepler_11_b",
+      "body2": "kepler_11_g",
+      "branch": "A",
+      "other": "kepler_11_g"
+     },
+     "unit": "deg"
+    },
+    {
+     "id": "miB",
+     "measurement": "mutual_inclination",
+     "sample": "end",
+     "args": {
+      "body": "kepler_11_b",
+      "body2": "kepler_11_g",
+      "branch": "B",
+      "other": "kepler_11_g"
+     },
+     "unit": "deg"
+    },
+    {
+     "id": "cl",
+     "measurement": "min_separation",
+     "sample": "series",
+     "args": {
+      "body": "*",
+      "body2": "*",
+      "interval": 3155760000.0,
+      "other": "*"
+     },
+     "unit": "m"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "miB",
+     "b": "miA",
+     "value": 0.1,
+     "text": {
+      "en": "An inclined outer giant of Jupiter's mass tilts the inner planets.",
+      "ru": "Наклонённый внешний гигант массы Юпитера наклоняет внутренние планеты."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Mutual inclinations grow over secular time scales.",
+      "ru": "Взаимные наклоны растут на вековых масштабах."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Node angles were assumed zero at start. The perturber is the Jupiter preset at 0.9 au; 100 years keep each world within the run budget.",
+      "ru": "Узлы в старте приняты нулевыми. Возмутитель — заготовка Юпитера на 0,9 а.е.; 100 лет укладывают каждый мир в бюджет прогона."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E10",
+   "theme": "Экзосистемы и данные",
+   "mode": "A/D",
+   "title": {
+    "en": "Proxima: unknown atmosphere",
+    "ru": "Proxima: неизвестная атмосфера"
+   },
+   "question": {
+    "en": "Compare two climate hypotheses",
+    "ru": "Сравнить две климатические гипотезы"
+   },
+   "plan_measurement": "поток, температурный диапазон",
+   "scene_id": "real.proxima_centauri",
+   "alt_scene_ids": [
+    "real.lhs_1140"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.proxima_centauri"
+     }
+    },
+    {
+     "action": "select_body",
+     "args": {
+      "body": "proxima_cen_b"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "proxima_cen_b"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    },
+    {
+     "action": "set_body_field",
+     "args": {
+      "body": "proxima_cen_b",
+      "field": "surface.atmosphere",
+      "value": "dense_atmosphere_ocean"
+     }
+    }
+   ],
+   "horizon_s": 2592000.0,
+   "measurements": [
+    {
+     "id": "fA",
+     "measurement": "stellar_flux_at_body",
+     "sample": "end",
+     "args": {
+      "body": "proxima_cen_b"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "tA",
+     "measurement": "surface_temperature_range",
+     "sample": "end",
+     "args": {
+      "body": "proxima_cen_b",
+      "branch": "A"
+     },
+     "unit": "K"
+    },
+    {
+     "id": "tB",
+     "measurement": "surface_temperature_range",
+     "sample": "end",
+     "args": {
+      "body": "proxima_cen_b",
+      "branch": "B"
+     },
+     "unit": "K"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "tB",
+     "b": "tA",
+     "value": 5.0,
+     "text": {
+      "en": "Same flux, different temperature range: the hypothesis matters.",
+      "ru": "Поток тот же, диапазон температур разный: гипотеза важна."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Two hypotheses give different climates at identical flux.",
+      "ru": "Две гипотезы дают разный климат при одинаковом потоке."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Neither branch is an observation.",
+      "ru": "Ни одна ветка не является наблюдением."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "radiation",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E11",
+   "theme": "Экзосистемы и данные",
+   "mode": "A/D",
+   "title": {
+    "en": "55 Cancri: two families",
+    "ru": "55 Cancri: две семьи"
+   },
+   "question": {
+    "en": "Open components A/B without double-counting planets",
+    "ru": "Открыть компоненты A/B и не удвоить учёт планет"
+   },
+   "plan_measurement": "состав, барицентры",
+   "scene_id": "real.55_cancri_ab",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.55_cancri_ab"
+     }
+    },
+    {
+     "action": "open_passport",
+     "args": {
+      "body": "55_cnc_star_b"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 315576000.0,
+   "measurements": [
+    {
+     "id": "n",
+     "measurement": "body_count",
+     "sample": "start",
+     "args": {
+      "class": "planet"
+     },
+     "unit": "int"
+    },
+    {
+     "id": "bA",
+     "measurement": "barycenter_position",
+     "sample": "start",
+     "args": {
+      "bodies": "family_a"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "bB",
+     "measurement": "barycenter_position",
+     "sample": "start",
+     "args": {
+      "bodies": "family_b"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "eA",
+     "measurement": "distance",
+     "sample": "start",
+     "args": {
+      "body": "55_cnc_e",
+      "body2": "55_cancri_ab_star",
+      "other": "55_cancri_ab_star"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "eB",
+     "measurement": "distance",
+     "sample": "start",
+     "args": {
+      "body": "55_cnc_e",
+      "body2": "55_cnc_star_b",
+      "other": "55_cnc_star_b"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "kE",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "55_cnc_e",
+      "primary": "55_cancri_ab_star",
+      "relative_to": "55_cancri_ab_star"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "kD",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "55_cnc_d",
+      "primary": "55_cancri_ab_star",
+      "relative_to": "55_cancri_ab_star"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "kBb",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "55_cnc_b_b",
+      "primary": "55_cnc_star_b",
+      "relative_to": "55_cnc_star_b"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "kBc",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "55_cnc_b_c",
+      "primary": "55_cnc_star_b",
+      "relative_to": "55_cnc_star_b"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "kS",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "55_cnc_star_b",
+      "primary": [
+       "55_cancri_ab_star",
+       "55_cnc_e",
+       "55_cnc_b",
+       "55_cnc_c",
+       "55_cnc_f",
+       "55_cnc_d"
+      ],
+      "relative_to": [
+       "55_cancri_ab_star",
+       "55_cnc_e",
+       "55_cnc_b",
+       "55_cnc_c",
+       "55_cnc_f",
+       "55_cnc_d"
+      ]
+     },
+     "unit": "J/kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "eq",
+     "a": "n",
+     "value": 7,
+     "text": {
+      "en": "Seven planets: five at A and two at B, each counted once.",
+      "ru": "Семь планет: пять у A и две у B, каждая учтена один раз."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "lt",
+     "a": "eA/eB",
+     "value": 0.001,
+     "text": {
+      "en": "Geometry: 55 Cnc e is ~70 000 times closer to star A than to star B.",
+      "ru": "Геометрия: 55 Cnc e примерно в 70 000 раз ближе к звезде A, чем к B."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "lt",
+     "a": "max(kE, kD)",
+     "value": 0.0,
+     "text": {
+      "en": "Over 10 years the innermost and outermost planets of A keep negative two-body energy relative to A.",
+      "ru": "За 10 лет ближняя и дальняя планеты A сохраняют отрицательную энергию двух тел относительно A."
+     }
+    },
+    {
+     "id": "c4",
+     "op": "lt",
+     "a": "max(kBb, kBc)",
+     "value": 0.0,
+     "text": {
+      "en": "Over 10 years both planets of B keep negative two-body energy relative to B.",
+      "ru": "За 10 лет обе планеты B сохраняют отрицательную энергию двух тел относительно B."
+     }
+    },
+    {
+     "id": "c5",
+     "op": "lt",
+     "a": "kS",
+     "value": 0.0,
+     "text": {
+      "en": "Star B stays bound to star A with its family (two-body energy relative to that group).",
+      "ru": "Звезда B остаётся связанной со звездой A и её семьёй (энергия двух тел относительно этой группы)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Each family orbits its own star; the stars orbit the common barycentre.",
+      "ru": "Каждая семья обращается вокруг своей звезды; звёзды — вокруг общего барицентра."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E12",
+   "theme": "Экзосистемы и данные",
+   "mode": "A/D",
+   "title": {
+    "en": "Beta Pic: discovery update",
+    "ru": "Beta Pic: обновление открытия"
+   },
+   "question": {
+    "en": "Open the new card while keeping the old experiment",
+    "ru": "Открыть новую карточку, сохранив старый состав опыта"
+   },
+   "plan_measurement": "версия данных, число тел",
+   "scene_id": "real.beta_pictoris",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.beta_pictoris"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "legacy"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "remove_body",
+     "args": {
+      "body": "bet_pic_d"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "v",
+     "measurement": "data_version",
+     "sample": "start",
+     "args": {
+      "scene": "real.beta_pictoris"
+     },
+     "unit": "string"
+    },
+    {
+     "id": "nA",
+     "measurement": "body_count",
+     "sample": "end",
+     "args": {
+      "branch": "A"
+     },
+     "unit": "int"
+    },
+    {
+     "id": "nL",
+     "measurement": "body_count",
+     "sample": "end",
+     "args": {
+      "branch": "legacy"
+     },
+     "unit": "int"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "nA",
+     "b": "nL",
+     "value": 0.5,
+     "text": {
+      "en": "The legacy two-planet composition is kept as a separate branch.",
+      "ru": "Старый состав из двух планет сохранён отдельной веткой."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Catalogue updates do not overwrite earlier experiments.",
+      "ru": "Обновления каталога не переписывают прежние опыты."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "passport",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E13",
+   "theme": "Двойные и иерархии",
+   "mode": "D",
+   "title": {
+    "en": "Kepler-16: two suns",
+    "ru": "Kepler-16: два светила"
+   },
+   "question": {
+    "en": "Compare a moving pair with one equivalent source",
+    "ru": "Сравнить движущуюся пару и условный один источник"
+   },
+   "plan_measurement": "поток во времени",
+   "scene_id": "real.kepler_16",
+   "alt_scene_ids": [
+    "generated.binary_p"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.kepler_16"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "single"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_luminosity",
+     "args": {
+      "body": "kepler_16_star_b",
+      "luminosity_w": 0.0
+     }
+    },
+    {
+     "action": "scale_body_field",
+     "args": {
+      "body": "kepler_16_star_a",
+      "field": "luminosity_w",
+      "factor": 1.017
+     }
+    }
+   ],
+   "horizon_s": 19872000.0,
+   "measurements": [
+    {
+     "id": "fA",
+     "measurement": "stellar_flux_at_body",
+     "sample": "series",
+     "args": {
+      "body": "kepler_16_b",
+      "branch": "A"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "fS",
+     "measurement": "stellar_flux_at_body",
+     "sample": "series",
+     "args": {
+      "body": "kepler_16_b",
+      "branch": "single"
+     },
+     "unit": "W/m^2"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "fA.std",
+     "b": "fS.std",
+     "value": 0.001,
+     "text": {
+      "en": "Two moving suns modulate flux; one equivalent source does not.",
+      "ru": "Два движущихся солнца модулируют поток, один эквивалентный источник — нет."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Mean flux is similar; the variability differs.",
+      "ru": "Средний поток близок; различается изменчивость."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "radiation"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E14",
+   "theme": "Двойные и иерархии",
+   "mode": "D",
+   "title": {
+    "en": "Kepler-47: transit windows",
+    "ru": "Kepler-47: окна транзитов"
+   },
+   "question": {
+    "en": "Place a fixed observer",
+    "ru": "Поставить фиксированного наблюдателя"
+   },
+   "plan_measurement": "события затмений",
+   "scene_id": "real.kepler_47",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.kepler_47"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "photometer"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_observation",
+     "args": {
+      "instrument": "photometer",
+      "duration_s": 126230400.0,
+      "cadence_s": 1800,
+      "exposure_s": 1800,
+      "noise": 0.0002,
+      "seed": 47
+     }
+    }
+   ],
+   "horizon_s": 126230400.0,
+   "measurements": [
+    {
+     "id": "tt",
+     "measurement": "transit_times",
+     "sample": "series",
+     "args": {
+      "body": "kepler_47_c",
+      "observer": "photometer"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "ec",
+     "measurement": "normalized_flux_series",
+     "sample": "series",
+     "args": {
+      "observer": "photometer"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "ttv",
+     "measurement": "transit_timing_variation",
+     "sample": "end",
+     "args": {
+      "body": "kepler_47_c",
+      "observer": "photometer"
+     },
+     "unit": "s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.eclipse_detected",
+     "value": 10,
+     "text": {
+      "en": "Stellar eclipses recur every 7.45 days.",
+      "ru": "Затмения звёзд повторяются каждые 7,45 суток."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "count_ge",
+     "a": "tt",
+     "value": 4,
+     "text": {
+      "en": "Four transits of c across star A in four years.",
+      "ru": "Четыре транзита c по звезде A за четыре года."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "gt",
+     "a": "ttv*ttv",
+     "value": 100000000.0,
+     "text": {
+      "en": "Transit times depart from a fixed period by hours, because star A itself moves around the pair.",
+      "ru": "Моменты транзитов отходят от строгого периода на часы, потому что сама звезда A движется вокруг пары."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Transit windows drift as the binary moves.",
+      "ru": "Окна транзитов смещаются из-за движения пары."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E15",
+   "theme": "Двойные и иерархии",
+   "mode": "D",
+   "title": {
+    "en": "S-orbit and P-orbit",
+    "ru": "S-орбита и P-орбита"
+   },
+   "question": {
+    "en": "Build two different architectures",
+    "ru": "Построить две разные архитектуры"
+   },
+   "plan_measurement": "сближения, уход",
+   "scene_id": "generated.binary_s",
+   "alt_scene_ids": [
+    "generated.binary_p"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.binary_s"
+     }
+    },
+    {
+     "action": "load_branch_of",
+     "args": {
+      "scene": "generated.binary_p",
+      "branch": "B"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 631152000.0,
+   "measurements": [
+    {
+     "id": "cl",
+     "measurement": "min_separation",
+     "sample": "series",
+     "args": {
+      "body": "*",
+      "body2": "*",
+      "interval": 631152000.0,
+      "other": "*"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "n0",
+     "measurement": "body_count",
+     "sample": "start",
+     "args": {
+      "class": "planet"
+     },
+     "unit": "int"
+    },
+    {
+     "id": "esc",
+     "measurement": "body_count",
+     "sample": "end",
+     "args": {
+      "class": "planet"
+     },
+     "unit": "int"
+    },
+    {
+     "id": "k1",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "p1",
+      "primary": "star_a",
+      "relative_to": "star_a"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "k2",
+     "measurement": "bound_to",
+     "sample": "end",
+     "args": {
+      "body": "p2",
+      "primary": "star_a",
+      "relative_to": "star_a"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "kP",
+     "measurement": "bound_to",
+     "sample": "start",
+     "args": {
+      "branch": "B",
+      "body": "p1",
+      "primary": [
+       "star_a",
+       "star_b"
+      ],
+      "relative_to": [
+       "star_a",
+       "star_b"
+      ]
+     },
+     "unit": "J/kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "lt",
+     "a": "max(k1, k2)",
+     "value": 0.0,
+     "text": {
+      "en": "S-type: over 20 years both planets keep negative two-body energy relative to their star.",
+      "ru": "Тип S: за 20 лет обе планеты сохраняют отрицательную энергию двух тел относительно своей звезды."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "eq",
+     "a": "esc - n0",
+     "value": 0,
+     "text": {
+      "en": "No planet is removed during the 20 years.",
+      "ru": "За 20 лет ни одна планета не удалена."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "lt",
+     "a": "kP",
+     "value": 0.0,
+     "text": {
+      "en": "P-type at start: the planet is bound to the binary as a whole.",
+      "ru": "Тип P в старте: планета связана с парой как с целым."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Both generated systems start bound; the S-type planets also stay bound over 20 years. The Holman-Wiegert limit (S-type 6.2 au, planets at 2.1 and 4.3 au) is an empirical guide, not a guarantee of stability.",
+      "ru": "Обе системы стартуют связанными; планеты типа S остаются связанными 20 лет. Предел Холмана — Вигерта (тип S: 6,2 а.е., планеты на 2,1 и 4,3 а.е.) — эмпирический ориентир, а не гарантия устойчивости."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements",
+    "save_hash",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E16",
+   "theme": "Двойные и иерархии",
+   "mode": "D",
+   "title": {
+    "en": "Alpha Cen-like triple",
+    "ru": "Тройная Alpha Cen-подобная"
+   },
+   "question": {
+    "en": "Change the mutual tilt of a conditional insertion",
+    "ru": "Изменить взаимный наклон условной вставки"
+   },
+   "plan_measurement": "эксцентриситет",
+   "scene_id": "real.alpha_centauri_ab",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.alpha_centauri_ab"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "optional:conditional_a_hz",
+      "placement": "orbit_selected"
+     }
+    },
+    {
+     "action": "set_base_step",
+     "args": {
+      "base_step_s": 39403.0
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    },
+    {
+     "action": "rotate_orbit",
+     "args": {
+      "body": "conditional_a_hz",
+      "axis": "line_of_nodes",
+      "angle_deg": 60.0
+     }
+    }
+   ],
+   "horizon_s": 63115200000.0,
+   "measurements": [
+    {
+     "id": "eA",
+     "measurement": "eccentricity",
+     "sample": "series",
+     "args": {
+      "body": "conditional_a_hz",
+      "primary": "alpha_cen_a",
+      "branch": "A",
+      "relative_to": "alpha_cen_a"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "eB",
+     "measurement": "eccentricity",
+     "sample": "series",
+     "args": {
+      "body": "conditional_a_hz",
+      "primary": "alpha_cen_a",
+      "branch": "B",
+      "relative_to": "alpha_cen_a"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "eB.max",
+     "b": "eA.max",
+     "value": 0.02,
+     "text": {
+      "en": "Mutual tilt drives larger eccentricity oscillations.",
+      "ru": "Взаимный наклон раскачивает эксцентриситет сильнее."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Inclined companions pump eccentricity (Kozai-Lidov-like behaviour on long horizons).",
+      "ru": "Наклонённый компаньон раскачивает эксцентриситет (поведение типа Козаи — Лидова)."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "The planet is an authored conditional insertion. The solver step is set explicitly to 39 403 s (1/32 of the default) so the eccentricity maxima are converged.",
+      "ru": "Планета — авторская условная вставка. Шаг решателя явно задан 39 403 с (1/32 стандартного), чтобы максимумы эксцентриситета сошлись."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements",
+    "orbit_edit"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E17",
+   "theme": "Двойные и иерархии",
+   "mode": "D",
+   "title": {
+    "en": "Shift the barycentre",
+    "ru": "Сдвиг барицентра"
+   },
+   "question": {
+    "en": "Move the whole system with one transformation",
+    "ru": "Перенести всю систему одним преобразованием"
+   },
+   "plan_measurement": "внутренняя энергия, импульс",
+   "scene_id": "real.kepler_16",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.kepler_16"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "rigid_move",
+     "args": {
+      "bodies": "all",
+      "dx_m": [
+       1000000000000.0,
+       0,
+       0
+      ],
+      "dv_mps": [
+       5000.0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "horizon_s": 8640000.0,
+   "measurements": [
+    {
+     "id": "u0",
+     "measurement": "internal_energy_subsystem",
+     "sample": "end",
+     "args": {
+      "bodies": "all",
+      "branch": "B"
+     },
+     "unit": "J"
+    },
+    {
+     "id": "u1",
+     "measurement": "internal_energy_subsystem",
+     "sample": "end",
+     "args": {
+      "bodies": "all"
+     },
+     "unit": "J"
+    },
+    {
+     "id": "p1",
+     "measurement": "linear_momentum",
+     "sample": "end",
+     "args": {},
+     "unit": "kg m/s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "u1/u0",
+     "value": 1e-06,
+     "text": {
+      "en": "Internal energy is frame-independent.",
+      "ru": "Внутренняя энергия не зависит от системы отсчёта."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "gt",
+     "a": "p1",
+     "value": 0.0,
+     "text": {
+      "en": "Total momentum is now non-zero (moving barycentre).",
+      "ru": "Полный импульс теперь ненулевой (движущийся барицентр)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "A Galilean shift moves the whole system without changing its internal dynamics.",
+      "ru": "Галилеев сдвиг переносит систему, не меняя её внутренней динамики."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements",
+    "orbit_edit"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E18",
+   "theme": "Двойные и иерархии",
+   "mode": "D",
+   "title": {
+    "en": "Sirius and the white dwarf",
+    "ru": "Sirius и белый карлик"
+   },
+   "question": {
+    "en": "Separate mass, radius and luminosity",
+    "ru": "Разделить массу, радиус и светимость"
+   },
+   "plan_measurement": "силы, световой поток",
+   "scene_id": "real.sirius_ab",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.sirius_ab"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "mA",
+     "measurement": "body_mass",
+     "sample": "start",
+     "args": {
+      "body": "sirius_a"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "mB",
+     "measurement": "body_mass",
+     "sample": "start",
+     "args": {
+      "body": "sirius_b"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "rB",
+     "measurement": "body_radius",
+     "sample": "start",
+     "args": {
+      "body": "sirius_b"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "LA",
+     "measurement": "luminosity",
+     "sample": "start",
+     "args": {
+      "body": "sirius_a"
+     },
+     "unit": "W"
+    },
+    {
+     "id": "LB",
+     "measurement": "luminosity",
+     "sample": "start",
+     "args": {
+      "body": "sirius_b"
+     },
+     "unit": "W"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "mB/mA",
+     "value": [
+      0.45,
+      0.55
+     ],
+     "lo": 0.45,
+     "hi": 0.55,
+     "text": {
+      "en": "B has half of A's mass...",
+      "ru": "Масса B — половина массы A..."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "le",
+     "a": "LB/LA",
+     "value": 0.01,
+     "text": {
+      "en": "...but under 1% of its luminosity.",
+      "ru": "...но менее 1% её светимости."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Gravity follows mass; light follows radius and temperature.",
+      "ru": "Гравитация определяется массой, свет — радиусом и температурой."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E19",
+   "theme": "Конструктор и резонансы",
+   "mode": "D",
+   "title": {
+    "en": "Build a 3:2 chain",
+    "ru": "Построить цепь 3:2"
+   },
+   "question": {
+    "en": "Match ratios and libration after a run",
+    "ru": "Сопоставить отношения и либрацию после прогона"
+   },
+   "plan_measurement": "периоды, угол",
+   "scene_id": "generated.red_chain",
+   "alt_scene_ids": [
+    "real.kepler_223",
+    "real.hd_110067"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.red_chain"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_generator",
+     "args": {
+      "archetype": "resonant_chain",
+      "seed": 1919,
+      "params": {}
+     }
+    }
+   ],
+   "horizon_s": 17280000.0,
+   "measurements": [
+    {
+     "id": "pr",
+     "measurement": "period_ratio",
+     "sample": "end",
+     "args": {
+      "body": "p1",
+      "body2": "p2",
+      "other": "p2"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "st",
+     "measurement": "resonance_angle_state",
+     "sample": "end",
+     "args": {
+      "bodies": [
+       "p1",
+       "p2"
+      ],
+      "p": 3,
+      "q": 2,
+      "interval": 17280000.0
+     },
+     "unit": "enum"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "pr",
+     "value": [
+      1.48,
+      1.53
+     ],
+     "lo": 1.48,
+     "hi": 1.53,
+     "text": {
+      "en": "Near 3:2 period ratio.",
+      "ru": "Отношение периодов около 3:2."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "exists",
+     "a": "st",
+     "text": {
+      "en": "Report whether the angle librates over T.",
+      "ru": "Сообщите, либрирует ли угол на интервале T."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Ratio and libration are separate checks.",
+      "ru": "Отношение и либрация — разные проверки."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "generator",
+    "resonance_tools"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E20",
+   "theme": "Конструктор и резонансы",
+   "mode": "D",
+   "title": {
+    "en": "GJ 876: three-body angle",
+    "ru": "GJ 876: трёхтельный угол"
+   },
+   "question": {
+    "en": "Reproduce the chosen solution and an intervention",
+    "ru": "Воспроизвести выбранное решение и вмешательство"
+   },
+   "plan_measurement": "угол на интервале T",
+   "scene_id": "real.gj_876",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.gj_876"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "apply_velocity_kick",
+     "args": {
+      "body": "gj_876_b",
+      "dv_mps": 5000.0,
+      "direction": "radial"
+     }
+    }
+   ],
+   "horizon_s": 94672800.0,
+   "measurements": [
+    {
+     "id": "aA",
+     "measurement": "resonance_angle_series",
+     "sample": "series",
+     "args": {
+      "bodies": [
+       "gj_876_c",
+       "gj_876_b",
+       "gj_876_e"
+      ],
+      "p": 1,
+      "q": 2,
+      "interval": 94672800.0,
+      "branch": "A"
+     },
+     "unit": "deg"
+    },
+    {
+     "id": "aB",
+     "measurement": "resonance_angle_series",
+     "sample": "series",
+     "args": {
+      "bodies": [
+       "gj_876_c",
+       "gj_876_b",
+       "gj_876_e"
+      ],
+      "p": 1,
+      "q": 2,
+      "interval": 94672800.0,
+      "branch": "B"
+     },
+     "unit": "deg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "gt",
+     "a": "aA - aB",
+     "value": 20.0,
+     "text": {
+      "en": "A 5 km/s kick on b widens the swing of the 2:1 (c-b) resonant angle by more than 20 deg (model: 3 -> 38 deg).",
+      "ru": "Толчок b на 5 км/с расширяет размах угла резонанса 2:1 (c-b) более чем на 20 градусов (модель: 3 -> 38)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "lt",
+     "a": "aB",
+     "value": 10.0,
+     "text": {
+      "en": "Without the kick the angle librates tightly (model: 3 deg).",
+      "ru": "Без толчка угол либрирует узко (модель: 3 градуса)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "A kick widens the resonant swing; three years are too short to call it circulation.",
+      "ru": "Толчок расширяет резонансный размах; трёх лет мало, чтобы назвать это циркуляцией."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Elements transcribed from one coplanar fit.",
+      "ru": "Элементы перенесены из одного компланарного решения."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "orbit_edit",
+    "resonance_tools"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E21",
+   "theme": "Конструктор и резонансы",
+   "mode": "D",
+   "title": {
+    "en": "HD 158259: nearly 3:2",
+    "ru": "HD 158259: почти 3:2"
+   },
+   "question": {
+    "en": "Do not call it resonance from the ratio",
+    "ru": "Не назначать резонанс по дроби"
+   },
+   "plan_measurement": "циркуляция/либрация",
+   "scene_id": "real.hd_158259",
+   "alt_scene_ids": [
+    "real.toi_178"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.hd_158259"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 63115200.0,
+   "measurements": [
+    {
+     "id": "pr",
+     "measurement": "period_ratio",
+     "sample": "start",
+     "args": {
+      "body": "hd_158259_b",
+      "body2": "hd_158259_c",
+      "other": "hd_158259_c"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "st",
+     "measurement": "resonance_angle_state",
+     "sample": "end",
+     "args": {
+      "bodies": [
+       "hd_158259_b",
+       "hd_158259_c"
+      ],
+      "p": 3,
+      "q": 2,
+      "interval": 63115200.0
+     },
+     "unit": "enum"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "pr",
+     "value": [
+      1.5,
+      1.62
+     ],
+     "lo": 1.5,
+     "hi": 1.62,
+     "text": {
+      "en": "Ratio near 3:2...",
+      "ru": "Отношение около 3:2..."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "answer",
+     "a": "q_ratio_not_resonance",
+     "value": "f",
+     "text": {
+      "en": "...but the ratio alone is not a resonance claim.",
+      "ru": "...но одно отношение не доказывает резонанс."
+     },
+     "question": {
+      "id": "q_ratio_not_resonance",
+      "text": {
+       "en": "The period ratio of b and c is close to 3:2. Does that alone prove a resonance?",
+       "ru": "Отношение периодов b и c близко к 3:2. Доказывает ли это само по себе резонанс?"
+      },
+      "options": [
+       {
+        "id": "t",
+        "text": {
+         "en": "Yes, a ratio near 3:2 is a resonance",
+         "ru": "Да, отношение около 3:2 — это резонанс"
+        }
+       },
+       {
+        "id": "f",
+        "text": {
+         "en": "No, the critical angle must librate over the interval",
+         "ru": "Нет, критический угол должен либрировать на интервале"
+        }
+       }
+      ],
+      "correct": "f",
+      "correct_index": 1
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Near-commensurate is not resonant.",
+      "ru": "Близко к соизмеримости — ещё не резонанс."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "resonance_tools"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E22",
+   "theme": "Конструктор и резонансы",
+   "mode": "D",
+   "title": {
+    "en": "A guest in K2-138's gap",
+    "ru": "Гость в промежутке K2-138"
+   },
+   "question": {
+    "en": "Test probe orbits over a finite horizon",
+    "ru": "Проверить пробные орбиты на конечном горизонте"
+   },
+   "plan_measurement": "минимальное сближение",
+   "scene_id": "real.k2_138",
+   "alt_scene_ids": [
+    "real.hr_8799"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.k2_138"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "tool.tracer_seeder",
+      "placement": "free",
+      "params": {
+       "inner_m": 16455765777.0,
+       "outer_m": 32911531554.0,
+       "count": 500
+      }
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "ms",
+     "measurement": "min_separation",
+     "sample": "series",
+     "args": {
+      "body": "tracers",
+      "body2": "planets",
+      "interval": 31557600.0,
+      "other": "planets"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "n",
+     "measurement": "body_count",
+     "sample": "end",
+     "args": {
+      "class": "test_particle"
+     },
+     "unit": "int"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "n",
+     "value": 475,
+     "text": {
+      "en": "Test orbits in the gap survive the one-year horizon (model: 500 of 500).",
+      "ru": "Пробные орбиты в промежутке переживают горизонт в год (модель: 500 из 500)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "answer",
+     "a": "q_survival_horizon",
+     "value": "b",
+     "text": {
+      "en": "...which says nothing about longer times.",
+      "ru": "...и это ничего не говорит о более долгом времени."
+     },
+     "question": {
+      "id": "q_survival_horizon",
+      "text": {
+       "en": "All 500 test orbits in the gap survived one year. What does this show?",
+       "ru": "Все 500 пробных орбит в промежутке пережили один год. Что это показывает?"
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "The gap is stable forever",
+         "ru": "Промежуток устойчив навсегда"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "Nothing was removed within this one year; longer horizons must be run to say more",
+         "ru": "За этот год ничего не удалено; чтобы сказать больше, нужны более долгие прогоны"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "The planets do not attract the test orbits",
+         "ru": "Планеты не притягивают пробные орбиты"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Survival over T is not eternal stability.",
+      "ru": "Выживание за T — не вечная устойчивость."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "save_hash",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E23",
+   "theme": "Конструктор и резонансы",
+   "mode": "D",
+   "title": {
+    "en": "One seed on three clients",
+    "ru": "Один seed на трёх клиентах"
+   },
+   "question": {
+    "en": "Compare composition and numerical tolerances",
+    "ru": "Сопоставить состав и численные допуски"
+   },
+   "plan_measurement": "ID, начальные состояния",
+   "scene_id": "generated.red_chain",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "set_generator",
+     "args": {
+      "archetype": "red_dwarf_chain",
+      "seed": 1101
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "save_game",
+     "args": {
+      "slot": "seed1101"
+     }
+    },
+    {
+     "action": "export_report",
+     "args": {
+      "format": "json"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "h",
+     "measurement": "state_hash",
+     "sample": "end",
+     "args": {},
+     "unit": "hex"
+    },
+    {
+     "id": "ids",
+     "measurement": "fragment_ids",
+     "sample": "end",
+     "args": {
+      "event": "none"
+     },
+     "unit": "list"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "state_equal",
+     "a": "h",
+     "value": "scene:generated.red_chain",
+     "text": {
+      "en": "Same seed and version give the same initial state.",
+      "ru": "Тот же seed и версия дают то же начальное состояние."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Determinism is checked by hash within quantisation.",
+      "ru": "Детерминизм проверяется хэшем с квантованием."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger",
+    "generator",
+    "journal",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E24",
+   "theme": "Конструктор и резонансы",
+   "mode": "D",
+   "title": {
+    "en": "Mass behind the same picture",
+    "ru": "Масса при той же картинке"
+   },
+   "question": {
+    "en": "Change the true mass, keep the visual size",
+    "ru": "Изменить истинную массу, сохранив визуальный размер"
+   },
+   "plan_measurement": "орбитальный отклик",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "scale_body_field",
+     "args": {
+      "body": "jupiter",
+      "field": "mass_kg",
+      "factor": 10.0
+     }
+    }
+   ],
+   "horizon_s": 378691200.0,
+   "measurements": [
+    {
+     "id": "rA",
+     "measurement": "body_radius",
+     "sample": "end",
+     "args": {
+      "body": "jupiter"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "eA",
+     "measurement": "eccentricity",
+     "sample": "series",
+     "args": {
+      "body": "saturn",
+      "branch": "A"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "eB",
+     "measurement": "eccentricity",
+     "sample": "series",
+     "args": {
+      "body": "saturn",
+      "branch": "B"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "rA",
+     "value": 0.0,
+     "text": {
+      "en": "Same picture: radius unchanged.",
+      "ru": "Та же картинка: радиус не изменился."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "differs",
+     "a": "eB.max",
+     "b": "eA.max",
+     "value": 0.005,
+     "text": {
+      "en": "Heavier Jupiter perturbs Saturn more.",
+      "ru": "Тяжёлый Юпитер сильнее возмущает Сатурн."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Appearance is not mass.",
+      "ru": "Внешний вид — не масса."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E25",
+   "theme": "Обсерватория",
+   "mode": "D",
+   "title": {
+    "en": "One planet in front of a star",
+    "ru": "Одна планета перед звездой"
+   },
+   "question": {
+    "en": "Measure the depth for a uniform disk",
+    "ru": "Измерить глубину для равномерного диска"
+   },
+   "plan_measurement": "нормированный поток",
+   "scene_id": "generated.hot_jupiter",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.hot_jupiter"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "photometer"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "rotate_orbit",
+     "args": {
+      "body": "p1",
+      "axis": "line_of_nodes",
+      "angle_deg": 0.0
+     }
+    },
+    {
+     "action": "start_observation",
+     "args": {
+      "instrument": "photometer",
+      "duration_s": 864000.0,
+      "cadence_s": 120,
+      "exposure_s": 120,
+      "noise": 0.0,
+      "seed": 1
+     }
+    }
+   ],
+   "horizon_s": 864000.0,
+   "measurements": [
+    {
+     "id": "d",
+     "measurement": "transit_depth",
+     "sample": "end",
+     "args": {
+      "body": "p1",
+      "observer": "photometer"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "rr",
+     "measurement": "body_radius",
+     "sample": "start",
+     "args": {
+      "body": "p1"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "rs",
+     "measurement": "body_radius",
+     "sample": "start",
+     "args": {
+      "body": "star"
+     },
+     "unit": "m"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "d/(rr/rs)^2",
+     "value": [
+      0.95,
+      1.05
+     ],
+     "lo": 0.95,
+     "hi": 1.05,
+     "text": {
+      "en": "Uniform disk: depth = (Rp/Rs)^2 within 5%.",
+      "ru": "Однородный диск: глубина = (Rp/Rs)^2 с точностью 5%."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Depth measures the area ratio.",
+      "ru": "Глубина измеряет отношение площадей."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Generated orbit may need tilting to edge-on (i=90 in observer frame).",
+      "ru": "Орбиту может понадобиться повернуть ребром к наблюдателю."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements",
+    "observatory",
+    "orbit_edit"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E26",
+   "theme": "Обсерватория",
+   "mode": "D",
+   "title": {
+    "en": "Two planets in one signal",
+    "ru": "Две планеты в сигнале"
+   },
+   "question": {
+    "en": "Find two periods in a synthetic series",
+    "ru": "Найти два периода в синтетическом ряду"
+   },
+   "plan_measurement": "период, остатки",
+   "scene_id": "real.kepler_11",
+   "alt_scene_ids": [
+    "real.toi_178"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.kepler_11"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "photometer"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_observation",
+     "args": {
+      "instrument": "photometer",
+      "duration_s": 17280000.0,
+      "cadence_s": 1800,
+      "exposure_s": 1800,
+      "noise": 0.0001,
+      "seed": 26
+     }
+    }
+   ],
+   "horizon_s": 17280000.0,
+   "measurements": [
+    {
+     "id": "pk",
+     "measurement": "periodogram_peaks",
+     "sample": "end",
+     "args": {
+      "series": "normalized_flux_series"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "res",
+     "measurement": "fit_residuals_rms",
+     "sample": "end",
+     "args": {
+      "series": "normalized_flux_series",
+      "model": "two_planets"
+     },
+     "unit": "series unit"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "pk",
+     "value": 2,
+     "text": {
+      "en": "At least two periods recovered.",
+      "ru": "Найдено не менее двух периодов."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Multiple transiting planets superpose.",
+      "ru": "Транзиты нескольких планет накладываются."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E27",
+   "theme": "Обсерватория",
+   "mode": "D",
+   "title": {
+    "en": "Tilt without a transit",
+    "ru": "Наклон без транзита"
+   },
+   "question": {
+    "en": "Rotate the orbit relative to the instrument",
+    "ru": "Повернуть орбиту относительно прибора"
+   },
+   "plan_measurement": "факт транзита, RV",
+   "scene_id": "generated.hot_jupiter",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.hot_jupiter"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "photometer"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "rotate_orbit",
+     "args": {
+      "body": "p1",
+      "axis": "line_of_nodes",
+      "angle_deg": 30.0
+     }
+    }
+   ],
+   "horizon_s": 864000.0,
+   "measurements": [
+    {
+     "id": "t",
+     "measurement": "transit_occurs",
+     "sample": "end",
+     "args": {
+      "body": "p1",
+      "observer": "photometer"
+     },
+     "unit": "bool"
+    },
+    {
+     "id": "k",
+     "measurement": "rv_semi_amplitude",
+     "sample": "end",
+     "args": {
+      "star": "star"
+     },
+     "unit": "m/s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "eq",
+     "a": "t",
+     "value": false,
+     "text": {
+      "en": "Tilted 30 deg: no transit...",
+      "ru": "Наклон 30°: транзита нет..."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "gt",
+     "a": "k",
+     "value": 0.0,
+     "text": {
+      "en": "...but the RV signal remains (reduced by sin i).",
+      "ru": "...но сигнал RV остаётся (уменьшенный в sin i)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Transits need near edge-on geometry; RV only needs sin i > 0.",
+      "ru": "Транзиту нужна почти ребровая геометрия; RV — лишь sin i > 0."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "observatory",
+    "orbit_edit"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E28",
+   "theme": "Обсерватория",
+   "mode": "D",
+   "title": {
+    "en": "A dark companion",
+    "ru": "Тёмный компаньон"
+   },
+   "question": {
+    "en": "Estimate an RV parameter and check the assumptions",
+    "ru": "Оценить параметр RV-модели и сверить допущения"
+   },
+   "plan_measurement": "амплитуда, период",
+   "scene_id": "real.hd_69830",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.hd_69830"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "rv_spectrograph"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_observation",
+     "args": {
+      "instrument": "rv_spectrograph",
+      "duration_s": 34560000.0,
+      "cadence_s": 86400.0,
+      "exposure_s": 900,
+      "noise": 0.6,
+      "seed": 28
+     }
+    }
+   ],
+   "horizon_s": 34560000.0,
+   "measurements": [
+    {
+     "id": "k",
+     "measurement": "rv_semi_amplitude",
+     "sample": "end",
+     "args": {
+      "star": "hd_69830_star",
+      "body": "hd_69830_b"
+     },
+     "unit": "m/s"
+    },
+    {
+     "id": "pk",
+     "measurement": "periodogram_peaks",
+     "sample": "end",
+     "args": {
+      "series": "rv_series"
+     },
+     "unit": "s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "k",
+     "value": [
+      2.5,
+      4.5
+     ],
+     "lo": 2.5,
+     "hi": 4.5,
+     "text": {
+      "en": "b's semi-amplitude ~3.5 m/s.",
+      "ru": "Полуамплитуда b ~3,5 м/с."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "RV gives Msini; edge-on is assumed in this scene.",
+      "ru": "RV даёт Msini; в сцене принят вид с ребра."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E29",
+   "theme": "Обсерватория",
+   "mode": "D",
+   "title": {
+    "en": "Long exposure",
+    "ru": "Длинная экспозиция"
+   },
+   "question": {
+    "en": "Show averaging of a narrow transit",
+    "ru": "Показать усреднение узкого транзита"
+   },
+   "plan_measurement": "глубина, длительность",
+   "scene_id": "real.trappist_1",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.trappist_1"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "photometer"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_observation",
+     "args": {
+      "instrument": "photometer",
+      "duration_s": 345600.0,
+      "cadence_s": 60,
+      "exposure_s": 60,
+      "noise": 0.0,
+      "seed": 29
+     }
+    }
+   ],
+   "horizon_s": 345600.0,
+   "measurements": [
+    {
+     "id": "dS",
+     "measurement": "transit_depth",
+     "sample": "end",
+     "args": {
+      "body": "trappist_1_b",
+      "exposure_s": 60
+     },
+     "unit": "1"
+    },
+    {
+     "id": "dL",
+     "measurement": "transit_depth",
+     "sample": "end",
+     "args": {
+      "body": "trappist_1_b",
+      "exposure_s": 3600
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "lt",
+     "a": "dL",
+     "b": "dS",
+     "text": {
+      "en": "Long exposures smear a 36-minute transit: apparent depth decreases.",
+      "ru": "Длинная экспозиция размывает 36-минутный транзит: видимая глубина уменьшается."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Exposure averages over physical time.",
+      "ru": "Экспозиция усредняет по физическому времени."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E30",
+   "theme": "Обсерватория",
+   "mode": "D",
+   "title": {
+    "en": "Noise and a false hypothesis",
+    "ru": "Шум и ложная гипотеза"
+   },
+   "question": {
+    "en": "Compare the clean model and labelled noise",
+    "ru": "Сравнить чистую модель и подписанный шум"
+   },
+   "plan_measurement": "остатки, неопределённость",
+   "scene_id": "real.hd_10180",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.hd_10180"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "rv_spectrograph"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_observation",
+     "args": {
+      "instrument": "rv_spectrograph",
+      "duration_s": 86400000.0,
+      "cadence_s": 86400.0,
+      "exposure_s": 900,
+      "noise": 3.0,
+      "seed": 30
+     }
+    }
+   ],
+   "horizon_s": 86400000.0,
+   "measurements": [
+    {
+     "id": "pk",
+     "measurement": "periodogram_peaks",
+     "sample": "end",
+     "args": {
+      "series": "rv_series"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "res",
+     "measurement": "fit_residuals_rms",
+     "sample": "end",
+     "args": {
+      "series": "rv_series",
+      "model": "six_planets"
+     },
+     "unit": "series unit"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "exists",
+     "a": "pk",
+     "text": {
+      "en": "Compare peaks with and without seeded noise.",
+      "ru": "Сравните пики с подписанным шумом и без него."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "in_range",
+     "a": "res",
+     "value": [
+      2.7,
+      3.3
+     ],
+     "lo": 2.7,
+     "hi": 3.3,
+     "text": {
+      "en": "Residuals against the true model equal the injected noise (3 m/s): the extra peaks are noise.",
+      "ru": "Остатки относительно истинной модели равны введённому шуму (3 м/с): лишние пики — шум."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Noise can create spurious peaks; seed and level are recorded.",
+      "ru": "Шум может создавать ложные пики; seed и уровень записаны."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E31",
+   "theme": "Серии и неопределённость",
+   "mode": "D",
+   "title": {
+    "en": "Mass 1-4",
+    "ru": "Масса 1–4"
+   },
+   "question": {
+    "en": "Run four values of one parameter",
+    "ru": "Прогнать четыре значения одного параметра"
+   },
+   "plan_measurement": "исход, конечная энергия",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "jupiter.mass_kg",
+      "values": [
+       "x1",
+       "x2",
+       "x3",
+       "x4"
+      ],
+      "horizon_s": 1577880000.0,
+      "metrics": [
+       "total_energy",
+       "eccentricity",
+       "domain_status"
+      ],
+      "step_budget_per_run": 500000
+     }
+    }
+   ],
+   "horizon_s": 1577880000.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "tab.rows",
+     "value": 4,
+     "text": {
+      "en": "Four runs, each with a status.",
+      "ru": "Четыре прогона, у каждого статус."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Outcomes and final energies are tabulated.",
+      "ru": "Исходы и конечные энергии сведены в таблицу."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Each run declares a work budget of 500 000 solver steps (50 years plan 438 300); the usual default is 400 000.",
+      "ru": "Каждый прогон объявляет бюджет 500 000 шагов решателя (50 лет — это 438 300 шагов); обычный предел — 400 000."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E32",
+   "theme": "Серии и неопределённость",
+   "mode": "D",
+   "title": {
+    "en": "Mass-distance grid",
+    "ru": "Сетка масса–расстояние"
+   },
+   "question": {
+    "en": "Run 4x4 variants in sequence",
+    "ru": "Последовательно посчитать 4×4 вариантов"
+   },
+   "plan_measurement": "таблица исходов",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "p3.mass_kg",
+      "values": [
+       "x0.5",
+       "x1",
+       "x2",
+       "x4"
+      ],
+      "parameter2": "p3.a_m",
+      "values2": [
+       "x0.8",
+       "x0.9",
+       "x1.1",
+       "x1.2"
+      ],
+      "horizon_s": 631152000.0,
+      "metrics": [
+       "equilibrium_temperature",
+       "domain_status"
+      ]
+     }
+    }
+   ],
+   "horizon_s": 631152000.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "tab.rows",
+     "value": 16,
+     "text": {
+      "en": "All 16 grid points recorded (including failures).",
+      "ru": "Все 16 точек сетки записаны (включая неудачные)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "A 4x4 grid runs sequentially.",
+      "ru": "Сетка 4×4 прогоняется последовательно."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E33",
+   "theme": "Серии и неопределённость",
+   "mode": "D",
+   "title": {
+    "en": "RV minimum mass",
+    "ru": "Минимальная масса RV"
+   },
+   "question": {
+    "en": "Compare explicit inclinations",
+    "ru": "Сравнить явно заданные наклоны"
+   },
+   "plan_measurement": "истинная масса, траектория",
+   "scene_id": "real.hd_10180",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.hd_10180"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "inclination_all",
+      "values": [
+       90,
+       60,
+       30
+      ],
+      "horizon_s": 3155760000.0,
+      "metrics": [
+       "body_mass",
+       "eccentricity",
+       "domain_status"
+      ],
+      "step_budget_per_run": 8000000
+     }
+    }
+   ],
+   "horizon_s": 3155760000.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "tab.rows",
+     "value": 3,
+     "text": {
+      "en": "All three inclinations were run.",
+      "ru": "Прогнаны все три наклона."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "sign",
+     "a": "d(body_mass)/d(inclination)",
+     "value": -1,
+     "text": {
+      "en": "True mass = Msini/sin i: lower inclination, heavier planets.",
+      "ru": "Истинная масса = Msini/sin i: меньше наклон — тяжелее планеты."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Lower inclinations mean heavier planets and different dynamics.",
+      "ru": "Меньший наклон — тяжелее планеты и иная динамика."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Each run declares a work budget of 8 000 000 solver steps (100 years plan about 4.26 million); the usual default is 400 000.",
+      "ru": "Каждый прогон объявляет бюджет 8 000 000 шагов решателя (100 лет — около 4,26 млн шагов); обычный предел — 400 000."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E34",
+   "theme": "Серии и неопределённость",
+   "mode": "D",
+   "title": {
+    "en": "Different albedos",
+    "ru": "Разные альбедо"
+   },
+   "question": {
+    "en": "Compare equilibrium at one flux",
+    "ru": "Сравнить равновесие при одном потоке"
+   },
+   "plan_measurement": "температура",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "p3.surface.albedo_bond",
+      "values": [
+       0.1,
+       0.3,
+       0.5,
+       0.7
+      ],
+      "horizon_s": 63115200.0,
+      "metrics": [
+       "surface_temperature_mean"
+      ]
+     }
+    }
+   ],
+   "horizon_s": 63115200.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "sign",
+     "a": "d(surface_temperature_mean)/d(albedo)",
+     "value": -1,
+     "text": {
+      "en": "Higher albedo, colder planet.",
+      "ru": "Выше альбедо — холоднее."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "T scales as (1-A)^1/4.",
+      "ru": "T ~ (1-A)^1/4."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E35",
+   "theme": "Серии и неопределённость",
+   "mode": "D",
+   "title": {
+    "en": "Interrupted series",
+    "ru": "Прерванная серия"
+   },
+   "question": {
+    "en": "Close the app between runs and continue",
+    "ru": "Закрыть приложение между опытами и продолжить"
+   },
+   "plan_measurement": "статусы, отсутствие дубликатов",
+   "scene_id": "generated.red_chain",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.red_chain"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "p2.mass_kg",
+      "values": [
+       "x1",
+       "x2",
+       "x4",
+       "x8"
+      ],
+      "horizon_s": 31557600.0,
+      "metrics": [
+       "domain_status"
+      ]
+     }
+    },
+    {
+     "action": "save_game",
+     "args": {
+      "slot": "series"
+     }
+    },
+    {
+     "action": "load_game",
+     "args": {
+      "slot": "series"
+     }
+    },
+    {
+     "action": "resume_series",
+     "args": {}
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.series_resumed",
+     "value": 1,
+     "text": {
+      "en": "Series resumes after restart without duplicates.",
+      "ru": "Серия продолжается после перезапуска без дубликатов."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Run statuses persist in the save.",
+      "ru": "Статусы прогонов хранятся в сохранении."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "save_hash",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E36",
+   "theme": "Серии и неопределённость",
+   "mode": "D",
+   "title": {
+    "en": "Applicability threshold",
+    "ru": "Порог применимости"
+   },
+   "question": {
+    "en": "Keep domain-exceeded runs in the results",
+    "ru": "Не выкинуть domain-exceeded из результатов"
+   },
+   "plan_measurement": "число всех/успешных прогонов",
+   "scene_id": "real.sgr_a_s2",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.sgr_a_s2"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "s2.periapsis_scale",
+      "values": [
+       1.0,
+       0.1,
+       0.01,
+       0.001
+      ],
+      "horizon_s": 536479200.0,
+      "metrics": [
+       "domain_status",
+       "speed_fraction_c"
+      ]
+     }
+    }
+   ],
+   "horizon_s": 536479200.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "tab.rows",
+     "value": 4,
+     "text": {
+      "en": "All four runs stay in the table.",
+      "ru": "Все четыре прогона остаются в таблице."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "ge",
+     "a": "tab.rows - tab.rows_ok",
+     "value": 2,
+     "text": {
+      "en": "The two tightest orbits (periapsis below the 20 r_s guard) are reported as beyond the model.",
+      "ru": "Две самые тесные орбиты (перицентр внутри защитной сферы 20 r_s) отмечены как вышедшие за модель."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "sign",
+     "a": "d(speed_fraction_c)/d(periapsis_scale)",
+     "value": -1,
+     "text": {
+      "en": "Tighter orbits approach a larger fraction of c.",
+      "ru": "Чем теснее орбита, тем ближе скорость к доле c."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Report all runs, including those that exceeded the model.",
+      "ru": "Сообщайте все прогоны, включая вышедшие за модель."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E37",
+   "theme": "Столкновения и катастрофы",
+   "mode": "D",
+   "title": {
+    "en": "Head-on merger",
+    "ru": "Лобовое слияние"
+   },
+   "question": {
+    "en": "Check the remnant and the ejecta",
+    "ru": "Проверить остаток и выброс"
+   },
+   "plan_measurement": "масса, линейный импульс",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "solar.charon",
+      "placement": "free",
+      "params": {
+       "impact": "moon"
+      }
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 2592000.0,
+   "measurements": [
+    {
+     "id": "ml",
+     "measurement": "mass_ledger",
+     "sample": "end",
+     "args": {
+      "start_at": "run_start"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "pl",
+     "measurement": "momentum_ledger",
+     "sample": "end",
+     "args": {
+      "start_at": "run_start"
+     },
+     "unit": "kg m/s"
+    },
+    {
+     "id": "rm",
+     "measurement": "remnant_mass",
+     "sample": "end",
+     "args": {
+      "event": "collision"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "ml.total",
+     "value": 1e-09,
+     "text": {
+      "en": "Mass is conserved (bodies + ejecta).",
+      "ru": "Масса сохраняется (тела + выброс)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "unchanged_within",
+     "a": "pl.total",
+     "value": 1e-09,
+     "text": {
+      "en": "Linear momentum is conserved.",
+      "ru": "Импульс сохраняется."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "A head-on merger (a Charon-mass body into the Moon) keeps mass and momentum in the ledger.",
+      "ru": "Лобовое слияние (тело массы Харона и Луна) сохраняет массу и импульс в балансе."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Point-mass collisions resolved at contact by the LS12 outcome rule; a merger puts the pair's orbital angular momentum into the remnant's spin; at most 6 fragments; no tidal (Roche) disruption.",
+      "ru": "Точечные столкновения при контакте по правилу исходов LS12; при слиянии орбитальный момент пары переходит во вращение остатка; не более 6 фрагментов; приливного разрушения (Роша) нет."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E38",
+   "theme": "Столкновения и катастрофы",
+   "mode": "D",
+   "title": {
+    "en": "Grazing impact",
+    "ru": "Скользящий удар"
+   },
+   "question": {
+    "en": "Account for spin, ejecta and model limits",
+    "ru": "Учесть спин/выброс/ограничения модели"
+   },
+   "plan_measurement": "угловой момент, ledger",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "solar.ganymede",
+      "placement": "free",
+      "params": {
+       "graze": "earth"
+      }
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 5184000.0,
+   "measurements": [
+    {
+     "id": "ll",
+     "measurement": "angular_momentum_ledger",
+     "sample": "end",
+     "args": {},
+     "unit": "kg m^2/s"
+    },
+    {
+     "id": "ej",
+     "measurement": "ejecta_mass",
+     "sample": "end",
+     "args": {
+      "event": "collision"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "sL",
+     "measurement": "spin_angular_momentum",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "kg m^2/s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "ll.total",
+     "value": 1e-06,
+     "text": {
+      "en": "Orbital + spin angular momentum accounted.",
+      "ru": "Учтён орбитальный и спиновый момент."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "changed_by_fraction",
+     "a": "sL",
+     "value": 1.0,
+     "text": {
+      "en": "The remnant's spin angular momentum at least doubles: the oblique merger turns the pair's orbital angular momentum into spin.",
+      "ru": "Спиновый момент остатка как минимум удваивается: при косом слиянии орбитальный момент пары переходит во вращение."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "An oblique merger (a Ganymede-mass body grazing Earth) spins up the remnant.",
+      "ru": "Косое слияние (тело массы Ганимеда задевает Землю) раскручивает остаток."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Point-mass collisions resolved at contact by the LS12 outcome rule; a merger puts the pair's orbital angular momentum into the remnant's spin; at most 6 fragments; no tidal (Roche) disruption. A fragmenting graze would not spin Earth up in this model.",
+      "ru": "Точечные столкновения при контакте по правилу исходов LS12; при слиянии орбитальный момент пары переходит во вращение остатка; не более 6 фрагментов; приливного разрушения (Роша) нет. Скользящий удар с дроблением в этой модели Землю не раскручивает."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E39",
+   "theme": "Столкновения и катастрофы",
+   "mode": "D",
+   "title": {
+    "en": "Destroying a moon",
+    "ru": "Разрушение спутника"
+   },
+   "question": {
+    "en": "Compare physical fragments on three clients",
+    "ru": "Сравнить физические фрагменты на трёх клиентах"
+   },
+   "plan_measurement": "массы, ID",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "solar.pluto",
+      "placement": "free",
+      "params": {
+       "impact": "moon"
+      }
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 864000.0,
+   "measurements": [
+    {
+     "id": "ids",
+     "measurement": "fragment_ids",
+     "sample": "end",
+     "args": {
+      "event": "disruption"
+     },
+     "unit": "list"
+    },
+    {
+     "id": "m",
+     "measurement": "mass_ledger",
+     "sample": "end",
+     "args": {},
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "ids",
+     "value": 2,
+     "text": {
+      "en": "Physical fragments with stable ids.",
+      "ru": "Физические фрагменты со стабильными id."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "A Pluto-mass impact breaks the Moon into physical fragments that keep stable ids (compare them on each client).",
+      "ru": "Удар тела массы Плутона разбивает Луну на физические фрагменты со стабильными id (сравните их на каждом клиенте)."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Point-mass collisions resolved at contact by the LS12 outcome rule; a merger puts the pair's orbital angular momentum into the remnant's spin; at most 6 fragments; no tidal (Roche) disruption. Tidal breakup inside the Roche limit is not modelled.",
+      "ru": "Точечные столкновения при контакте по правилу исходов LS12; при слиянии орбитальный момент пары переходит во вращение остатка; не более 6 фрагментов; приливного разрушения (Роша) нет. Распад внутри предела Роша не моделируется."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E40",
+   "theme": "Столкновения и катастрофы",
+   "mode": "D",
+   "title": {
+    "en": "Supernova in the lab",
+    "ru": "Сверхновая в лаборатории"
+   },
+   "question": {
+    "en": "Change mass and ejecta by scenario",
+    "ru": "Изменить массу и выброс по сценарию"
+   },
+   "plan_measurement": "орбиты, энергия",
+   "scene_id": "generated.binary_s",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.binary_s"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "trigger_supernova",
+     "args": {
+      "body": "star_b",
+      "ejecta_fraction": 0.6,
+      "energy_j": 1e+44,
+      "remnant": "neutron_star"
+     }
+    }
+   ],
+   "horizon_s": 1577880000.0,
+   "measurements": [
+    {
+     "id": "eA",
+     "measurement": "specific_orbital_energy",
+     "sample": "end",
+     "args": {
+      "body": "star_a",
+      "primary": "star_b",
+      "relative_to": "star_b"
+     },
+     "unit": "J/kg"
+    },
+    {
+     "id": "ml",
+     "measurement": "mass_ledger",
+     "sample": "end",
+     "args": {},
+     "unit": "kg"
+    },
+    {
+     "id": "eB",
+     "measurement": "eccentricity",
+     "sample": "end",
+     "args": {
+      "body": "star_b"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "rm",
+     "measurement": "remnant_mass",
+     "sample": "end",
+     "args": {
+      "body": "star_b"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "eB",
+     "value": [
+      0.47,
+      0.57
+     ],
+     "lo": 0.47,
+     "hi": 0.57,
+     "text": {
+      "en": "Losing 60 % of B at once stretches the orbit (two-body: e 0.17 -> 0.52) but keeps it bound.",
+      "ru": "Мгновенная потеря 60 % массы B вытягивает орбиту (задача двух тел: e 0,17 -> 0,52), но не разрывает её."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "in_range",
+     "a": "rm",
+     "value": [
+      5.23e+29,
+      5.34e+29
+     ],
+     "lo": 5.23e+29,
+     "hi": 5.34e+29,
+     "text": {
+      "en": "The remnant keeps 40 % of B (5.29e29 kg).",
+      "ru": "Остаток сохраняет 40 % массы B (5,29e29 кг)."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "unchanged_within",
+     "a": "ml.total",
+     "value": 1e-09,
+     "text": {
+      "en": "Ejected mass stays in the ledger.",
+      "ru": "Выброшенная масса остаётся в учёте."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Scripted outcome, not stellar evolution.",
+      "ru": "Сценарный исход, не звёздная эволюция."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger",
+    "explosions",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E41",
+   "theme": "Столкновения и катастрофы",
+   "mode": "D",
+   "title": {
+    "en": "A neighbour's supernova",
+    "ru": "Сверхновая соседа"
+   },
+   "question": {
+    "en": "Separate the arrival of light and of the shell",
+    "ru": "Разделить прибытие света и оболочки"
+   },
+   "plan_measurement": "локальное время, поток",
+   "scene_id": "generated.triple",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.triple"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "trigger_supernova",
+     "args": {
+      "body": "star_c",
+      "ejecta_fraction": 0.5,
+      "energy_j": 1e+44,
+      "remnant": "neutron_star"
+     }
+    }
+   ],
+   "horizon_s": 157788000.0,
+   "measurements": [
+    {
+     "id": "lt",
+     "measurement": "light_travel_time",
+     "sample": "start",
+     "args": {
+      "body": "star_c",
+      "body2": "star_a",
+      "other": "star_a"
+     },
+     "unit": "s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.light_front_arrived",
+     "value": 1,
+     "text": {
+      "en": "Light arrives first...",
+      "ru": "Сначала приходит свет..."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "count_ge",
+     "a": "events.shell_arrived",
+     "value": 1,
+     "text": {
+      "en": "...the ejecta shell much later.",
+      "ru": "...оболочка — значительно позже."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Light at c, ejecta at ~1e7 m/s.",
+      "ru": "Свет со скоростью c, выброс ~1e7 м/с."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "explosions",
+    "radiation"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E42",
+   "theme": "Столкновения и катастрофы",
+   "mode": "D",
+   "title": {
+    "en": "A passing planet",
+    "ru": "Пролетающая планета"
+   },
+   "question": {
+    "en": "Measure the perturbation; no probability without an ensemble",
+    "ru": "Измерить возмущение и вероятность не заявлять без ансамбля"
+   },
+   "plan_measurement": "элементы до/после",
+   "scene_id": "generated.rogue",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.rogue"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 12623040000.0,
+   "measurements": [
+    {
+     "id": "e0",
+     "measurement": "eccentricity",
+     "sample": "start",
+     "args": {
+      "body": "p2"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "e1",
+     "measurement": "eccentricity",
+     "sample": "end",
+     "args": {
+      "body": "p2"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "exists",
+     "a": "e1",
+     "text": {
+      "en": "Elements before/after the flyby.",
+      "ru": "Элементы до и после пролёта."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "answer",
+     "a": "q_single_run",
+     "value": "no",
+     "text": {
+      "en": "One run is not a probability.",
+      "ru": "Один прогон — не вероятность."
+     },
+     "question": {
+      "id": "q_single_run",
+      "text": {
+       "en": "After one flyby run, can you state the probability that the planet is ejected?",
+       "ru": "Можно ли после одного прогона пролёта назвать вероятность выброса планеты?"
+      },
+      "options": [
+       {
+        "id": "yes",
+        "text": {
+         "en": "Yes, the outcome of this run is the probability",
+         "ru": "Да, исход этого прогона и есть вероятность"
+        }
+       },
+       {
+        "id": "no",
+        "text": {
+         "en": "No, a probability needs an ensemble (series of runs)",
+         "ru": "Нет, для вероятности нужен ансамбль (серия прогонов)"
+        }
+       }
+      ],
+      "correct": "no",
+      "correct_index": 1
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Use the series runner for statistics.",
+      "ru": "Для статистики используйте серии."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E43",
+   "theme": "Поверхность и энергия",
+   "mode": "D",
+   "title": {
+    "en": "Ice world",
+    "ru": "Ледяной мир"
+   },
+   "question": {
+    "en": "Melt part of the ice with limited energy",
+    "ru": "Растопить часть льда с ограниченной энергией"
+   },
+   "plan_measurement": "масса фаз, энергия",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "select_body",
+     "args": {
+      "body": "p4"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p4",
+      "initial_ice_kg_m2": 100.0
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "local_heater",
+     "args": {
+      "body": "p4",
+      "power_w": 1e+16,
+      "duration_s": 31557600.0,
+      "region": "north_cap"
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "w0",
+     "measurement": "water_phase_masses",
+     "sample": "start",
+     "args": {
+      "body": "p4"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "w1",
+     "measurement": "water_phase_masses",
+     "sample": "end",
+     "args": {
+      "body": "p4"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "w1.total/w0.total",
+     "value": 1e-09,
+     "text": {
+      "en": "Total water conserved; ice converts to liquid.",
+      "ru": "Вода сохраняется; лёд переходит в жидкость."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Energy is finite: latent heat limits melting.",
+      "ru": "Энергия конечна: скрытая теплота ограничивает таяние."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E44",
+   "theme": "Поверхность и энергия",
+   "mode": "D",
+   "title": {
+    "en": "Day and night",
+    "ru": "День и ночь"
+   },
+   "question": {
+    "en": "Compare rotating and fixed spin",
+    "ru": "Сравнить вращающийся и фиксированный spin-профиль"
+   },
+   "plan_measurement": "карта температуры",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [
+    "real.proxima_centauri",
+    "real.hd_80606_80607"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "locked"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_spin",
+     "args": {
+      "body": "p3",
+      "period_s": 0,
+      "locked": true
+     }
+    }
+   ],
+   "horizon_s": 63115200.0,
+   "measurements": [
+    {
+     "id": "mA",
+     "measurement": "surface_temperature_map",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "branch": "A"
+     },
+     "unit": "K"
+    },
+    {
+     "id": "mL",
+     "measurement": "surface_temperature_map",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "branch": "locked"
+     },
+     "unit": "K"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "mL.range",
+     "b": "mA.range",
+     "value": 20.0,
+     "text": {
+      "en": "Locked rotation gives a hot day side and cold night side.",
+      "ru": "Захваченное вращение даёт горячую дневную и холодную ночную стороны."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Rotation redistributes heat in the grid model.",
+      "ru": "Вращение перераспределяет тепло в модели сетки."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E45",
+   "theme": "Поверхность и энергия",
+   "mode": "D",
+   "title": {
+    "en": "Two suns and seasons",
+    "ru": "Два солнца и сезоны"
+   },
+   "question": {
+    "en": "Compare flux distribution",
+    "ru": "Сравнить распределение потока"
+   },
+   "plan_measurement": "карта/среднее потока",
+   "scene_id": "generated.binary_p",
+   "alt_scene_ids": [
+    "real.kepler_34"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.binary_p"
+     }
+    },
+    {
+     "action": "select_body",
+     "args": {
+      "body": "p1"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "tool.flux_meter",
+      "placement": "free"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p1"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "f",
+     "measurement": "flux_series",
+     "sample": "series",
+     "args": {
+      "body": "p1"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "m",
+     "measurement": "surface_temperature_map",
+     "sample": "end",
+     "args": {
+      "body": "p1"
+     },
+     "unit": "K"
+    },
+    {
+     "id": "fs",
+     "measurement": "stellar_flux_at_body",
+     "sample": "series",
+     "args": {
+      "body": "p1"
+     },
+     "unit": "W/m^2"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "gt",
+     "a": "fs.std/fs.mean",
+     "value": 0.04,
+     "text": {
+      "en": "The binary's 13-day orbit modulates the planet's flux by about +-13 %.",
+      "ru": "13-суточная орбита пары модулирует поток на планете примерно на +-13 %."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Two sources give beat-like seasons.",
+      "ru": "Два источника дают «биения» сезонов."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "radiation",
+    "series",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E46",
+   "theme": "Поверхность и энергия",
+   "mode": "D",
+   "title": {
+    "en": "Albedo brush",
+    "ru": "Кисть альбедо"
+   },
+   "question": {
+    "en": "Change an area without adding mass",
+    "ru": "Изменить область без добавления массы"
+   },
+   "plan_measurement": "поглощённая энергия",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "base"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "surface_brush",
+     "args": {
+      "body": "p3",
+      "field": "albedo",
+      "value": 0.8,
+      "region": "equatorial_band"
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "ea",
+     "measurement": "absorbed_energy",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "interval": 31557600.0
+     },
+     "unit": "J"
+    },
+    {
+     "id": "eaBase",
+     "measurement": "absorbed_energy",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "interval": 31557600.0,
+      "branch": "base"
+     },
+     "unit": "J"
+    },
+    {
+     "id": "m",
+     "measurement": "body_mass",
+     "sample": "end",
+     "args": {
+      "body": "p3"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "m",
+     "value": 0.0,
+     "text": {
+      "en": "Albedo brush does not add mass.",
+      "ru": "Кисть альбедо не добавляет массу."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "lt",
+     "a": "ea",
+     "b": "eaBase",
+     "text": {
+      "en": "The brightened band absorbs less sunlight over the year than the unpainted planet.",
+      "ru": "Осветлённый пояс поглощает за год меньше света, чем неокрашенная планета."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Brighter surface absorbs less energy.",
+      "ru": "Более светлая поверхность поглощает меньше энергии."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "measurements",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E47",
+   "theme": "Поверхность и энергия",
+   "mode": "D",
+   "title": {
+    "en": "Add an ocean",
+    "ru": "Добавить океан"
+   },
+   "question": {
+    "en": "Account for external water delivery",
+    "ru": "Учесть внешнюю поставку воды"
+   },
+   "plan_measurement": "масса резервуаров",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "add_water",
+     "args": {
+      "body": "p3",
+      "mass_kg": 1.4e+21,
+      "source": "external_delivery"
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "w",
+     "measurement": "water_phase_masses",
+     "sample": "end",
+     "args": {
+      "body": "p3"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "ml",
+     "measurement": "mass_ledger",
+     "sample": "end",
+     "args": {},
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "exists",
+     "a": "ml.external",
+     "text": {
+      "en": "Added water appears as an external ledger entry.",
+      "ru": "Добавленная вода — внешняя запись в балансе."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Oceans do not appear from nothing.",
+      "ru": "Океаны не возникают из ничего."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E48",
+   "theme": "Поверхность и энергия",
+   "mode": "D",
+   "title": {
+    "en": "Switch off the star",
+    "ru": "Выключить звезду"
+   },
+   "question": {
+    "en": "Follow cooling without a hidden source",
+    "ru": "Проследить охлаждение без скрытого источника"
+   },
+   "plan_measurement": "излучённая энергия",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "earth"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_luminosity",
+     "args": {
+      "body": "sun",
+      "luminosity_w": 0.0
+     }
+    }
+   ],
+   "horizon_s": 7889400.0,
+   "measurements": [
+    {
+     "id": "t",
+     "measurement": "surface_temperature_mean",
+     "sample": "series",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "K"
+    },
+    {
+     "id": "er",
+     "measurement": "radiated_energy",
+     "sample": "end",
+     "args": {
+      "body": "earth",
+      "interval": 7889400.0
+     },
+     "unit": "J"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "sign",
+     "a": "d(t)/dt",
+     "value": -1,
+     "text": {
+      "en": "Earth cools without a hidden heat source.",
+      "ru": "Земля остывает без скрытого источника тепла."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Cooling rate follows heat capacity.",
+      "ru": "Темп остывания определяется теплоёмкостью."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E49",
+   "theme": "Планетная инженерия",
+   "mode": "D",
+   "title": {
+    "en": "Cool an overheated world",
+    "ru": "Охладить перегретый мир"
+   },
+   "question": {
+    "en": "Find an albedo under a constraint",
+    "ru": "Найти альбедо при заданном ограничении"
+   },
+   "plan_measurement": "целевой диапазон T",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "select_body",
+     "args": {
+      "body": "p2"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p2"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "p2.surface.albedo_bond",
+      "values": [
+       0.3,
+       0.5,
+       0.7,
+       0.85
+      ],
+      "horizon_s": 31557600.0,
+      "metrics": [
+       "surface_temperature_mean"
+      ]
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "exists",
+     "a": "tab.first_in_range",
+     "value": [
+      273,
+      320
+     ],
+     "text": {
+      "en": "Find the lowest albedo that brings T into 273-320 K.",
+      "ru": "Найдите наименьшее альбедо, дающее T в 273–320 К."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Engineering targets are model ranges.",
+      "ru": "Инженерные цели — диапазоны модели."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E50",
+   "theme": "Планетная инженерия",
+   "mode": "D",
+   "title": {
+    "en": "Keep the atmosphere",
+    "ru": "Сохранить атмосферу"
+   },
+   "question": {
+    "en": "Compare atmosphere masses and thermal inertia",
+    "ru": "Сравнить заданные массы атмосферы и тепловую инерцию"
+   },
+   "plan_measurement": "давление модели, T",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "start_series",
+     "args": {
+      "parameter": "p3.surface.atmosphere.surface_pressure_pa",
+      "values": [
+       10000.0,
+       100000.0,
+       1000000.0
+      ],
+      "horizon_s": 31557600.0,
+      "metrics": [
+       "atmosphere_pressure_model",
+       "surface_temperature_range"
+      ]
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "tab",
+     "measurement": "series_table",
+     "sample": "end",
+     "args": {},
+     "unit": "table"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "tab.rows",
+     "value": 3,
+     "text": {
+      "en": "All three pressures were run.",
+      "ru": "Прогнаны все три давления."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "sign",
+     "a": "d(surface_temperature_range)/d(surface_pressure_pa)",
+     "value": -1,
+     "text": {
+      "en": "Thicker atmospheres narrow the temperature range.",
+      "ru": "Плотнее атмосфера — уже диапазон температур."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "A denser atmosphere stores and moves more heat.",
+      "ru": "Плотная атмосфера запасает и переносит больше тепла."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "series",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E51",
+   "theme": "Планетная инженерия",
+   "mode": "D",
+   "title": {
+    "en": "Relief and ocean",
+    "ru": "Рельеф и океан"
+   },
+   "question": {
+    "en": "Shift relief with a constant water reservoir",
+    "ru": "Сдвинуть рельеф при постоянном резервуаре воды"
+   },
+   "plan_measurement": "накопление воды в регионе (масса жидкости, сравнение с базовой веткой)",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3",
+      "initial_liquid_kg_m2": 100000.0
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "surface_brush",
+     "args": {
+      "body": "p3",
+      "field": "height",
+      "value": -2000.0,
+      "region": "continent_1"
+     }
+    }
+   ],
+   "horizon_s": 3155760.0,
+   "measurements": [
+    {
+     "id": "f0",
+     "measurement": "regional_liquid_mass",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "region": "continent_1",
+      "branch": "B"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "f1",
+     "measurement": "regional_liquid_mass",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "region": "continent_1"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "w",
+     "measurement": "water_phase_masses",
+     "sample": "end",
+     "args": {
+      "body": "p3"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "gt",
+     "a": "f1",
+     "b": "f0",
+     "text": {
+      "en": "A lowered basin collects more water than the same region of the unbrushed world at the same time.",
+      "ru": "Понижённая котловина собирает больше воды, чем тот же регион мира без кисти в тот же момент."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Water runs downhill into the basin while the total water stays the same.",
+      "ru": "Вода стекает в котловину, а полная масса воды не меняется."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Model limit: water moves only by the height field and the energy balance; no tides, no terrain physics. Accumulation is measured as liquid mass in the region, not as a flooded area.",
+      "ru": "Предел модели: вода перемещается только по полю высот и энергобалансу; без приливов и физики рельефа. Накопление измеряется массой жидкости в регионе, а не площадью затопления."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E52",
+   "theme": "Планетная инженерия",
+   "mode": "D",
+   "title": {
+    "en": "Local heating",
+    "ru": "Локальный нагрев"
+   },
+   "question": {
+    "en": "Heat a region with finite power",
+    "ru": "Нагреть выбранную область конечной мощностью"
+   },
+   "plan_measurement": "энергия, пар",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "base"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "local_heater",
+     "args": {
+      "body": "p3",
+      "power_w": 1000000000000000.0,
+      "duration_s": 6311520.0,
+      "region": "equator_spot"
+     }
+    }
+   ],
+   "horizon_s": 9467280.0,
+   "measurements": [
+    {
+     "id": "e",
+     "measurement": "absorbed_energy",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "interval": 9467280.0
+     },
+     "unit": "J"
+    },
+    {
+     "id": "w",
+     "measurement": "water_phase_masses",
+     "sample": "end",
+     "args": {
+      "body": "p3"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "t",
+     "measurement": "surface_temperature_map",
+     "sample": "end",
+     "args": {
+      "body": "p3"
+     },
+     "unit": "K"
+    },
+    {
+     "id": "tBase",
+     "measurement": "surface_temperature_map",
+     "sample": "end",
+     "args": {
+      "body": "p3",
+      "branch": "base"
+     },
+     "unit": "K"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.heater_finished",
+     "value": 1,
+     "text": {
+      "en": "Heater energy is finite and ledgered.",
+      "ru": "Энергия нагревателя конечна и учтена."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "gt",
+     "a": "t",
+     "b": "tBase",
+     "text": {
+      "en": "The heated spot widens the planet's temperature range compared with the unheated branch.",
+      "ru": "Нагретое пятно расширяет диапазон температур по сравнению с ветвью без нагрева."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Local power makes a local hot spot; the energy is bounded.",
+      "ru": "Локальная мощность создаёт горячее пятно; энергия ограничена."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E53",
+   "theme": "Планетная инженерия",
+   "mode": "D",
+   "title": {
+    "en": "At the habitable-zone edge",
+    "ru": "У края зоны обитаемости"
+   },
+   "question": {
+    "en": "Compare climate assumptions",
+    "ru": "Сравнить климатические предположения"
+   },
+   "plan_measurement": "T, вода, ограничения",
+   "scene_id": "real.toi_700",
+   "alt_scene_ids": [
+    "real.kepler_62"
+   ],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.toi_700"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "tool.habitable_zone",
+      "placement": "free"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "toi_700_e"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    },
+    {
+     "action": "set_body_field",
+     "args": {
+      "body": "toi_700_e",
+      "field": "surface.albedo_bond",
+      "value": 0.6
+     }
+    }
+   ],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "f",
+     "measurement": "stellar_flux_at_body",
+     "sample": "end",
+     "args": {
+      "body": "toi_700_e"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "tA",
+     "measurement": "surface_temperature_mean",
+     "sample": "end",
+     "args": {
+      "body": "toi_700_e",
+      "branch": "A"
+     },
+     "unit": "K"
+    },
+    {
+     "id": "tB",
+     "measurement": "surface_temperature_mean",
+     "sample": "end",
+     "args": {
+      "body": "toi_700_e",
+      "branch": "B"
+     },
+     "unit": "K"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "differs",
+     "a": "tA",
+     "b": "tB",
+     "value": 10.0,
+     "text": {
+      "en": "Assumptions move the planet across the model boundary.",
+      "ru": "Допущения переносят планету через границу модели."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Conservative vs optimistic zones differ by assumptions.",
+      "ru": "Консервативная и оптимистичная зоны различаются допущениями."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "radiation",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E54",
+   "theme": "Планетная инженерия",
+   "mode": "D",
+   "title": {
+    "en": "Engineering A/B",
+    "ru": "Инженерное A/B"
+   },
+   "question": {
+    "en": "Transfer source and modified branch to iPhone",
+    "ru": "Перенести исходник и изменённую ветвь на iPhone"
+   },
+   "plan_measurement": "параметры, результаты",
+   "scene_id": "generated.climate",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.climate"
+     }
+    },
+    {
+     "action": "enable_surface_grid",
+     "args": {
+      "body": "p3"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    },
+    {
+     "action": "surface_brush",
+     "args": {
+      "body": "p3",
+      "field": "albedo",
+      "value": 0.45,
+      "region": "global"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "save_game",
+     "args": {
+      "slot": "engineering_ab"
+     }
+    },
+    {
+     "action": "export_report",
+     "args": {
+      "format": "json"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "h",
+     "measurement": "state_hash",
+     "sample": "end",
+     "args": {},
+     "unit": "hex"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "state_equal",
+     "a": "h",
+     "value": "import:engineering_ab",
+     "text": {
+      "en": "The saved file decodes to the same state (round trip on this client; other platforms are verified by transferring the file).",
+      "ru": "Сохранённый файл раскрывается в то же состояние (проверка на этом клиенте; другие платформы проверяются переносом файла)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Cross-platform transfer by file.",
+      "ru": "Перенос между платформами файлом."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "journal",
+    "save_hash",
+    "surface_grid"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E55",
+   "theme": "Пульсары и остатки",
+   "mode": "D",
+   "title": {
+    "en": "Planets of Lich",
+    "ru": "Планеты Lich"
+   },
+   "question": {
+    "en": "Observe the chosen PSR B1257+12 model",
+    "ru": "Наблюдать выбранную модель PSR B1257+12"
+   },
+   "plan_measurement": "орбиты, тайминг",
+   "scene_id": "real.psr_b1257_12",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.psr_b1257_12"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "pulsar_receiver"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 17280000.0,
+   "measurements": [
+    {
+     "id": "r",
+     "measurement": "pulse_arrival_residuals",
+     "sample": "series",
+     "args": {
+      "pulsar": "psr_b1257_12_psr",
+      "receiver": "pulsar_receiver"
+     },
+     "unit": "s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "r.amplitude",
+     "value": [
+      0.0001,
+      0.005
+     ],
+     "lo": 0.0001,
+     "hi": 0.005,
+     "text": {
+      "en": "Residuals of order a millisecond from the planets' pull.",
+      "ru": "Остатки порядка миллисекунды от притяжения планет."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Planets move the pulsar by ~hundreds of km.",
+      "ru": "Планеты смещают пульсар на сотни км."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "compact_objects",
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E56",
+   "theme": "Пульсары и остатки",
+   "mode": "D",
+   "title": {
+    "en": "Turn the beam",
+    "ru": "Повернуть луч"
+   },
+   "question": {
+    "en": "Change pulse visibility without changing gravity",
+    "ru": "Изменить видимость импульсов без изменения гравитации"
+   },
+   "plan_measurement": "график приёмника",
+   "scene_id": "real.psr_b1257_12",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.psr_b1257_12"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": "frame.observer_direction",
+      "instrument": "jet_receiver",
+      "cadence_s": 1.0
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "base"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_beam_axis",
+     "args": {
+      "body": "psr_b1257_12_psr",
+      "axis": "frame.observer_direction",
+      "half_angle_deg": 10.0
+     }
+    }
+   ],
+   "horizon_s": 60.0,
+   "measurements": [
+    {
+     "id": "f0",
+     "measurement": "receiver_flux_series",
+     "sample": "start",
+     "args": {
+      "receiver": "jet_receiver"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "f1",
+     "measurement": "receiver_flux_series",
+     "sample": "end",
+     "args": {
+      "receiver": "jet_receiver"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "f",
+     "measurement": "receiver_flux_series",
+     "sample": "series",
+     "args": {
+      "receiver": "jet_receiver"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "p",
+     "measurement": "orbital_period",
+     "sample": "end",
+     "args": {
+      "body": "psr_b1257_12_c"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "pB",
+     "measurement": "orbital_period",
+     "sample": "end",
+     "args": {
+      "body": "psr_b1257_12_c",
+      "branch": "base"
+     },
+     "unit": "s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "gt",
+     "a": "f1/f0",
+     "value": 1.05,
+     "text": {
+      "en": "Turned so that it sweeps the receiver, the beam adds rotation-averaged flux (model: +7 % for a 1 % beam share).",
+      "ru": "Повёрнутый так, чтобы проходить через приёмник, луч добавляет усреднённый по вращению поток (модель: +7 % при доле луча 1 %)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "unchanged_within",
+     "a": "p/pB",
+     "value": 1e-08,
+     "text": {
+      "en": "Beam orientation does not change gravity: planet c's period matches the unturned copy at the same time.",
+      "ru": "Ориентация луча не меняет гравитацию: период планеты c совпадает с неповёрнутой копией в тот же момент."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Visibility of pulses is geometry; gravity is untouched.",
+      "ru": "Видимость импульсов — геометрия; гравитация не меняется."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "compact_objects",
+    "measurements",
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E57",
+   "theme": "Пульсары и остатки",
+   "mode": "D",
+   "title": {
+    "en": "Frequency without flashing",
+    "ru": "Частота без мигания"
+   },
+   "question": {
+    "en": "Read the period from a graph in reduced motion",
+    "ru": "Читать период на графике при reduced motion"
+   },
+   "plan_measurement": "частота, доступность",
+   "scene_id": "real.psr_b1257_12",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.psr_b1257_12"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": [
+       0.0,
+       0.34,
+       0.94
+      ],
+      "instrument": "pulsar_receiver"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 1.0,
+   "measurements": [
+    {
+     "id": "fr",
+     "measurement": "pulse_frequency",
+     "sample": "end",
+     "args": {
+      "pulsar": "psr_b1257_12_psr",
+      "receiver": "pulsar_receiver"
+     },
+     "unit": "Hz"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "fr",
+     "value": [
+      160.0,
+      162.0
+     ],
+     "lo": 160.0,
+     "hi": 162.0,
+     "text": {
+      "en": "A receiver on the beam cone reads ~160.8 Hz from the graph, no strobe needed.",
+      "ru": "Приёмник на конусе луча считывает ~160,8 Гц по графику, без мигания."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Reduced motion shows frequency as numbers/graph.",
+      "ru": "Режим уменьшенного движения показывает частоту числом/графиком."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "compact_objects",
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E58",
+   "theme": "Пульсары и остатки",
+   "mode": "D",
+   "title": {
+    "en": "The PSR B1620-26 system",
+    "ru": "Система PSR B1620-26"
+   },
+   "question": {
+    "en": "Compare an isolated copy with a labelled external field",
+    "ru": "Сравнить изолированную копию и подписанное внешнее поле"
+   },
+   "plan_measurement": "состав, орбитальный отклик",
+   "scene_id": "real.psr_b1620_26",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.psr_b1620_26"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 3155760000.0,
+   "measurements": [
+    {
+     "id": "eA",
+     "measurement": "eccentricity",
+     "sample": "series",
+     "args": {
+      "body": "psr_b1620_26_b"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "le",
+     "a": "eA.max - eA.min",
+     "value": 0.001,
+     "text": {
+      "en": "Isolated, the planet's orbit barely changes in 100 years (model: e varies by <= 2.4e-4).",
+      "ru": "В изоляции орбита планеты за 100 лет почти не меняется (модель: e меняется не более чем на 2,4e-4)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "answer",
+     "a": "q_cluster_field",
+     "value": "b",
+     "text": {
+      "en": "Any cluster-driven change could not appear here: the field is outside the model.",
+      "ru": "Изменение от поля скопления здесь появиться не могло: поля нет в модели."
+     },
+     "question": {
+      "id": "q_cluster_field",
+      "text": {
+       "en": "PSR B1620-26 lives in the globular cluster M4. Why can this run not show the cluster's effect on the planet?",
+       "ru": "PSR B1620-26 находится в шаровом скоплении M4. Почему этот прогон не может показать влияние скопления на планету?"
+      },
+      "options": [
+       {
+        "id": "a",
+        "text": {
+         "en": "Because the cluster has no effect at all",
+         "ru": "Потому что скопление вообще не влияет"
+        }
+       },
+       {
+        "id": "b",
+        "text": {
+         "en": "Because the external cluster potential is not part of this model (planned for 1.2)",
+         "ru": "Потому что внешнего потенциала скопления нет в этой модели (запланирован в 1.2)"
+        }
+       },
+       {
+        "id": "c",
+        "text": {
+         "en": "Because the planet is too heavy",
+         "ru": "Потому что планета слишком тяжёлая"
+        }
+       }
+      ],
+      "correct": "b",
+      "correct_index": 1
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "External cluster field is not part of the 1.0 core.",
+      "ru": "Внешнее поле скопления не входит в ядро 1.0."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E59",
+   "theme": "Пульсары и остатки",
+   "mode": "D",
+   "title": {
+    "en": "A neutron star nearby",
+    "ru": "Нейтронная звезда рядом"
+   },
+   "question": {
+    "en": "Reach the guard zone with a clear stop",
+    "ru": "Достичь guard-зоны с понятным остановом"
+   },
+   "plan_measurement": "domain status",
+   "scene_id": "real.psr_b1257_12",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.psr_b1257_12"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "compact.neutron_star",
+      "placement": "free",
+      "params": {
+       "toward": "psr_b1257_12_psr"
+      }
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 31557600.0,
+   "measurements": [
+    {
+     "id": "ds",
+     "measurement": "domain_status",
+     "sample": "end",
+     "args": {},
+     "unit": "enum"
+    },
+    {
+     "id": "cp",
+     "measurement": "compactness",
+     "sample": "end",
+     "args": {
+      "body": "ns"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.domain_guard",
+     "value": 1,
+     "text": {
+      "en": "The guard stops the run with a readable reason.",
+      "ru": "Ограничитель останавливает прогон с понятной причиной."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "compact_objects",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E60",
+   "theme": "Пульсары и остатки",
+   "mode": "D",
+   "title": {
+    "en": "End of a star's life",
+    "ru": "Исход жизни звезды"
+   },
+   "question": {
+    "en": "Choose a teaching outcome, conserving matter",
+    "ru": "Выбрать учебный исход, сохранив вещество по модели"
+   },
+   "plan_measurement": "остаток, выброс",
+   "scene_id": "real.sirius_ab",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.sirius_ab"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "trigger_supernova",
+     "args": {
+      "body": "sirius_a",
+      "ejecta_fraction": 0.7,
+      "energy_j": 3.6e+43,
+      "remnant": "none"
+     }
+    }
+   ],
+   "horizon_s": 1577880000.0,
+   "measurements": [
+    {
+     "id": "ml",
+     "measurement": "mass_ledger",
+     "sample": "end",
+     "args": {},
+     "unit": "kg"
+    },
+    {
+     "id": "e",
+     "measurement": "eccentricity",
+     "sample": "end",
+     "args": {
+      "body": "sirius_b"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "rm",
+     "measurement": "remnant_mass",
+     "sample": "end",
+     "args": {
+      "body": "sirius_a"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "unchanged_within",
+     "a": "ml.total",
+     "value": 1e-09,
+     "text": {
+      "en": "Mass is moved to ejecta, not deleted.",
+      "ru": "Масса переходит в выброс, а не исчезает."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "in_range",
+     "a": "rm",
+     "value": [
+      1.218e+30,
+      1.243e+30
+     ],
+     "lo": 1.218e+30,
+     "hi": 1.243e+30,
+     "text": {
+      "en": "A keeps 30 % of its mass (1.23e30 kg).",
+      "ru": "A сохраняет 30 % массы (1,23e30 кг)."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "gt",
+     "a": "e",
+     "value": 1.0,
+     "text": {
+      "en": "At this orbital phase the sudden loss unbinds Sirius B (two-body: e 0.59 -> 1.17).",
+      "ru": "На этой фазе орбиты резкая потеря массы отрывает Сириус B (задача двух тел: e 0,59 -> 1,17)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "Teaching outcome: A sheds most of its mass at once; the pair can no longer hold Sirius B.",
+      "ru": "Учебный исход: A сразу теряет большую часть массы; пара больше не удерживает Сириус B."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "collision_ledger",
+    "explosions",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E61",
+   "theme": "Чёрные дыры и AGN",
+   "mode": "D",
+   "title": {
+    "en": "Black hole without accretion",
+    "ru": "BH без аккреции"
+   },
+   "question": {
+    "en": "Disable the disk, keep the mass",
+    "ru": "Отключить диск, сохранив массу"
+   },
+   "plan_measurement": "ускорения, светимость",
+   "scene_id": "real.cygnus_x_1",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.cygnus_x_1"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_accretion",
+     "args": {
+      "body": "cyg_x1_bh",
+      "mdot_kg_s": 0.0,
+      "disk_mass_kg": 0.0,
+      "enabled": false
+     }
+    }
+   ],
+   "horizon_s": 1728000.0,
+   "measurements": [
+    {
+     "id": "L",
+     "measurement": "accretion_luminosity",
+     "sample": "end",
+     "args": {
+      "body": "cyg_x1_bh"
+     },
+     "unit": "W"
+    },
+    {
+     "id": "p",
+     "measurement": "orbital_period",
+     "sample": "end",
+     "args": {
+      "body": "hde_226868"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "pB",
+     "measurement": "orbital_period",
+     "sample": "end",
+     "args": {
+      "body": "hde_226868",
+      "branch": "B"
+     },
+     "unit": "s"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "le",
+     "a": "L",
+     "value": 0.0,
+     "text": {
+      "en": "No accretion, no light.",
+      "ru": "Нет аккреции — нет света."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "unchanged_within",
+     "a": "p/pB",
+     "value": 1e-06,
+     "text": {
+      "en": "Same mass, same orbit: the period matches the unedited world at the same time.",
+      "ru": "Та же масса — та же орбита: период совпадает с неизменённым миром в тот же момент."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "The comparison is with an unedited copy at the same time, so the integrator's own small oscillation cancels.",
+      "ru": "Сравнение идёт с неизменённой копией в тот же момент, поэтому собственные малые колебания интегратора сокращаются."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "compact_objects",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E62",
+   "theme": "Чёрные дыры и AGN",
+   "mode": "D",
+   "title": {
+    "en": "Cygnus X-1-like feeding",
+    "ru": "Cygnus X-1-подобная"
+   },
+   "question": {
+    "en": "Change the supply at fixed mass",
+    "ru": "Изменить подачу при фиксированной массе"
+   },
+   "plan_measurement": "аккреция, светимость",
+   "scene_id": "real.cygnus_x_1",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.cygnus_x_1"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_accretion",
+     "args": {
+      "body": "cyg_x1_bh",
+      "mdot_kg_s": 2200000000000000.0,
+      "enabled": true
+     }
+    }
+   ],
+   "horizon_s": 864000.0,
+   "measurements": [
+    {
+     "id": "L",
+     "measurement": "accretion_luminosity",
+     "sample": "series",
+     "args": {
+      "body": "cyg_x1_bh"
+     },
+     "unit": "W"
+    },
+    {
+     "id": "m",
+     "measurement": "body_mass",
+     "sample": "end",
+     "args": {
+      "body": "cyg_x1_bh"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "LB",
+     "measurement": "accretion_luminosity",
+     "sample": "end",
+     "args": {
+      "body": "cyg_x1_bh",
+      "branch": "B"
+     },
+     "unit": "W"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "changed_by_fraction",
+     "a": "L/LB",
+     "value": 5.0,
+     "text": {
+      "en": "Ten-fold supply raises luminosity accordingly: compared with the unedited copy at the same moment.",
+      "ru": "Десятикратная подача соответственно повышает светимость: по сравнению с неизменённой копией в тот же момент."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "The comparison is with an unedited copy at the same time; both luminosities follow the supply rate (L = efficiency x rate x c^2, below the Eddington limit).",
+      "ru": "Сравнение идёт с неизменённой копией в тот же момент; обе светимости следуют темпу подачи (L = КПД x темп x c^2, ниже предела Эддингтона)."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results. Known defect (core, pending fix A2): the black hole's accretion luminosity is not set until the end of the first time step, so the luminosity series starts at 0. The criterion compares end values with the unedited copy after that step and is not affected.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели. Известный дефект (ядро, исправление A2 ожидается): светимость аккреции чёрной дыры задаётся только в конце первого шага, поэтому ряд светимости начинается с 0. Критерий сравнивает конечные значения с неизменённой копией после этого шага, и дефект его не затрагивает."
+   },
+   "requires_features": [
+    "branches",
+    "compact_objects",
+    "measurements"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E63",
+   "theme": "Чёрные дыры и AGN",
+   "mode": "D",
+   "title": {
+    "en": "A quasar near a system",
+    "ru": "Квазар рядом с системой"
+   },
+   "question": {
+    "en": "Insert a nucleus with explicit mass and measure consequences",
+    "ru": "Вставить ядро с явной массой и измерить последствия"
+   },
+   "plan_measurement": "орбиты, поток",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "insert_system",
+     "args": {
+      "source": "compact.quasar",
+      "offset_m": [
+       6.17135516e+17,
+       0,
+       0
+      ],
+      "velocity_mps": [
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "horizon_s": 315576000.0,
+   "measurements": [
+    {
+     "id": "f0",
+     "measurement": "stellar_flux_at_body",
+     "sample": "start",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "f",
+     "measurement": "stellar_flux_at_body",
+     "sample": "end",
+     "args": {
+      "body": "earth"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "e",
+     "measurement": "eccentricity",
+     "sample": "end",
+     "args": {
+      "body": "neptune"
+     },
+     "unit": "1"
+    },
+    {
+     "id": "eB",
+     "measurement": "eccentricity",
+     "sample": "end",
+     "args": {
+      "body": "neptune",
+      "branch": "B"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "f - f0",
+     "value": [
+      300.0,
+      2000.0
+     ],
+     "lo": 300.0,
+     "hi": 2000.0,
+     "text": {
+      "en": "In this model a steady source irradiates at once (continuous-irradiance approximation): +~710 W/m^2 at 20 pc (the 90 % of 3.78e39 W outside the jets).",
+      "ru": "В этой модели постоянный источник освещает сразу (приближение непрерывного облучения): +~710 Вт/м^2 с 20 пк (90 % от 3,78e39 Вт вне джетов)."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "unchanged_within",
+     "a": "e/eB",
+     "value": 0.01,
+     "text": {
+      "en": "Its tide across the Solar System is tiny: Neptune's eccentricity matches the world without the quasar at the same time.",
+      "ru": "Его прилив поперёк Солнечной системы крошечный: эксцентриситет Нептуна совпадает с миром без квазара в тот же момент."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "The system falls toward the quasar as a whole; internal orbits barely notice.",
+      "ru": "Система падает к квазару как целое; внутренние орбиты почти не замечают."
+     }
+    }
+   ],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "Model limit: steady sources use continuous irradiance with no light-travel delay (real light would need ~65 years from 20 pc); light and shell fronts are modelled only for explosions. Neptune's own eccentricity varies by ~0.7 % in 10 years, so it is compared with the same moment of the world without the quasar.",
+      "ru": "Предел модели: постоянные источники светят без задержки распространения (реальному свету нужно ~65 лет с 20 пк); фронты света и оболочки моделируются только для взрывов. Собственный эксцентриситет Нептуна меняется на ~0,7 % за 10 лет, поэтому он сравнивается с тем же моментом мира без квазара."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "atomic_insert",
+    "branches",
+    "measurements",
+    "radiation"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E64",
+   "theme": "Чёрные дыры и AGN",
+   "mode": "D",
+   "title": {
+    "en": "Turn the jet",
+    "ru": "Повернуть джет"
+   },
+   "question": {
+    "en": "Separate orientation and mass",
+    "ru": "Разделить ориентацию и массу"
+   },
+   "plan_measurement": "поток на приёмнике",
+   "scene_id": "generated.agn",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.agn"
+     }
+    },
+    {
+     "action": "place_observer",
+     "args": {
+      "direction": [
+       0,
+       1,
+       0
+      ],
+      "instrument": "jet_receiver"
+     }
+    },
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_jet_axis",
+     "args": {
+      "body": "core",
+      "axis": [
+       0,
+       1,
+       0
+      ]
+     }
+    }
+   ],
+   "horizon_s": 86400.0,
+   "measurements": [
+    {
+     "id": "f0",
+     "measurement": "receiver_flux_series",
+     "sample": "start",
+     "args": {
+      "receiver": "jet_receiver"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "f1",
+     "measurement": "receiver_flux_series",
+     "sample": "end",
+     "args": {
+      "receiver": "jet_receiver"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "m",
+     "measurement": "body_mass",
+     "sample": "end",
+     "args": {
+      "body": "core"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "fB",
+     "measurement": "receiver_flux_series",
+     "sample": "end",
+     "args": {
+      "receiver": "jet_receiver",
+      "branch": "B"
+     },
+     "unit": "W/m^2"
+    },
+    {
+     "id": "mB",
+     "measurement": "body_mass",
+     "sample": "end",
+     "args": {
+      "body": "core",
+      "branch": "B"
+     },
+     "unit": "kg"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "gt",
+     "a": "f1",
+     "b": "fB",
+     "text": {
+      "en": "Pointing the jet at the receiver raises its flux above the unedited copy at the same moment.",
+      "ru": "Направление джета на приёмник повышает поток по сравнению с неизменённой копией в тот же момент."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "unchanged_within",
+     "a": "m/mB",
+     "value": 0.0,
+     "text": {
+      "en": "Orientation does not change mass: accretion changes the core's mass equally in both worlds, so the masses match exactly.",
+      "ru": "Ориентация не меняет массу: аккреция одинаково меняет массу ядра в обоих мирах, поэтому массы совпадают точно."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [
+    {
+     "on_event": "sim_paused",
+     "text": {
+      "en": "The receiver sits 1 pc away along +y; the comparison is with an unedited copy at the same time, so accretion and the stars' motion cancel and only the jet's direction differs.",
+      "ru": "Приёмник находится в 1 пк по оси +y; сравнение идёт с неизменённой копией в тот же момент, поэтому аккреция и движение звёзд сокращаются и различается только направление джета."
+     }
+    }
+   ],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results. Known defect (core, pending fix A2): the AGN's luminosity is not set until the end of the first time step, so the start reading f0 shows only the stars' light (1.6106e-5 W/m2; with the AGN lit it would be about 145.002 W/m2). The criteria compare end values after that step and are not affected.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели. Известный дефект (ядро, исправление A2 ожидается): светимость АЯГ задаётся только в конце первого шага, поэтому начальное значение f0 показывает лишь свет звёзд (1,6106e-5 Вт/м2; при светящемся ядре было бы около 145,002 Вт/м2). Критерии сравнивают конечные значения после этого шага, и дефект их не затрагивает."
+   },
+   "requires_features": [
+    "branches",
+    "compact_objects",
+    "measurements",
+    "observatory"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E65",
+   "theme": "Чёрные дыры и AGN",
+   "mode": "D",
+   "title": {
+    "en": "Out of fuel",
+    "ru": "Топливо кончилось"
+   },
+   "question": {
+    "en": "Follow the finite reservoir",
+    "ru": "Проследить конечный резервуар"
+   },
+   "plan_measurement": "масса диска, мощность",
+   "scene_id": "generated.agn",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.agn"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "set_time_rate",
+     "args": {
+      "rate": 10000000000.0
+     }
+    }
+   ],
+   "horizon_s": 110000000.0,
+   "measurements": [
+    {
+     "id": "dm",
+     "measurement": "disk_mass",
+     "sample": "series",
+     "args": {
+      "body": "core"
+     },
+     "unit": "kg"
+    },
+    {
+     "id": "L",
+     "measurement": "accretion_luminosity",
+     "sample": "series",
+     "args": {
+      "body": "core"
+     },
+     "unit": "W"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.accretion_fuel_depleted",
+     "value": 1,
+     "text": {
+      "en": "Finite reservoir runs out.",
+      "ru": "Конечный запас исчерпан."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "le",
+     "a": "L.end",
+     "value": 0.0,
+     "text": {
+      "en": "Luminosity drops to zero.",
+      "ru": "Светимость падает до нуля."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "compact_objects"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E66",
+   "theme": "Чёрные дыры и AGN",
+   "mode": "D",
+   "title": {
+    "en": "S2 around Sgr A*",
+    "ru": "S2 у Sgr A*"
+   },
+   "question": {
+    "en": "Compare the Newtonian model with its accuracy boundary",
+    "ru": "Сравнить ньютоновскую модель и границу её точности"
+   },
+   "plan_measurement": "период, periapse, guard",
+   "scene_id": "real.sgr_a_s2",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.sgr_a_s2"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 536479200.0,
+   "measurements": [
+    {
+     "id": "P",
+     "measurement": "observed_period",
+     "sample": "end",
+     "args": {
+      "body": "s2"
+     },
+     "unit": "s"
+    },
+    {
+     "id": "rp",
+     "measurement": "periapsis_distance",
+     "sample": "end",
+     "args": {
+      "body": "s2",
+      "primary": "sgr_a_star",
+      "relative_to": "sgr_a_star"
+     },
+     "unit": "m"
+    },
+    {
+     "id": "pr",
+     "measurement": "periapsis_precession",
+     "sample": "end",
+     "args": {
+      "body": "s2",
+      "primary": "sgr_a_star",
+      "interval": 536479200.0,
+      "relative_to": "sgr_a_star"
+     },
+     "unit": "deg/orbit"
+    },
+    {
+     "id": "v",
+     "measurement": "speed_fraction_c",
+     "sample": "series",
+     "args": {
+      "body": "s2"
+     },
+     "unit": "1"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "in_range",
+     "a": "P",
+     "value": [
+      500000000.0,
+      515000000.0
+     ],
+     "lo": 500000000.0,
+     "hi": 515000000.0,
+     "text": {
+      "en": "Period ~16.05 years.",
+      "ru": "Период ~16,05 лет."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "le",
+     "a": "pr",
+     "value": 0.01,
+     "text": {
+      "en": "Newtonian model: almost no precession (observed: 12 arcmin per orbit).",
+      "ru": "Ньютоновская модель: прецессии почти нет (наблюдается 12′ за оборот)."
+     }
+    },
+    {
+     "id": "c3",
+     "op": "le",
+     "a": "v.max",
+     "value": 0.1,
+     "text": {
+      "en": "Within the guard (max ~0.026 c).",
+      "ru": "В пределах ограничителя (до ~0,026 c)."
+     }
+    }
+   ],
+   "outcomes": [
+    {
+     "id": "expected",
+     "text": {
+      "en": "The missing precession is the boundary of this model.",
+      "ru": "Отсутствие прецессии — граница этой модели."
+     }
+    }
+   ],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "compact_objects",
+    "measurements",
+    "series"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending",
+   "series_samples": 256
+  },
+  {
+   "id": "E67",
+   "theme": "История и свободная экспедиция",
+   "mode": "A/D",
+   "title": {
+    "en": "Three worlds, one route",
+    "ru": "Три мира одним маршрутом"
+   },
+   "question": {
+    "en": "Visit real and authored places",
+    "ru": "Посетить реальные и авторские места"
+   },
+   "plan_measurement": "закладки, вопросы",
+   "scene_id": "real.trappist_1",
+   "alt_scene_ids": [
+    "generated.binary_p",
+    "real.solar_system"
+   ],
+   "setup": [
+    {
+     "action": "add_bookmark",
+     "args": {
+      "scene": "real.trappist_1"
+     }
+    },
+    {
+     "action": "add_bookmark",
+     "args": {
+      "scene": "generated.binary_p"
+     }
+    },
+    {
+     "action": "add_bookmark",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "j",
+     "measurement": "journal_entries",
+     "sample": "end",
+     "args": {},
+     "unit": "int"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.route_completed",
+     "value": 1,
+     "text": {
+      "en": "Visit three places with a question each.",
+      "ru": "Посетите три места с вопросом в каждом."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "journal"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E68",
+   "theme": "История и свободная экспедиция",
+   "mode": "A/D",
+   "title": {
+    "en": "Undo a catastrophe",
+    "ru": "Отменить катастрофу"
+   },
+   "question": {
+    "en": "Restore a checkpoint instead of reverse explosion",
+    "ru": "Восстановить checkpoint вместо обратного взрыва"
+   },
+   "plan_measurement": "state hash, состав",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    },
+    {
+     "action": "add_preset",
+     "args": {
+      "preset": "planet.mars_like",
+      "placement": "free",
+      "params": {
+       "impact": "earth"
+      }
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "restore_checkpoint",
+     "args": {
+      "checkpoint": "before_last_transaction"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "h0",
+     "measurement": "state_hash",
+     "sample": "start",
+     "args": {},
+     "unit": "hex"
+    },
+    {
+     "id": "h1",
+     "measurement": "state_hash",
+     "sample": "end",
+     "args": {},
+     "unit": "hex"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "state_equal",
+     "a": "h1",
+     "value": "checkpoint",
+     "text": {
+      "en": "Undo restores the checkpoint (not backwards integration).",
+      "ru": "Отмена восстанавливает контрольную точку (не обратное интегрирование)."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "history",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E69",
+   "theme": "История и свободная экспедиция",
+   "mode": "A/D",
+   "title": {
+    "en": "One experiment, three platforms",
+    "ru": "Один опыт три платформы"
+   },
+   "question": {
+    "en": "Transfer a file and run one command",
+    "ru": "Перенести файл и выполнить одну команду"
+   },
+   "plan_measurement": "допуски, manifest",
+   "scene_id": "generated.red_chain",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "generated.red_chain"
+     }
+    },
+    {
+     "action": "save_game",
+     "args": {
+      "slot": "xplat"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "export_report",
+     "args": {
+      "format": "json"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "h",
+     "measurement": "state_hash",
+     "sample": "end",
+     "args": {},
+     "unit": "hex"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "state_equal",
+     "a": "h",
+     "value": "import:xplat",
+     "text": {
+      "en": "The file reopens with the same state on this client; iPhone/Windows equality needs the file run there.",
+      "ru": "Файл открывается в том же состоянии на этом клиенте; равенство на iPhone/Windows требует запуска файла там."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "journal",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E70",
+   "theme": "История и свободная экспедиция",
+   "mode": "A/D",
+   "title": {
+    "en": "A system inside a system",
+    "ru": "Система в другой системе"
+   },
+   "question": {
+    "en": "Insert a whole hierarchy atomically",
+    "ru": "Вставить целую иерархию атомарно"
+   },
+   "plan_measurement": "позиции/скорости, undo",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.solar_system"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "insert_system",
+     "args": {
+      "source": "generated.binary_p",
+      "offset_m": [
+       1500000000000000.0,
+       0,
+       0
+      ],
+      "velocity_mps": [
+       0,
+       20000.0,
+       0
+      ]
+     }
+    }
+   ],
+   "horizon_s": 1.0,
+   "measurements": [
+    {
+     "id": "n",
+     "measurement": "body_count",
+     "sample": "end",
+     "args": {},
+     "unit": "int"
+    },
+    {
+     "id": "h",
+     "measurement": "state_hash",
+     "sample": "end",
+     "args": {},
+     "unit": "hex"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "n",
+     "value": 13,
+     "text": {
+      "en": "All bodies inserted atomically (one undo).",
+      "ru": "Все тела вставлены атомарно (одна отмена)."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "atomic_insert",
+    "save_hash"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E71",
+   "theme": "История и свободная экспедиция",
+   "mode": "A/D",
+   "title": {
+    "en": "Passport of assumptions",
+    "ru": "Паспорт допущений"
+   },
+   "question": {
+    "en": "Find reconstructed fields before running",
+    "ru": "Найти реконструированные поля до запуска"
+   },
+   "plan_measurement": "верный ответ игрока",
+   "scene_id": "real.hd_10180",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "load_scene",
+     "args": {
+      "scene": "real.hd_10180"
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "open_passport",
+     "args": {
+      "body": "hd_10180_g"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "pk",
+     "measurement": "provenance_kind",
+     "sample": "start",
+     "args": {
+      "body": "hd_10180_g",
+      "field": "mass_kg"
+     },
+     "unit": "enum"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "answer",
+     "a": "q_passport",
+     "value": "minimum_mass",
+     "text": {
+      "en": "Identify Msini before running anything.",
+      "ru": "Распознайте Msini до запуска."
+     },
+     "question": {
+      "id": "q_passport",
+      "text": {
+       "en": "What kind of value is the listed mass of HD 10180 g?",
+       "ru": "Что представляет собой указанная масса HD 10180 g?"
+      },
+      "options": [
+       {
+        "id": "true_mass",
+        "text": {
+         "en": "Its true mass",
+         "ru": "Истинную массу"
+        }
+       },
+       {
+        "id": "minimum_mass",
+        "text": {
+         "en": "A minimum mass (Msini): the true mass is larger by 1/sin i",
+         "ru": "Минимальную массу (Msini): истинная больше в 1/sin i"
+        }
+       },
+       {
+        "id": "upper_limit",
+        "text": {
+         "en": "An upper limit",
+         "ru": "Верхний предел"
+        }
+       }
+      ],
+      "correct": "minimum_mass",
+      "correct_index": 1
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "passport"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  },
+  {
+   "id": "E72",
+   "theme": "История и свободная экспедиция",
+   "mode": "A/D",
+   "title": {
+    "en": "Your own discovery",
+    "ru": "Собственное открытие"
+   },
+   "question": {
+    "en": "Ask a question, run A/B and export",
+    "ru": "Сформулировать вопрос, провести A/B и экспортировать"
+   },
+   "plan_measurement": "вопрос, исходник, измерение, вывод",
+   "scene_id": "real.solar_system",
+   "alt_scene_ids": [],
+   "setup": [
+    {
+     "action": "write_explanation",
+     "args": {
+      "min_chars": 40
+     }
+    }
+   ],
+   "intervention": [
+    {
+     "action": "create_branch",
+     "args": {
+      "name": "B"
+     }
+    },
+    {
+     "action": "export_report",
+     "args": {
+      "format": "md"
+     }
+    }
+   ],
+   "horizon_s": 0.0,
+   "measurements": [
+    {
+     "id": "j",
+     "measurement": "journal_entries",
+     "sample": "end",
+     "args": {},
+     "unit": "int"
+    }
+   ],
+   "criteria": [
+    {
+     "id": "c1",
+     "op": "count_ge",
+     "a": "events.hypothesis_recorded",
+     "value": 1,
+     "text": {
+      "en": "Question recorded.",
+      "ru": "Вопрос записан."
+     }
+    },
+    {
+     "id": "c2",
+     "op": "count_ge",
+     "a": "events.report_exported",
+     "value": 1,
+     "text": {
+      "en": "Report with source, measurement and conclusion exported.",
+      "ru": "Отчёт с источником, измерением и выводом экспортирован."
+     }
+    }
+   ],
+   "outcomes": [],
+   "hints": [],
+   "model_limits": {
+    "en": "Point-mass Newtonian core unless a listed module is used; results are model results.",
+    "ru": "Ньютоновское ядро точечных масс, если не указан модуль; результаты — результаты модели."
+   },
+   "requires_features": [
+    "branches",
+    "journal"
+   ],
+   "plan_acceptance": "Исходная сцена, вмешательство, горизонт, наблюдение, допуски/варианты исхода, объяснение и save/undo проходят на трёх платформах",
+   "implementation_state": "data_ready_mechanic_pending"
+  }
+ ]
+}

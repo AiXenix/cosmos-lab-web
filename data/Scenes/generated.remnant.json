@@ -1,0 +1,617 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.remnant",
+ "name": {
+  "en": "Planets around a stellar remnant",
+  "ru": "Планеты у остатка звезды"
+ },
+ "kind": "authored_procedural",
+ "group": "remnant_planets",
+ "description": {
+  "en": "Survivors around a white dwarf (or pulsar) with a tidal debris disk.",
+  "ru": "Уцелевшие планеты у белого карлика (или пульсара) с приливным обломочным диском."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 2182.46,
+  "suggested_horizon_s": 49141500000.0,
+  "time_scale_hint": 67538.6,
+  "guard": {
+   "min_separation_m": 2888440.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 4691310000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [],
+ "bodies": [
+  {
+   "id": "remnant",
+   "name": {
+    "en": "Riqui",
+    "ru": "Riqui"
+   },
+   "class": "white_dwarf",
+   "subclass": "DA",
+   "parent": null,
+   "mass_kg": 1.34545782559377e+30,
+   "radius_m": 8354639.34646094,
+   "position_m": [
+    24820788.56329375,
+    -83457352.27392913,
+    -168482.5775138456
+   ],
+   "velocity_mps": [
+    183.6141682185496,
+    -26.37499505000883,
+    2.519955481454987
+   ],
+   "star": {
+    "teff_k": 10980.6,
+    "luminosity_w": 7.2306881e+23,
+    "spectral_type": "DA"
+   },
+   "appearance": {
+    "profile": "Star_WhiteDwarf",
+    "seed": 2526126956,
+    "params": {
+     "StarColor": [
+      0.565,
+      0.6617,
+      1.0,
+      1
+     ],
+     "Seed": 956.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.565,
+        0.6617,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "white dwarf mass-radius scaling"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "white dwarf mass-radius scaling"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "white dwarf mass-radius scaling"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Riqui b",
+    "ru": "Riqui b"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "remnant",
+   "mass_kg": 3.28189127235024e+27,
+   "radius_m": 85720616.3951655,
+   "position_m": [
+    2132148588.781593,
+    15570486243.20718,
+    57694163.81069997
+   ],
+   "velocity_mps": [
+    -75189.21605612477,
+    10887.2601586675,
+    -1028.025846963734
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 16083452160.6083,
+    "e": 0.02048556045,
+    "i_deg": 0.8052153915,
+    "node_deg": 277.4415482,
+    "omega_deg": 135.3256888,
+    "mean_anomaly_deg": 28.42137101,
+    "period_s": 1350771.35016473,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 161.87
+   },
+   "appearance": {
+    "profile": "Giant_Jupiter",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 919.0,
+     "ColorA": [
+      0.7977,
+      0.7173,
+      0.487,
+      1
+     ],
+     "ColorB": [
+      0.488,
+      0.3828,
+      0.262,
+      1
+     ],
+     "ColorC": [
+      0.9698,
+      0.9028,
+      0.8628,
+      1
+     ],
+     "BandCount": 12.2,
+     "Turbulence": 0.336,
+     "StormIntensity": 0.555,
+     "StormLatitude": -0.39
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "p2",
+   "name": {
+    "en": "Riqui c",
+    "ru": "Riqui c"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "remnant",
+   "mass_kg": 3.39352557659692e+23,
+   "radius_m": 2888435.53970653,
+   "position_m": [
+    39797999116.83438,
+    -153310982794.2595,
+    4294909757.564776
+   ],
+   "velocity_mps": [
+    21325.82218946013,
+    7698.660843050808,
+    -1524.748678149354
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 145136671435.766,
+    "e": 0.1308214223,
+    "i_deg": 4.030009592,
+    "node_deg": 127.1897228,
+    "omega_deg": 296.7599608,
+    "mean_anomaly_deg": 231.0567267,
+    "period_s": 36616650.6654499,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.6,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 46.849
+   },
+   "appearance": {
+    "profile": "Planet_IceBall",
+    "seed": 1690977849,
+    "params": {
+     "Seed": 541.0,
+     "LandColorA": [
+      0.3978,
+      0.3798,
+      0.346,
+      1
+     ],
+     "LandColorB": [
+      0.2639,
+      0.2202,
+      0.2143,
+      1
+     ],
+     "OceanColor": [
+      0.01843,
+      0.05864,
+      0.1351,
+      1
+     ],
+     "NoiseScale": 2.509
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "p3",
+   "name": {
+    "en": "Riqui d",
+    "ru": "Riqui d"
+   },
+   "class": "planet",
+   "subclass": "water_world_hypothesis",
+   "parent": "remnant",
+   "mass_kg": 4.69178460333081e+25,
+   "radius_m": 17353178.3755284,
+   "position_m": [
+    -861214080008.5482,
+    1305254534556.335,
+    764799412.9932989
+   ],
+   "velocity_mps": [
+    -6170.883083265213,
+    -5263.949341969836,
+    -343.3094604477793
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 1829003206834.9,
+    "e": 0.1890470404,
+    "i_deg": 2.438799997,
+    "node_deg": 304.0749933,
+    "omega_deg": 226.8198154,
+    "mean_anomaly_deg": 327.0295835,
+    "period_s": 1638049514.62052,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 15.179
+   },
+   "appearance": {
+    "profile": "Planet_Ocean",
+    "seed": 3489708867,
+    "params": {
+     "Seed": 47.0,
+     "LandColorA": [
+      0.2348,
+      0.2886,
+      0.1925,
+      1
+     ],
+     "LandColorB": [
+      0.3889,
+      0.3463,
+      0.2521,
+      1
+     ],
+     "OceanColor": [
+      0.0105,
+      0.05563,
+      0.1789,
+      1
+     ],
+     "NoiseScale": 1.686,
+     "CloudCoverage": 0.546
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [
+  {
+   "id": "tidal_debris",
+   "type": "debris_belt",
+   "parent": "remnant",
+   "inner_radius_m": 347850000.0,
+   "outer_radius_m": 834840000.0,
+   "thickness_m": 41742000.0,
+   "total_mass_kg": 0.0,
+   "massless": true,
+   "test_particle_count": 1024,
+   "seed": 951100565,
+   "eccentricity_max": 0.05,
+   "inclination_max_deg": 3.0,
+   "appearance": {
+    "profile": "Ring_DebrisWarm",
+    "params": {}
+   },
+   "provenance": {
+    "geometry": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator belt; massless tracers"
+    }
+   },
+   "note": {
+    "en": "Massless tracers.",
+    "ru": "Безмассовые трассеры."
+   },
+   "visual_particle_count": 1500,
+   "particle_note": {
+    "en": "test_particle_count are integrated massless tracers (Portable64 total <= 1024); visual_particle_count may be drawn as decoration only.",
+    "ru": "test_particle_count — интегрируемые безмассовые трассеры (Portable64: всего <= 1024); visual_particle_count — только декоративные частицы."
+   }
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 5,
+  "reconstructed": 0,
+  "assumed": 3,
+  "literature": 0,
+  "authored": 16
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 168)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.072 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "remnant_planets",
+  "seed": 9909,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Riqui"
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

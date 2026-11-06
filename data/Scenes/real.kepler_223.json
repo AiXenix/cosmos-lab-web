@@ -1,0 +1,1040 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.kepler_223",
+ "name": {
+  "en": "Kepler-223",
+  "ru": "Kepler-223"
+ },
+ "kind": "real_planetary",
+ "group": "compact_resonant",
+ "description": {
+  "en": "Four sub-Neptunes locked in a 3:4:6:8 resonant chain.",
+  "ru": "Четыре субнептуна в резонансной цепочке 3:4:6:8."
+ },
+ "gameplay": "Резонанс, миграция и наблюдаемые транзиты",
+ "epoch": {
+  "jd_tdb": 2455704.5,
+  "label": "JD 2455704.5 TDB (median of catalogue reference times, to limit propagation)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 941.411,
+  "suggested_horizon_s": 85214900.0,
+  "time_scale_hint": 31901.0,
+  "guard": {
+   "min_separation_m": 19070500.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 68626400000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "planets",
+   "kind": "planet_family",
+   "members": [
+    "kepler_223_b",
+    "kepler_223_c",
+    "kepler_223_d",
+    "kepler_223_e"
+   ],
+   "name": {
+    "en": "Planets",
+    "ru": "Планеты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "kepler_223_star",
+   "name": {
+    "en": "Kepler-223",
+    "ru": "Kepler-223"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 2.2369611052311e+30,
+   "radius_m": 1196604000.0,
+   "position_m": [
+    -353073.0894282757,
+    224788.8446766866,
+    -7226.498162425268
+   ],
+   "velocity_mps": [
+    1.541845293469842,
+    2.034254031976692,
+    0.01820919423319853
+   ],
+   "star": {
+    "teff_k": 4951.25,
+    "luminosity_w": 6.1317012e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 3885616223,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.7895,
+      0.6175,
+      1
+     ],
+     "Seed": 223.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.7895,
+        0.6175,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "star.teff_k"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.125,
+      "unit": "M_sun",
+      "column": "st_mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.72,
+      "unit": "R_sun",
+      "column": "st_rad"
+     }
+    },
+    "star.teff_k": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "main-sequence L ~ M^4 with R -> Teff"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    }
+   },
+   "catalogue_name": "Kepler-223"
+  },
+  {
+   "id": "kepler_223_b",
+   "name": {
+    "en": "Kepler-223 b",
+    "ru": "Kepler-223 b"
+   },
+   "catalogue_name": "Kepler-223 b",
+   "class": "planet",
+   "subclass": "sub_neptune",
+   "parent": "kepler_223_star",
+   "mass_kg": 4.41940461584256e+25,
+   "radius_m": 19070519.0,
+   "position_m": [
+    6121406856.18996,
+    -10679101257.33377,
+    -7226.498163079187
+   ],
+   "velocity_mps": [
+    -90056.0780929902,
+    -56721.97656096136,
+    0.01820919422972519
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 90.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 7.4,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 2.99,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 7.38449,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)"
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.078,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 0 orbits; period uncertainty alone shifts timing by ~0.0021 h",
+     "original": {
+      "value": 2455701.5155,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     6.56939e+24,
+     7.76382e+24
+    ],
+    "radius_m": [
+     1722090.0,
+     1148060.0
+    ]
+   },
+   "elements": {
+    "a_m": 11546769580.3552,
+    "e": 0.078,
+    "i_deg": 90.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 145.4968454,
+    "period_s": 638019.935999999,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.1,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 1097.8
+   },
+   "appearance": {
+    "profile": "Giant_SubNeptune",
+    "seed": 4008252730,
+    "params": {
+     "Seed": 200.0,
+     "ColorA": [
+      0.7727,
+      0.6571,
+      0.5103,
+      1
+     ],
+     "ColorB": [
+      0.565,
+      0.3724,
+      0.2586,
+      1
+     ],
+     "ColorC": [
+      0.9263,
+      0.7741,
+      0.8242,
+      1
+     ],
+     "BandCount": 11.9,
+     "Turbulence": 0.503
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_HotGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "kepler_223_c",
+   "name": {
+    "en": "Kepler-223 c",
+    "ru": "Kepler-223 c"
+   },
+   "catalogue_name": "Kepler-223 c",
+   "class": "planet",
+   "subclass": "sub_neptune",
+   "parent": "kepler_223_star",
+   "mass_kg": 3.04580588389149e+25,
+   "radius_m": 21940664.0,
+   "position_m": [
+    4301222718.504914,
+    -15391965358.93688,
+    -7226.498163367768
+   ],
+   "velocity_mps": [
+    -84967.5420759666,
+    -28124.58764170543,
+    0.01820919423147627
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 90.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 5.1,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 3.44,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 9.84564,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)"
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.15,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 0 orbits; period uncertainty alone shifts timing by ~0.0055 h",
+     "original": {
+      "value": 2455700.1459,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     6.56939e+24,
+     1.01527e+25
+    ],
+    "radius_m": [
+     1913430.0,
+     1275620.0
+    ]
+   },
+   "elements": {
+    "a_m": 13987650337.7562,
+    "e": 0.15,
+    "i_deg": 90.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 159.2050898,
+    "period_s": 850663.295999998,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.1,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 997.39
+   },
+   "appearance": {
+    "profile": "Giant_SubNeptune",
+    "seed": 3685426801,
+    "params": {
+     "Seed": 285.0,
+     "ColorA": [
+      0.7003,
+      0.589,
+      0.5331,
+      1
+     ],
+     "ColorB": [
+      0.4979,
+      0.4146,
+      0.2515,
+      1
+     ],
+     "ColorC": [
+      0.9418,
+      0.8559,
+      0.7849,
+      1
+     ],
+     "BandCount": 9.62,
+     "Turbulence": 0.446
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_HotGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "kepler_223_d",
+   "name": {
+    "en": "Kepler-223 d",
+    "ru": "Kepler-223 d"
+   },
+   "catalogue_name": "Kepler-223 d",
+   "class": "planet",
+   "subclass": "neptune_like",
+   "parent": "kepler_223_star",
+   "mass_kg": 4.7777347198298e+25,
+   "radius_m": 33421244.0,
+   "position_m": [
+    -2822659552.690177,
+    17436883636.39426,
+    627192013.1904202
+   ],
+   "velocity_mps": [
+    92456.36566012439,
+    14407.07291416596,
+    518.211200719304
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 87.94,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 8.0,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 5.24,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 14.78869,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)"
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.037,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 0 orbits; period uncertainty alone shifts timing by ~0.00017 h",
+     "original": {
+      "value": 2455704.8504,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     7.76382e+24,
+     8.95825e+24
+    ],
+    "radius_m": [
+     2870140.0,
+     1658310.0
+    ]
+   },
+   "elements": {
+    "a_m": 18345872094.5508,
+    "e": 0.037,
+    "i_deg": 87.94,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 351.4702384,
+    "period_s": 1277742.816,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 817.86
+   },
+   "appearance": {
+    "profile": "Giant_WarmNeptune",
+    "seed": 821124754,
+    "params": {
+     "Seed": 884.0,
+     "ColorA": [
+      0.7624,
+      0.5906,
+      0.4938,
+      1
+     ],
+     "ColorB": [
+      0.5078,
+      0.4156,
+      0.2392,
+      1
+     ],
+     "ColorC": [
+      0.8187,
+      0.83,
+      0.8392,
+      1
+     ],
+     "BandCount": 19.4,
+     "Turbulence": 0.439
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "kepler_223_e",
+   "name": {
+    "en": "Kepler-223 e",
+    "ru": "Kepler-223 e"
+   },
+   "catalogue_name": "Kepler-223 e",
+   "class": "planet",
+   "subclass": "neptune_like",
+   "parent": "kepler_223_star",
+   "mass_kg": 2.86664083189788e+25,
+   "radius_m": 29339260.0,
+   "position_m": [
+    18249001277.34173,
+    -13785119542.72758,
+    -481386981.9677783
+   ],
+   "velocity_mps": [
+    -45296.18611887292,
+    -65424.48066776063,
+    -2284.673208516182
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 88.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 4.8,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 4.6,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 19.72567,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)"
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.051,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 1 orbits; period uncertainty alone shifts timing by ~0.0087 h",
+     "original": {
+      "value": 2455717.5237,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     7.1666e+24,
+     8.36104e+24
+    ],
+    "radius_m": [
+     2615020.0,
+     1722090.0
+    ]
+   },
+   "elements": {
+    "a_m": 22230108803.963,
+    "e": 0.051,
+    "i_deg": 88.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 122.3131686,
+    "period_s": 1704297.888,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 742.98
+   },
+   "appearance": {
+    "profile": "Giant_WarmNeptune",
+    "seed": 13578298,
+    "params": {
+     "Seed": 386.0,
+     "ColorA": [
+      0.8463,
+      0.7294,
+      0.5463,
+      1
+     ],
+     "ColorB": [
+      0.5975,
+      0.4159,
+      0.2357,
+      1
+     ],
+     "ColorC": [
+      0.901,
+      0.8825,
+      0.7888,
+      1
+     ],
+     "BandCount": 16.7,
+     "Turbulence": 0.279
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "star_teff_ms",
+   "text": {
+    "en": "Missing effective temperatures use main-sequence scalings.",
+    "ru": "Недостающие эффективные температуры оценены по главной последовательности."
+   },
+   "affects": [
+    "kepler_223_star.star.teff_k"
+   ]
+  },
+  {
+   "id": "node_zero",
+   "text": {
+    "en": "Sky-plane node angles are not measured for transit/RV planets; all are set to 0, so mutual inclinations may be underestimated.",
+    "ru": "Углы узлов в картинной плоскости не измерены для транзитных/RV планет; все приняты 0, взаимные наклоны могут быть занижены."
+   },
+   "affects": [
+    "kepler_223_b.elements.node_deg",
+    "kepler_223_c.elements.node_deg",
+    "kepler_223_d.elements.node_deg",
+    "kepler_223_e.elements.node_deg"
+   ]
+  },
+  {
+   "id": "not_coherent_fit",
+   "text": {
+    "en": "Elements come from independently published solutions; the scene is a reconstruction, not a coherent photodynamical fit, and will not reproduce exact future transit times.",
+    "ru": "Элементы взяты из независимо опубликованных решений; сцена — реконструкция, а не согласованный фотодинамический fit, и не воспроизведёт точные будущие транзиты."
+   },
+   "affects": [
+    "bodies.state"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 22,
+  "derived": 18,
+  "reconstructed": 1,
+  "assumed": 12,
+  "literature": 0,
+  "authored": 4
+ },
+ "sources": [
+  {
+   "id": "nasa_ps_default",
+   "title": "NASA Exoplanet Archive, Planetary Systems (PS) table, default_flag=1 snapshot",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync (query in Atlas/atlas_hosts.json)",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_01b82e58",
+   "title": "NASA и ссылка на исследование",
+   "url": "https://science.nasa.gov/universe/exoplanets/dance-of-the-sub-neptunes-a-planetary-system-in-resonance/",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E19"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 10.1)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.00018 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "data_version": {
+  "catalogue": "NASA PS default snapshot",
+  "retrieved_utc": "2026-11-02T19:04:00.627107+00:00",
+  "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+ },
+ "plan": {
+  "research_id": "CS08",
+  "gameplay": "Резонанс, миграция и наблюдаемые транзиты"
+ }
+}

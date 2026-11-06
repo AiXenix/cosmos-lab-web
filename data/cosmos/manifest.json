@@ -1,0 +1,101 @@
+{
+ "schema": "aixenix.cosmos.content/1",
+ "brand": "AiXenix",
+ "generator": "web/docs/cosmos/build_cosmos_data.py",
+ "frame": {
+  "id": "galactocentric_pc",
+  "convention": "astropy Galactocentric (v4.0 defaults)",
+  "r0Pc": 8122.0,
+  "zSunPc": 20.8,
+  "sunPositionPc": [
+   -8121.973366122299,
+   -0.0,
+   20.8
+  ],
+  "gcRaDeg": 266.4051,
+  "gcDecDeg": -28.936175,
+  "roll0Deg": 58.5986320306,
+  "sources": [
+   "gravity2018",
+   "bennett_bovy2019",
+   "reid_brunthaler2004",
+   "astropy_galactocentric"
+  ]
+ },
+ "counts": {
+  "galaxies": 84,
+  "galaxiesC1": 31,
+  "regions": 13,
+  "knownStars": 403,
+  "gaiaOverlay": 5323
+ },
+ "snapshots": {
+  "bsc5p_bright.xml": {
+   "retrieved_utc": "2026-11-06T10:30:14Z",
+   "sha256": "c203e654d579c91e8792910dbbb3c274cb0e80675a80c613dcb66426358ecaeb",
+   "url": "https://heasarc.gsfc.nasa.gov/xamin/vo/tap/sync"
+  },
+  "gaia_dr3_cyg_x1.xml": {
+   "retrieved_utc": "2026-11-06T10:30:55Z",
+   "sha256": "8a4fd91fd6c26caa6d7057979864b51a28335bf95f645b67d87494bcef9e1ec7",
+   "url": "https://irsa.ipac.caltech.edu/TAP/sync"
+  },
+  "gaia_dr3_within_25pc.xml": {
+   "retrieved_utc": "2026-11-06T10:30:40Z",
+   "sha256": "1620ca6e395bc63d69a763c2a370625093a979b429adb41e59a9839faad979a2",
+   "url": "https://irsa.ipac.caltech.edu/TAP/sync"
+  },
+  "gaia_dr3_within_5pc.xml": {
+   "retrieved_utc": "2026-11-06T10:30:27Z",
+   "sha256": "6a612fa173321022e3ef9588c9110750c7d9b812f69ffc2bff664ecb47023692",
+   "url": "https://irsa.ipac.caltech.edu/TAP/sync"
+  },
+  "hipparcos_new.xml": {
+   "retrieved_utc": "2026-11-06T10:30:16Z",
+   "sha256": "4fbe27ca4c5941636c2ef1f8e85f593a31e2975206574c39f6162428d5ae3ca9",
+   "url": "https://heasarc.gsfc.nasa.gov/xamin/vo/tap/sync"
+  },
+  "iau_wgsn_names.json": {
+   "retrieved_utc": "2026-11-06T10:32:58Z",
+   "sha256": "149e9102f62467ed2d7aa4234288a525703ce284aa2de3336a3f0beddcc9c2ad",
+   "url": "https://exopla.net/star-names/modern-iau-star-names/"
+  },
+  "ned_galaxies.json": {
+   "retrieved_utc": "2026-11-06T10:30:11Z",
+   "sha256": "227281441549992223834499cd42a07723f16425ba16ba7a8d33672bf7ac52ca",
+   "url": "https://ned.ipac.caltech.edu/srs/ObjectLookup + https://ned.ipac.caltech.edu/cgi-bin/nDistance"
+  },
+  "ned_galaxies_ext.json": {
+   "retrieved_utc": "2026-11-06T11:14:18Z",
+   "sha256": "0141b9f745ab2bb9485ad986bc5fc13e676e12d42ffadb52ec8a60fba5fd26b5",
+   "url": "https://ned.ipac.caltech.edu/srs/ObjectLookup + https://ned.ipac.caltech.edu/cgi-bin/nDistance"
+  },
+  "nexsci_scene_hosts.xml": {
+   "retrieved_utc": "2026-11-06T10:32:55Z",
+   "sha256": "8baf2a02aa2ba30e5047d10783c935160e699a48ffd19859b8fe99fffa34e6d7",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
+  },
+  "rc3_bright.xml": {
+   "retrieved_utc": "2026-11-06T10:28:17Z",
+   "sha256": "17ca049d642395f3e98d28541b2153dc052df6600dcbb4fa64bb33ce621fd150",
+   "url": "https://heasarc.gsfc.nasa.gov/xamin/vo/tap/sync"
+  },
+  "ungc_all.xml": {
+   "retrieved_utc": "2026-11-06T11:11:16Z",
+   "sha256": "38424c923f60a7be39e3d0f2dac8f7be8efb42ed3462fb4caa98224a1c6129ee",
+   "url": "https://heasarc.gsfc.nasa.gov/xamin/vo/tap/sync"
+  },
+  "ungc_galaxies.xml": {
+   "retrieved_utc": "2026-11-06T10:28:14Z",
+   "sha256": "c1f3d452c955e4055f7f66d93880aa616c6c2f4ade430d186f10d29cef6b4e38",
+   "url": "https://heasarc.gsfc.nasa.gov/xamin/vo/tap/sync"
+  }
+ },
+ "files": {
+  "galaxies.json": "6378703f8c7590d0507fae06591f3635c11a3b2d92ad65c579c7c541d501ec5d",
+  "known_stars.json": "9bf0d0036ec7e998b30dc1e0786a5929ba16ca09ff951b6e6916831d604a696d",
+  "gaia_dr3_25pc.json": "2fc3739115382695df9e8d7f5e15758be80b208adc9fd0895f77933ff626c70b",
+  "sources.json": "299faf8ac74adb5dcf430f74a926c59e5e52137e6cbaafff2b04c1868714e437",
+  "regions.json": "2e8f2beb39af5003e98273ec1fd266963a14ed4bbad57b7279806ce22f0df5c3"
+ }
+}

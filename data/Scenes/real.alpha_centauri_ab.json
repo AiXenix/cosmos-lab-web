@@ -1,0 +1,636 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.alpha_centauri_ab",
+ "name": {
+  "en": "Alpha Centauri A/B",
+  "ru": "Альфа Центавра A/B"
+ },
+ "kind": "real_stellar_or_compact",
+ "group": "hierarchical_triple",
+ "description": {
+  "en": "The nearest stellar system: Sun-like A and B on an 80-year orbit, with Proxima on a ~550,000-year outer orbit.",
+  "ru": "Ближайшая звёздная система: солнцеподобные A и B на 80-летней орбите и Проксима на внешней орбите ~550 тыс. лет."
+ },
+ "gameplay": "Иерархическая кратность и условные планеты у A/B",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 1260883.908,
+  "suggested_horizon_s": 12608839080.0,
+  "time_scale_hint": 126088000.0,
+  "guard": {
+   "min_separation_m": 107277000.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "alpha_cen_ab",
+  "distance_m": 17951744484000.0,
+  "pitch_deg": -25.0,
+  "yaw_deg": 30.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "alpha_cen_ab",
+   "kind": "binary",
+   "members": [
+    "alpha_cen_a",
+    "alpha_cen_b"
+   ],
+   "name": {
+    "en": "A/B binary",
+    "ru": "Двойная A/B"
+   }
+  },
+  {
+   "id": "triple",
+   "kind": "hierarchy",
+   "members": [
+    "alpha_cen_a",
+    "alpha_cen_b",
+    "proxima_cen"
+   ],
+   "name": {
+    "en": "Hierarchical triple",
+    "ru": "Иерархическая тройная"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "alpha_cen_a",
+   "name": {
+    "en": "Alpha Centauri A (Rigil Kentaurus)",
+    "ru": "Альфа Центавра A (Ригил Кентаурус)"
+   },
+   "class": "star",
+   "subclass": "G2V",
+   "parent": null,
+   "mass_kg": 2.19818711274043e+30,
+   "radius_m": 851119380.0,
+   "position_m": [
+    -3991663272774.522,
+    96403428230504.22,
+    49830535910386.73
+   ],
+   "velocity_mps": [
+    1985.847673019562,
+    -861.1267235577952,
+    -760.6246971226274
+   ],
+   "star": {
+    "teff_k": 5790.0,
+    "luminosity_w": 5.8011863e+26,
+    "spectral_type": "G2V"
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 4239997968,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8809,
+      0.8258,
+      1
+     ],
+     "Seed": 968.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8809,
+        0.8258,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "kervella2016"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "kervella2016"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "kervella2016"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    }
+   }
+  },
+  {
+   "id": "alpha_cen_b",
+   "name": {
+    "en": "Alpha Centauri B (Toliman)",
+    "ru": "Альфа Центавра B (Толиман)"
+   },
+   "class": "star",
+   "subclass": "K1V",
+   "parent": "alpha_cen_ab",
+   "mass_kg": 1.86373657238499e+30,
+   "radius_m": 600528240.0,
+   "position_m": [
+    -1918390079050.968,
+    100904206750843.2,
+    47927201286580.25
+   ],
+   "velocity_mps": [
+    -2363.477315207337,
+    1027.847597339888,
+    874.4287109767312
+   ],
+   "star": {
+    "teff_k": 5260.0,
+    "luminosity_w": 1.9671227e+26,
+    "spectral_type": "K1V"
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 3653330391,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8254,
+      0.6952,
+      1
+     ],
+     "Seed": 391.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8254,
+        0.6952,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "kervella2016"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "kervella2016"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "kervella2016"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "literature",
+     "source": "pourbaix2016",
+     "method": "visual-binary elements (P, e, i, node, omega, T) -> state; omega convention of the astrometric orbit"
+    }
+   },
+   "elements": {
+    "a_m": 3521513146528.28,
+    "e": 0.5208,
+    "i_deg": 79.32,
+    "node_deg": 205.0,
+    "omega_deg": 232.3,
+    "mean_anomaly_deg": 199.7547241,
+    "period_s": 2521767815.99999,
+    "reference": "binary",
+    "convention": "sky"
+   }
+  },
+  {
+   "id": "proxima_cen",
+   "name": {
+    "en": "Proxima Centauri",
+    "ru": "Проксима Центавра"
+   },
+   "class": "star",
+   "subclass": "M5.5Ve",
+   "parent": "alpha_cen_ab",
+   "mass_kg": 2.42784845287749e+29,
+   "radius_m": 107276940.0,
+   "position_m": [
+    50867246266557.8,
+    -1647432456153872.0,
+    -819081271210845.4
+   ],
+   "velocity_mps": [
+    163.2488535684847,
+    -93.57870674475535,
+    174.1897778097785
+   ],
+   "star": {
+    "teff_k": 3042.0,
+    "luminosity_w": 7.0221676e+23,
+    "spectral_type": "M5.5Ve"
+   },
+   "appearance": {
+    "profile": "Star_RedDwarf",
+    "seed": 1122846481,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.4922,
+      0.1628,
+      1
+     ],
+     "Seed": 481.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Faint",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.4922,
+        0.1628,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "kervella2017"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "kervella2017"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "kervella2017"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "literature",
+     "source": "kervella2017",
+     "method": "outer orbit (a ~8700 au, e ~0.5, P ~547 kyr, periastron in ~283 kyr) -> state; large uncertainties"
+    }
+   },
+   "elements": {
+    "a_m": 1301501475090000.0,
+    "e": 0.5,
+    "i_deg": 107.6,
+    "node_deg": 126.0,
+    "omega_deg": 72.3,
+    "mean_anomaly_deg": 173.7477148,
+    "period_s": 17404923872466.5,
+    "reference": "hierarchical",
+    "convention": "sky"
+   }
+  }
+ ],
+ "optional_bodies": [
+  {
+   "id": "conditional_a_hz",
+   "name": {
+    "en": "Conditional planet in A's temperate zone",
+    "ru": "Условная планета в умеренной зоне A"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "alpha_cen_a",
+   "mass_kg": 5.972168399787245e+24,
+   "radius_m": 6378100.0,
+   "position_m": [
+    -3871250416058.011,
+    96521545651163.08,
+    49749807827084.83
+   ],
+   "velocity_mps": [
+    -16012.48839756715,
+    20224.33266302988,
+    3244.536834321953
+   ],
+   "elements": {
+    "a_m": 186997338375.0,
+    "e": 0.0,
+    "i_deg": 79.32,
+    "node_deg": 205.0,
+    "omega_deg": 0.0,
+    "mean_anomaly_deg": 40.0,
+    "period_s": 41946644.5051642,
+    "reference": "host",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    }
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 1564113778,
+    "params": {
+     "Seed": 238.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   },
+   "flags": {
+    "conditional": true,
+    "excluded_from_start": true,
+    "candidate": false,
+    "controversial": false,
+    "msini": false,
+    "reconstructed_fields": [
+     "*"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "conditional test planet coplanar with the A/B orbit; not an observed object"
+    }
+   },
+   "optional_note": {
+    "en": "Authored conditional insertion for experiments (E16); not a detected planet.",
+    "ru": "Авторская условная вставка для опытов (E16); не обнаруженная планета."
+   }
+  },
+  {
+   "id": "conditional_b_hz",
+   "name": {
+    "en": "Conditional planet in B's temperate zone",
+    "ru": "Условная планета в умеренной зоне B"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "alpha_cen_b",
+   "mass_kg": 5.972168399787245e+24,
+   "radius_m": 6378100.0,
+   "position_m": [
+    -1850958879289.722,
+    100970352506412.2,
+    47881993559931.18
+   ],
+   "velocity_mps": [
+    -24509.63481701542,
+    26972.57397326682,
+    5802.603057076889
+   ],
+   "elements": {
+    "a_m": 104718509490.0,
+    "e": 0.0,
+    "i_deg": 79.32,
+    "node_deg": 205.0,
+    "omega_deg": 0.0,
+    "mean_anomaly_deg": 40.0,
+    "period_s": 19090584.4805995,
+    "reference": "host",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    }
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 3854617158,
+    "params": {
+     "Seed": 803.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   },
+   "flags": {
+    "conditional": true,
+    "excluded_from_start": true,
+    "candidate": false,
+    "controversial": false,
+    "msini": false,
+    "reconstructed_fields": [
+     "*"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "conditional test planet coplanar with the A/B orbit; not an observed object"
+    }
+   },
+   "optional_note": {
+    "en": "Authored conditional insertion for experiments (E16); not a detected planet.",
+    "ru": "Авторская условная вставка для опытов (E16); не обнаруженная планета."
+   }
+  }
+ ],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "proxima_orbit",
+   "text": {
+    "en": "Proxima's bound orbit has large uncertainties; its state is a representative solution.",
+    "ru": "Связанная орбита Проксимы известна с большими погрешностями; состояние — представительное решение."
+   },
+   "affects": [
+    "proxima_cen.state"
+   ]
+  },
+  {
+   "id": "no_planets_start",
+   "text": {
+    "en": "No planets are in the start state: Proxima's planets live in their own scene, the 2025 JWST candidate around A is not included, and the optional planets here are authored conditional tests.",
+    "ru": "В старте нет планет: планеты Проксимы — в отдельной сцене, кандидат JWST 2025 у A не включён, а опциональные планеты здесь — авторские условные тесты."
+   },
+   "affects": [
+    "optional_bodies"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 6,
+  "reconstructed": 0,
+  "assumed": 0,
+  "literature": 11,
+  "authored": 6
+ },
+ "sources": [
+  {
+   "id": "kervella2016",
+   "title": "Kervella et al. 2016, A&A 594, A107 (alpha Cen A/B masses)",
+   "url": "https://arxiv.org/abs/1610.06079",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "pourbaix2016",
+   "title": "Pourbaix & Boffin 2016, A&A 586, A90 (alpha Cen AB orbit)",
+   "url": "https://arxiv.org/abs/1601.01636",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "kervella2017",
+   "title": "Kervella, Thevenin & Lovis 2017, A&A 598, L7 (Proxima orbit)",
+   "url": "https://arxiv.org/abs/1611.03495",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_f39314ea",
+   "title": "Динамическое исследование связи Proxima",
+   "url": "https://www.aanda.org/articles/aa/pdf/2017/02/aa29930-16.pdf",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E16"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 3.66e+03)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 3.1e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": "CS28",
+  "gameplay": "Иерархическая кратность и условные планеты у A/B"
+ }
+}

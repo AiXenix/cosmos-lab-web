@@ -1,0 +1,601 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.binary_s",
+ "name": {
+  "en": "Planets around one of two stars",
+  "ru": "Планеты у одной из двух звёзд"
+ },
+ "kind": "authored_procedural",
+ "group": "s_type_binary",
+ "description": {
+  "en": "Planets orbit one star while a companion circles the pair far out (S-type).",
+  "ru": "Планеты обращаются вокруг одной звезды, а компаньон — далеко снаружи (S-тип)."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 146470.0,
+  "suggested_horizon_s": 89297700000.0,
+  "time_scale_hint": 4604170.0,
+  "guard": {
+   "min_separation_m": 16131500.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 5656560000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "family_a",
+   "kind": "planet_family",
+   "members": [
+    "star_a",
+    "p1",
+    "p2"
+   ],
+   "name": {
+    "en": "Primary and its planets",
+    "ru": "Главная звезда и её планеты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "star_a",
+   "name": {
+    "en": "Renren A",
+    "ru": "Renren A"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 2.05241762764964e+30,
+   "radius_m": 713558959.902635,
+   "position_m": [
+    -651693960676.462,
+    -1024610491698.746,
+    -1035224699.403737
+   ],
+   "velocity_mps": [
+    3119.259015825758,
+    -1796.190235003676,
+    -1.799724513377845
+   ],
+   "star": {
+    "teff_k": 5882.77,
+    "luminosity_w": 4.3452043e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 1423020471,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8898,
+      0.8482,
+      1
+     ],
+     "Seed": 471.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8898,
+        0.8482,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 4404"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 4404"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 4404"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Renren Ab",
+    "ru": "Renren Ab"
+   },
+   "class": "planet",
+   "subclass": "water_world_hypothesis",
+   "parent": "star_a",
+   "mass_kg": 4.1448517683216e+25,
+   "radius_m": 16131461.4027175,
+   "position_m": [
+    -808766509445.4578,
+    -753069323500.3574,
+    9592757029.262398
+   ],
+   "velocity_mps": [
+    -15076.44863060253,
+    -11690.9346316923,
+    -389.0749334827868
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 308717584717.317,
+    "e": 0.03065381485,
+    "i_deg": 2.241383298,
+    "node_deg": 0,
+    "omega_deg": 355.5230335,
+    "mean_anomaly_deg": 121.5725966,
+    "period_s": 92083497.2421672,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 182.93
+   },
+   "appearance": {
+    "profile": "Planet_Ocean",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 538.0,
+     "LandColorA": [
+      0.2693,
+      0.3143,
+      0.1711,
+      1
+     ],
+     "LandColorB": [
+      0.373,
+      0.3379,
+      0.2646,
+      1
+     ],
+     "OceanColor": [
+      0.01026,
+      0.06192,
+      0.1714,
+      1
+     ],
+     "NoiseScale": 2.208,
+     "CloudCoverage": 0.521
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "p2",
+   "name": {
+    "en": "Renren Ac",
+    "ru": "Renren Ac"
+   },
+   "class": "planet",
+   "subclass": "neptune_like",
+   "parent": "star_a",
+   "mass_kg": 1.30807642233535e+26,
+   "radius_m": 31743719.7699591,
+   "position_m": [
+    -987380803404.0648,
+    -477582809496.6874,
+    6720837473.195118
+   ],
+   "velocity_mps": [
+    -9120.730630562233,
+    -9282.62495419348,
+    -107.9496666911282
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 619856730671.158,
+    "e": 0.03551485252,
+    "i_deg": 0.8123026063,
+    "node_deg": 0,
+    "omega_deg": 303.6762584,
+    "mean_anomaly_deg": 177.7004551,
+    "period_s": 261976838.262313,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 129.1
+   },
+   "appearance": {
+    "profile": "Giant_Neptune",
+    "seed": 1690977849,
+    "params": {
+     "Seed": 653.0,
+     "ColorA": [
+      0.8117,
+      0.7137,
+      0.5348,
+      1
+     ],
+     "ColorB": [
+      0.5808,
+      0.3614,
+      0.2535,
+      1
+     ],
+     "ColorC": [
+      0.9046,
+      0.7939,
+      0.8051,
+      1
+     ],
+     "BandCount": 10.5,
+     "Turbulence": 0.347,
+     "StormIntensity": 0.74,
+     "StormLatitude": 0.327
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "star_b",
+   "name": {
+    "en": "Renren B",
+    "ru": "Renren B"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "star_a",
+   "mass_kg": 1.32187685194006e+30,
+   "radius_m": 501845544.758258,
+   "position_m": [
+    1011978422868.765,
+    1590936641820.463,
+    1606380107.235401
+   ],
+   "velocity_mps": [
+    -4841.755283160954,
+    2790.147437498017,
+    2.817231825600532
+   ],
+   "star": {
+    "teff_k": 4517.91,
+    "luminosity_w": 7.4767222e+25,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 4193922392,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.7339,
+      0.5079,
+      1
+     ],
+     "Seed": 392.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.7339,
+        0.5079,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 4404"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 4404"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 4404"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 3697399567258.77,
+    "e": 0.1672895067,
+    "i_deg": 0.05785193875,
+    "node_deg": 0,
+    "omega_deg": 75.20103575,
+    "mean_anomaly_deg": 347.5222136,
+    "period_s": 2976589941.96341,
+    "reference": "binary",
+    "convention": "standard"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 6,
+  "reconstructed": 0,
+  "assumed": 2,
+  "literature": 0,
+  "authored": 16
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E15",
+  "E40"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 430)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.00015 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "s_type_binary",
+  "seed": 4404,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Renren",
+   "a_crit_m": 924374239056.875
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

@@ -1,0 +1,709 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.climate",
+ "name": {
+  "en": "Planetary engineering climate lab",
+  "ru": "Инженерная климатическая лаборатория"
+ },
+ "kind": "authored_procedural",
+ "group": "single_star",
+ "description": {
+  "en": "A Sun-like system with an Earth-mass target world at 1 au-equivalent flux for surface-grid engineering.",
+  "ru": "Солнцеподобная система с целевым миром земной массы при потоке, эквивалентном 1 а.е., для инженерии поверхностной сетки."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 1777.41,
+  "suggested_horizon_s": 494631000.0,
+  "time_scale_hint": 57886.3,
+  "guard": {
+   "min_separation_m": 3912210.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 264679000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [],
+ "bodies": [
+  {
+   "id": "star",
+   "name": {
+    "en": "Dravoqui",
+    "ru": "Dravoqui"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 1.533650034892e+30,
+   "radius_m": 565194972.439597,
+   "position_m": [
+    -327209.7712069955,
+    -167737.4208312516,
+    -1880.016568121516
+   ],
+   "velocity_mps": [
+    0.1314243666541644,
+    -0.1985571004398679,
+    -0.001525183101816562
+   ],
+   "star": {
+    "teff_k": 4939.22,
+    "luminosity_w": 1.3547287e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 499801682,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.788,
+      0.6145,
+      1
+     ],
+     "Seed": 682.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.788,
+        0.6145,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 11211"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 11211"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 11211"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Dravoqui b",
+    "ru": "Dravoqui b"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 2.34351044931114e+24,
+   "radius_m": 4952265.03431423,
+   "position_m": [
+    -1837431536.644413,
+    14262529861.28567,
+    56055847.61738997
+   ],
+   "velocity_mps": [
+    -85570.77071002392,
+    -12478.37563299051,
+    -144.5114786499881
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 15147058704.9188,
+    "e": 0.05327941337,
+    "i_deg": 0.2415644313,
+    "node_deg": 344.945735,
+    "omega_deg": 131.6269743,
+    "mean_anomaly_deg": 342.7043378,
+    "period_s": 1157726.57710708,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 617.1
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 788.0,
+     "LandColorA": [
+      0.817,
+      0.6163,
+      0.3985,
+      1
+     ],
+     "LandColorB": [
+      0.5252,
+      0.3677,
+      0.228,
+      1
+     ],
+     "OceanColor": [
+      0.02005,
+      0.06117,
+      0.1326,
+      1
+     ],
+     "NoiseScale": 1.878,
+     "CloudCoverage": 0.115
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "p2",
+   "name": {
+    "en": "Dravoqui c",
+    "ru": "Dravoqui c"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 3.59627967684072e+24,
+   "radius_m": 5580770.08057539,
+   "position_m": [
+    23470115149.88001,
+    -8983051550.147573,
+    52274912.71729738
+   ],
+   "velocity_mps": [
+    22499.91133796922,
+    57959.75008998142,
+    540.5273194370134
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 23914137124.0435,
+    "e": 0.05109939126,
+    "i_deg": 0.5116198052,
+    "node_deg": 325.5855846,
+    "omega_deg": 198.5604803,
+    "mean_anomaly_deg": 174.3710339,
+    "period_s": 2296651.52465602,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 491.12
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 1690977849,
+    "params": {
+     "Seed": 283.0,
+     "LandColorA": [
+      0.7323,
+      0.5767,
+      0.3587,
+      1
+     ],
+     "LandColorB": [
+      0.5249,
+      0.3504,
+      0.216,
+      1
+     ],
+     "OceanColor": [
+      0.01973,
+      0.05638,
+      0.1491,
+      1
+     ],
+     "NoiseScale": 2.588,
+     "CloudCoverage": 0.0863
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "p3",
+   "name": {
+    "en": "Dravoqui d",
+    "ru": "Dravoqui d"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 1.00671900455781e+24,
+   "radius_m": 3912212.37190747,
+   "position_m": [
+    -31684578224.95323,
+    -11828873897.64363,
+    223274703.7907146
+   ],
+   "velocity_mps": [
+    20964.41301094262,
+    -50739.681620803,
+    -800.1817401951455
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 33688679062.4344,
+    "e": 0.03481390994,
+    "i_deg": 0.9052703853,
+    "node_deg": 45.16819048,
+    "omega_deg": 253.7599832,
+    "mean_anomaly_deg": 265.5016396,
+    "period_s": 3840067.5357369,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 413.79
+   },
+   "appearance": {
+    "profile": "Planet_Desert",
+    "seed": 3489708867,
+    "params": {
+     "Seed": 244.0,
+     "LandColorA": [
+      0.7556,
+      0.5808,
+      0.3984,
+      1
+     ],
+     "LandColorB": [
+      0.4931,
+      0.337,
+      0.2046,
+      1
+     ],
+     "OceanColor": [
+      0.01914,
+      0.05522,
+      0.1298,
+      1
+     ],
+     "NoiseScale": 2.05,
+     "CloudCoverage": 0.0813
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "p4",
+   "name": {
+    "en": "Dravoqui e",
+    "ru": "Dravoqui e"
+   },
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "star",
+   "mass_kg": 5.97216839978724e+24,
+   "radius_m": 6378100.0,
+   "position_m": [
+    75956278455.68227,
+    44881526019.53435,
+    391675143.8199768
+   ],
+   "velocity_mps": [
+    -17254.07409257119,
+    29537.25118665316,
+    257.7676860083553
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "engineering target world (authored)"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "authored"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 88995001194.0884,
+    "e": 0.01,
+    "i_deg": 0.5,
+    "node_deg": 0,
+    "omega_deg": 0,
+    "mean_anomaly_deg": 30.0,
+    "period_s": 16487714.6589805,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 254.59
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 1291612587,
+    "params": {
+     "Seed": 398.0,
+     "LandColorA": [
+      0.2918,
+      0.366,
+      0.1909,
+      1
+     ],
+     "LandColorB": [
+      0.4517,
+      0.3584,
+      0.2701,
+      1
+     ],
+     "OceanColor": [
+      0.01894,
+      0.0683,
+      0.1579,
+      1
+     ],
+     "NoiseScale": 1.918,
+     "CloudCoverage": 0.497
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 6,
+  "reconstructed": 0,
+  "assumed": 4,
+  "literature": 0,
+  "authored": 20
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L11",
+  "L15",
+  "L16",
+  "L17"
+ ],
+ "experiment_ids": [
+  "E03",
+  "E32",
+  "E34",
+  "E43",
+  "E44",
+  "E46",
+  "E47",
+  "E49",
+  "E50",
+  "E51",
+  "E52",
+  "E54"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 25.2)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 1.9e-05 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "single_star",
+  "seed": 11211,
+  "version": "aixenix.gen/1",
+  "params": {
+   "habitable_lab": true
+  },
+  "meta": {
+   "host": "Dravoqui"
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

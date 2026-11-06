@@ -1,0 +1,3867 @@
+{
+ "format": "aixenix.cosmos.ui_strings",
+ "schemaVersion": 1,
+ "generator": "Tools/build_ui_strings.py",
+ "strings": {
+  "action.delete_selected": {
+   "en": "Delete selected",
+   "ru": "Удалить выбранное"
+  },
+  "action.focus_selected": {
+   "en": "Focus selected",
+   "ru": "Фокус на выбранном"
+  },
+  "action.help": {
+   "en": "Help",
+   "ru": "Справка"
+  },
+  "action.next_body": {
+   "en": "Next body",
+   "ru": "Следующее тело"
+  },
+  "action.open_add": {
+   "en": "Add object",
+   "ru": "Добавить объект"
+  },
+  "action.previous_body": {
+   "en": "Previous body",
+   "ru": "Предыдущее тело"
+  },
+  "action.redo": {
+   "en": "Redo",
+   "ru": "Повторить"
+  },
+  "action.reset_camera": {
+   "en": "Reset camera",
+   "ru": "Сбросить камеру"
+  },
+  "action.save": {
+   "en": "Save",
+   "ru": "Сохранить"
+  },
+  "action.slow_down": {
+   "en": "Slower time",
+   "ru": "Время медленнее"
+  },
+  "action.speed_up": {
+   "en": "Faster time",
+   "ru": "Время быстрее"
+  },
+  "action.toggle_labels": {
+   "en": "Labels on/off",
+   "ru": "Подписи вкл/выкл"
+  },
+  "action.toggle_pause": {
+   "en": "Pause / resume",
+   "ru": "Пауза / продолжить"
+  },
+  "action.toggle_trails": {
+   "en": "Trails on/off",
+   "ru": "Следы вкл/выкл"
+  },
+  "action.undo": {
+   "en": "Undo",
+   "ru": "Отменить"
+  },
+  "add.add": {
+   "en": "Add",
+   "ru": "Добавить"
+  },
+  "add.candidate.tip": {
+   "en": "Adds the candidate with its catalogue state. It stays marked as candidate/conditional.",
+   "ru": "Добавляет кандидата с каталожным состоянием. Он остаётся помечен как кандидат/условный."
+  },
+  "add.candidates": {
+   "en": "Candidates in this place (labelled, not in the start state)",
+   "ru": "Кандидаты этого места (подписаны, не входят в старт)"
+  },
+  "add.clear_overlays": {
+   "en": "Clear overlays",
+   "ru": "Убрать наложения"
+  },
+  "add.not_in_build": {
+   "en": "n/a",
+   "ru": "н/д"
+  },
+  "add.not_in_build.tip": {
+   "en": "This instrument is not available in this build.",
+   "ru": "Этот прибор недоступен в этой сборке."
+  },
+  "add.search": {
+   "en": "Search presets: ring, pulsar, binary, ocean...",
+   "ru": "Поиск пресетов: кольцо, пульсар, двойная, океан..."
+  },
+  "add.system_meta": {
+   "en": "system of {0} bodies",
+   "ru": "система из {0} тел"
+  },
+  "add.tools": {
+   "en": "Instruments and tools",
+   "ru": "Приборы и инструменты"
+  },
+  "add.use": {
+   "en": "Use",
+   "ru": "Применить"
+  },
+  "arch.agn_lab": {
+   "en": "A supermassive black hole (1e6-1e8 Msun) with a finite accretion disk, a jet and 4-6 stars on close, eccentric orbits.",
+   "ru": "Сверхмассивная чёрная дыра (1e6-1e8 Msun) с конечным аккреционным диском, джетом и 4-6 звёздами на тесных вытянутых орбитах."
+  },
+  "arch.hierarchical_triple": {
+   "en": "A close pair of stars and a third star far out; a planet can orbit the third star.",
+   "ru": "Тесная пара звёзд и третья звезда далеко от неё; вокруг третьей может обращаться планета."
+  },
+  "arch.hot_jupiter": {
+   "en": "A giant planet on a 1.2-5 day orbit close to its star; in about half of the systems an outer giant as well.",
+   "ru": "Гигант на орбите 1,2-5 суток близко к звезде; примерно в половине систем есть ещё внешний гигант."
+  },
+  "arch.moon_system_ring": {
+   "en": "A giant planet around a Sun-like star with 3-5 moons and a ring inside its Roche limit (the ring is visual and massless).",
+   "ru": "Гигант у звезды, похожей на Солнце, с 3-5 спутниками и кольцом внутри предела Роша (кольцо визуальное, без массы)."
+  },
+  "arch.p.bh_mass": {
+   "en": "Black hole mass, Msun",
+   "ru": "Масса чёрной дыры, Msun"
+  },
+  "arch.p.binary_a": {
+   "en": "Distance between the stars, AU",
+   "ru": "Расстояние между звёздами, а.е."
+  },
+  "arch.p.binary_e": {
+   "en": "Eccentricity of the pair",
+   "ru": "Эксцентриситет пары"
+  },
+  "arch.p.binary_period": {
+   "en": "Period of the pair, days",
+   "ru": "Период пары, сут"
+  },
+  "arch.p.debris_disk": {
+   "en": "Debris disk (massless)",
+   "ru": "Диск обломков (без массы)"
+  },
+  "arch.p.disk_fuel": {
+   "en": "Disk fuel, Msun",
+   "ru": "Запас диска, Msun"
+  },
+  "arch.p.eddington": {
+   "en": "Share of the Eddington luminosity",
+   "ru": "Доля эддингтоновской светимости"
+  },
+  "arch.p.first_period": {
+   "en": "Innermost orbital period, days",
+   "ru": "Период внутренней орбиты, сут"
+  },
+  "arch.p.giant_a": {
+   "en": "Giant distance, AU",
+   "ru": "Расстояние гиганта, а.е."
+  },
+  "arch.p.giant_count": {
+   "en": "Giant planets",
+   "ru": "Гигантов"
+  },
+  "arch.p.giant_mass": {
+   "en": "Giant mass, MJup",
+   "ru": "Масса гиганта, MJup"
+  },
+  "arch.p.hj_mass": {
+   "en": "Hot Jupiter mass, MJup",
+   "ru": "Масса горячего юпитера, MJup"
+  },
+  "arch.p.hj_period": {
+   "en": "Hot Jupiter period, days",
+   "ru": "Период горячего юпитера, сут"
+  },
+  "arch.p.host_planets": {
+   "en": "Planets of the host star",
+   "ru": "Планет у звезды"
+  },
+  "arch.p.impact": {
+   "en": "Impact parameter, AU",
+   "ru": "Прицельное расстояние, а.е."
+  },
+  "arch.p.inner_a": {
+   "en": "Innermost giant distance, AU",
+   "ru": "Расстояние внутреннего гиганта, а.е."
+  },
+  "arch.p.inner_masses": {
+   "en": "Masses of the inner pair, Msun",
+   "ru": "Массы звёзд внутренней пары, Msun"
+  },
+  "arch.p.inner_period": {
+   "en": "Period of the inner pair, days",
+   "ru": "Период внутренней пары, сут"
+  },
+  "arch.p.intruder_mass": {
+   "en": "Intruder mass, MJup",
+   "ru": "Масса пришельца, MJup"
+  },
+  "arch.p.mass_a": {
+   "en": "Star A mass, Msun",
+   "ru": "Масса звезды A, Msun"
+  },
+  "arch.p.mass_b": {
+   "en": "Star B mass, Msun",
+   "ru": "Масса звезды B, Msun"
+  },
+  "arch.p.moons": {
+   "en": "Moons",
+   "ru": "Спутников"
+  },
+  "arch.p.offset": {
+   "en": "Offset from exact resonance",
+   "ru": "Отклонение от точного резонанса"
+  },
+  "arch.p.outer_chance": {
+   "en": "Chance of an outer giant",
+   "ru": "Вероятность внешнего гиганта"
+  },
+  "arch.p.outer_mass": {
+   "en": "Third star mass, Msun",
+   "ru": "Масса третьей звезды, Msun"
+  },
+  "arch.p.periapse": {
+   "en": "Closest approach of the stars, r_s",
+   "ru": "Наименьшее расстояние звёзд, r_s"
+  },
+  "arch.p.period_ratio": {
+   "en": "Period ratio",
+   "ru": "Отношение периодов"
+  },
+  "arch.p.planets": {
+   "en": "Planets",
+   "ru": "Планет"
+  },
+  "arch.p.ratios": {
+   "en": "Resonances",
+   "ru": "Резонансы"
+  },
+  "arch.p.remnant": {
+   "en": "Remnant",
+   "ru": "Остаток звезды"
+  },
+  "arch.p.ring": {
+   "en": "Ring (visual, massless)",
+   "ru": "Кольцо (визуальное, без массы)"
+  },
+  "arch.p.spacing": {
+   "en": "Spacing factor between giants",
+   "ru": "Шаг между гигантами (множитель)"
+  },
+  "arch.p.star_mass": {
+   "en": "Star mass, Msun",
+   "ru": "Масса звезды, Msun"
+  },
+  "arch.p.stars": {
+   "en": "Stars",
+   "ru": "Звёзд"
+  },
+  "arch.p.start_distance": {
+   "en": "Start distance, AU",
+   "ru": "Начальное расстояние, а.е."
+  },
+  "arch.p.tertiary_planet": {
+   "en": "Planet around the third star",
+   "ru": "Планета у третьей звезды"
+  },
+  "arch.p.v_inf": {
+   "en": "Speed far away, km/s",
+   "ru": "Скорость вдали, км/с"
+  },
+  "arch.p.wd_mass": {
+   "en": "White dwarf mass, Msun",
+   "ru": "Масса белого карлика, Msun"
+  },
+  "arch.p_type_circumbinary": {
+   "en": "A close pair of stars (7-40 day period) with 1-3 planets orbiting both, outside the stability limit (like Kepler-16).",
+   "ru": "Тесная пара звёзд (период 7-40 суток) и 1-3 планеты вокруг обеих, за пределом устойчивости (как Kepler-16)."
+  },
+  "arch.red_dwarf_chain": {
+   "en": "A red dwarf (0.08-0.25 Msun) with 5-8 small planets on short orbits, each near a resonance with its neighbour (like TRAPPIST-1).",
+   "ru": "Красный карлик (0,08-0,25 Msun) с 5-8 небольшими планетами на коротких орбитах, каждая рядом с резонансом с соседом (как TRAPPIST-1)."
+  },
+  "arch.remnant_planets": {
+   "en": "Planets that survived around a white dwarf or a pulsar, with a tidal debris disk of test particles.",
+   "ru": "Планеты, уцелевшие у белого карлика или пульсара, и приливный диск обломков из пробных частиц."
+  },
+  "arch.resonant_chain": {
+   "en": "A Sun-like star with 4-6 planets near 3:2, 4:3 or 2:1 period ratios.",
+   "ru": "Звезда, похожая на Солнце, с 4-6 планетами вблизи отношений периодов 3:2, 4:3 или 2:1."
+  },
+  "arch.rogue_flyby": {
+   "en": "A Sun-like star with 2-4 planets and a free-floating planet or brown dwarf passing through on a hyperbolic path.",
+   "ru": "Звезда, похожая на Солнце, с 2-4 планетами и свободная планета или коричневый карлик, пролетающий по гиперболе."
+  },
+  "arch.s_type_binary": {
+   "en": "Two stars 20-60 AU apart; 1-3 planets orbit one of them inside its stable zone.",
+   "ru": "Две звезды на расстоянии 20-60 а.е.; 1-3 планеты обращаются вокруг одной из них внутри зоны устойчивости."
+  },
+  "arch.single_star": {
+   "en": "A Sun-like star (0.7-1.3 Msun) with 4-8 planets: rocky worlds inside the snow line, giants or ice giants beyond it, on nearly circular, nearly flat orbits.",
+   "ru": "Звезда, похожая на Солнце (0,7-1,3 Msun), и 4-8 планет: каменные внутри линии льда, гиганты или ледяные гиганты за ней; орбиты почти круговые и почти плоские."
+  },
+  "arch.wide_giants": {
+   "en": "A bright star with 3-5 giant planets far out (the first at 8-18 AU) and warm and cold belts of test particles.",
+   "ru": "Яркая звезда с 3-5 гигантами далеко от неё (первый на 8-18 а.е.) и тёплым и холодным поясами пробных частиц."
+  },
+  "atlas.aliases": {
+   "en": "Also known as: {0}",
+   "ru": "Также известна как: {0}"
+  },
+  "atlas.card_only": {
+   "en": "data card only",
+   "ru": "только карточка данных"
+  },
+  "atlas.controversial_flag": {
+   "en": " | CONTROVERSIAL",
+   "ru": " | СПОРНОЕ"
+  },
+  "atlas.distance": {
+   "en": "distance",
+   "ru": "расстояние"
+  },
+  "atlas.distance_l": {
+   "en": "Distance",
+   "ru": "Расстояние"
+  },
+  "atlas.error": {
+   "en": "Atlas unavailable: {0}",
+   "ru": "Атлас недоступен: {0}"
+  },
+  "atlas.f_all": {
+   "en": "All",
+   "ru": "Все"
+  },
+  "atlas.f_controversial": {
+   "en": "Controversial",
+   "ru": "Спорные"
+  },
+  "atlas.f_multi": {
+   "en": "Several planets",
+   "ru": "Несколько планет"
+  },
+  "atlas.f_scene": {
+   "en": "Has a lab scene",
+   "ru": "Есть сцена"
+  },
+  "atlas.f_stars": {
+   "en": "Several stars",
+   "ru": "Несколько звёзд"
+  },
+  "atlas.has_scene": {
+   "en": "lab scene available",
+   "ru": "есть сцена лаборатории"
+  },
+  "atlas.loading": {
+   "en": "Loading the NASA snapshot (6451 planets, 4847 hosts)...",
+   "ru": "Загрузка снимка NASA (6451 планета, 4847 хозяев)..."
+  },
+  "atlas.lower_limit": {
+   "en": "lower limit ",
+   "ru": "нижний предел "
+  },
+  "atlas.msini": {
+   "en": " (M sin i, minimum)",
+   "ru": " (M sin i, минимум)"
+  },
+  "atlas.no_scene": {
+   "en": "No reconstructed scene: the archive does not give a consistent 3D state (nodes, phases, joint fit). This card shows the data only; nothing is simulated.",
+   "ru": "Реконструированной сцены нет: архив не даёт согласованного 3D-состояния (узлы, фазы, совместное решение). Карточка показывает только данные; ничего не моделируется."
+  },
+  "atlas.not_found": {
+   "en": "{0} is not in the atlas.",
+   "ru": "{0} нет в атласе."
+  },
+  "atlas.open_record.tip": {
+   "en": "Open this planet's archive record",
+   "ru": "Открыть архивную запись этой планеты"
+  },
+  "atlas.open_scene": {
+   "en": "Open the curated lab scene",
+   "ru": "Открыть подготовленную сцену"
+  },
+  "atlas.page": {
+   "en": "{0} matches - page {1} / {2}",
+   "ru": "найдено {0} — страница {1} / {2}"
+  },
+  "atlas.planet_rows": {
+   "en": "Planets (archive rows; empty = not provided, never zero)",
+   "ru": "Планеты (строки архива; пусто = не указано, никогда не ноль)"
+  },
+  "atlas.planets": {
+   "en": "planets",
+   "ru": "планет"
+  },
+  "atlas.record_detail": {
+   "en": "Archive record: {0}; mass {1}; reference {2}. Values are the archive's, not a fitted 3D state.",
+   "ru": "Архивная запись: {0}; масса {1}; источник {2}. Это значения архива, а не подогнанное трёхмерное состояние."
+  },
+  "atlas.record_not_found": {
+   "en": "{0} has no record {1} in the atlas.",
+   "ru": "У {0} нет записи {1} в атласе."
+  },
+  "atlas.search_hint": {
+   "en": "Host or alias (Kepler-90, KOI-351, TRAPPIST-1...)",
+   "ru": "Хозяин или псевдоним (Kepler-90, KOI-351, TRAPPIST-1...)"
+  },
+  "atlas.snapshot": {
+   "en": "Snapshot: {0} planets of {1} hosts, retrieved {2} (SHA-256 {3}). A catalogue row is not a ready simulation: only curated places open in the lab.",
+   "ru": "Снимок: {0} планет у {1} хозяев, получен {2} (SHA-256 {3}). Строка каталога — не готовая симуляция: в лаборатории открываются только подготовленные места."
+  },
+  "atlas.st_mass": {
+   "en": "Star mass",
+   "ru": "Масса звезды"
+  },
+  "atlas.st_rad": {
+   "en": "Star radius",
+   "ru": "Радиус звезды"
+  },
+  "atlas.st_teff": {
+   "en": "Star temperature",
+   "ru": "Температура звезды"
+  },
+  "atlas.stars": {
+   "en": "Stars in system (reported)",
+   "ru": "Звёзд в системе (по данным)"
+  },
+  "atlas.upper_limit": {
+   "en": "upper limit ",
+   "ru": "верхний предел "
+  },
+  "atm.bad_pressure": {
+   "en": "The surface pressure must be zero or positive.",
+   "ru": "Давление у поверхности должно быть нулём или положительным."
+  },
+  "atm.edit_pressure": {
+   "en": "Surface pressure (Pa): same gas, the greenhouse follows the column; 0 removes it",
+   "ru": "Давление у поверхности (Па): тот же газ, парниковый эффект следует за столбом; 0 убирает атмосферу"
+  },
+  "atm.h.airless": {
+   "en": "Airless bare rock",
+   "ru": "Безвоздушный голый камень"
+  },
+  "atm.h.dense": {
+   "en": "Dense atmosphere with ocean",
+   "ru": "Плотная атмосфера с океаном"
+  },
+  "atm.h.ocean_world": {
+   "en": "Water-rich ocean world",
+   "ru": "Богатый водой мир-океан"
+  },
+  "atm.h.rocky_n2": {
+   "en": "Rocky with N2 atmosphere",
+   "ru": "Каменистая с азотной атмосферой"
+  },
+  "atm.h.snowball": {
+   "en": "Snowball",
+   "ru": "Снежок"
+  },
+  "atm.h.thin": {
+   "en": "Thin N2/CO2 atmosphere",
+   "ru": "Тонкая атмосфера N2/CO2"
+  },
+  "atm.hypotheses": {
+   "en": "Hypotheses from the data (unknown in reality): each sets pressure, gas and Bond albedo in one undoable step.",
+   "ru": "Гипотезы из данных (в реальности неизвестно): каждая задаёт давление, газ и альбедо Бонда за один отменяемый шаг."
+  },
+  "atm.no_body": {
+   "en": "No such body in the open world.",
+   "ru": "Такого тела нет в открытом мире."
+  },
+  "atm.no_hypothesis": {
+   "en": "The scene defines no atmosphere hypothesis {0} for {1}.",
+   "ru": "В сцене нет гипотезы атмосферы {0} для {1}."
+  },
+  "atm.none": {
+   "en": "none in the model",
+   "ru": "в модели нет"
+  },
+  "atm.not_planet": {
+   "en": "Only planets and moons carry a model atmosphere.",
+   "ru": "Модельная атмосфера бывает только у планет и спутников."
+  },
+  "atm.state": {
+   "en": "Pressure, optical depth, column",
+   "ru": "Давление, оптическая толщина, столб"
+  },
+  "atm.title": {
+   "en": "Atmosphere (grey model)",
+   "ru": "Атмосфера (серая модель)"
+  },
+  "beam.bad_axis": {
+   "en": "The beam needs a direction and a half angle between 0 and 90 degrees.",
+   "ru": "Лучу нужно направление и полуугол от 0 до 90 градусов."
+  },
+  "beam.need_pulsar": {
+   "en": "Only a pulsar has a beam to turn.",
+   "ru": "Луч, который можно повернуть, есть только у пульсара."
+  },
+  "bookmark.add": {
+   "en": "Bookmark this place",
+   "ru": "Добавить в закладки"
+  },
+  "bookmark.only_catalogue": {
+   "en": "Only catalogue places can be bookmarked; save a generated or edited world instead.",
+   "ru": "В закладки добавляются только места каталога; созданный или изменённый мир сохраните."
+  },
+  "bookmark.remove": {
+   "en": "Bookmarked (remove)",
+   "ru": "В закладках (убрать)"
+  },
+  "bookmark.tip": {
+   "en": "Bookmarks are kept offline and form a route through several worlds.",
+   "ru": "Закладки хранятся на устройстве без сети и образуют маршрут через несколько миров."
+  },
+  "bookmarks.empty": {
+   "en": "No bookmarks yet: use \"Bookmark this place\" in a passport or in the lab.",
+   "ru": "Закладок пока нет: нажмите «Добавить в закладки» в паспорте места или в лаборатории."
+  },
+  "bookmarks.intro": {
+   "en": "Bookmarked places are stored on this device and work offline. A route opens them one after another; it is completed when every stop has been opened.",
+   "ru": "Закладки хранятся на этом устройстве и работают без сети. Маршрут открывает их по очереди и считается пройденным, когда открыта каждая остановка."
+  },
+  "bookmarks.remove": {
+   "en": "Remove",
+   "ru": "Убрать"
+  },
+  "brand.company": {
+   "en": "AiXenix",
+   "ru": "AiXenix"
+  },
+  "brand.copyright": {
+   "en": "(c) 2026 AiXenix - aixenix.com",
+   "ru": "(c) 2026 AiXenix — aixenix.com"
+  },
+  "brand.title": {
+   "en": "Cosmos Lab",
+   "ru": "Cosmos Lab"
+  },
+  "brush.albedo": {
+   "en": "albedo",
+   "ru": "альбедо"
+  },
+  "brush.heat": {
+   "en": "heat",
+   "ru": "тепло"
+  },
+  "brush.height": {
+   "en": "terrain",
+   "ru": "рельеф"
+  },
+  "brush.ice": {
+   "en": "ice",
+   "ru": "лёд"
+  },
+  "brush.water": {
+   "en": "water",
+   "ru": "вода"
+  },
+  "class.asteroid": {
+   "en": "Asteroid",
+   "ru": "Астероид"
+  },
+  "class.black_hole": {
+   "en": "Black hole",
+   "ru": "Чёрная дыра"
+  },
+  "class.brown_dwarf": {
+   "en": "Brown dwarf",
+   "ru": "Коричневый карлик"
+  },
+  "class.comet": {
+   "en": "Comet",
+   "ru": "Комета"
+  },
+  "class.dwarf_planet": {
+   "en": "Dwarf planet",
+   "ru": "Карликовая планета"
+  },
+  "class.fragment": {
+   "en": "Fragment",
+   "ru": "Обломок"
+  },
+  "class.moon": {
+   "en": "Moon",
+   "ru": "Спутник"
+  },
+  "class.neutron_star": {
+   "en": "Neutron star",
+   "ru": "Нейтронная звезда"
+  },
+  "class.planet": {
+   "en": "Planet",
+   "ru": "Планета"
+  },
+  "class.pulsar": {
+   "en": "Pulsar",
+   "ru": "Пульсар"
+  },
+  "class.star": {
+   "en": "Star",
+   "ru": "Звезда"
+  },
+  "class.test_particle": {
+   "en": "Test particle (massless)",
+   "ru": "Пробная частица (без массы)"
+  },
+  "class.unknown": {
+   "en": "Object",
+   "ru": "Объект"
+  },
+  "class.white_dwarf": {
+   "en": "White dwarf",
+   "ru": "Белый карлик"
+  },
+  "compact.beam": {
+   "en": "Beam half-width / magnetic inclination",
+   "ru": "Полуширина луча / магнитное наклонение"
+  },
+  "compact.beam_to_observer": {
+   "en": "Point the beam at the observer now (gravity unchanged)",
+   "ru": "Направить луч на наблюдателя сейчас (гравитация не меняется)"
+  },
+  "compact.beam_to_observer.tip": {
+   "en": "Sets the magnetic inclination and rotation phase so the beam axis points along the observer direction (scene data, else the camera).",
+   "ru": "Задаёт магнитное наклонение и фазу вращения так, чтобы ось луча смотрела на наблюдателя (направление из данных сцены, иначе камера)."
+  },
+  "compact.edit_beam_power": {
+   "en": "Beam power share (0..1) - part of the luminosity in the two beams, the rest isotropic",
+   "ru": "Доля мощности в лучах (0..1): часть светимости в двух лучах, остальное изотропно"
+  },
+  "compact.edit_incl": {
+   "en": "Magnetic inclination (deg) - changes the beam, never gravity",
+   "ru": "Магнитное наклонение (°) — меняет луч, но не гравитацию"
+  },
+  "compact.edit_mdot": {
+   "en": "Accretion rate (Msun/yr)",
+   "ru": "Темп аккреции (Msun/год)"
+  },
+  "compact.fuel": {
+   "en": "Disk reservoir (finite fuel)",
+   "ru": "Запас диска (конечное топливо)"
+  },
+  "compact.guard": {
+   "en": "Model guard radius",
+   "ru": "Граничный радиус модели"
+  },
+  "compact.guard_note": {
+   "en": "Inside the guard radius Newtonian gravity is no longer valid: the simulation pauses and offers a labelled model event instead of a fake result.",
+   "ru": "Внутри граничного радиуса ньютоновская гравитация неприменима: симуляция встаёт на паузу и предлагает подписанное модельное событие вместо ложного результата."
+  },
+  "compact.hole_mass": {
+   "en": "Hole mass",
+   "ru": "Масса дыры"
+  },
+  "compact.lacc": {
+   "en": "Accretion luminosity eta*mdot*c^2",
+   "ru": "Светимость аккреции η·ṁ·c²"
+  },
+  "compact.lens_note": {
+   "en": "The dark shadow and ring are an illustrative screen-space picture, not general-relativistic ray tracing. Gravity here is Newtonian outside the guard radius.",
+   "ru": "Тёмная тень и кольцо — иллюстративная экранная картинка, а не трассировка лучей ОТО. Гравитация вне граничного радиуса ньютоновская."
+  },
+  "compact.lens_note_v2": {
+   "en": "Shadow, photon ring and lensed disk: light is traced through a Schwarzschild (non-spinning) table at the drawn size of the hole (visual mass). The thin disk is idealised and drawn to 30 inner radii; close to the camera it is trimmed for the view. Jets are a visual indicator of power and axis. Gravity here is Newtonian outside the guard radius.",
+   "ru": "Тень, фотонное кольцо и линзированный диск: свет прослеживается по таблице Шварцшильда (без вращения) для видимого размера дыры (визуальная масса). Тонкий диск идеализирован и нарисован до 30 внутренних радиусов; возле камеры он подрезан для обзора. Джеты — визуальный индикатор мощности и оси. Гравитация здесь ньютоновская вне граничного радиуса."
+  },
+  "compact.mdot": {
+   "en": "Requested accretion rate",
+   "ru": "Запрошенный темп аккреции"
+  },
+  "compact.no_disk": {
+   "en": "no accretion disk",
+   "ru": "нет аккреционного диска"
+  },
+  "compact.none": {
+   "en": "Select a neutron star, pulsar or black hole. Stars can be replaced by a black hole of the same mass in Properties.",
+   "ru": "Выберите нейтронную звезду, пульсар или чёрную дыру. Звезду можно заменить чёрной дырой той же массы во вкладке «Свойства»."
+  },
+  "compact.rs": {
+   "en": "Schwarzschild radius 2GM/c2",
+   "ru": "Радиус Шварцшильда 2GM/c²"
+  },
+  "compact.spin": {
+   "en": "Spin period",
+   "ru": "Период вращения"
+  },
+  "compact.tilt_jet": {
+   "en": "Tilt the jet by 30 degrees (mass unchanged)",
+   "ru": "Наклонить джет на 30° (масса не меняется)"
+  },
+  "compare.copy_note": {
+   "en": "{0} here is a temporary copy run from its stored state to this time in whole base steps; the stored branch and this world are unchanged.",
+   "ru": "{0} здесь - временная копия, прогнанная из сохранённого состояния до этого времени целыми базовыми шагами; сохранённая ветка и этот мир не изменились."
+  },
+  "compare.header": {
+   "en": "{0}: this branch at {1} vs {2} at {3}",
+   "ru": "{0}: эта ветка на {1} против {2} на {3}"
+  },
+  "compare.intro": {
+   "en": "A comparison is fair at one physical time. Run the other branch to the current time first, then compare the selected body.",
+   "ru": "Сравнение честно в одно физическое время. Сначала досчитайте другую ветку до текущего времени, затем сравните выбранное тело."
+  },
+  "compare.invalid": {
+   "en": "Not recorded: {0} needs a value in both branches ({1}).",
+   "ru": "Не записано: для {0} нужно значение в обеих ветках ({1})."
+  },
+  "compare.missing": {
+   "en": "This body does not exist in the other branch (removed or merged).",
+   "ru": "Этого тела нет в другой ветке (удалено или слилось)."
+  },
+  "compare.peek": {
+   "en": "Compare with {0}",
+   "ru": "Сравнить с {0}"
+  },
+  "compare.record": {
+   "en": "Record",
+   "ru": "Записать"
+  },
+  "compare.recorded": {
+   "en": "Comparison of {0} recorded.",
+   "ru": "Сравнение {0} записано."
+  },
+  "compare.run_copy_to_now": {
+   "en": "Run a copy of {0} to this time",
+   "ru": "Прогнать копию {0} до этого времени"
+  },
+  "compare.time_mismatch": {
+   "en": "The branches are at different times: this comparison mixes time and intervention.",
+   "ru": "Ветки в разном времени: сравнение смешивает время и вмешательство."
+  },
+  "compare.title": {
+   "en": "Compare branches",
+   "ru": "Сравнение веток"
+  },
+  "create.algorithm": {
+   "en": "Algorithm (draws in this order)",
+   "ru": "Алгоритм (порядок выборок)"
+  },
+  "create.bad_seed": {
+   "en": "The seed must be a whole number from 0 to 4294967295.",
+   "ru": "Seed должен быть целым числом от 0 до 4294967295."
+  },
+  "create.details_hide": {
+   "en": "Hide reproducibility details",
+   "ru": "Скрыть подробности воспроизводимости"
+  },
+  "create.details_show": {
+   "en": "Reproducibility details (generator version, exact draw order)",
+   "ru": "Подробности воспроизводимости (версия генератора, точный порядок розыгрыша)"
+  },
+  "create.failed": {
+   "en": "The generator could not build this system: {0}",
+   "ru": "Генератор не смог построить систему: {0}"
+  },
+  "create.generate": {
+   "en": "Generate and open",
+   "ru": "Создать и открыть"
+  },
+  "create.generate.tip": {
+   "en": "The core builds the system from the seed, checks the composition and opens an independent world (mode D).",
+   "ru": "Ядро строит систему по seed, проверяет состав и открывает независимый мир (режим D)."
+  },
+  "create.habitable_lab": {
+   "en": "Habitable lab: the planet nearest to Earth-like flux becomes a 1 Earth-mass planet",
+   "ru": "Обитаемая лаборатория: планета с потоком, ближайшим к земному, заменяется планетой массой 1 Земли"
+  },
+  "create.in_core": {
+   "en": "in this build",
+   "ru": "есть в этой сборке"
+  },
+  "create.new_system": {
+   "en": "A new system: it opens as generated.{0}.s<seed> and can be saved like any world.",
+   "ru": "Новая система: откроется как generated.{0}.s<seed>, её можно сохранить как любой мир."
+  },
+  "create.no_archetypes": {
+   "en": "No archetype list found in Content/Data/Catalogue/archetypes.json. The build is incomplete.",
+   "ru": "Список архетипов Content/Data/Catalogue/archetypes.json не найден. Сборка неполная."
+  },
+  "create.no_stability_claim": {
+   "en": "static checks only, long-term stability is not claimed",
+   "ru": "только статические проверки, долгосрочная устойчивость не утверждается"
+  },
+  "create.not_in_core": {
+   "en": "not in this build",
+   "ru": "нет в этой сборке"
+  },
+  "create.provenance": {
+   "en": "procedural: every value follows from the seed",
+   "ru": "процедурно: каждое значение следует из seed"
+  },
+  "create.random_seed": {
+   "en": "Random seed",
+   "ru": "Случайный seed"
+  },
+  "create.ranges2": {
+   "en": "What the seed chooses",
+   "ru": "Что выбирает зерно"
+  },
+  "create.raw_params": {
+   "en": "Parameter keys as stored",
+   "ru": "Ключи параметров как в данных"
+  },
+  "create.reproduces": {
+   "en": "This seed reproduces the authored place \"{0}\"; its initial state can be compared with the catalogue (lesson L07).",
+   "ru": "Этот seed воспроизводит авторское место «{0}»; его начальное состояние можно сравнить с каталогом (урок L07)."
+  },
+  "create.seed": {
+   "en": "Seed",
+   "ru": "Seed"
+  },
+  "create.seed_hint": {
+   "en": "whole number 0 ... 4294967295",
+   "ru": "целое число 0 ... 4294967295"
+  },
+  "create.subtitle": {
+   "en": "Authored systems are generated with fixed seeds and a versioned algorithm. Open one, then add stars, planets, moons and compact objects from the Add tab.",
+   "ru": "Авторские системы созданы с фиксированным seed и версией алгоритма. Откройте одну и добавляйте звёзды, планеты, спутники и компактные объекты во вкладке «Добавить»."
+  },
+  "create.tab_generator": {
+   "en": "Generator (12 archetypes)",
+   "ru": "Генератор (12 архетипов)"
+  },
+  "create.tab_places": {
+   "en": "Authored places (11)",
+   "ru": "Авторские места (11)"
+  },
+  "create.title": {
+   "en": "Create a system",
+   "ru": "Создать систему"
+  },
+  "create.unsupported": {
+   "en": "This archetype is listed in the data, but the core generator of this build does not implement it.",
+   "ru": "Архетип есть в данных, но генератор ядра этой сборки его не реализует."
+  },
+  "credits.black_holes": {
+   "en": "Black holes are drawn by tracing light in the Schwarzschild (non-rotating) metric with a precomputed ray table: the shadow, the photon ring and the lensed disk images follow the bending of light, and disk brightness includes the Doppler and gravitational shift. Disk turbulence is illustrative; spin (Kerr) effects are not modelled; orbits stay Newtonian.",
+   "ru": "Чёрные дыры рисуются трассировкой света в метрике Шварцшильда (без вращения) по заранее рассчитанной таблице лучей: тень, фотонное кольцо и линзированные изображения диска следуют изгибу света, а яркость диска учитывает доплеровский и гравитационный сдвиг. Турбулентность диска иллюстративна; эффекты вращения (Керр) не моделируются; орбиты остаются ньютоновскими."
+  },
+  "credits.data": {
+   "en": "Data",
+   "ru": "Данные"
+  },
+  "credits.engine": {
+   "en": "Technology",
+   "ru": "Технологии"
+  },
+  "credits.exact_hide": {
+   "en": "Hide the exact source records",
+   "ru": "Скрыть точные записи об источниках"
+  },
+  "credits.exact_show": {
+   "en": "Exact source records (file, source and rights as recorded)",
+   "ru": "Точные записи об источниках (файл, источник и права, как записано)"
+  },
+  "credits.images": {
+   "en": "Image sources (as recorded with each texture)",
+   "ru": "Источники изображений (как записано для каждой текстуры)"
+  },
+  "credits.images_missing": {
+   "en": "The image credit list is missing from this build (Content/CosmosUI/credits.json).",
+   "ru": "В этой сборке нет списка авторов изображений (Content/CosmosUI/credits.json)."
+  },
+  "credits.jpl": {
+   "en": "Solar System states: NASA/JPL Horizons (J2000 TDB, ecliptic) and JPL GM values (DE440). Physical radii and rotation: IAU WGCCRE.",
+   "ru": "Состояния Солнечной системы: NASA/JPL Horizons (J2000 TDB, эклиптика) и значения GM JPL (DE440). Радиусы и вращение: IAU WGCCRE."
+  },
+  "credits.literature": {
+   "en": "Each scene lists its literature sources in the passport.",
+   "ru": "Каждая сцена перечисляет свои литературные источники в паспорте."
+  },
+  "credits.made_by": {
+   "en": "AiXenix Cosmos Lab - created by AiXenix",
+   "ru": "AiXenix Cosmos Lab — создано AiXenix"
+  },
+  "credits.models": {
+   "en": "Models and limits",
+   "ru": "Модели и границы"
+  },
+  "credits.models_text": {
+   "en": "Newtonian point-mass N-body dynamics with collisions, a heuristic energy-balance surface grid (not a climate model), synthetic transit/RV/pulsar observations, finite-fuel accretion. No general relativity beyond labelled guard limits, no gas dynamics, no claims about life. Exoplanet looks are artistic.",
+   "ru": "Ньютоновская динамика точечных масс N-body со столкновениями, эвристическая сетка энергобаланса поверхности (не климатическая модель), синтетические наблюдения транзитов/RV/пульсаров, аккреция с конечным топливом. Нет общей теории относительности за пределами подписанных границ, нет газодинамики, нет утверждений о жизни. Внешний вид экзопланет художественный."
+  },
+  "credits.nasa": {
+   "en": "This game uses a snapshot of the NASA Exoplanet Archive (Planetary Systems table, default parameter sets, retrieved 2026-11-02), operated by the California Institute of Technology under contract with NASA. Catalogue rows are shown as published; reconstructions are labelled.",
+   "ru": "Игра использует снимок архива экзопланет NASA (таблица Planetary Systems, рекомендуемые наборы параметров, получен 2026-11-02), который ведёт Калифорнийский технологический институт по контракту с NASA. Строки каталога показаны как опубликованы; реконструкции подписаны."
+  },
+  "credits.title": {
+   "en": "Credits",
+   "ru": "Авторы"
+  },
+  "credits.unreal": {
+   "en": "Made with Unreal Engine. Unreal and Unreal Engine are trademarks or registered trademarks of Epic Games, Inc.",
+   "ru": "Сделано на Unreal Engine. Unreal и Unreal Engine — товарные знаки или зарегистрированные товарные знаки Epic Games, Inc."
+  },
+  "diag.branch": {
+   "en": "Branch",
+   "ru": "Ветка"
+  },
+  "diag.branch_b": {
+   "en": "Copy world to branch B",
+   "ru": "Скопировать мир в ветку B"
+  },
+  "diag.branch_b.tip": {
+   "en": "A/B comparison: both branches start from the same physical time.",
+   "ru": "Сравнение A/B: обе ветки начинаются в одном физическом времени."
+  },
+  "diag.branch_created2": {
+   "en": "Branch {0} created from the current state. Switch to it to try a different change.",
+   "ru": "Ветка {0} создана из текущего состояния. Переключитесь на неё, чтобы попробовать другое изменение."
+  },
+  "diag.branch_failed": {
+   "en": "Branch not created: {0}",
+   "ru": "Ветка не создана: {0}"
+  },
+  "diag.caps": {
+   "en": "Capabilities in use",
+   "ru": "Используемые возможности"
+  },
+  "diag.caps_missing": {
+   "en": "not supported by this build: {0}",
+   "ru": "не поддерживаются этой сборкой: {0}"
+  },
+  "diag.caps_none": {
+   "en": "none",
+   "ru": "нет"
+  },
+  "diag.copy_done": {
+   "en": "A copy of branch {0} now sits at t = {1}; the stored branch and this world are unchanged.",
+   "ru": "Копия ветки {0} теперь в t = {1}; сохранённая ветка и этот мир не изменились."
+  },
+  "diag.copy_failed": {
+   "en": "No comparison: {0}",
+   "ru": "Сравнения нет: {0}"
+  },
+  "diag.copy_running": {
+   "en": "Running a copy of branch {0} to this time...",
+   "ru": "Копия ветки {0} идёт до этого времени..."
+  },
+  "diag.energy": {
+   "en": "Orbital energy error |dE|/(K+|U|)",
+   "ru": "Ошибка орбитальной энергии |ΔE|/(K+|U|)"
+  },
+  "diag.epoch0": {
+   "en": "Epoch of t = 0 (TDB)",
+   "ru": "Эпоха t = 0 (TDB)"
+  },
+  "diag.epoch_now": {
+   "en": "Absolute time now (TDB)",
+   "ru": "Абсолютное время сейчас (TDB)"
+  },
+  "diag.hash": {
+   "en": "State hash",
+   "ru": "Хеш состояния"
+  },
+  "diag.history": {
+   "en": "Undo history",
+   "ru": "История отмен"
+  },
+  "diag.history_value": {
+   "en": "{0} steps, {1} MB kept",
+   "ru": "{0} шагов, {1} МБ"
+  },
+  "diag.integrator": {
+   "en": "Integrator (last step)",
+   "ru": "Интегратор (последний шаг)"
+  },
+  "diag.ledger_abs": {
+   "en": "Ledger: guard absorptions (model events)",
+   "ru": "Баланс: поглощения у границы модели (модельные события)"
+  },
+  "diag.ledger_coll": {
+   "en": "Ledger: mechanical energy change in collisions",
+   "ru": "Баланс: изменение механической энергии при столкновениях"
+  },
+  "diag.ledger_ext": {
+   "en": "Ledger: external energy (your edits)",
+   "ru": "Баланс: внешняя энергия (ваши правки)"
+  },
+  "diag.ledger_rad": {
+   "en": "Ledger: radiated (accretion, spin-down)",
+   "ru": "Баланс: излучено (аккреция, замедление вращения)"
+  },
+  "diag.mass": {
+   "en": "Total mass",
+   "ru": "Полная масса"
+  },
+  "diag.mode_exec": {
+   "en": "Executing mode",
+   "ru": "Исполняемый режим"
+  },
+  "diag.mode_exec_d": {
+   "en": "D - direct N-body, the only mode this build runs",
+   "ru": "D - прямое N-тело, единственный режим этой сборки"
+  },
+  "diag.mode_req": {
+   "en": "Requested mode",
+   "ru": "Запрошенный режим"
+  },
+  "diag.mode_req_value": {
+   "en": "{0}, by {1}",
+   "ru": "{0}, источник: {1}"
+  },
+  "diag.mode_runs_as": {
+   "en": "this world runs as {0}",
+   "ru": "этот мир идёт как {0}"
+  },
+  "diag.model": {
+   "en": "Model",
+   "ru": "Модель"
+  },
+  "diag.model_value": {
+   "en": "Newtonian point masses, all massive bodies interact; tracers feel gravity only",
+   "ru": "Ньютоновские точечные массы, все массивные тела взаимодействуют; трассеры только чувствуют гравитацию"
+  },
+  "diag.momentum": {
+   "en": "Momentum / angular momentum error",
+   "ru": "Ошибка импульса / момента импульса"
+  },
+  "diag.no_branch": {
+   "en": "Create a branch first.",
+   "ru": "Сначала создайте ветку."
+  },
+  "diag.origin": {
+   "en": "Branch origin",
+   "ru": "Точка ветвления"
+  },
+  "diag.origin_none": {
+   "en": "none recorded",
+   "ru": "не записана"
+  },
+  "diag.origin_value": {
+   "en": "{0}: t = {1}, step {2}, {3}; since then {4} and {5} steps",
+   "ru": "{0}: t = {1}, шаг {2}, {3}; с тех пор {4} и {5} шагов"
+  },
+  "diag.profile": {
+   "en": "Profile / capacity",
+   "ru": "Профиль / ёмкость"
+  },
+  "diag.step": {
+   "en": "Base step / smallest substep",
+   "ru": "Базовый шаг / наименьший подшаг"
+  },
+  "diag.steps": {
+   "en": "Macro steps",
+   "ru": "Макрошаги"
+  },
+  "diag.switch": {
+   "en": "Switch A/B",
+   "ru": "Переключить A/B"
+  },
+  "diag.switched": {
+   "en": "Now in branch {0}.",
+   "ru": "Теперь в ветке {0}."
+  },
+  "diag.title": {
+   "en": "Model and numerical health",
+   "ru": "Модель и численное состояние"
+  },
+  "epoch.approx": {
+   "en": "{0}: {1}, JD {2}",
+   "ru": "{0}: {1}, JD {2}"
+  },
+  "epoch.approx_jd": {
+   "en": "{0}: JD {1}; no calendar date before day number 0 (-4713-11-24)",
+   "ru": "{0}: JD {1}; календарной даты до дня номер 0 (-4713-11-24) нет"
+  },
+  "epoch.approx_mark": {
+   "en": "approximate, for display",
+   "ru": "приблизительно, для показа"
+  },
+  "epoch.computed": {
+   "en": "{0}; computed from the t = 0 epoch and SimTime: a rounded result, no bound shown",
+   "ru": "{0}; вычислено из эпохи t = 0 и SimTime: округлённый результат, оценка погрешности не показывается"
+  },
+  "epoch.split": {
+   "en": "JD {0} d + {1} s",
+   "ru": "JD {0} сут + {1} с"
+  },
+  "epoch.src_exact": {
+   "en": "source: given as day + seconds, no quantisation",
+   "ru": "источник: задана днём и секундами, без квантования"
+  },
+  "epoch.src_quant": {
+   "en": "source: one JD value, known to +/-{0} s",
+   "ru": "источник: одно значение JD, известна с точностью +/-{0} с"
+  },
+  "epoch.unavailable": {
+   "en": "cannot be formed ({0}) from the t = 0 epoch {1} and SimTime {2} s; no fallback date",
+   "ru": "не может быть получено ({0}) из эпохи t = 0 {1} и SimTime {2} с; запасной даты нет"
+  },
+  "exp.apply": {
+   "en": "Apply intervention",
+   "ru": "Применить вмешательство"
+  },
+  "exp.criterion.baseline_not_reached": {
+   "en": "a baseline copy did not finish its planned steps: {0}",
+   "ru": "копия для сравнения не выполнила все запланированные шаги: {0}"
+  },
+  "exp.criterion.domain": {
+   "en": "! The model reached its validity guard during the run; results above are up to that moment.",
+   "ru": "! Модель достигла границы применимости во время прогона; результаты выше — до этого момента."
+  },
+  "exp.criterion.horizon_not_reached": {
+   "en": "the run did not reach its horizon: {0}",
+   "ru": "прогон не дошёл до горизонта: {0}"
+  },
+  "exp.criterion.required_missing": {
+   "en": "required measurement not recorded: {0}",
+   "ru": "не записано обязательное измерение: {0}"
+  },
+  "exp.criterion.run_for_not_reached": {
+   "en": "a timed step stopped before its planned end: {0}",
+   "ru": "шаг с заданным временем остановился раньше запланированного конца: {0}"
+  },
+  "exp.criterion.series_metric_missing": {
+   "en": "a promised series measurement is missing: {0}",
+   "ru": "обещанное измерение серии отсутствует: {0}"
+  },
+  "exp.criterion.series_row_incomplete": {
+   "en": "a series run did not finish honestly: {0}",
+   "ru": "прогон серии не завершился честно: {0}"
+  },
+  "exp.criterion.unevaluated": {
+   "en": "not measured: {0}",
+   "ru": "не измерено: {0}"
+  },
+  "exp.problem.awaiting_answer": {
+   "en": "waiting for your answer",
+   "ru": "ожидается ваш ответ"
+  },
+  "exp.problem.command_timeout": {
+   "en": "the simulation did not answer",
+   "ru": "симуляция не ответила"
+  },
+  "exp.problem.edit_timeout": {
+   "en": "an edit was not applied",
+   "ru": "изменение не было применено"
+  },
+  "exp.problem.load_timeout": {
+   "en": "the place did not open",
+   "ru": "место не открылось"
+  },
+  "exp.problem.scheduled_run_ended": {
+   "en": "a scheduled run ended without reaching its stop: {0}",
+   "ru": "запланированный прогон завершился, не дойдя до остановки: {0}"
+  },
+  "exp.problem.series_interrupt_timeout": {
+   "en": "the series interruption was not saved in time",
+   "ru": "прерывание серии не было сохранено вовремя"
+  },
+  "exp.problem.series_no_resume": {
+   "en": "the interrupted series left no resumable state",
+   "ru": "прерванная серия не оставила состояния для продолжения"
+  },
+  "exp.problem.series_not_interrupted": {
+   "en": "the series was not interrupted (it had ended or was not running)",
+   "ru": "серия не была прервана (она уже завершилась или не выполнялась)"
+  },
+  "exp.problem.series_resume_stopped": {
+   "en": "the series stopped before it was resumed",
+   "ru": "серия остановилась до продолжения"
+  },
+  "exp.problem.series_resume_timeout": {
+   "en": "the series did not resume in time",
+   "ru": "серия не продолжилась вовремя"
+  },
+  "exp.problem.state_not_fresh": {
+   "en": "the {0} state was not published fresh within {1} s: {2}",
+   "ru": "состояние «{0}» не было опубликовано актуальным за {1} с: {2}"
+  },
+  "exp.status.action": {
+   "en": "Preparing: {0}",
+   "ru": "Подготовка: {0}"
+  },
+  "exp.status.branches": {
+   "en": "Running the comparison branch...",
+   "ru": "Прогон ветки для сравнения..."
+  },
+  "exp.status.completed": {
+   "en": "Experiment completed: criteria met and explanation recorded.",
+   "ru": "Эксперимент завершён: критерии выполнены, объяснение записано."
+  },
+  "exp.status.evaluated": {
+   "en": "Criteria met. Write your explanation to complete the experiment.",
+   "ru": "Критерии выполнены. Напишите объяснение, чтобы завершить эксперимент."
+  },
+  "exp.status.failed": {
+   "en": "Experiment stopped: {0}",
+   "ru": "Эксперимент остановлен: {0}"
+  },
+  "exp.status.intervention": {
+   "en": "Ready: press Apply intervention.",
+   "ru": "Готово: нажмите «Применить вмешательство»."
+  },
+  "exp.status.loading": {
+   "en": "Opening the place...",
+   "ru": "Открываем место..."
+  },
+  "exp.status.not_met": {
+   "en": "The run did not meet the criteria; the experiment is not counted. Review the lines and try again.",
+   "ru": "Прогон не выполнил критерии; эксперимент не засчитан. Посмотрите строки и попробуйте снова."
+  },
+  "exp.status.paused": {
+   "en": "Paused - resume time to continue the experiment.",
+   "ru": "Пауза — продолжите время, чтобы закончить эксперимент."
+  },
+  "exp.status.question": {
+   "en": "Answer the question to finish the evaluation.",
+   "ru": "Ответьте на вопрос, чтобы завершить оценку."
+  },
+  "exp.status.running": {
+   "en": "Running the experiment...",
+   "ru": "Эксперимент выполняется..."
+  },
+  "exp.status.running_pct": {
+   "en": "Running: {0}%",
+   "ru": "Выполнение: {0}%"
+  },
+  "exp.status.series": {
+   "en": "Series: {0} of {1} runs",
+   "ru": "Серия: {0} из {1} прогонов"
+  },
+  "exp.status.unevaluated": {
+   "en": "Some criteria could not be measured in this run; the experiment is not counted.",
+   "ru": "Часть критериев не удалось измерить в этом прогоне; эксперимент не засчитан."
+  },
+  "exp.status.waiting_player": {
+   "en": "To finish: {0}",
+   "ru": "Чтобы завершить: {0}"
+  },
+  "exp.todo.bookmark": {
+   "en": "bookmark the places",
+   "ru": "добавьте места в закладки"
+  },
+  "exp.todo.explanation": {
+   "en": "write an explanation in the journal",
+   "ru": "запишите объяснение в журнал"
+  },
+  "exp.todo.hypothesis": {
+   "en": "record a research question in the journal",
+   "ru": "запишите исследовательский вопрос в журнал"
+  },
+  "exp.todo.passport": {
+   "en": "open the passport of the body",
+   "ru": "откройте паспорт тела"
+  },
+  "exp.todo.report": {
+   "en": "export the report",
+   "ru": "экспортируйте отчёт"
+  },
+  "exp.todo.route": {
+   "en": "visit every place of the route",
+   "ru": "посетите все места маршрута"
+  },
+  "explore.all": {
+   "en": "All",
+   "ru": "Все"
+  },
+  "explore.card_meta": {
+   "en": "{0} bodies - experiments: {1}",
+   "ru": "тел: {0} — эксперименты: {1}"
+  },
+  "explore.mode_d": {
+   "en": "opens in mode D: Newtonian N-body",
+   "ru": "открывается в режиме D: ньютоновская N-body"
+  },
+  "explore.no_data": {
+   "en": "No scene library found in Content/Data/Scenes. The build is incomplete.",
+   "ru": "Библиотека сцен в Content/Data/Scenes не найдена. Сборка неполная."
+  },
+  "explore.not_validated": {
+   "en": "scenario not yet validated",
+   "ru": "сценарий ещё не проверен"
+  },
+  "explore.not_validated_banner2": {
+   "en": "Not yet scientifically validated: the start state follows the catalogue but has not been confirmed against observations or a fitted solution. The finite-horizon numerical audit of the integration is a separate, technical check.",
+   "ru": "Пока не подтверждено научно: начальное состояние следует каталогу, но не сверено с наблюдениями или подогнанным решением. Численный аудит интегрирования на конечном горизонте — отдельная техническая проверка."
+  },
+  "explore.nothing": {
+   "en": "Nothing matches. Try another word or filter.",
+   "ru": "Ничего не найдено. Попробуйте другое слово или фильтр."
+  },
+  "explore.open": {
+   "en": "Open in the lab",
+   "ru": "Открыть в лаборатории"
+  },
+  "explore.open.tip": {
+   "en": "Creates an independent copy (mode D). The catalogue entry is never modified.",
+   "ru": "Создаёт независимую копию (режим D). Запись каталога никогда не меняется."
+  },
+  "explore.scene_error": {
+   "en": "This scene cannot be opened: {0}",
+   "ru": "Эту сцену нельзя открыть: {0}"
+  },
+  "explore.search_hint": {
+   "en": "Search by name or question: two suns, rings, pulsar, resonance, habitable...",
+   "ru": "Поиск по названию или вопросу: два солнца, кольца, пульсар, резонанс, обитаемость..."
+  },
+  "explore.subtitle": {
+   "en": "40 places: 24 real planetary systems, 4 stellar/compact environments, the Solar System and 11 authored systems. Every scene shows where each number comes from.",
+   "ru": "40 мест: 24 реальные планетные системы, 4 звёздных/компактных окружения, Солнечная система и 11 авторских систем. Каждая сцена показывает, откуда взято каждое число."
+  },
+  "explore.tab_atlas": {
+   "en": "NASA exoplanet atlas",
+   "ru": "Атлас экзопланет NASA"
+  },
+  "explore.tab_bookmarks": {
+   "en": "Bookmarks and route ({0})",
+   "ru": "Закладки и маршрут ({0})"
+  },
+  "explore.tab_places": {
+   "en": "Places (40)",
+   "ru": "Места (40)"
+  },
+  "explore.title": {
+   "en": "Explore worlds",
+   "ru": "Исследовать миры"
+  },
+  "explore.validated": {
+   "en": "scenario validated",
+   "ru": "сценарий проверен"
+  },
+  "feed.clear": {
+   "en": "Clear",
+   "ru": "Очистить"
+  },
+  "feed.converted": {
+   "en": "Collapsed to a black hole (model rule): {0}",
+   "ru": "Коллапс в чёрную дыру (правило модели): {0}"
+  },
+  "feed.energy": {
+   "en": " (mechanical energy change {0})",
+   "ru": " (изменение механической энергии {0})"
+  },
+  "feed.fragmentation": {
+   "en": "Fragmentation: {0}",
+   "ru": "Дробление: {0}"
+  },
+  "feed.fuel": {
+   "en": "Accretion fuel exhausted: {0}",
+   "ru": "Топливо аккреции исчерпано: {0}"
+  },
+  "feed.guard": {
+   "en": "Model limit ({0}): {1}",
+   "ru": "Граница модели ({0}): {1}"
+  },
+  "feed.light_front": {
+   "en": "Light of the explosion reached {0} after {1}",
+   "ru": "Свет взрыва достиг {0} через {1}"
+  },
+  "feed.list_hide": {
+   "en": "Hide list",
+   "ru": "Скрыть список"
+  },
+  "feed.list_show": {
+   "en": "All events ({0})",
+   "ru": "Все события ({0})"
+  },
+  "feed.list_tip": {
+   "en": "The latest 60 physical events of this session, newest first: number, simulated time, participants; repeats are grouped. Click a row to focus its body.",
+   "ru": "Последние 60 физических событий сеанса, новые сверху: номер, время модели, участники; повторы сгруппированы. Нажмите на строку, чтобы перейти к телу."
+  },
+  "feed.merge": {
+   "en": "Merger: {0}",
+   "ru": "Слияние: {0}"
+  },
+  "feed.removed": {
+   "en": "Removed: {0}",
+   "ru": "Удалено: {0}"
+  },
+  "feed.removed_body": {
+   "en": "#{0} (gone)",
+   "ru": "#{0} (больше нет)"
+  },
+  "feed.shell_front": {
+   "en": "The ejecta shell (model speed) reached {0} after {1}",
+   "ru": "Оболочка выброса (модельная скорость) достигла {0} через {1}"
+  },
+  "feed.tip": {
+   "en": "Latest physical event. Click to focus the bodies involved.",
+   "ru": "Последнее физическое событие. Щелчок — навести камеру на участников."
+  },
+  "frame.inner_disk": {
+   "en": "View: inner disk",
+   "ru": "Вид: внутренний диск"
+  },
+  "frame.inner_disk.tip": {
+   "en": "Shadow, photon ring and the hot inner disk (camera only)",
+   "ru": "Тень, фотонное кольцо и горячий внутренний диск (только камера)"
+  },
+  "frame.whole_system": {
+   "en": "View: whole system",
+   "ru": "Вид: вся система"
+  },
+  "frame.whole_system.tip": {
+   "en": "The whole disk and the nearest companion (camera only)",
+   "ru": "Весь диск и ближайший компаньон (только камера)"
+  },
+  "graph.delay": {
+   "en": "Roemer delay variation, s",
+   "ru": "вариация рёмеровской задержки, с"
+  },
+  "graph.distance_au": {
+   "en": "distance to primary, AU",
+   "ru": "расстояние до главного тела, а.е."
+  },
+  "graph.empty": {
+   "en": "No data yet: run time to record this series.",
+   "ru": "Данных пока нет: запустите время, чтобы записать этот ряд."
+  },
+  "graph.flux": {
+   "en": "relative flux",
+   "ru": "относительный поток"
+  },
+  "graph.flux_beamed": {
+   "en": "jets and beams",
+   "ru": "джеты и лучи"
+  },
+  "graph.flux_short": {
+   "en": "flux",
+   "ru": "поток"
+  },
+  "graph.flux_total": {
+   "en": "total",
+   "ru": "всего"
+  },
+  "graph.flux_wm2": {
+   "en": "stellar flux, W/m2",
+   "ru": "поток звёзд, Вт/м²"
+  },
+  "graph.receiver_flux": {
+   "en": "flux, W/m2",
+   "ru": "поток, Вт/м2"
+  },
+  "graph.rv": {
+   "en": "radial velocity, m/s (+ = receding)",
+   "ru": "лучевая скорость, м/с (+ = удаление)"
+  },
+  "graph.rv_short": {
+   "en": "RV",
+   "ru": "RV"
+  },
+  "graph.series_ended": {
+   "en": "{0} (ended)",
+   "ru": "{0} (серия завершена)"
+  },
+  "graph.time_d": {
+   "en": "simulated days",
+   "ru": "симуляционные сутки"
+  },
+  "graph.toa": {
+   "en": "TOA",
+   "ru": "приход"
+  },
+  "graph.with_noise": {
+   "en": "with noise",
+   "ru": "с шумом"
+  },
+  "handle.apo": {
+   "en": "apoapsis {0} (drag)",
+   "ru": "апоцентр {0} (тяните)"
+  },
+  "handle.apply": {
+   "en": "Apply (one undo step)",
+   "ru": "Применить (один шаг отмены)"
+  },
+  "handle.b_albedo": {
+   "en": "Albedo set to {0}",
+   "ru": "Альбедо станет {0}"
+  },
+  "handle.b_heat": {
+   "en": "Heat {0} J/m2",
+   "ru": "Тепло {0} Дж/м2"
+  },
+  "handle.b_height": {
+   "en": "Terrain {0} m (relief only; gravity is not rebuilt)",
+   "ru": "Рельеф {0} м (только рельеф; гравитация не пересчитывается)"
+  },
+  "handle.b_ice": {
+   "en": "Ice {0} kg/m2",
+   "ru": "Лёд {0} кг/м2"
+  },
+  "handle.b_water": {
+   "en": "Water {0} kg/m2",
+   "ru": "Вода {0} кг/м2"
+  },
+  "handle.bad_shape": {
+   "en": "Periapsis must be positive and not larger than apoapsis.",
+   "ru": "Перицентр должен быть положительным и не больше апоцентра."
+  },
+  "handle.barycentre": {
+   "en": "the barycentre of the other bodies",
+   "ru": "барицентра остальных тел"
+  },
+  "handle.brush_cap": {
+   "en": "{0}; radius {1}, about {2} % of the surface",
+   "ru": "{0}; радиус {1}, около {2} % поверхности"
+  },
+  "handle.brush_centre": {
+   "en": "Centre: latitude {0}, longitude {1} (body-fixed, as the surface model uses them)",
+   "ru": "Центр: широта {0}, долгота {1} (в системе тела, как в модели поверхности)"
+  },
+  "handle.brush_energy": {
+   "en": "External energy: about {0} (recorded in the energy ledger)",
+   "ru": "Внешняя энергия: около {0} (учитывается в балансе энергии)"
+  },
+  "handle.brush_mass": {
+   "en": "External supply: about {0} (added to the body's mass and recorded in the ledger)",
+   "ru": "Внешний подвоз: около {0} (прибавляется к массе тела и учитывается в балансе)"
+  },
+  "handle.brush_removal": {
+   "en": "Removal: up to {0} (no more than is present; recorded in the ledger)",
+   "ru": "Удаление: до {0} (не больше, чем есть; учитывается в балансе)"
+  },
+  "handle.cancel": {
+   "en": "Cancel (Esc)",
+   "ru": "Отмена (Esc)"
+  },
+  "handle.dv": {
+   "en": "dv {0} (drag the tip)",
+   "ru": "dv {0} (тяните за конец)"
+  },
+  "handle.dv_mag": {
+   "en": "dv {0}, arrow x{1} (drag the tip)",
+   "ru": "dv {0}, стрелка x{1} (тяните за конец)"
+  },
+  "handle.ellipse": {
+   "en": "ellipse: a {0}, e {1}, periapsis {2}, apoapsis {3}, period {4}",
+   "ru": "эллипс: a {0}, e {1}, перицентр {2}, апоцентр {3}, период {4}"
+  },
+  "handle.escapes": {
+   "en": "escapes (open orbit, e {0}, closest approach {1})",
+   "ru": "уходит (незамкнутая орбита, e {0}, наименьшее расстояние {1})"
+  },
+  "handle.f_apo": {
+   "en": "Apoapsis",
+   "ru": "Апоцентр"
+  },
+  "handle.f_incl": {
+   "en": "Inclination",
+   "ru": "Наклонение"
+  },
+  "handle.f_lat": {
+   "en": "Centre latitude",
+   "ru": "Широта центра"
+  },
+  "handle.f_lon": {
+   "en": "Centre longitude",
+   "ru": "Долгота центра"
+  },
+  "handle.f_normal": {
+   "en": "Normal",
+   "ru": "По нормали"
+  },
+  "handle.f_peri": {
+   "en": "Periapsis",
+   "ru": "Перицентр"
+  },
+  "handle.f_prograde": {
+   "en": "Prograde",
+   "ru": "По движению"
+  },
+  "handle.f_radial": {
+   "en": "Radial out",
+   "ru": "Радиально наружу"
+  },
+  "handle.f_radius": {
+   "en": "Radius",
+   "ru": "Радиус"
+  },
+  "handle.field.tip": {
+   "en": "Enter sets the pending value and updates the preview; nothing changes until Apply.",
+   "ru": "Enter задаёт ожидающее значение и обновляет предпросмотр; ничего не меняется до «Применить»."
+  },
+  "handle.fit": {
+   "en": "Fit view",
+   "ru": "Вписать вид"
+  },
+  "handle.fit.tip": {
+   "en": "Frame the current and the new orbit inside the free part of the view",
+   "ru": "Показать текущую и новую орбиту в свободной части экрана"
+  },
+  "handle.gone": {
+   "en": "The body is no longer in the world.",
+   "ru": "Этого тела больше нет в мире."
+  },
+  "handle.lv_dv": {
+   "en": "Velocity change {0}: prograde {1}, radial out {2}, normal {3}",
+   "ru": "Изменение скорости {0}: по движению {1}, радиально наружу {2}, по нормали {3}"
+  },
+  "handle.lv_speed": {
+   "en": "Speed relative to {0}: {1} -> {2} (escape speed here {3})",
+   "ru": "Скорость относительно {0}: {1} -> {2} (скорость убегания здесь {3})"
+  },
+  "handle.new_place": {
+   "en": "new position",
+   "ru": "новое положение"
+  },
+  "handle.no_reference": {
+   "en": "There is no other mass to measure the velocity against.",
+   "ru": "Нет другой массы, относительно которой можно задать скорость."
+  },
+  "handle.no_surface": {
+   "en": "Turn on the surface model for this body first.",
+   "ru": "Сначала включите модель поверхности для этого тела."
+  },
+  "handle.note": {
+   "en": "Nothing changes until Apply. Time is paused while you edit and resumes after Apply or Cancel.",
+   "ru": "Ничего не меняется до «Применить». Пока вы редактируете, время стоит; оно продолжится после «Применить» или «Отмена»."
+  },
+  "handle.now_after": {
+   "en": "Now: {0}. After: {1}.",
+   "ru": "Сейчас: {0}. После: {1}."
+  },
+  "handle.orbit_new": {
+   "en": "New orbit around {0}: periapsis {1}, apoapsis {2}, inclination {3}",
+   "ru": "Новая орбита вокруг {0}: перицентр {1}, апоцентр {2}, наклонение {3}"
+  },
+  "handle.orbit_note": {
+   "en": "The body keeps its place along the orbit (true anomaly); position and velocity change together in one step.",
+   "ru": "Тело сохраняет своё место на орбите (истинную аномалию); положение и скорость меняются вместе за один шаг."
+  },
+  "handle.p_escape": {
+   "en": "Just above escape speed",
+   "ru": "Чуть выше скорости убегания"
+  },
+  "handle.p_zero": {
+   "en": "Zero",
+   "ru": "Ноль"
+  },
+  "handle.peri": {
+   "en": "periapsis {0} (drag)",
+   "ru": "перицентр {0} (тяните)"
+  },
+  "handle.peri_inside": {
+   "en": "Periapsis {0} lies inside {1} (radius {2}).",
+   "ru": "Перицентр {0} оказывается внутри {1} (радиус {2})."
+  },
+  "handle.pick_centre": {
+   "en": "Click the planet to choose the centre of the brush.",
+   "ru": "Щёлкните по планете, чтобы выбрать центр кисти."
+  },
+  "handle.title_brush": {
+   "en": "Brush on {0}: click the planet to place it",
+   "ru": "Кисть на {0}: щёлкните по планете, чтобы её поставить"
+  },
+  "handle.title_launch": {
+   "en": "Launch vector: {0} (drag the arrow tip or type values)",
+   "ru": "Вектор запуска: {0} (тяните конец стрелки или введите значения)"
+  },
+  "handle.title_orbit": {
+   "en": "Orbit handles: {0} (drag periapsis / apoapsis or type values)",
+   "ru": "Ручки орбиты: {0} (тяните перицентр / апоцентр или введите значения)"
+  },
+  "handle.two_body": {
+   "en": "Two-body preview around {0}: a guide; the simulation integrates every body.",
+   "ru": "Предпросмотр задачи двух тел вокруг {0}: это ориентир; моделирование учитывает все тела."
+  },
+  "handle.unbound": {
+   "en": "The orbit is not bound (e >= 1): change it with the launch vector instead.",
+   "ru": "Орбита не замкнута (e >= 1): измените её вектором запуска."
+  },
+  "handle.v_now": {
+   "en": "v {0}",
+   "ru": "v {0}"
+  },
+  "handle.zero_kick": {
+   "en": "Drag the arrow tip or type a velocity change first.",
+   "ru": "Сначала потяните конец стрелки или введите изменение скорости."
+  },
+  "help.first_run": {
+   "en": "Welcome. Start with Explore or lesson L01. In a world: drag to orbit, scroll or pinch to zoom, click a body to select, F1 for help.",
+   "ru": "Добро пожаловать. Начните с «Исследовать миры» или урока L01. В мире: перетаскивание — облёт, прокрутка или щипок — масштаб, щелчок по телу — выбор, F1 — справка."
+  },
+  "help.short": {
+   "en": "Drag: orbit. Right-drag / Shift+drag: pan. Wheel / pinch: zoom. Click: select. Double-click: focus. Space: pause. [ ]: time rate. Cmd/Ctrl+Z: undo.",
+   "ru": "Перетаскивание — облёт. Правая кнопка / Shift+перетаскивание — сдвиг. Колесо / щипок — масштаб. Щелчок — выбор. Двойной щелчок — фокус. Пробел — пауза. [ ] — скорость времени. Cmd/Ctrl+Z — отмена."
+  },
+  "hud.date_na": {
+   "en": "date not available",
+   "ru": "дата недоступна"
+  },
+  "hud.enlarged_scene": {
+   "en": "bodies x{0} (visual, by scene)",
+   "ru": "тела x{0} (визуально, по сцене)"
+  },
+  "hud.enlarged_short": {
+   "en": "bodies x{0} (visual)",
+   "ru": "тела x{0} (визуально)"
+  },
+  "hud.explore": {
+   "en": "Places",
+   "ru": "Места"
+  },
+  "hud.explore.tip": {
+   "en": "Explore other worlds",
+   "ru": "Исследовать другие миры"
+  },
+  "hud.faster": {
+   "en": ">>",
+   "ru": ">>"
+  },
+  "hud.faster.tip": {
+   "en": "Faster time (])",
+   "ru": "Время быстрее (])"
+  },
+  "hud.learn": {
+   "en": "Learn",
+   "ru": "Обучение"
+  },
+  "hud.learn.tip": {
+   "en": "Lessons and experiments",
+   "ru": "Уроки и эксперименты"
+  },
+  "hud.menu": {
+   "en": "Menu",
+   "ru": "Меню"
+  },
+  "hud.menu.tip": {
+   "en": "Main menu (Esc)",
+   "ru": "Главное меню (Esc)"
+  },
+  "hud.mode_d.tip": {
+   "en": "Mode D: every massive body attracts every other (Newtonian N-body); orbits are computed, never drawn as decoration.",
+   "ru": "Режим D: каждое массивное тело притягивает каждое (ньютоновская задача N тел); орбиты рассчитываются, а не рисуются для красоты."
+  },
+  "hud.mode_d_short": {
+   "en": "N-body (D)",
+   "ru": "N тел (D)"
+  },
+  "hud.pause": {
+   "en": "Pause",
+   "ru": "Пауза"
+  },
+  "hud.play": {
+   "en": "Play",
+   "ru": "Пуск"
+  },
+  "hud.play.tip": {
+   "en": "Pause / resume (Space)",
+   "ru": "Пауза / продолжить (Пробел)"
+  },
+  "hud.rate.tip": {
+   "en": "Requested simulation rate; the achieved rate is shown below when the step budget, an event or a guard slows it down.",
+   "ru": "Запрошенная скорость времени; фактическая показывается ниже, когда её ограничивают бюджет шагов, событие или защита модели."
+  },
+  "hud.rate_achieved": {
+   "en": "achieved {0}",
+   "ru": "фактически {0}"
+  },
+  "hud.redo": {
+   "en": "Redo",
+   "ru": "Повторить"
+  },
+  "hud.redo.tip": {
+   "en": "Redo",
+   "ru": "Повторить"
+  },
+  "hud.save": {
+   "en": "Save",
+   "ru": "Сохранить"
+  },
+  "hud.save.tip": {
+   "en": "Quick save (Cmd/Ctrl+S)",
+   "ru": "Быстрое сохранение (Cmd/Ctrl+S)"
+  },
+  "hud.slower": {
+   "en": "<<",
+   "ru": "<<"
+  },
+  "hud.slower.tip": {
+   "en": "Slower time ([)",
+   "ru": "Время медленнее ([)"
+  },
+  "hud.tab_add": {
+   "en": "Add",
+   "ru": "Добавить"
+  },
+  "hud.tab_bodies": {
+   "en": "Bodies",
+   "ru": "Тела"
+  },
+  "hud.tab_journal": {
+   "en": "Journal",
+   "ru": "Журнал"
+  },
+  "hud.undo": {
+   "en": "Undo",
+   "ru": "Отменить"
+  },
+  "hud.undo.none": {
+   "en": "Nothing to undo",
+   "ru": "Нечего отменять"
+  },
+  "hud.undo.tip": {
+   "en": "Undo: {0} ({1} steps kept)",
+   "ru": "Отменить: {0} (хранится шагов: {1})"
+  },
+  "insp.aim": {
+   "en": "Aim a velocity change",
+   "ru": "Задать изменение скорости"
+  },
+  "insp.albedo": {
+   "en": "Bond albedo",
+   "ru": "Альбедо Бонда"
+  },
+  "insp.apply": {
+   "en": "Apply",
+   "ru": "Применить"
+  },
+  "insp.apply.tip": {
+   "en": "Commits one change (undoable). Physics continues from the new state.",
+   "ru": "Одно изменение (можно отменить). Физика продолжится из нового состояния."
+  },
+  "insp.compact_more": {
+   "en": "Accretion, jets, pulsar beam and the model guard are in the Compact tab.",
+   "ru": "Аккреция, джеты, луч пульсара и защита модели — во вкладке «Компактные»."
+  },
+  "insp.density": {
+   "en": "Mean density",
+   "ru": "Средняя плотность"
+  },
+  "insp.edit": {
+   "en": "Change (preview by typing, then Apply)",
+   "ru": "Изменить (введите значение, затем «Применить»)"
+  },
+  "insp.edit_distance": {
+   "en": "Move to a circular orbit at distance (AU, km, m)",
+   "ru": "Перевести на круговую орбиту на расстоянии (AU, km, m)"
+  },
+  "insp.edit_lum": {
+   "en": "New luminosity (W or Lsun; 0 switches the star off)",
+   "ru": "Новая светимость (W или Lsun; 0 выключает звезду)"
+  },
+  "insp.edit_mass": {
+   "en": "New mass (kg, Msun, Mjup, Mearth)",
+   "ru": "Новая масса (kg, Msun, Mjup, Mearth)"
+  },
+  "insp.edit_mass_factor": {
+   "en": "Multiply mass by",
+   "ru": "Умножить массу на"
+  },
+  "insp.edit_radius": {
+   "en": "New radius (m, km, Rearth, Rjup, Rsun)",
+   "ru": "Новый радиус (m, km, Rearth, Rjup, Rsun)"
+  },
+  "insp.flag_controversial": {
+   "en": "controversial in archive",
+   "ru": "спорное в архиве"
+  },
+  "insp.flag_edited": {
+   "en": "edited by you",
+   "ru": "изменено вами"
+  },
+  "insp.flag_fantasy": {
+   "en": "fantasy outcome (labelled model event)",
+   "ru": "фантазийный исход (подписанное модельное событие)"
+  },
+  "insp.flag_msini": {
+   "en": "mass is M sin i",
+   "ru": "масса — это M sin i"
+  },
+  "insp.flag_reconstructed": {
+   "en": "has reconstructed fields",
+   "ru": "есть реконструированные поля"
+  },
+  "insp.flag_validity": {
+   "en": "has left the model's validity range",
+   "ru": "вышло за область применимости модели"
+  },
+  "insp.flux": {
+   "en": "Stellar flux",
+   "ru": "Поток звёздного излучения"
+  },
+  "insp.focus": {
+   "en": "Focus",
+   "ru": "Фокус"
+  },
+  "insp.gravity": {
+   "en": "Surface gravity",
+   "ru": "Ускорение на поверхности"
+  },
+  "insp.hide": {
+   "en": "Hide",
+   "ru": "Скрыть"
+  },
+  "insp.hide.tip": {
+   "en": "Hide the inspector (the 3D view gets the space)",
+   "ru": "Скрыть инспектор (место отдаётся 3D-виду)"
+  },
+  "insp.invalid": {
+   "en": "Value not understood. Use a number with a unit, e.g. 2 Msun, 1.5 AU, 5772.",
+   "ru": "Значение не распознано. Используйте число с единицей, например 2 Msun, 1.5 AU, 5772."
+  },
+  "insp.kick": {
+   "en": "Velocity change and orbit (preview first, then Apply)",
+   "ru": "Изменение скорости и орбиты (сначала предпросмотр, затем «Применить»)"
+  },
+  "insp.kick.tip2": {
+   "en": "Shows the velocity change as an arrow with the new orbit before anything changes; Apply makes it one undo step.",
+   "ru": "Показывает изменение скорости стрелкой и новую орбиту до того, как что-то изменится; «Применить» делает это одним шагом отмены."
+  },
+  "insp.kick_out": {
+   "en": "+5% outward",
+   "ru": "+5% наружу"
+  },
+  "insp.kick_pro": {
+   "en": "+10% prograde",
+   "ru": "+10% по движению"
+  },
+  "insp.kick_retro": {
+   "en": "-10% retrograde",
+   "ru": "−10% против движения"
+  },
+  "insp.luminosity": {
+   "en": "Luminosity",
+   "ru": "Светимость"
+  },
+  "insp.mass": {
+   "en": "Mass",
+   "ru": "Масса"
+  },
+  "insp.msini_suffix": {
+   "en": " (minimum, M sin i)",
+   "ru": " (минимум, M sin i)"
+  },
+  "insp.no_source": {
+   "en": "no luminous source",
+   "ru": "нет источника света"
+  },
+  "insp.orbit_handles": {
+   "en": "Edit the orbit with handles",
+   "ru": "Изменить орбиту ручками"
+  },
+  "insp.orbit_handles.tip": {
+   "en": "Drag periapsis and apoapsis or type them with units; the new orbit is previewed before Apply.",
+   "ru": "Тяните перицентр и апоцентр или введите их с единицами; новая орбита показывается до «Применить»."
+  },
+  "insp.overview_counts": {
+   "en": "{0} stars, {1} planets, {2} compact objects, {3} moons and small bodies",
+   "ru": "звёзд: {0}, планет: {1}, компактных объектов: {2}, спутников и малых тел: {3}"
+  },
+  "insp.overview_energy": {
+   "en": "Orbital energy error",
+   "ru": "Ошибка орбитальной энергии"
+  },
+  "insp.overview_pick": {
+   "en": "Main bodies",
+   "ru": "Главные тела"
+  },
+  "insp.overview_step": {
+   "en": "Base step",
+   "ru": "Базовый шаг"
+  },
+  "insp.overview_time": {
+   "en": "Simulated time",
+   "ru": "Время симуляции"
+  },
+  "insp.provenance_n": {
+   "en": "Where the numbers come from ({0} fields)",
+   "ru": "Откуда эти числа (полей: {0})"
+  },
+  "insp.radius": {
+   "en": "Radius",
+   "ru": "Радиус"
+  },
+  "insp.remove": {
+   "en": "Remove",
+   "ru": "Удалить"
+  },
+  "insp.remove.tip": {
+   "en": "Removes the body (one undo step). Its graphs stay with a 'removed' mark.",
+   "ru": "Удаляет тело (один шаг отмены). Его графики сохраняются с отметкой «удалено»."
+  },
+  "insp.rotation": {
+   "en": "Rotation period",
+   "ru": "Период вращения"
+  },
+  "insp.rs": {
+   "en": "Schwarzschild radius",
+   "ru": "Радиус Шварцшильда"
+  },
+  "insp.select_hint": {
+   "en": "Select a body in the view or in the Bodies list. Each value shows its unit and where it comes from.",
+   "ru": "Выберите тело в сцене или в списке «Тела». У каждого значения указаны единица и происхождение."
+  },
+  "insp.show": {
+   "en": "Inspector",
+   "ru": "Инспектор"
+  },
+  "insp.show.tip": {
+   "en": "Show the inspector of the selected body",
+   "ru": "Показать инспектор выбранного тела"
+  },
+  "insp.speed": {
+   "en": "Speed (barycentric)",
+   "ru": "Скорость отн. барицентра"
+  },
+  "insp.supernova": {
+   "en": "Scripted supernova (neutron-star remnant 1.4 Msun)",
+   "ru": "Сверхновая по сценарию (остаток — нейтронная звезда 1,4 Msun)"
+  },
+  "insp.supernova.tip": {
+   "en": "Labelled model: the remnant keeps 1.4 Msun, the rest leaves as 12 massive ejecta clumps at 5000 km/s. Mass and momentum are conserved; the energy is an external input.",
+   "ru": "Подписанная модель: остаток сохраняет 1,4 Msun, остальное уходит 12 массивными сгустками со скоростью 5000 км/с. Масса и импульс сохраняются; энергия — внешний вклад."
+  },
+  "insp.supernova_mass": {
+   "en": "A scripted supernova needs a star heavier than 1.5 Msun here.",
+   "ru": "Для сценарной сверхновой нужна звезда тяжелее 1,5 Msun."
+  },
+  "insp.tab_compact": {
+   "en": "Compact",
+   "ru": "Компактные"
+  },
+  "insp.tab_diag": {
+   "en": "Model",
+   "ru": "Модель"
+  },
+  "insp.tab_measure": {
+   "en": "Measure",
+   "ru": "Измерения"
+  },
+  "insp.tab_obs": {
+   "en": "Observatory",
+   "ru": "Обсерватория"
+  },
+  "insp.tab_orbit": {
+   "en": "Orbit",
+   "ru": "Орбита"
+  },
+  "insp.tab_props": {
+   "en": "Properties",
+   "ru": "Свойства"
+  },
+  "insp.tab_series": {
+   "en": "Series",
+   "ru": "Серии"
+  },
+  "insp.tab_surface": {
+   "en": "Surface",
+   "ru": "Поверхность"
+  },
+  "insp.teff": {
+   "en": "Effective temperature",
+   "ru": "Эффективная температура"
+  },
+  "insp.teq": {
+   "en": "Equilibrium temperature",
+   "ru": "Равновесная температура"
+  },
+  "insp.to_bh": {
+   "en": "Replace by a black hole of the same mass",
+   "ru": "Заменить чёрной дырой той же массы"
+  },
+  "insp.to_bh.tip": {
+   "en": "Same mass gives the same weak-field gravity; the light disappears. This is a labelled fantasy edit, not stellar evolution.",
+   "ru": "Та же масса даёт то же притяжение в слабом поле; свет исчезает. Это подписанная фантазийная правка, а не звёздная эволюция."
+  },
+  "inspector.gone": {
+   "en": "(body no longer exists)",
+   "ru": "(тела больше нет)"
+  },
+  "inspector.none": {
+   "en": "none",
+   "ru": "нет"
+  },
+  "journal.add_note": {
+   "en": "Add as note",
+   "ru": "Как заметку"
+  },
+  "journal.add_question": {
+   "en": "Add as question",
+   "ru": "Как вопрос"
+  },
+  "journal.empty": {
+   "en": "Record measurements from the inspector and write your questions here. The journal is exported from Saves.",
+   "ru": "Записывайте измерения из инспектора и свои вопросы здесь. Журнал экспортируется на экране сохранений."
+  },
+  "journal.hint": {
+   "en": "Write a question, hypothesis or note...",
+   "ru": "Запишите вопрос, гипотезу или заметку..."
+  },
+  "keys.unbound": {
+   "en": "unbound",
+   "ru": "не назначено"
+  },
+  "kind.authored": {
+   "en": "Authored (procedural, fixed seed)",
+   "ru": "Авторская (процедурная, фиксированный seed)"
+  },
+  "kind.authored_short": {
+   "en": "Authored",
+   "ru": "Авторские"
+  },
+  "kind.real_planetary": {
+   "en": "Real planetary system",
+   "ru": "Реальная планетная система"
+  },
+  "kind.real_planetary_short": {
+   "en": "Real planets",
+   "ru": "Реальные планеты"
+  },
+  "kind.real_stellar": {
+   "en": "Real stellar / compact",
+   "ru": "Реальная звёздная / компактная"
+  },
+  "kind.real_stellar_short": {
+   "en": "Stars & compact",
+   "ru": "Звёзды и компактные"
+  },
+  "kind.solar": {
+   "en": "Solar System",
+   "ru": "Солнечная система"
+  },
+  "lang.code": {
+   "en": "en",
+   "ru": "ru"
+  },
+  "learn.action_failed": {
+   "en": "Experiment step could not run: {0}",
+   "ru": "Шаг эксперимента не выполнен: {0}"
+  },
+  "learn.cannot_start": {
+   "en": "This item cannot start in this build.",
+   "ru": "Это задание нельзя начать в этой сборке."
+  },
+  "learn.completed": {
+   "en": "Completed: {0}",
+   "ru": "Выполнено: {0}"
+  },
+  "learn.correct": {
+   "en": "Correct.",
+   "ru": "Верно."
+  },
+  "learn.done": {
+   "en": "Completed.",
+   "ru": "Выполнено."
+  },
+  "learn.elapsed": {
+   "en": "{0} of {1} simulated",
+   "ru": "смоделировано {0} из {1}"
+  },
+  "learn.explain": {
+   "en": "Explain the result in your own words to finish.",
+   "ru": "Чтобы завершить, объясните результат своими словами."
+  },
+  "learn.explanation_hint": {
+   "en": "Your explanation in your own words...",
+   "ru": "Ваше объяснение своими словами..."
+  },
+  "learn.explanation_short": {
+   "en": "Write at least a sentence in your own words ({0}+ characters).",
+   "ru": "Напишите хотя бы одно предложение своими словами (от 20 символов)."
+  },
+  "learn.loading": {
+   "en": "Opening the lesson place...",
+   "ru": "Открываем место урока..."
+  },
+  "learn.missing": {
+   "en": "Needs: {0}",
+   "ru": "Нужно: {0}"
+  },
+  "learn.start": {
+   "en": "Start",
+   "ru": "Начать"
+  },
+  "learn.state.completed": {
+   "en": "Completed",
+   "ru": "Выполнено"
+  },
+  "learn.state.in_progress": {
+   "en": "In progress",
+   "ru": "В процессе"
+  },
+  "learn.state.not_started": {
+   "en": "Not started",
+   "ru": "Не начато"
+  },
+  "learn.state.unavailable": {
+   "en": "Not available in this build",
+   "ru": "Недоступно в этой сборке"
+  },
+  "learn.stop": {
+   "en": "Stop",
+   "ru": "Остановить"
+  },
+  "learn.submit": {
+   "en": "Submit",
+   "ru": "Отправить"
+  },
+  "learn.subtitle": {
+   "en": "Lessons and experiments never lock the catalogue or tools. They complete only from real runtime events and measurements; items needing a tool this build lacks are marked as not available.",
+   "ru": "Уроки и эксперименты никогда не закрывают каталог и инструменты. Они засчитываются только по реальным событиям и измерениям; задания, требующие отсутствующего в этой сборке инструмента, помечены как недоступные."
+  },
+  "learn.tab_experiments": {
+   "en": "Experiments ({0}/{1} completed)",
+   "ru": "Эксперименты (выполнено {0}/{1})"
+  },
+  "learn.tab_lessons": {
+   "en": "Lessons ({0}/{1} completed)",
+   "ru": "Уроки (выполнено {0}/{1})"
+  },
+  "learn.title": {
+   "en": "Learn",
+   "ru": "Обучение"
+  },
+  "learn.try_again": {
+   "en": "Not quite - look at the measurement again and retry.",
+   "ru": "Не совсем — посмотрите на измерение ещё раз и попробуйте снова."
+  },
+  "library.bodies": {
+   "en": "bodies",
+   "ru": "тел"
+  },
+  "library.caps_none": {
+   "en": "none",
+   "ru": "нет"
+  },
+  "library.checking": {
+   "en": "Checking the save...",
+   "ru": "Проверка сохранения..."
+  },
+  "library.damaged": {
+   "en": "Damaged: {0}",
+   "ru": "Повреждено: {0}"
+  },
+  "library.empty": {
+   "en": "No saves yet.",
+   "ru": "Сохранений пока нет."
+  },
+  "library.export_failed": {
+   "en": "Could not write {0}",
+   "ru": "Не удалось записать {0}"
+  },
+  "library.export_journal": {
+   "en": "Export journal",
+   "ru": "Экспорт журнала"
+  },
+  "library.exported": {
+   "en": "Exported to {0}",
+   "ru": "Экспортировано в {0}"
+  },
+  "library.load": {
+   "en": "Load",
+   "ru": "Загрузить"
+  },
+  "library.manifest": {
+   "en": "Requested {0} ({1}); runs {2}. Epoch of t = 0: {3}. Capabilities: {4}. Branch origin: {5}.",
+   "ru": "Запрошен {0} ({1}); идёт как {2}. Эпоха t = 0: {3}. Возможности: {4}. Точка ветвления: {5}."
+  },
+  "library.need_name": {
+   "en": "Enter a save name first.",
+   "ru": "Сначала введите имя сохранения."
+  },
+  "library.no_codec": {
+   "en": "Saving is unavailable in this build: the core snapshot codec is missing.",
+   "ru": "Сохранение недоступно в этой сборке: нет кодека снимков ядра."
+  },
+  "library.origin_no": {
+   "en": "none",
+   "ru": "нет"
+  },
+  "library.origin_yes": {
+   "en": "recorded",
+   "ru": "записана"
+  },
+  "library.refused": {
+   "en": "Cannot be loaded: {0}. {1}",
+   "ru": "Нельзя загрузить: {0}. {1}"
+  },
+  "library.reveal": {
+   "en": "Open the saves folder",
+   "ru": "Открыть папку сохранений"
+  },
+  "library.save_as": {
+   "en": "Save current world",
+   "ru": "Сохранить текущий мир"
+  },
+  "library.sim_time": {
+   "en": "sim time",
+   "ru": "время симуляции"
+  },
+  "library.slot_hint": {
+   "en": "Save name (letters, digits, - and _)",
+   "ru": "Имя сохранения (латиница, цифры, - и _)"
+  },
+  "library.subtitle": {
+   "en": "Load a previous experiment or keep the current one. Loading never overwrites the file you load from.",
+   "ru": "Загрузите прежний опыт или сохраните текущий. Загрузка никогда не перезаписывает исходный файл."
+  },
+  "library.title": {
+   "en": "Saves and exports",
+   "ru": "Сохранения и экспорт"
+  },
+  "library.where2": {
+   "en": "Saves folder: {0}. Each file holds a versioned core snapshot with a checksum; the previous save is kept as .bak.",
+   "ru": "Папка сохранений: {0}. Каждый файл хранит версионированный снимок ядра с контрольной суммой; предыдущее сохранение остаётся как .bak."
+  },
+  "measure.flux_meter": {
+   "en": "Flux meter",
+   "ru": "Датчик потока"
+  },
+  "measure.instruments": {
+   "en": "Instruments",
+   "ru": "Приборы"
+  },
+  "measure.intro": {
+   "en": "Record a value to your journal. Lessons check recorded measurements.",
+   "ru": "Запишите значение в журнал. Уроки проверяют записанные измерения."
+  },
+  "measure.no_orbit": {
+   "en": "Orbit values do not apply: {0} orbits no primary in this system.",
+   "ru": "Орбитальные величины не применимы: {0} не обращается вокруг главного тела в этой системе."
+  },
+  "measure.pair": {
+   "en": "With {0}",
+   "ru": "Вместе с {0}"
+  },
+  "measure.pair_hint": {
+   "en": "Shift+click a second body to measure distance, light time, period ratio and mutual inclination.",
+   "ru": "Shift+щелчок по второму телу — расстояние, время света, отношение периодов и взаимное наклонение."
+  },
+  "measure.record": {
+   "en": "Record",
+   "ru": "Записать"
+  },
+  "measure.recorded": {
+   "en": "Recorded {0} = {1}",
+   "ru": "Записано {0} = {1}"
+  },
+  "measure.resonance.circulating": {
+   "en": "circulating ({0} samples, {1})",
+   "ru": "циркуляция ({0} отсчётов, {1})"
+  },
+  "measure.resonance.inconclusive": {
+   "en": "undetermined: bounded but drifting, or too few oscillations ({0} samples, {1})",
+   "ru": "не определено: угол ограничен, но дрейфует, или колебаний слишком мало ({0} отсчётов, {1})"
+  },
+  "measure.resonance.insufficient": {
+   "en": "undetermined: too few samples or too short an interval ({0} samples, {1})",
+   "ru": "не определено: мало отсчётов или слишком короткий интервал ({0} отсчётов, {1})"
+  },
+  "measure.resonance.librating": {
+   "en": "librating over the recorded interval ({0} samples, {1})",
+   "ru": "либрация за записанный интервал ({0} отсчётов, {1})"
+  },
+  "measure.series_rv": {
+   "en": "radial velocity",
+   "ru": "лучевая скорость"
+  },
+  "measure.since_lesson": {
+   "en": "(since the lesson started)",
+   "ru": "(с начала урока)"
+  },
+  "measure.surface": {
+   "en": "Surface grid",
+   "ru": "Сетка поверхности"
+  },
+  "measure.system": {
+   "en": "Whole system",
+   "ru": "Вся система"
+  },
+  "measure.to_barycentre": {
+   "en": "(to the barycentre)",
+   "ru": "(до барицентра)"
+  },
+  "measure.unavailable": {
+   "en": "Cannot record: {0}",
+   "ru": "Нельзя записать: {0}"
+  },
+  "menu.continue": {
+   "en": "Continue experiment",
+   "ru": "Продолжить опыт"
+  },
+  "menu.continue.none": {
+   "en": "No save yet",
+   "ru": "Сохранений пока нет"
+  },
+  "menu.continue.tip": {
+   "en": "Load your last save",
+   "ru": "Загрузить последнее сохранение"
+  },
+  "menu.create": {
+   "en": "Create a system",
+   "ru": "Создать систему"
+  },
+  "menu.create.tip": {
+   "en": "Authored procedural systems with fixed seeds; add stars, planets and compact objects in the lab",
+   "ru": "Авторские процедурные системы с фиксированным seed; в лаборатории добавляйте звёзды, планеты и компактные объекты"
+  },
+  "menu.credits": {
+   "en": "Credits",
+   "ru": "Авторы"
+  },
+  "menu.explore": {
+   "en": "Explore worlds",
+   "ru": "Исследовать миры"
+  },
+  "menu.explore.tip": {
+   "en": "40 places and the full NASA exoplanet atlas",
+   "ru": "40 мест и полный атлас экзопланет NASA"
+  },
+  "menu.learn": {
+   "en": "Learn",
+   "ru": "Учиться"
+  },
+  "menu.learn.tip": {
+   "en": "24 lessons and 72 experiments",
+   "ru": "24 урока и 72 эксперимента"
+  },
+  "menu.library": {
+   "en": "Saves",
+   "ru": "Сохранения"
+  },
+  "menu.quit": {
+   "en": "Quit",
+   "ru": "Выход"
+  },
+  "menu.settings": {
+   "en": "Settings",
+   "ru": "Настройки"
+  },
+  "menu.start_here": {
+   "en": "Start here",
+   "ru": "Начните здесь"
+  },
+  "menu.start_here.text": {
+   "en": "Lesson L01 opens the Solar System built from JPL Horizons vectors (J2000). Select Earth, read its period, run a year and explain why Mars takes longer.",
+   "ru": "Урок L01 открывает Солнечную систему, построенную по векторам JPL Horizons (J2000). Выберите Землю, прочитайте её период, прогоните год и объясните, почему Марсу нужно больше времени."
+  },
+  "menu.start_l01": {
+   "en": "Start lesson L01",
+   "ru": "Начать урок L01"
+  },
+  "menu.tagline": {
+   "en": "Find a world, ask a question, change one condition, measure what happens - then compare and keep your explanation.",
+   "ru": "Найдите мир, задайте вопрос, измените одно условие, измерьте последствия — затем сравните и сохраните своё объяснение."
+  },
+  "mode.a": {
+   "en": "A - atlas (catalogue view)",
+   "ru": "A - атлас (каталожный вид)"
+  },
+  "mode.c": {
+   "en": "C - cluster tree (not in this build)",
+   "ru": "C - дерево скопления (нет в этой сборке)"
+  },
+  "mode.d": {
+   "en": "D - direct N-body",
+   "ru": "D - прямое N-тело"
+  },
+  "mode.g": {
+   "en": "G - galactic potential (not in this build)",
+   "ru": "G - галактический потенциал (нет в этой сборке)"
+  },
+  "mode.src_none": {
+   "en": "not recorded",
+   "ru": "не записан"
+  },
+  "mode.src_scene": {
+   "en": "the scene's default",
+   "ru": "по умолчанию сцены"
+  },
+  "mode.src_user": {
+   "en": "your request",
+   "ru": "ваш запрос"
+  },
+  "obs.depth": {
+   "en": "Deepest dip (noiseless)",
+   "ru": "Самый глубокий провал (без шума)"
+  },
+  "obs.flux_empty": {
+   "en": "No exposure yet: one is recorded every {0} of simulated time. Run time to collect a series.",
+   "ru": "Экспозиций пока нет: одна записывается каждые {0} модельного времени. Запустите время, чтобы собрать ряд."
+  },
+  "obs.flux_now": {
+   "en": "Flux now (isotropic + beamed)",
+   "ru": "Поток сейчас (изотропный + направленный)"
+  },
+  "obs.flux_placed": {
+   "en": "Flux receiver placed 1 pc away: one exposure every 10 min of simulated time.",
+   "ru": "Приёмник потока поставлен в 1 пк: одна экспозиция каждые 10 мин модельного времени."
+  },
+  "obs.flux_series3": {
+   "en": "Flux receiver {0}, {1}: {2} exposures, one every {3}",
+   "ru": "Приёмник потока {0}, {1}: экспозиций {2}, по одной каждые {3}"
+  },
+  "obs.intro": {
+   "en": "Synthetic instruments: the observer is a direction in space, independent of the camera. Samples are averaged over the exposure in physical time; noise is seeded and labelled. These are not real telescope data.",
+   "ru": "Синтетические приборы: наблюдатель — направление в пространстве, не зависящее от камеры. Отсчёты усредняются по экспозиции в физическом времени; шум задан seed и подписан. Это не реальные данные телескопа."
+  },
+  "obs.k": {
+   "en": "RV half-amplitude (noiseless)",
+   "ru": "Полуамплитуда RV (без шума)"
+  },
+  "obs.monitor": {
+   "en": "Monitor resonance angle of the two Shift-selected planets (auto p:q)",
+   "ru": "Следить за резонансным углом двух планет, выбранных с Shift (p:q автоматически)"
+  },
+  "obs.monitor_added": {
+   "en": "Monitoring the {0}:{1} critical angle. A verdict needs several libration cycles.",
+   "ru": "Отслеживается критический угол {0}:{1}. Для вывода нужно несколько циклов либрации."
+  },
+  "obs.monitor_bodies": {
+   "en": "Select two different orbiting bodies to monitor.",
+   "ru": "Выберите два разных тела на орбитах для наблюдения."
+  },
+  "obs.monitor_central": {
+   "en": "No central body for the resonance: the inner body has no primary.",
+   "ru": "Нет центрального тела для резонанса: у внутреннего тела нет первичного тела."
+  },
+  "obs.monitor_period": {
+   "en": "Both bodies need a bound orbit (a period) to monitor a resonance.",
+   "ru": "Чтобы следить за резонансом, у обоих тел должна быть замкнутая орбита (период)."
+  },
+  "obs.place_camera": {
+   "en": "Observe from the current camera direction",
+   "ru": "Наблюдать из текущего направления камеры"
+  },
+  "obs.place_earth": {
+   "en": "Observe from Earth's direction (scene data)",
+   "ru": "Наблюдать из направления Земли (данные сцены)"
+  },
+  "obs.place_flux": {
+   "en": "Place a flux receiver for this body (jets and beams included) along the observer direction",
+   "ru": "Поставить приёмник потока для этого тела (с джетами и лучами) по направлению на наблюдателя"
+  },
+  "obs.place_flux.tip": {
+   "en": "Jets and pulsar beams carry their power in cones: the receiver sees them only when a cone points at it. Gravity is unaffected.",
+   "ru": "Джеты и лучи пульсара несут мощность в конусах: приёмник видит их, только когда конус направлен на него. Гравитация не меняется."
+  },
+  "obs.place_noisy": {
+   "en": "Same, with 200 ppm seeded noise",
+   "ru": "То же, с шумом 200 ppm (seed)"
+  },
+  "obs.place_receiver": {
+   "en": "Place a pulse receiver along the camera direction",
+   "ru": "Поставить приёмник импульсов по направлению камеры"
+  },
+  "obs.placed": {
+   "en": "Photometer and RV instrument placed. Run time to collect samples.",
+   "ru": "Фотометр и прибор лучевых скоростей установлены. Запустите время, чтобы собрать отсчёты."
+  },
+  "obs.receiver_placed": {
+   "en": "Receiver placed: one time-of-arrival per hour, no screen strobe.",
+   "ru": "Приёмник установлен: один момент прихода в час, без мигания экрана."
+  },
+  "obs.receiver_series": {
+   "en": "Receiver #{0}: {1} arrivals (variation of the light-travel delay, not a timing-model residual)",
+   "ru": "Приёмник №{0}: {1} приходов (вариация задержки света, а не остатки модели тайминга)"
+  },
+  "obs.rx_all": {
+   "en": "light of every luminous body",
+   "ru": "свет всех светящихся тел"
+  },
+  "obs.rx_at": {
+   "en": "at {0}",
+   "ru": "у тела {0}"
+  },
+  "obs.rx_far": {
+   "en": "far observer {0} from the barycentre",
+   "ru": "далёкий наблюдатель на {0} от барицентра"
+  },
+  "obs.rx_from": {
+   "en": "light of {0}",
+   "ru": "свет тела {0}"
+  },
+  "obs.series": {
+   "en": "Instrument #{0}: {1} samples, cadence {2}",
+   "ru": "Прибор №{0}: {1} отсчётов, каденс {2}"
+  },
+  "obs.transits": {
+   "en": "Transits / eclipses (geometric mid times)",
+   "ru": "Транзиты / затмения (геометрические середины)"
+  },
+  "obs.ttv": {
+   "en": "Transit timing of this body",
+   "ru": "Тайминг транзитов этого тела"
+  },
+  "obs.ttv_few": {
+   "en": "{0} transits (O-C needs 3)",
+   "ru": "транзитов: {0} (для O-C нужно 3)"
+  },
+  "obs.ttv_need": {
+   "en": "needs a photometer and transits of this body",
+   "ru": "нужен фотометр и транзиты этого тела"
+  },
+  "obs.ttv_value": {
+   "en": "{0} transits, O-C of the latest {1} s",
+   "ru": "транзитов: {0}, O-C последнего {1} с"
+  },
+  "orbit.a": {
+   "en": "Semi-major axis",
+   "ru": "Большая полуось"
+  },
+  "orbit.apo": {
+   "en": "Apoapsis",
+   "ru": "Апоцентр"
+  },
+  "orbit.bound": {
+   "en": "bound (ellipse)",
+   "ru": "связанная (эллипс)"
+  },
+  "orbit.e": {
+   "en": "Eccentricity",
+   "ru": "Эксцентриситет"
+  },
+  "orbit.energy": {
+   "en": "Specific orbital energy",
+   "ru": "Удельная орбитальная энергия"
+  },
+  "orbit.group_primary": {
+   "en": "barycentre of {0}",
+   "ru": "барицентра {0}"
+  },
+  "orbit.i": {
+   "en": "Inclination (to frame XY)",
+   "ru": "Наклонение (к плоскости XY)"
+  },
+  "orbit.no_period": {
+   "en": "none (unbound)",
+   "ru": "нет (несвязанная)"
+  },
+  "orbit.note": {
+   "en": "Osculating two-body elements of the current state; other bodies make them change over time. A period ratio near p:q is not a resonance by itself - use a resonance monitor (Observatory) for the critical angle over an interval.",
+   "ru": "Оскулирующие элементы двух тел для текущего состояния; другие тела меняют их со временем. Отношение периодов около p:q само по себе не резонанс — используйте монитор резонанса (Обсерватория) для критического угла на интервале."
+  },
+  "orbit.peri": {
+   "en": "Periapsis",
+   "ru": "Перицентр"
+  },
+  "orbit.period": {
+   "en": "Osculating period",
+   "ru": "Оскулирующий период"
+  },
+  "orbit.predict": {
+   "en": "Predict path (1 orbit, on a copy)",
+   "ru": "Прогноз пути (1 оборот, на копии)"
+  },
+  "orbit.predict.tip": {
+   "en": "Integrates a copy of the world; the real simulation is not affected.",
+   "ru": "Интегрирует копию мира; настоящая симуляция не меняется."
+  },
+  "orbit.predicted_bg": {
+   "en": "Predicted path ready (N-body, on a copy without tracers). The line is cleared when the scene changes.",
+   "ru": "Прогноз пути готов (N тел, на копии без трассеров). Линия убирается при смене сцены."
+  },
+  "orbit.predicting": {
+   "en": "Predicting on a copy in the background; the simulation keeps running.",
+   "ru": "Прогноз считается на копии в фоне; симуляция продолжает работать."
+  },
+  "orbit.primary": {
+   "en": "Relative to",
+   "ru": "Относительно"
+  },
+  "orbit.state": {
+   "en": "State",
+   "ru": "Состояние"
+  },
+  "orbit.unbound": {
+   "en": "unbound (escaping)",
+   "ru": "несвязанная (уход)"
+  },
+  "overlay.barycentre": {
+   "en": "barycentre (centre of mass)",
+   "ru": "барицентр (центр масс)"
+  },
+  "overlay.hill": {
+   "en": "Hill radius {0}",
+   "ru": "радиус Хилла {0}"
+  },
+  "overlay.hz_short": {
+   "en": "HZ: 0.36-1.06 x Earth flux",
+   "ru": "ЗО: поток 0,36-1,06 от земного"
+  },
+  "overlay.legend_title": {
+   "en": "View overlays (drawing only, no physics)",
+   "ru": "Наложения вида (только рисунок, без физики)"
+  },
+  "overlay.lens_short": {
+   "en": "r_s {0}",
+   "ru": "r_s {0}"
+  },
+  "overlay.lg_bary": {
+   "en": "Cross: the barycentre, the centre of mass that every body orbits.",
+   "ru": "Крестик: барицентр, центр масс, вокруг которого обращаются все тела."
+  },
+  "overlay.lg_hill": {
+   "en": "Ring around the body: its Hill radius, inside which its gravity dominates the star's tide (where moons can stay).",
+   "ru": "Кольцо вокруг тела: радиус Хилла, внутри которого его тяготение сильнее приливного действия звезды (там могут держаться спутники)."
+  },
+  "overlay.lg_hz": {
+   "en": "Two rings around the star: stellar flux between 0.36 and 1.06 times Earth's. A heuristic zone, not a sign of life.",
+   "ru": "Два кольца вокруг звезды: поток от 0,36 до 1,06 земного. Это эвристическая зона, а не признак жизни."
+  },
+  "overlay.lg_lens": {
+   "en": "Rings around the compact object: r_s, the photon sphere (1.5 r_s) and the shadow edge (about 2.6 r_s); the outermost marks the model's guard radius.",
+   "ru": "Кольца вокруг компактного объекта: r_s, фотонная сфера (1,5 r_s) и край тени (около 2,6 r_s); внешнее отмечает защитный радиус модели."
+  },
+  "overlay.lg_potential": {
+   "en": "Faint lines in the orbit plane: equal gravitational potential at log-spaced levels; they crowd where gravity is strong. A body's orbital energy is its potential plus v^2/2.",
+   "ru": "Бледные линии в плоскости орбит: равный гравитационный потенциал на логарифмических уровнях; они сгущаются там, где тяготение сильно. Орбитальная энергия тела равна потенциалу плюс v^2/2."
+  },
+  "overlay.lg_potential_none": {
+   "en": "No equal-potential line is in view outside the drawn bodies: zoom out to see them.",
+   "ru": "В кадре нет линий равного потенциала вне нарисованных тел: отдалите камеру, чтобы их увидеть."
+  },
+  "overlay.lg_roche": {
+   "en": "Ring around the body: the fluid Roche limit for a rocky moon; a moon closer than this is torn apart.",
+   "ru": "Кольцо вокруг тела: жидкий предел Роша для каменного спутника; более близкий спутник разрывается."
+  },
+  "overlay.lg_ruler": {
+   "en": "Line between two bodies: their distance and the light travel time.",
+   "ru": "Линия между двумя телами: расстояние и время пути света."
+  },
+  "overlay.lg_shell": {
+   "en": "Circles around the body: how far its light has travelled after the labelled times.",
+   "ru": "Окружности вокруг тела: как далеко ушёл его свет за подписанное время."
+  },
+  "overlay.light": {
+   "en": "light",
+   "ru": "свет"
+  },
+  "overlay.light_shell": {
+   "en": "light after {0}",
+   "ru": "свет через {0}"
+  },
+  "overlay.potential_none": {
+   "en": "no equal-potential line in view outside the bodies: zoom out",
+   "ru": "в кадре нет линий равного потенциала вне тел: отдалите камеру"
+  },
+  "overlay.roche_short": {
+   "en": "Roche {0}",
+   "ru": "Рош {0}"
+  },
+  "passport.assumptions": {
+   "en": "Assumptions (read before running)",
+   "ru": "Допущения (прочитайте до запуска)"
+  },
+  "passport.bodies": {
+   "en": "Bodies in the start state",
+   "ru": "Тела в стартовом состоянии"
+  },
+  "passport.candidate": {
+   "en": "candidate / conditional",
+   "ru": "кандидат / условное"
+  },
+  "passport.controversial": {
+   "en": "controversial in the archive",
+   "ru": "спорное в архиве"
+  },
+  "passport.epoch": {
+   "en": "Epoch",
+   "ru": "Эпоха"
+  },
+  "passport.excluded": {
+   "en": "Deliberately excluded",
+   "ru": "Сознательно исключено"
+  },
+  "passport.field_albedo": {
+   "en": "Bond albedo",
+   "ru": "альбедо Бонда"
+  },
+  "passport.field_all": {
+   "en": "all values",
+   "ru": "все величины"
+  },
+  "passport.field_compact": {
+   "en": "compact-object parameters",
+   "ru": "параметры компактного объекта"
+  },
+  "passport.field_mass": {
+   "en": "mass",
+   "ru": "масса"
+  },
+  "passport.field_orbit": {
+   "en": "orbital elements",
+   "ru": "элементы орбиты"
+  },
+  "passport.field_radius": {
+   "en": "radius",
+   "ru": "радиус"
+  },
+  "passport.field_star": {
+   "en": "stellar parameters",
+   "ru": "параметры звезды"
+  },
+  "passport.field_surface": {
+   "en": "surface",
+   "ru": "поверхность"
+  },
+  "passport.frame": {
+   "en": "Frame",
+   "ru": "Система отсчёта"
+  },
+  "passport.lower_limit": {
+   "en": "mass lower limit",
+   "ru": "нижний предел массы"
+  },
+  "passport.msini": {
+   "en": "mass = M sin i (minimum)",
+   "ru": "масса = M sin i (минимум)"
+  },
+  "passport.observer": {
+   "en": "Observer direction",
+   "ru": "Направление на наблюдателя"
+  },
+  "passport.optional": {
+   "en": "Not in the start state (contested / candidate / conditional)",
+   "ru": "Не входят в старт (спорные / кандидаты / условные)"
+  },
+  "passport.reconstructed": {
+   "en": "reconstructed: {0}",
+   "ru": "реконструировано: {0}"
+  },
+  "passport.reconstructed_list": {
+   "en": "reconstructed: {0} (see technical details)",
+   "ru": "восстановлено: {0} (см. технические подробности)"
+  },
+  "passport.sources": {
+   "en": "Sources",
+   "ru": "Источники"
+  },
+  "passport.sources_toggle": {
+   "en": "{0} Sources and exclusions ({1})",
+   "ru": "{0} Источники и исключения ({1})"
+  },
+  "passport.step": {
+   "en": "Base step",
+   "ru": "Базовый шаг"
+  },
+  "passport.tech_hide": {
+   "en": "Hide technical details",
+   "ru": "Скрыть технические подробности"
+  },
+  "passport.tech_show": {
+   "en": "Technical details: coordinates, step, data provenance",
+   "ru": "Технические подробности: координаты, шаг, происхождение данных"
+  },
+  "place.cancel": {
+   "en": "Cancel",
+   "ru": "Отмена"
+  },
+  "place.click_status": {
+   "en": "{0}: click in the view to choose a position (the plane through the camera focus). The new body gets the local circular velocity around the strongest attractor.",
+   "ru": "{0}: щёлкните в сцене, чтобы выбрать положение (плоскость через фокус камеры). Новое тело получит местную круговую скорость вокруг самого сильного притягивающего тела."
+  },
+  "place.confirm": {
+   "en": "Confirm",
+   "ru": "Подтвердить"
+  },
+  "place.done": {
+   "en": "Added. Undo removes it in one step.",
+   "ru": "Добавлено. Отмена убирает его одним шагом."
+  },
+  "place.orbit_status": {
+   "en": "{0}: circular orbit around {1} at {2}. Confirm to add (one undo step) or Cancel.",
+   "ru": "{0}: круговая орбита вокруг {1} на {2}. «Подтвердить» — добавить (один шаг отмены), или «Отмена»."
+  },
+  "place.ready": {
+   "en": "Preview ready (the ghost does not gravitate). Confirm to add, or Cancel.",
+   "ru": "Предпросмотр готов (призрак не притягивает). Подтвердите добавление или отмените."
+  },
+  "place.unknown": {
+   "en": "Preset {0} cannot be placed here.",
+   "ru": "Заготовку {0} нельзя разместить здесь."
+  },
+  "prov.artistic": {
+   "en": "artistic",
+   "ru": "художественное"
+  },
+  "prov.assumed": {
+   "en": "assumed",
+   "ru": "допущение"
+  },
+  "prov.authored": {
+   "en": "authored",
+   "ru": "авторское"
+  },
+  "prov.derived": {
+   "en": "derived",
+   "ru": "выведено"
+  },
+  "prov.literature": {
+   "en": "literature",
+   "ru": "из литературы"
+  },
+  "prov.measured": {
+   "en": "measured",
+   "ru": "измерено"
+  },
+  "prov.procedural": {
+   "en": "procedural",
+   "ru": "процедурное"
+  },
+  "prov.reconstructed": {
+   "en": "reconstructed",
+   "ru": "реконструировано"
+  },
+  "prov.user": {
+   "en": "your edit",
+   "ru": "ваша правка"
+  },
+  "route.done": {
+   "en": "Route completed: {0} places visited.",
+   "ru": "Маршрут пройден: посещено мест — {0}."
+  },
+  "route.next": {
+   "en": "Next stop",
+   "ru": "Следующая остановка"
+  },
+  "route.progress": {
+   "en": "Route {0}/{1}",
+   "ru": "Маршрут {0}/{1}"
+  },
+  "route.start": {
+   "en": "Start the route",
+   "ru": "Начать маршрут"
+  },
+  "route.start.tip": {
+   "en": "Opens the first bookmarked place; use Next stop in the lab to continue.",
+   "ru": "Открывает первое место из закладок; дальше — «Следующая остановка» в лаборатории."
+  },
+  "route.too_short": {
+   "en": "Bookmark at least two places to follow a route.",
+   "ru": "Для маршрута добавьте в закладки хотя бы два места."
+  },
+  "rx.need_direction": {
+   "en": "A receiver without a body needs a direction.",
+   "ru": "Приёмнику без тела нужно направление."
+  },
+  "rx.no_world": {
+   "en": "Open a world first.",
+   "ru": "Сначала откройте мир."
+  },
+  "series.applied": {
+   "en": "applied: {0}",
+   "ru": "применено: {0}"
+  },
+  "series.bad_field": {
+   "en": "{0} cannot be varied in a series.",
+   "ru": "{0} нельзя менять в серии."
+  },
+  "series.bad_value": {
+   "en": "Value \"{0}\" is not a number.",
+   "ru": "Значение «{0}» не является числом."
+  },
+  "series.budget_declared": {
+   "en": "declared by the plan",
+   "ru": "объявлен планом"
+  },
+  "series.budget_default": {
+   "en": "safe default",
+   "ru": "безопасное значение по умолчанию"
+  },
+  "series.budget_line": {
+   "en": "Work per run: {0} whole steps planned; budget {1} steps and {2} sub-steps ({3}). {4} runs, {5} steps in all.",
+   "ru": "Работа одного прогона: запланировано {0} целых шагов; бюджет {1} шагов и {2} подшагов ({3}). Прогонов {4}, всего {5} шагов."
+  },
+  "series.budget_too_large": {
+   "en": "The plan declares {0} steps per run; at most {1} can be declared.",
+   "ru": "План объявляет {0} шагов на прогон; объявить можно не больше {1}."
+  },
+  "series.busy": {
+   "en": "A series is already running.",
+   "ru": "Серия уже выполняется."
+  },
+  "series.cancel": {
+   "en": "Cancel",
+   "ru": "Отменить"
+  },
+  "series.cancel.tip": {
+   "en": "The run in progress stops at once (its partial work is not a result); finished runs are kept and the remaining runs are marked cancelled.",
+   "ru": "Текущий прогон остановится сразу (его частичная работа не считается результатом); завершённые прогоны сохраняются, остальные отмечаются как отменённые."
+  },
+  "series.cancelled": {
+   "en": "Series cancelled: {0} of {1} runs finished; their rows are kept.",
+   "ru": "Серия отменена: завершено {0} из {1} прогонов; их строки сохранены."
+  },
+  "series.damaged": {
+   "en": "The saved series cannot be read.",
+   "ru": "Сохранённую серию не удаётся прочитать."
+  },
+  "series.done": {
+   "en": "Series finished: {0} of {1} runs ok. All outcomes are in the table.",
+   "ru": "Серия завершена: успешно {0} из {1}. Все исходы — в таблице."
+  },
+  "series.export": {
+   "en": "Export CSV (units, model, statuses)",
+   "ru": "Экспорт CSV (единицы, модель, статусы)"
+  },
+  "series.horizon_effective": {
+   "en": "Each run simulates {0} (requested {1}; time advances in whole steps of {2}).",
+   "ru": "Каждый прогон моделирует {0} (запрошено {1}; время идёт целыми шагами по {2})."
+  },
+  "series.horizon_hint": {
+   "en": "horizon, e.g. 10 yr, 200 d",
+   "ru": "горизонт, например 10 yr, 200 d"
+  },
+  "series.interrupt_save_failed": {
+   "en": "The series was interrupted but could not be saved ({0}). It cannot be resumed; start it again.",
+   "ru": "Серия прервана, но её не удалось сохранить ({0}). Продолжить её нельзя; запустите её заново."
+  },
+  "series.interrupt_saving": {
+   "en": "The series is still being interrupted and saved; resume it once that is done.",
+   "ru": "Серия ещё прерывается и сохраняется; продолжите её, когда это закончится."
+  },
+  "series.interrupted": {
+   "en": "Series interrupted: {0}. Resume it in the Series panel: finished runs are not repeated and the run in progress continues where it stopped.",
+   "ru": "Серия прервана: {0}. Продолжите её на панели серии: завершённые прогоны не повторятся, а текущий прогон продолжится с того же места."
+  },
+  "series.intro": {
+   "en": "Each run copies the current world, changes one or two parameters, integrates to the horizon and records the metrics. Runs are sequential; failed or out-of-model runs stay in the table.",
+   "ru": "Каждый прогон копирует текущий мир, меняет один-два параметра, интегрирует до горизонта и записывает метрики. Прогоны последовательные; сбойные и вышедшие за модель остаются в таблице."
+  },
+  "series.lost": {
+   "en": "The series could not continue: {0}",
+   "ru": "Серию нельзя продолжить: {0}"
+  },
+  "series.metric_missing": {
+   "en": "not measurable at the end state: {0}",
+   "ru": "не измеряется в конечном состоянии: {0}"
+  },
+  "series.metric_unmeasurable": {
+   "en": "The metric {0} cannot be measured for {1} in this world ({2}), so no run could record it. Prepare the world first (for a surface metric: turn on the surface grid).",
+   "ru": "Метрику {0} нельзя измерить для {1} в этом мире ({2}), поэтому ни один прогон не смог бы её записать. Сначала подготовьте мир (для метрики поверхности включите сетку поверхности)."
+  },
+  "series.metrics_lost": {
+   "en": "metrics were not recorded before the interruption",
+   "ru": "метрики не были записаны до прерывания"
+  },
+  "series.mixed": {
+   "en": "Use either factors (x0.5, x2) or absolute values on one parameter, not both.",
+   "ru": "Для одного параметра используйте либо множители (x0.5, x2), либо абсолютные значения, но не вместе."
+  },
+  "series.no_body": {
+   "en": "Body {0} is not in this world.",
+   "ru": "Тела {0} нет в этом мире."
+  },
+  "series.no_horizon": {
+   "en": "Give a positive horizon (e.g. 10 yr).",
+   "ru": "Укажите положительный горизонт (например, 10 yr)."
+  },
+  "series.no_observer": {
+   "en": "Inclination series need the scene's observer direction (sky plane); this place defines none.",
+   "ru": "Серии по наклонению нужно направление на наблюдателя (плоскость неба); в этом месте оно не задано."
+  },
+  "series.no_saved": {
+   "en": "No interrupted series was saved.",
+   "ru": "Прерванной серии не сохранено."
+  },
+  "series.no_sim": {
+   "en": "The simulation is not available.",
+   "ru": "Симуляция недоступна."
+  },
+  "series.no_step": {
+   "en": "The world has no base step yet; wait for it to load.",
+   "ru": "У мира ещё нет базового шага; дождитесь загрузки."
+  },
+  "series.no_values": {
+   "en": "Give at least one value.",
+   "ru": "Укажите хотя бы одно значение."
+  },
+  "series.over_budget": {
+   "en": "One run would need {0} steps of {1}; the work budget is {2} steps per run ({3}). Shorten the horizon or declare a larger budget in the plan; the physics is never coarsened to fit.",
+   "ru": "Одному прогону нужно {0} шагов по {1}; бюджет работы — {2} шагов на прогон ({3}). Сократите горизонт или объявите в плане больший бюджет; физика ради этого не огрубляется."
+  },
+  "series.param1": {
+   "en": "Parameter 1: {0}",
+   "ru": "Параметр 1: {0}"
+  },
+  "series.param2": {
+   "en": "Parameter 2 (optional grid): {0}",
+   "ru": "Параметр 2 (необязательная сетка): {0}"
+  },
+  "series.preparing": {
+   "en": "The core is checking every run of the plan...",
+   "ru": "Ядро проверяет каждый прогон плана..."
+  },
+  "series.progress": {
+   "en": "{0} / {1} runs done, {2} ok",
+   "ru": "выполнено {0} / {1}, успешно {2}"
+  },
+  "series.queue_mismatch": {
+   "en": "The saved series cannot be resumed: its queue file does not belong to it (an incomplete save).",
+   "ru": "Сохранённую серию нельзя продолжить: файл её очереди ей не принадлежит (сохранение не завершено)."
+  },
+  "series.reason_world": {
+   "en": "another place or a save was loaded",
+   "ru": "загружено другое место или сохранение"
+  },
+  "series.rejected": {
+   "en": "The core rejected the plan: {0}",
+   "ru": "Ядро отклонило план: {0}"
+  },
+  "series.resume": {
+   "en": "Resume the interrupted series",
+   "ru": "Продолжить прерванную серию"
+  },
+  "series.resume_failed": {
+   "en": "The saved series cannot be resumed: {0}",
+   "ru": "Сохранённую серию нельзя продолжить: {0}"
+  },
+  "series.resume_unsaved": {
+   "en": "This series cannot be resumed: its interruption was not saved ({0}). Start it again.",
+   "ru": "Эту серию нельзя продолжить: её прерывание не было сохранено ({0}). Запустите её заново."
+  },
+  "series.row_diag": {
+   "en": "{0} simulated in {1} steps, {2} collisions, energy error {3}",
+   "ru": "{0} симуляции за {1} шагов, столкновений: {2}, ошибка энергии {3}"
+  },
+  "series.run_paused": {
+   "en": "Run {0} paused at {1} of {2} steps; it continues where it stopped.",
+   "ru": "Прогон {0} приостановлен на {1} из {2} шагов; он продолжится с того же места."
+  },
+  "series.run_progress": {
+   "en": "Run {0}: {1} of {2} steps ({3} %), {4} steps/s, about {5} left",
+   "ru": "Прогон {0}: {1} из {2} шагов ({3} %), {4} шагов/с, осталось около {5}"
+  },
+  "series.running_note": {
+   "en": "(the world is paused while runs execute)",
+   "ru": "(мир на паузе, пока выполняются прогоны)"
+  },
+  "series.select": {
+   "en": "Select the body whose parameter you want to vary.",
+   "ru": "Выберите тело, параметр которого хотите менять."
+  },
+  "series.start": {
+   "en": "Start series",
+   "ru": "Запустить серию"
+  },
+  "series.status.cancelled": {
+   "en": "cancelled",
+   "ru": "отменён"
+  },
+  "series.status.domain_exceeded": {
+   "en": "outside the model (guard / speed limit)",
+   "ru": "вне модели (защитная сфера / предел скорости)"
+  },
+  "series.status.failed": {
+   "en": "failed",
+   "ru": "сбой"
+  },
+  "series.status.ok": {
+   "en": "ok",
+   "ru": "готово"
+  },
+  "series.status.pending": {
+   "en": "waiting",
+   "ru": "ожидает"
+  },
+  "series.status.stopped": {
+   "en": "step cap reached before the horizon",
+   "ru": "достигнут предел шагов до горизонта"
+  },
+  "series.substeps_too_large": {
+   "en": "The plan declares {0} sub-steps per run; at most {1} can be declared.",
+   "ru": "План объявляет {0} подшагов на прогон; объявить можно не больше {1}."
+  },
+  "series.title": {
+   "en": "Series of runs",
+   "ru": "Серия прогонов"
+  },
+  "series.too_many": {
+   "en": "At most {0} runs per series.",
+   "ru": "Не больше {0} прогонов в серии."
+  },
+  "series.values2_hint": {
+   "en": "leave empty for a one-parameter series",
+   "ru": "оставьте пустым для серии по одному параметру"
+  },
+  "series.values_hint": {
+   "en": "values: x0.5, x1, x2 (factors) or absolute SI",
+   "ru": "значения: x0.5, x1, x2 (множители) или абсолютные в СИ"
+  },
+  "settings.audio": {
+   "en": "Sound (separate volumes; data sonification never replaces the graphs)",
+   "ru": "Звук (раздельные громкости; сонификация данных не заменяет графики)"
+  },
+  "settings.controls": {
+   "en": "Controls",
+   "ru": "Управление"
+  },
+  "settings.invert_y": {
+   "en": "Invert vertical orbit",
+   "ru": "Инвертировать вертикальный облёт"
+  },
+  "settings.keys": {
+   "en": "Keyboard shortcuts (click to rebind)",
+   "ru": "Сочетания клавиш (щёлкните, чтобы переназначить)"
+  },
+  "settings.labels": {
+   "en": "Labels",
+   "ru": "Подписи"
+  },
+  "settings.language": {
+   "en": "Language",
+   "ru": "Язык"
+  },
+  "settings.markers": {
+   "en": "Markers for small bodies",
+   "ru": "Маркеры малых тел"
+  },
+  "settings.motion": {
+   "en": "Motion and effects",
+   "ru": "Движение и эффекты"
+  },
+  "settings.orbit_speed": {
+   "en": "Orbit sensitivity",
+   "ru": "Чувствительность облёта"
+  },
+  "settings.orbits": {
+   "en": "Orbit paths (next orbit, N-body prediction)",
+   "ru": "Пути орбит (следующий оборот, прогноз N тел)"
+  },
+  "settings.palette": {
+   "en": "Palette",
+   "ru": "Палитра"
+  },
+  "settings.palette_contrast": {
+   "en": "High contrast",
+   "ru": "Высокий контраст"
+  },
+  "settings.palette_default": {
+   "en": "Default",
+   "ru": "Стандартная"
+  },
+  "settings.palette_safe": {
+   "en": "Colour-safe",
+   "ru": "Для нарушений цветового зрения"
+  },
+  "settings.press_key": {
+   "en": "Press a key... (Esc cancels)",
+   "ru": "Нажмите клавишу... (Esc — отмена)"
+  },
+  "settings.q_epic": {
+   "en": "Epic",
+   "ru": "Максимальное"
+  },
+  "settings.q_high": {
+   "en": "High",
+   "ru": "Высокое"
+  },
+  "settings.q_low": {
+   "en": "Low",
+   "ru": "Низкое"
+  },
+  "settings.q_medium": {
+   "en": "Medium",
+   "ru": "Среднее"
+  },
+  "settings.quality": {
+   "en": "Graphics quality",
+   "ru": "Качество графики"
+  },
+  "settings.readability": {
+   "en": "Readability and colour",
+   "ru": "Читаемость и цвет"
+  },
+  "settings.reduce_flashes": {
+   "en": "Reduce bright flashes",
+   "ru": "Ослабить яркие вспышки"
+  },
+  "settings.reduced_motion": {
+   "en": "Reduced motion (instant camera moves, no animated surfaces)",
+   "ru": "Меньше движения (мгновенные переходы камеры, неподвижные поверхности)"
+  },
+  "settings.reset_keys": {
+   "en": "Reset shortcuts",
+   "ru": "Сбросить сочетания"
+  },
+  "settings.scale_by_scene": {
+   "en": "By scene",
+   "ru": "По сцене"
+  },
+  "settings.scale_now_scene": {
+   "en": "In effect: bodies drawn x{0}, as this place suggests (visual only; physics unchanged).",
+   "ru": "Сейчас: тела нарисованы x{0}, как предлагает это место (только вид; физика не меняется)."
+  },
+  "settings.scale_now_true": {
+   "en": "In effect: true scale (physical radii).",
+   "ru": "Сейчас: истинный масштаб (физические радиусы)."
+  },
+  "settings.scale_now_user": {
+   "en": "In effect: bodies drawn x{0} (visual only; physics unchanged).",
+   "ru": "Сейчас: тела нарисованы x{0} (только вид; физика не меняется)."
+  },
+  "settings.size_l": {
+   "en": "Large",
+   "ru": "Крупный"
+  },
+  "settings.size_m": {
+   "en": "Normal",
+   "ru": "Обычный"
+  },
+  "settings.size_scale": {
+   "en": "Body size (visual only)",
+   "ru": "Размер тел (только вид)"
+  },
+  "settings.size_xl": {
+   "en": "Extra large",
+   "ru": "Очень крупный"
+  },
+  "settings.subtitle": {
+   "en": "All changes apply immediately and are saved locally. None of them changes physics.",
+   "ru": "Все изменения применяются сразу и сохраняются локально. Ни одно из них не меняет физику."
+  },
+  "settings.text_size": {
+   "en": "Text size",
+   "ru": "Размер текста"
+  },
+  "settings.title": {
+   "en": "Settings",
+   "ru": "Настройки"
+  },
+  "settings.trails": {
+   "en": "Trails",
+   "ru": "Следы"
+  },
+  "settings.true_scale": {
+   "en": "True scale",
+   "ru": "Истинный масштаб"
+  },
+  "settings.view": {
+   "en": "View",
+   "ru": "Вид"
+  },
+  "settings.vol_ambient": {
+   "en": "Ambient",
+   "ru": "Фон"
+  },
+  "settings.vol_data": {
+   "en": "Data sonification (pulsar pulses)",
+   "ru": "Сонификация данных (импульсы пульсара)"
+  },
+  "settings.vol_events": {
+   "en": "Events",
+   "ru": "События"
+  },
+  "settings.vol_master": {
+   "en": "Master",
+   "ru": "Общая"
+  },
+  "settings.vol_ui": {
+   "en": "Interface",
+   "ru": "Интерфейс"
+  },
+  "surface.already_on": {
+   "en": "The surface grid of this body is already on.",
+   "ru": "Сетка поверхности этого тела уже включена."
+  },
+  "surface.b_bright": {
+   "en": "Albedo 0.8",
+   "ru": "Альбедо 0,8"
+  },
+  "surface.b_dark": {
+   "en": "Albedo 0.1",
+   "ru": "Альбедо 0,1"
+  },
+  "surface.b_heat": {
+   "en": "Heat 1e8 J/m2",
+   "ru": "Тепло 1e8 Дж/м²"
+  },
+  "surface.b_height": {
+   "en": "Raise terrain +500 m",
+   "ru": "Поднять рельеф на 500 м"
+  },
+  "surface.b_height.tip": {
+   "en": "Changes relief only; gravity is not rebuilt (labelled).",
+   "ru": "Меняет только рельеф; гравитация не пересчитывается (подписано)."
+  },
+  "surface.b_water": {
+   "en": "Supply water 1000 kg/m2",
+   "ru": "Добавить воду 1000 кг/м²"
+  },
+  "surface.b_water.tip": {
+   "en": "External water supply: the body's mass grows and the ledger records it.",
+   "ru": "Внешняя поставка воды: масса тела растёт, баланс это записывает."
+  },
+  "surface.brushes2": {
+   "en": "Brushes: choose one, click the planet to place it, check the preview, then Apply",
+   "ru": "Кисти: выберите кисть, щёлкните по планете, проверьте предпросмотр, затем «Применить»"
+  },
+  "surface.diurnal": {
+   "en": "diurnal mean (step longer than half a day)",
+   "ru": "среднесуточная (шаг длиннее половины суток)"
+  },
+  "surface.enable": {
+   "en": "Enable surface grid (24 x 48 cells)",
+   "ru": "Включить сетку поверхности (24 × 48 ячеек)"
+  },
+  "surface.enabled": {
+   "en": "Surface grid enabled.",
+   "ru": "Сетка поверхности включена."
+  },
+  "surface.heater": {
+   "en": "Local heater: 1e15 W for 10 days at lat 0, lon 0",
+   "ru": "Локальный нагреватель: 1e15 Вт на 10 суток, широта 0, долгота 0"
+  },
+  "surface.heater.tip": {
+   "en": "Finite power and finite total energy; the energy ledger shows its contribution.",
+   "ru": "Конечные мощность и полная энергия; баланс энергии показывает вклад."
+  },
+  "surface.insolation": {
+   "en": "Insolation mode",
+   "ru": "Режим инсоляции"
+  },
+  "surface.label": {
+   "en": "Energy-balance surface grid - heuristic educational model, not a climate model (GCM). Water and energy are conserved unless you supply them explicitly.",
+   "ru": "Сетка энергобаланса поверхности — эвристическая учебная модель, не климатическая модель (GCM). Вода и энергия сохраняются, если вы явно их не добавляете."
+  },
+  "surface.legend2": {
+   "en": "Heat map in K, the same scale on every body (273 K: water freezes at 1 bar). Colour shows the model temperature only; liquid water or a colour do not mean life.",
+   "ru": "Тепловая карта в K, шкала одинакова для всех тел (273 K: вода замерзает при 1 бар). Цвет показывает только температуру модели; жидкая вода или цвет не означают жизнь."
+  },
+  "surface.mean": {
+   "en": "Mean temperature",
+   "ru": "Средняя температура"
+  },
+  "surface.not_for_stars": {
+   "en": "Surface grids apply to planets and moons.",
+   "ru": "Сетка поверхности применяется к планетам и спутникам."
+  },
+  "surface.power": {
+   "en": "Absorbed / emitted power",
+   "ru": "Поглощённая / излучённая мощность"
+  },
+  "surface.range": {
+   "en": "Range",
+   "ru": "Диапазон"
+  },
+  "surface.record_section": {
+   "en": "Record to the journal",
+   "ru": "Записать в журнал"
+  },
+  "surface.residual": {
+   "en": "Energy ledger residual",
+   "ru": "Невязка энергетического баланса"
+  },
+  "surface.resolved": {
+   "en": "rotation resolved",
+   "ru": "вращение разрешено"
+  },
+  "surface.show_heatmap": {
+   "en": "Show the heat map on the planet",
+   "ru": "Показывать тепловую карту на планете"
+  },
+  "surface.water": {
+   "en": "Ice / liquid / vapour",
+   "ru": "Лёд / вода / пар"
+  },
+  "time.limit_compute": {
+   "en": "limited by computation",
+   "ru": "ограничено вычислениями"
+  },
+  "time.limit_encounter": {
+   "en": "close encounter: small steps",
+   "ru": "тесное сближение: мелкие шаги"
+  },
+  "time.limit_fault": {
+   "en": "numerical fault: state restored",
+   "ru": "численный сбой: состояние восстановлено"
+  },
+  "time.limit_guard": {
+   "en": "model limit reached",
+   "ru": "достигнута граница модели"
+  },
+  "time.limit_speed": {
+   "en": "speed above 0.1 c",
+   "ru": "скорость выше 0,1 c"
+  },
+  "time.paused": {
+   "en": "paused",
+   "ru": "пауза"
+  },
+  "toast.add_rejected": {
+   "en": "Placement rejected ({0}). {1}",
+   "ru": "Размещение отклонено ({0}). {1}"
+  },
+  "toast.edit_rejected": {
+   "en": "Change rejected ({0}). {1}",
+   "ru": "Изменение отклонено ({0}). {1}"
+  },
+  "toast.edit_stale": {
+   "en": "Change not applied: the world changed before it arrived (another change was still being applied). Try again: {0}",
+   "ru": "Изменение не применено: мир изменился раньше, чем оно пришло (ещё применялось другое изменение). Повторите: {0}"
+  },
+  "toast.fragmentation": {
+   "en": "Collision: bodies fragmented",
+   "ru": "Столкновение: тела раздроблены"
+  },
+  "toast.fuel": {
+   "en": "Accretion reservoir exhausted: the disk fades, the mass remains.",
+   "ru": "Запас аккреции исчерпан: диск гаснет, масса остаётся."
+  },
+  "toast.guard": {
+   "en": "Model limit reached ({0}): simulation paused. See the event card.",
+   "ru": "Достигнута граница модели ({0}): симуляция на паузе. Подробности в карточке события."
+  },
+  "toast.held_stale": {
+   "en": "Not applied: the panel showed another state of the world (a load, a switch, an undo or a redo). It shows the current one now.",
+   "ru": "Не применено: панель показывала другое состояние мира (загрузка, переключение, отмена или повтор). Сейчас она показывает текущее."
+  },
+  "toast.load_failed": {
+   "en": "Could not open {0}: {1}",
+   "ru": "Не удалось открыть {0}: {1}"
+  },
+  "toast.load_save_failed": {
+   "en": "Could not load the save: {0}",
+   "ru": "Не удалось загрузить сохранение: {0}"
+  },
+  "toast.loaded": {
+   "en": "Loaded",
+   "ru": "Загружено"
+  },
+  "toast.merge": {
+   "en": "Collision: bodies merged",
+   "ru": "Столкновение: тела слились"
+  },
+  "toast.no_save": {
+   "en": "No save yet",
+   "ru": "Сохранений пока нет"
+  },
+  "toast.nothing_to_redo": {
+   "en": "Nothing to redo",
+   "ru": "Нечего повторять"
+  },
+  "toast.nothing_to_undo": {
+   "en": "Nothing to undo",
+   "ru": "Нечего отменять"
+  },
+  "toast.redone": {
+   "en": "Redone: {0}",
+   "ru": "Повторено: {0}"
+  },
+  "toast.remove_rejected": {
+   "en": "Removal rejected ({0})",
+   "ru": "Удаление отклонено ({0})"
+  },
+  "toast.save_failed": {
+   "en": "Save failed: {0}",
+   "ru": "Не удалось сохранить: {0}"
+  },
+  "toast.save_unavailable": {
+   "en": "Saving is not available in this build (core snapshot codec missing).",
+   "ru": "Сохранение недоступно в этой сборке (нет кодека снимков ядра)."
+  },
+  "toast.saved": {
+   "en": "Saved",
+   "ru": "Сохранено"
+  },
+  "toast.undone": {
+   "en": "Undone: {0}",
+   "ru": "Отменено: {0}"
+  },
+  "tool.need_beam": {
+   "en": "A jet/beam receiver needs a pulsar, an accreting black hole or a star in the scene.",
+   "ru": "Приёмнику джета/луча нужен пульсар, аккрецирующая чёрная дыра или звезда в сцене."
+  },
+  "tool.need_planet": {
+   "en": "Select a planet or moon first.",
+   "ru": "Сначала выберите планету или спутник."
+  },
+  "tool.need_pulsar": {
+   "en": "A pulse receiver needs a pulsar in the scene.",
+   "ru": "Приёмнику импульсов нужен пульсар в сцене."
+  },
+  "tool.need_star": {
+   "en": "This instrument needs a star in the scene.",
+   "ru": "Этому прибору нужна звезда в сцене."
+  },
+  "tool.need_target": {
+   "en": "Select a suitable body first.",
+   "ru": "Сначала выберите подходящее тело."
+  },
+  "tool.need_two": {
+   "en": "Select a body, then Shift+click a second one.",
+   "ru": "Выберите тело, затем Shift+щелчок по второму."
+  },
+  "tool.no_optional": {
+   "en": "This candidate is not part of the current scene.",
+   "ru": "Этого кандидата нет в текущей сцене."
+  },
+  "tool.no_sim": {
+   "en": "The simulation is not available.",
+   "ru": "Симуляция недоступна."
+  },
+  "tool.no_world": {
+   "en": "Open a place first.",
+   "ru": "Сначала откройте место."
+  },
+  "tool.optional_added": {
+   "en": "Candidate added with its catalogue state; its status stays labelled.",
+   "ru": "Кандидат добавлен с каталожным состоянием; его статус остаётся подписан."
+  },
+  "tool.unavailable": {
+   "en": "This tool is not available in this build.",
+   "ru": "Этот инструмент недоступен в этой сборке."
+  },
+  "tree.tip": {
+   "en": "Click to select. Double-click in the view (or F) to focus the camera.",
+   "ru": "Щелчок — выбрать. Двойной щелчок в сцене (или F) — навести камеру."
+  },
+  "tree.tracers": {
+   "en": "{0} massless tracers in {1} structures (feel gravity, exert none)",
+   "ru": "{0} безмассовых трассеров в {1} структурах (чувствуют гравитацию, сами не притягивают)"
+  },
+  "tx.atmosphere": {
+   "en": "{0}: atmosphere hypothesis {1}",
+   "ru": "{0}: гипотеза атмосферы {1}"
+  },
+  "tx.beam": {
+   "en": "{0}: beam inclination -> {1} deg",
+   "ru": "{0}: наклонение луча -> {1}°"
+  },
+  "tx.beam_axis": {
+   "en": "{0}: beam axis turned (gravity unchanged)",
+   "ru": "{0}: ось луча повёрнута (гравитация не меняется)"
+  },
+  "tx.beam_power": {
+   "en": "{0}: beam power share -> {1}",
+   "ru": "{0}: доля мощности в лучах -> {1}"
+  },
+  "tx.brush_at": {
+   "en": "{0}: {1} brush at lat {2}, lon {3}, radius {4}",
+   "ru": "{0}: кисть «{1}» на широте {2}, долготе {3}, радиус {4}"
+  },
+  "tx.distance": {
+   "en": "{0}: circular orbit at {1}",
+   "ru": "{0}: круговая орбита на {1}"
+  },
+  "tx.heater": {
+   "en": "{0}: finite heater",
+   "ru": "{0}: конечный нагреватель"
+  },
+  "tx.jet": {
+   "en": "{0}: jet axis tilted 30 deg",
+   "ru": "{0}: ось джета наклонена на 30°"
+  },
+  "tx.launch": {
+   "en": "{0}: launch vector {1} (prograde {2}, radial {3}, normal {4})",
+   "ru": "{0}: вектор запуска {1} (по движению {2}, радиально {3}, по нормали {4})"
+  },
+  "tx.luminosity": {
+   "en": "{0}: luminosity -> {1}",
+   "ru": "{0}: светимость -> {1}"
+  },
+  "tx.mass": {
+   "en": "{0}: mass -> {1}",
+   "ru": "{0}: масса -> {1}"
+  },
+  "tx.mass_factor": {
+   "en": "{0}: mass x{1}",
+   "ru": "{0}: масса ×{1}"
+  },
+  "tx.mdot": {
+   "en": "{0}: accretion -> {1} Msun/yr",
+   "ru": "{0}: аккреция -> {1} Msun/год"
+  },
+  "tx.optional": {
+   "en": "Add candidate {0}",
+   "ru": "Добавить кандидата {0}"
+  },
+  "tx.orbit_shape": {
+   "en": "{0}: orbit periapsis {1}, apoapsis {2}, inclination {3}",
+   "ru": "{0}: орбита с перицентром {1}, апоцентром {2}, наклонением {3}"
+  },
+  "tx.place": {
+   "en": "Add {0}",
+   "ru": "Добавить {0}"
+  },
+  "tx.pressure": {
+   "en": "{0}: surface pressure {1}",
+   "ru": "{0}: давление у поверхности {1}"
+  },
+  "tx.radius": {
+   "en": "{0}: radius -> {1}",
+   "ru": "{0}: радиус -> {1}"
+  },
+  "tx.remove": {
+   "en": "Remove {0}",
+   "ru": "Удалить {0}"
+  },
+  "tx.supernova": {
+   "en": "{0}: scripted supernova",
+   "ru": "{0}: сверхновая по сценарию"
+  },
+  "tx.surface": {
+   "en": "{0}: enable surface grid",
+   "ru": "{0}: включить сетку поверхности"
+  },
+  "tx.to_bh": {
+   "en": "{0} -> black hole (same mass, fantasy outcome)",
+   "ru": "{0} -> чёрная дыра (та же масса, фантазийный исход)"
+  },
+  "tx.tracers": {
+   "en": "Seed 300 massless tracers around {0}",
+   "ru": "Посеять 300 безмассовых трассеров вокруг {0}"
+  },
+  "ui.back": {
+   "en": "< Back",
+   "ru": "< Назад"
+  },
+  "ui.copy_link": {
+   "en": "Copy link",
+   "ru": "Копировать ссылку"
+  },
+  "ui.next": {
+   "en": ">",
+   "ru": ">"
+  },
+  "ui.prev": {
+   "en": "<",
+   "ru": "<"
+  },
+  "unit.au": {
+   "en": "AU",
+   "ru": "а.е."
+  },
+  "unit.d": {
+   "en": "d",
+   "ru": "сут"
+  },
+  "unit.earth_flux": {
+   "en": "x Earth",
+   "ru": "× земного"
+  },
+  "unit.h": {
+   "en": "h",
+   "ru": "ч"
+  },
+  "unit.kg": {
+   "en": "kg",
+   "ru": "кг"
+  },
+  "unit.km": {
+   "en": "km",
+   "ru": "км"
+  },
+  "unit.kms": {
+   "en": "km/s",
+   "ru": "км/с"
+  },
+  "unit.kyr": {
+   "en": "kyr",
+   "ru": "тыс. лет"
+  },
+  "unit.lsun": {
+   "en": "L Sun",
+   "ru": "L Солнца"
+  },
+  "unit.m": {
+   "en": "m",
+   "ru": "м"
+  },
+  "unit.mearth": {
+   "en": "M Earth",
+   "ru": "M Земли"
+  },
+  "unit.min": {
+   "en": "min",
+   "ru": "мин"
+  },
+  "unit.mjup": {
+   "en": "M Jup",
+   "ru": "M Юпитера"
+  },
+  "unit.ms": {
+   "en": "m/s",
+   "ru": "м/с"
+  },
+  "unit.msun": {
+   "en": "M Sun",
+   "ru": "M Солнца"
+  },
+  "unit.pc": {
+   "en": "pc",
+   "ru": "пк"
+  },
+  "unit.rearth": {
+   "en": "R Earth",
+   "ru": "R Земли"
+  },
+  "unit.rjup": {
+   "en": "R Jup",
+   "ru": "R Юпитера"
+  },
+  "unit.rsun": {
+   "en": "R Sun",
+   "ru": "R Солнца"
+  },
+  "unit.s": {
+   "en": "s",
+   "ru": "с"
+  },
+  "unit.stopped": {
+   "en": "stopped",
+   "ru": "остановлено"
+  },
+  "unit.yr": {
+   "en": "yr",
+   "ru": "лет"
+  },
+  "value.no": {
+   "en": "no",
+   "ru": "нет"
+  },
+  "value.not_provided": {
+   "en": "not provided",
+   "ru": "не указано"
+  },
+  "value.yes": {
+   "en": "yes",
+   "ru": "да"
+  },
+  "view.edge_on": {
+   "en": "Edge-on",
+   "ru": "С ребра"
+  },
+  "view.edge_on.tip": {
+   "en": "Look along the orbital plane",
+   "ru": "Смотреть вдоль плоскости орбит"
+  },
+  "view.follow": {
+   "en": "Follow",
+   "ru": "Следить"
+  },
+  "view.follow.tip": {
+   "en": "Keep the selected body in the centre",
+   "ru": "Держать выбранное тело в центре"
+  },
+  "view.follow_needs_selection": {
+   "en": "Select a body to follow.",
+   "ru": "Выберите тело, за которым следить."
+  },
+  "view.free": {
+   "en": "Free",
+   "ru": "Свободно"
+  },
+  "view.free.tip": {
+   "en": "Free orbit camera (Home)",
+   "ru": "Свободная орбитальная камера (Home)"
+  },
+  "view.label": {
+   "en": "View",
+   "ru": "Вид"
+  },
+  "view.no_observer": {
+   "en": "This scene defines no observer direction; the view looks along +Z of the scene frame.",
+   "ru": "В этой сцене не задано направление наблюдателя; вид направлен вдоль +Z системы координат сцены."
+  },
+  "view.observer": {
+   "en": "Observer",
+   "ru": "Наблюдатель"
+  },
+  "view.observer.tip": {
+   "en": "Look from the scene's observer direction (as a telescope on Earth sees the system)",
+   "ru": "Смотреть с направления наблюдателя сцены (как телескоп на Земле видит систему)"
+  },
+  "view.top": {
+   "en": "Top",
+   "ru": "Сверху"
+  },
+  "view.top.tip": {
+   "en": "Look down on the orbital plane",
+   "ru": "Смотреть сверху на плоскость орбит"
+  }
+ }
+}

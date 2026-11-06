@@ -1,0 +1,456 @@
+{
+ "schema": "aixenix.cosmos.archetypes/1",
+ "version": "aixenix.gen/1",
+ "rng": {
+  "name": "SplitMix64",
+  "spec": "Deterministic integer RNG shared with the C++ generator (documented in archetypes.json).\n\n    next_u64: state += 0x9E3779B97F4A7C15; z = state; z = (z ^ (z >> 30)) * 0xBF58476D1CE4E5B9;\n              z = (z ^ (z >> 27)) * 0x94D049BB133111EB; return z ^ (z >> 31)   (all mod 2^64)\n    uniform(): (next_u64 >> 11) * 2^-53  in [0,1)",
+  "salted_seed": "state = seed XOR archetype_salt (see Scripts/prepare_content.py)",
+  "golden_references": "Content/Data/Scenes/generated.*.json are this generator's outputs for the listed seeds"
+ },
+ "archetypes": [
+  {
+   "id": "single_star",
+   "algorithm_id": "aixenix.gen/1:single_star",
+   "name": {
+    "en": "Single star system",
+    "ru": "Одиночная звезда"
+   },
+   "params": {
+    "star_mass_msun": [
+     0.7,
+     1.3
+    ],
+    "planet_count": [
+     4,
+     8
+    ],
+    "first_period_d": [
+     5,
+     40
+    ],
+    "period_ratio": [
+     1.5,
+     2.6
+    ],
+    "habitable_lab": [
+     0,
+     1
+    ]
+   },
+   "algorithm": [
+    "m* = logU(0.7,1.3)",
+    "n = 4 + u64%5",
+    "P1 = logU(5,40) d; P(k+1) = P(k) * U(1.5,2.6)",
+    "inside snow line 2.7 au*(m*)^2: mass logU(0.1,6) Me; outside: giant with p=0.6 mass logU(15,1500) Me else logU(1,15)",
+    "e = U(0,0.06), i = U(0,2.5) deg, node/omega/M = U(0,360)",
+    "habitable_lab: replace planet nearest S=1 by 1 Me at a = sqrt(L)"
+   ],
+   "golden_scenes": [
+    "generated.climate"
+   ]
+  },
+  {
+   "id": "red_dwarf_chain",
+   "algorithm_id": "aixenix.gen/1:red_dwarf_chain",
+   "name": {
+    "en": "Red dwarf with a compact chain",
+    "ru": "Красный карлик с компактной цепочкой"
+   },
+   "params": {
+    "star_mass_msun": [
+     0.08,
+     0.25
+    ],
+    "planet_count": [
+     5,
+     8
+    ],
+    "first_period_d": [
+     1.0,
+     3.0
+    ],
+    "ratios": [
+     "3:2",
+     "4:3",
+     "5:3",
+     "2:1"
+    ],
+    "offset": [
+     0.002,
+     0.012
+    ]
+   },
+   "algorithm": [
+    "m* = logU(0.08,0.25)",
+    "n = 5 + u64%4",
+    "P1 = U(1,3) d; ratio = choice(3/2,4/3,5/3,2/1)*(1+U(0.002,0.012))",
+    "mass logU(0.3,2.0) Me; e = U(0,0.008); i = U(0,0.4) deg; M = U(0,360)"
+   ],
+   "golden_scenes": [
+    "generated.red_chain"
+   ]
+  },
+  {
+   "id": "wide_giants",
+   "algorithm_id": "aixenix.gen/1:wide_giants",
+   "name": {
+    "en": "Wide giant planets with belts",
+    "ru": "Широкая система гигантов"
+   },
+   "params": {
+    "star_mass_msun": [
+     1.2,
+     2.0
+    ],
+    "giant_count": [
+     3,
+     5
+    ],
+    "inner_a_au": [
+     8,
+     18
+    ],
+    "spacing": [
+     1.6,
+     2.2
+    ],
+    "mass_mjup": [
+     1,
+     10
+    ]
+   },
+   "algorithm": [
+    "m* = U(1.2,2.0)",
+    "n = 3 + u64%3",
+    "a1 = U(8,18) au; a(k+1) = a(k)*U(1.6,2.2)",
+    "mass U(1,10) MJ; e U(0,0.08); i U(0,2)",
+    "belts: warm 0.4*a1..0.8*a1, cold 1.5*a_n..2.5*a_n (massless tracers)"
+   ],
+   "golden_scenes": [
+    "generated.wide_giants"
+   ]
+  },
+  {
+   "id": "hot_jupiter",
+   "algorithm_id": "aixenix.gen/1:hot_jupiter",
+   "name": {
+    "en": "Hot Jupiter",
+    "ru": "Горячий Юпитер"
+   },
+   "params": {
+    "star_mass_msun": [
+     0.9,
+     1.25
+    ],
+    "hj_period_d": [
+     1.2,
+     5.0
+    ],
+    "hj_mass_mjup": [
+     0.3,
+     3.0
+    ],
+    "outer_companion_probability": 0.5
+   },
+   "algorithm": [
+    "m* = U(0.9,1.25)",
+    "hot Jupiter P = U(1.2,5) d, M = logU(0.3,3) MJ, e = 0",
+    "with p=0.5: outer giant a = U(1.5,5) au, M = logU(0.5,5) MJ, e = U(0,0.3)"
+   ],
+   "golden_scenes": [
+    "generated.hot_jupiter"
+   ]
+  },
+  {
+   "id": "s_type_binary",
+   "algorithm_id": "aixenix.gen/1:s_type_binary",
+   "name": {
+    "en": "Planets around one star of a binary (S-type)",
+    "ru": "S-орбита в двойной"
+   },
+   "params": {
+    "mass_a": [
+     0.8,
+     1.2
+    ],
+    "mass_b": [
+     0.3,
+     0.9
+    ],
+    "binary_a_au": [
+     20,
+     60
+    ],
+    "binary_e": [
+     0.1,
+     0.5
+    ],
+    "planets": [
+     1,
+     3
+    ]
+   },
+   "algorithm": [
+    "mA = U(0.8,1.2), mB = U(0.3,0.9)",
+    "a_b = U(20,60) au, e_b = U(0.1,0.5)",
+    "a_crit = Holman&Wiegert1999 S-type * a_b; planets at a_crit*U(0.15,0.75) sorted, masses logU(1,300) Me"
+   ],
+   "golden_scenes": [
+    "generated.binary_s"
+   ]
+  },
+  {
+   "id": "p_type_circumbinary",
+   "algorithm_id": "aixenix.gen/1:p_type_circumbinary",
+   "name": {
+    "en": "Planets around both stars (P-type)",
+    "ru": "P-орбита вокруг пары"
+   },
+   "params": {
+    "mass_a": [
+     0.7,
+     1.1
+    ],
+    "mass_b": [
+     0.2,
+     0.8
+    ],
+    "binary_period_d": [
+     7,
+     40
+    ],
+    "binary_e": [
+     0.0,
+     0.3
+    ],
+    "planets": [
+     1,
+     3
+    ]
+   },
+   "algorithm": [
+    "mA, mB uniform",
+    "P_b = logU(7,40) d, e_b = U(0,0.3)",
+    "a_crit = HW99 P-type * a_b; planet k at a_crit*(1.2+0.6k)*U(1,1.3)",
+    "planet masses logU(5,400) Me, coplanar within 0.5 deg"
+   ],
+   "golden_scenes": [
+    "generated.binary_p"
+   ]
+  },
+  {
+   "id": "hierarchical_triple",
+   "algorithm_id": "aixenix.gen/1:hierarchical_triple",
+   "name": {
+    "en": "Hierarchical triple star",
+    "ru": "Иерархическая тройная"
+   },
+   "params": {
+    "inner_masses": [
+     0.5,
+     1.0
+    ],
+    "inner_period_d": [
+     10,
+     100
+    ],
+    "outer_mass": [
+     0.3,
+     0.8
+    ],
+    "period_ratio": [
+     40,
+     200
+    ],
+    "tertiary_planet": true
+   },
+   "algorithm": [
+    "inner pair U(0.5,1.0) each, P_in = logU(10,100) d, e_in U(0,0.3)",
+    "outer star U(0.3,0.8), P_out = P_in*logU(40,200), e_out U(0,0.4), i_mut U(0,40)",
+    "Mardling-Aarseth check stored; planet around tertiary at 0.2*a_crit(S-type vs outer orbit)"
+   ],
+   "golden_scenes": [
+    "generated.triple"
+   ]
+  },
+  {
+   "id": "resonant_chain",
+   "algorithm_id": "aixenix.gen/1:resonant_chain",
+   "name": {
+    "en": "Resonant chain",
+    "ru": "Резонансная цепочка"
+   },
+   "params": {
+    "star_mass_msun": [
+     0.8,
+     1.1
+    ],
+    "planet_count": [
+     4,
+     6
+    ],
+    "first_period_d": [
+     4,
+     12
+    ],
+    "ratios": [
+     "3:2",
+     "4:3",
+     "2:1"
+    ],
+    "offset": [
+     -0.003,
+     0.008
+    ]
+   },
+   "algorithm": [
+    "m* U(0.8,1.1)",
+    "n = 4 + u64%3",
+    "P1 U(4,12) d; ratio choice(3/2,4/3,2/1)*(1+U(-0.003,0.008))",
+    "masses logU(2,15) Me; e U(0,0.02)"
+   ],
+   "golden_scenes": []
+  },
+  {
+   "id": "moon_system_ring",
+   "algorithm_id": "aixenix.gen/1:moon_system_ring",
+   "name": {
+    "en": "Planet with moons and a ring",
+    "ru": "Планета со спутниками и кольцом"
+   },
+   "params": {
+    "giant_mass_mjup": [
+     0.3,
+     3.0
+    ],
+    "giant_a_au": [
+     1.0,
+     6.0
+    ],
+    "moons": [
+     3,
+     5
+    ],
+    "ring": true
+   },
+   "algorithm": [
+    "G-dwarf host 1 Msun",
+    "giant mass logU(0.3,3) MJ at a U(1,6) au",
+    "moons: a1 = U(5,8) R_p, ratio 2*(1+U(0,0.02)), masses logU(1e-3,0.03) Me",
+    "ring 1.2..2.2 R_p (inside fluid Roche limit; visual, massless)"
+   ],
+   "golden_scenes": [
+    "generated.moon_lab"
+   ]
+  },
+  {
+   "id": "remnant_planets",
+   "algorithm_id": "aixenix.gen/1:remnant_planets",
+   "name": {
+    "en": "Planets around a stellar remnant",
+    "ru": "Планеты у остатка звезды"
+   },
+   "params": {
+    "remnant": [
+     "white_dwarf",
+     "pulsar"
+    ],
+    "wd_mass": [
+     0.55,
+     0.75
+    ],
+    "planets": [
+     1,
+     3
+    ],
+    "debris_disk": true
+   },
+   "algorithm": [
+    "remnant: white dwarf (p=0.75) mass U(0.55,0.75) Teff U(6000,20000) R=0.0125 Rsun*(M/0.6)^-1/3, or pulsar 1.4 Msun",
+    "planets a = logU(0.02,20) au sorted, masses logU(0.01,600) Me",
+    "tidal debris disk 0.5..1.2 R_sun (massless)"
+   ],
+   "golden_scenes": [
+    "generated.remnant"
+   ]
+  },
+  {
+   "id": "rogue_flyby",
+   "algorithm_id": "aixenix.gen/1:rogue_flyby",
+   "name": {
+    "en": "Free-floating body flyby",
+    "ru": "Пролетающее свободное тело"
+   },
+   "params": {
+    "host_planets": [
+     2,
+     4
+    ],
+    "intruder_mass_mjup": [
+     1,
+     80
+    ],
+    "impact_parameter_au": [
+     5,
+     60
+    ],
+    "v_inf_kms": [
+     1,
+     6
+    ],
+    "start_distance_au": 600
+   },
+   "algorithm": [
+    "host: Sun-like star with 2-4 planets (single_star rules, a <= 30 au)",
+    "intruder mass logU(1,80) MJ (planet or brown dwarf)",
+    "hyperbola with b = U(5,60) au, v_inf = U(1,6) km/s, starting at 600 au on the incoming asymptote; inclination U(0,60) deg"
+   ],
+   "golden_scenes": [
+    "generated.rogue"
+   ]
+  },
+  {
+   "id": "agn_lab",
+   "algorithm_id": "aixenix.gen/1:agn_lab",
+   "name": {
+    "en": "Active galactic nucleus laboratory",
+    "ru": "Лаборатория активного ядра"
+   },
+   "params": {
+    "bh_mass_msun": [
+     1000000.0,
+     100000000.0
+    ],
+    "stars": [
+     4,
+     6
+    ],
+    "periapse_rs": [
+     800,
+     5000
+    ],
+    "disk_fuel_msun": [
+     0.01,
+     1.0
+    ],
+    "eddington_fraction": [
+     0.01,
+     0.3
+    ]
+   },
+   "algorithm": [
+    "M_bh = logU(1e6,1e8)",
+    "disk reservoir logU(0.01,1) Msun, efficiency 0.1, mdot = f_Edd * L_Edd/(0.1 c^2), finite",
+    "stars 1-15 Msun on orbits with periapse logU(800,5000) r_s, e U(0.3,0.9), random orientation",
+    "jet along +z, power 0.1*L_acc"
+   ],
+   "golden_scenes": [
+    "generated.agn"
+   ]
+  }
+ ],
+ "limits": {
+  "en": "A generated system passes static checks (no overlaps, bound orbits, Hill spacing reported); no long-term stability claim.",
+  "ru": "Сгенерированная система проходит статические проверки; заявлений о долгосрочной устойчивости нет."
+ }
+}

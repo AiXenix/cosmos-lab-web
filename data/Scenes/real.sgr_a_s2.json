@@ -1,0 +1,384 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.sgr_a_s2",
+ "name": {
+  "en": "Sgr A* / S2",
+  "ru": "Стрелец A* / S2"
+ },
+ "kind": "real_stellar_or_compact",
+ "group": "galactic_centre",
+ "description": {
+  "en": "The Milky Way's central black hole of 4.3 million solar masses and the star S2 on a 16-year orbit passing 120 au from it.",
+  "ru": "Центральная чёрная дыра Млечного Пути массой 4,3 млн Солнц и звезда S2 на 16-летней орбите, проходящая в 120 а.е. от неё."
+ },
+ "gameplay": "Орбита S2 и сравнение моделей с явно заданной применимостью",
+ "epoch": {
+  "jd_tdb": 2457754.25,
+  "label": "2017.0 (1.4 years before S2 periapse)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 3600.0,
+  "suggested_horizon_s": 1519020000.0,
+  "time_scale_hint": 25317100.0,
+  "guard": {
+   "min_separation_m": 4174200000.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "S2 periapse is ~1400 r_s and ~0.026 c: inside the Newtonian guard, but relativistic effects measured by GRAVITY are absent.",
+    "ru": "Перицентр S2 ~1400 r_s и ~0,026 c: в пределах ньютоновского ограничителя, но измеренные GRAVITY релятивистские эффекты отсутствуют."
+   },
+   "schwarzschild_guard_factor": 100.0,
+   "max_speed_fraction_c": 0.1
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 398811000000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "gc",
+   "kind": "hierarchy",
+   "members": [
+    "sgr_a_star",
+    "s2"
+   ],
+   "name": {
+    "en": "Galactic centre",
+    "ru": "Центр Галактики"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "sgr_a_star",
+   "name": {
+    "en": "Sagittarius A*",
+    "ru": "Стрелец A*"
+   },
+   "class": "black_hole",
+   "subclass": "supermassive",
+   "parent": null,
+   "mass_kg": 8.47261446167975e+36,
+   "radius_m": 12583798578.1773,
+   "position_m": [
+    177216633.7359756,
+    298908583.4489785,
+    243471599.2721611
+   ],
+   "velocity_mps": [
+    -5.026279354192962,
+    -4.716312441408957,
+    -1.34993742491393
+   ],
+   "compact": {
+    "schwarzschild_radius_m": 12583798578.1773,
+    "accretion": {
+     "enabled": true,
+     "disk_mass_kg": 3e+26,
+     "mdot_kg_s": 1.11265e+17,
+     "efficiency": 1e-05,
+     "luminosity_w": 1e+29,
+     "fuel_finite": true,
+     "inner_radius_m": 37751395734.5318,
+     "outer_radius_m": 755027914690.637
+    },
+    "jet": {
+     "enabled": false,
+     "power_w": 0.0,
+     "half_opening_deg": 5.0,
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "appearance": {
+    "profile": "BlackHole_Default",
+    "seed": 4061724116,
+    "params": {},
+    "layers": {
+     "disk": {
+      "profile": "Disk_Quiescent",
+      "params": {}
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "compact.accretion"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "gravity2020"
+    },
+    "radius_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Schwarzschild radius"
+    },
+    "compact.accretion": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "quiescent radiatively inefficient flow; L ~ 1e29 W and eta = 1e-5 illustrative; finite reservoir 3e26 kg sized to last ~86 yr (beyond the 48-yr horizon) because the real inflow from stellar winds is not simulated"
+    }
+   }
+  },
+  {
+   "id": "s2",
+   "name": {
+    "en": "S2 (S0-2)",
+    "ru": "S2 (S0-2)"
+   },
+   "class": "star",
+   "subclass": "B0-2.5V",
+   "parent": "sgr_a_star",
+   "mass_kg": 2.70423742499049e+31,
+   "radius_m": 4174200000.0,
+   "position_m": [
+    -55523535025661.1,
+    -93650696623242.31,
+    -76281800330785.06
+   ],
+   "velocity_mps": [
+    1574777.671192366,
+    1477662.302414966,
+    422947.3064381063
+   ],
+   "star": {
+    "teff_k": 28000.0,
+    "luminosity_w": 7.63133e+30,
+    "spectral_type": "B0-2.5V"
+   },
+   "appearance": {
+    "profile": "Star_Hot",
+    "seed": 1183330989,
+    "params": {
+     "StarColor": [
+      0.369,
+      0.5023,
+      1.0,
+      1
+     ],
+     "Seed": 989.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.369,
+        0.5023,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "habibi2017",
+     "note": "mass from Habibi 2017; radius illustrative"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "habibi2017",
+     "note": "mass from Habibi 2017; radius illustrative"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "habibi2017",
+     "note": "mass from Habibi 2017; radius illustrative"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "literature",
+     "source": "gravity2020",
+     "method": "Keplerian elements of the GRAVITY 2020 fit (R0 = 8246.7 pc) -> state; fit includes 1PN terms that are absent here"
+    }
+   },
+   "elements": {
+    "a_m": 154282648985809.0,
+    "e": 0.884649,
+    "i_deg": 134.567,
+    "node_deg": 228.171,
+    "omega_deg": 66.263,
+    "mean_anomaly_deg": 329.0604842,
+    "period_s": 506341147.562338,
+    "reference": "binary",
+    "convention": "sky"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [
+  {
+   "id": "nuclear_cluster_glow",
+   "type": "nebula_glow",
+   "parent": "sgr_a_star",
+   "inner_radius_m": 74798935350000.0,
+   "outer_radius_m": 5983914828000000.0,
+   "thickness_m": 5983914828000000.0,
+   "total_mass_kg": 0.0,
+   "massless": true,
+   "test_particle_count": 0,
+   "seed": 4711,
+   "eccentricity_max": 0,
+   "inclination_max_deg": 90,
+   "appearance": {
+    "profile": "Sky_GalacticCenter",
+    "params": {}
+   },
+   "provenance": {
+    "geometry": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "visual backdrop only; other S-stars and the nuclear cluster mass are not simulated"
+    }
+   },
+   "note": {
+    "en": "Visual only: the surrounding star cluster has no gravity in this scene.",
+    "ru": "Только визуально: окружающее скопление не имеет гравитации в этой сцене."
+   }
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "newtonian_s2",
+   "text": {
+    "en": "Newtonian point-mass model: the observed 12-arcminute Schwarzschild precession per orbit and gravitational redshift are not produced.",
+    "ru": "Ньютоновская модель точечных масс: наблюдаемая шварцшильдовская прецессия 12′ за оборот и гравитационное красное смещение не возникают."
+   },
+   "affects": [
+    "physics"
+   ]
+  },
+  {
+   "id": "finite_reservoir",
+   "text": {
+    "en": "Accretion is a finite reservoir with no resupply; its size is chosen to outlast the scene horizon, not measured.",
+    "ru": "Аккреция — конечный запас без пополнения; его размер выбран так, чтобы хватило на горизонт сцены, а не измерен."
+   },
+   "affects": [
+    "sgr_a_star.compact.accretion"
+   ]
+  },
+  {
+   "id": "other_s_stars",
+   "text": {
+    "en": "Other S-stars, the extended mass and gas clouds are not included.",
+    "ru": "Другие S-звёзды, протяжённая масса и газовые облака не включены."
+   },
+   "affects": [
+    "bodies"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 3,
+  "reconstructed": 0,
+  "assumed": 1,
+  "literature": 5,
+  "authored": 0
+ },
+ "sources": [
+  {
+   "id": "gravity2020",
+   "title": "GRAVITY Collaboration 2020, A&A 636, L5 (S2 orbit, Schwarzschild precession)",
+   "url": "https://arxiv.org/abs/2004.07187",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "habibi2017",
+   "title": "Habibi et al. 2017, ApJ 847, 120 (S2 spectroscopy)",
+   "url": "https://arxiv.org/abs/1708.06353",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_e32d333f",
+   "title": "GRAVITY",
+   "url": "https://arxiv.org/abs/2004.07187",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E36",
+  "E66"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 7.93e+03)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 1.2e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_GalacticCenter",
+ "plan": {
+  "research_id": "CS36",
+  "gameplay": "Орбита S2 и сравнение моделей с явно заданной применимостью"
+ }
+}

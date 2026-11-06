@@ -1,0 +1,586 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.hd_80606_80607",
+ "name": {
+  "en": "HD 80606 / HD 80607",
+  "ru": "HD 80606 / HD 80607"
+ },
+ "kind": "real_planetary",
+ "group": "eccentric_giant",
+ "description": {
+  "en": "A giant planet on a 0.93-eccentricity orbit, heated by a short flash at periastron; a wide stellar companion HD 80607.",
+  "ru": "Гигант на орбите с эксцентриситетом 0,93 с коротким нагревом в перицентре; широкий звёздный компаньон HD 80607."
+ },
+ "gameplay": "Тепловой импульс в перицентре и его запаздывание",
+ "epoch": {
+  "jd_tdb": 2458888.5,
+  "label": "JD 2458888.5 TDB (median of catalogue reference times, to limit propagation)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 285.615,
+  "suggested_horizon_s": 192563000.0,
+  "time_scale_hint": 481407.0,
+  "guard": {
+   "min_separation_m": 73779700.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  },
+  "long_horizon_hint_s": 19256300000000.0,
+  "horizon_note": {
+   "en": "Default free-play hint: 20 periods of the high-eccentricity planet. The long optional horizon (pmin x 2e6) was only partly audited (core scene-horizon audit: 9.3 % covered within its CPU budget); it is not a stability claim.",
+   "ru": "Подсказка свободной игры по умолчанию: 20 периодов планеты с большим эксцентриситетом. Длинный необязательный горизонт (pmin x 2e6) проверен лишь частично (аудит горизонтов ядра: 9,3 % в пределах бюджета CPU); это не утверждение об устойчивости."
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 472055000000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "planets",
+   "kind": "planet_family",
+   "members": [
+    "hd_80606_b"
+   ],
+   "name": {
+    "en": "Planets",
+    "ru": "Планеты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "hd_80606_80607_star",
+   "name": {
+    "en": "HD 80606",
+    "ru": "HD 80606"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 2.08783036488236e+30,
+   "radius_m": 730485000.0,
+   "position_m": [
+    -134364189075914.9,
+    -177559803.6926579,
+    -2355380.569294234
+   ],
+   "velocity_mps": [
+    -94.5339446241197,
+    90.93892900441035,
+    -2.867099492179196
+   ],
+   "star": {
+    "teff_k": 5565.0,
+    "luminosity_w": 3.6467407e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 2411559426,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8583,
+      0.7709,
+      1
+     ],
+     "Seed": 426.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8583,
+        0.7709,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.05,
+      "unit": "M_sun",
+      "column": "st_mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.05,
+      "unit": "R_sun",
+      "column": "st_rad"
+     }
+    },
+    "star.teff_k": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 5565.0,
+      "unit": "K",
+      "column": "st_teff"
+     }
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    }
+   },
+   "catalogue_name": "HD 80606"
+  },
+  {
+   "id": "hd_80606_b",
+   "name": {
+    "en": "HD 80606 b",
+    "ru": "HD 80606 b"
+   },
+   "catalogue_name": "HD 80606 b",
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "hd_80606_80607_star",
+   "mass_kg": 7.9039813499349e+27,
+   "radius_m": 73779743.781048,
+   "position_m": [
+    -134363267355332.8,
+    46902280418.54507,
+    622171897.3902823
+   ],
+   "velocity_mps": [
+    24971.06601851611,
+    57399.12417632625,
+    757.342042432813
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 89.24,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1323.46926959,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 11.56766808,
+      "unit": "R_earth",
+      "column": "pl_rade"
+     }
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 111.436765,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.4603,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.93183,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "published angle placed as the planet's argument of periastron (transit at f = 90deg - omega); NASA does not standardise planet vs stellar-reflex conventions, so the subject is unknown (reconstruction)",
+     "original": {
+      "value": -58.887,
+      "column": "pl_orblper"
+     },
+     "angle_subject": "unknown"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from transit midtime with catalogue period over 0 orbits; period uncertainty alone shifts timing by ~6.8e-06 h",
+     "original": {
+      "value": 2458888.07466,
+      "unit": "BJD",
+      "column": "pl_tranmid"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     8.92119e+24,
+     8.92119e+24
+    ],
+    "radius_m": [
+     1072380.0,
+     1072380.0
+    ]
+   },
+   "elements": {
+    "a_m": 68995732805.4197,
+    "e": 0.93183,
+    "i_deg": 89.24,
+    "node_deg": 0.0,
+    "omega_deg": -58.887,
+    "mean_anomaly_deg": 19.88582597,
+    "period_s": 9628136.49599998,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 370.36
+   },
+   "appearance": {
+    "profile": "Giant_HotJupiter",
+    "seed": 382444724,
+    "params": {
+     "Seed": 568.0,
+     "ColorA": [
+      0.7198,
+      0.6389,
+      0.5516,
+      1
+     ],
+     "ColorB": [
+      0.548,
+      0.3858,
+      0.2731,
+      1
+     ],
+     "ColorC": [
+      0.9308,
+      0.8277,
+      0.6906,
+      1
+     ],
+     "BandCount": 11.5,
+     "Turbulence": 0.635
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "hd_80607",
+   "name": {
+    "en": "HD 80607",
+    "ru": "HD 80607"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 1.78956888418488e+30,
+   "radius_m": 626130000.0,
+   "position_m": [
+    157351662265318.8,
+    0.01927002930688942,
+    3.038608708704331e-10
+   ],
+   "velocity_mps": [
+    9.387535274721709e-14,
+    -359.6098870542747,
+    -2.173013234058635e-14
+   ],
+   "star": {
+    "teff_k": 5500.0,
+    "luminosity_w": 2.5562386e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 1631660162,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8515,
+      0.7549,
+      1
+     ],
+     "Seed": 162.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8515,
+        0.7549,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "mass_kg",
+     "radius_m",
+     "star.teff_k"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "companion mass/radius/Teff assumed solar-like G/K dwarf; projected separation ~1200 au; true orbit unconstrained"
+    },
+    "radius_m": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "companion mass/radius/Teff assumed solar-like G/K dwarf; projected separation ~1200 au; true orbit unconstrained"
+    },
+    "star.teff_k": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "companion mass/radius/Teff assumed solar-like G/K dwarf; projected separation ~1200 au; true orbit unconstrained"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "companion mass/radius/Teff assumed solar-like G/K dwarf; projected separation ~1200 au; true orbit unconstrained"
+    }
+   },
+   "elements": {
+    "a_m": 194477231910000.0,
+    "e": 0.5,
+    "i_deg": 90.0,
+    "node_deg": 0.0,
+    "omega_deg": 0.0,
+    "mean_anomaly_deg": 180.0,
+    "period_s": 1058199844711.01,
+    "reference": "wide_binary",
+    "convention": "sky"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "node_zero",
+   "text": {
+    "en": "Sky-plane node angles are not measured for transit/RV planets; all are set to 0, so mutual inclinations may be underestimated.",
+    "ru": "Углы узлов в картинной плоскости не измерены для транзитных/RV планет; все приняты 0, взаимные наклоны могут быть занижены."
+   },
+   "affects": [
+    "hd_80606_b.elements.node_deg"
+   ]
+  },
+  {
+   "id": "wide_companion",
+   "text": {
+    "en": "companion mass/radius/Teff assumed solar-like G/K dwarf; projected separation ~1200 au; true orbit unconstrained",
+    "ru": "Параметры и орбита широкого компаньона приняты (не измерены)."
+   },
+   "affects": [
+    "hd_80607.*"
+   ]
+  },
+  {
+   "id": "not_coherent_fit",
+   "text": {
+    "en": "Elements come from independently published solutions; the scene is a reconstruction, not a coherent photodynamical fit, and will not reproduce exact future transit times.",
+    "ru": "Элементы взяты из независимо опубликованных решений; сцена — реконструкция, а не согласованный фотодинамический fit, и не воспроизведёт точные будущие транзиты."
+   },
+   "affects": [
+    "bodies.state"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 9,
+  "derived": 8,
+  "reconstructed": 0,
+  "assumed": 6,
+  "literature": 0,
+  "authored": 1
+ },
+ "sources": [
+  {
+   "id": "nasa_ps_default",
+   "title": "NASA Exoplanet Archive, Planetary Systems (PS) table, default_flag=1 snapshot",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync (query in Atlas/atlas_hosts.json)",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_e20bf751",
+   "title": "Открытие",
+   "url": "https://arxiv.org/abs/astro-ph/0106256",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_defef377",
+   "title": "наблюдение нагрева JPL",
+   "url": "https://www.jpl.nasa.gov/images/pia20067-hd-80606b-light-curve/",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E44"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 58.6)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 1.5e-14 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "data_version": {
+  "catalogue": "NASA PS default snapshot",
+  "retrieved_utc": "2026-11-02T19:04:00.627107+00:00",
+  "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+ },
+ "plan": {
+  "research_id": "CS27",
+  "gameplay": "Тепловой импульс в перицентре и его запаздывание"
+ }
+}

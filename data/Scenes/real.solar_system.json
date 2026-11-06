@@ -1,0 +1,1499 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.solar_system",
+ "name": {
+  "en": "Solar System",
+  "ru": "Солнечная система"
+ },
+ "kind": "solar",
+ "group": "solar",
+ "description": {
+  "en": "The Sun, eight planets and the Moon from JPL Horizons barycentric vectors at J2000.",
+  "ru": "Солнце, восемь планет и Луна по барицентрическим векторам JPL Horizons на J2000."
+ },
+ "gameplay": "Эталон орбит, спутников и понятных сравнений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (JD 2451545.0)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "icrf_ecliptic_j2000_ssb",
+  "origin": "ssb",
+  "axes": "right-handed ICRF ecliptic J2000: x = vernal equinox, z = ecliptic north pole (Horizons REF_PLANE=ECLIPTIC)",
+  "recentred": false,
+  "residual_momentum_kg_mps": [
+   4.3169084e+27,
+   -4.8138227e+27,
+   -3.9668057e+26
+  ],
+  "residual_barycentre_velocity_mps": [
+   0.0021681268,
+   -0.0024176974,
+   -0.0001992291
+  ]
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 3600.0,
+  "suggested_horizon_s": 10419600000.0,
+  "time_scale_hint": 432000.0,
+  "guard": {
+   "min_separation_m": 1737400.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "sun",
+  "distance_m": 897587224200.0,
+  "pitch_deg": -30.0,
+  "yaw_deg": 20.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "inner",
+   "kind": "planet_family",
+   "members": [
+    "mercury",
+    "venus",
+    "earth",
+    "moon",
+    "mars"
+   ],
+   "name": {
+    "en": "Inner planets",
+    "ru": "Внутренние планеты"
+   }
+  },
+  {
+   "id": "outer",
+   "kind": "planet_family",
+   "members": [
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune"
+   ],
+   "name": {
+    "en": "Giant planets",
+    "ru": "Планеты-гиганты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "sun",
+   "name": {
+    "en": "Sun",
+    "ru": "Солнце"
+   },
+   "catalogue_name": "NAIF 10",
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 1.98840987131653e+30,
+   "gm_m3_s2": 1.32712440041279e+20,
+   "radius_m": 695700000.0,
+   "position_m": [
+    -1067706805.380953,
+    -418275271.8194473,
+    30861817.2547682
+   ],
+   "velocity_mps": [
+    9.312571926520471,
+    -12.82475570794162,
+    -0.1633507186350417
+   ],
+   "rotation": {
+    "period_s": 2192832.0,
+    "obliquity_deg": 7.25,
+    "axis": [
+     0.1223534935,
+     -0.03103787044,
+     0.9920011458
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-10-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "star.luminosity_w": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "IAU 2015 nominal solar luminosity"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    }
+   },
+   "star": {
+    "teff_k": 5772.0,
+    "luminosity_w": 3.828e+26,
+    "spectral_type": "G2V"
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 1,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8791,
+      0.8215,
+      1
+     ]
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8791,
+        0.8215,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   }
+  },
+  {
+   "id": "mercury",
+   "name": {
+    "en": "Mercury",
+    "ru": "Меркурий"
+   },
+   "catalogue_name": "NAIF 199",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 3.30100063698066e+23,
+   "gm_m3_s2": 22031868551400.0,
+   "radius_m": 2440530.0,
+   "position_m": [
+    -20529433161.23468,
+    -67331550535.34345,
+    -3648992526.494771
+   ],
+   "velocity_mps": [
+    37004.30442920571,
+    -11177.24068132644,
+    -4307.791469376853
+   ],
+   "rotation": {
+    "period_s": 5067360.0,
+    "obliquity_deg": 0.034,
+    "axis": [
+     0.09137781821,
+     -0.08159994992,
+     0.9924674012
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-199-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.088,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 398.24,
+    "atmosphere": {
+     "present": false
+    }
+   },
+   "appearance": {
+    "profile": "Planet_Mercury",
+    "seed": 2561042871,
+    "params": {
+     "Seed": 118.0
+    },
+    "layers": {}
+   },
+   "elements": {
+    "a_m": 57909068294.5272,
+    "e": 0.20563029,
+    "i_deg": 7.0050143,
+    "period_s": 7600530.07083402,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "venus",
+   "name": {
+    "en": "Venus",
+    "ru": "Венера"
+   },
+   "catalogue_name": "NAIF 299",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 4.86730581484201e+24,
+   "gm_m3_s2": 324858592000000.0,
+   "radius_m": 6051800.0,
+   "position_m": [
+    -108524200857.5715,
+    -5303290247.691983,
+    6166496116.973171
+   ],
+   "velocity_mps": [
+    1391.218601189967,
+    -35153.11993215464,
+    -560.2056890007159
+   ],
+   "rotation": {
+    "period_s": -20997360.0,
+    "obliquity_deg": 177.36,
+    "axis": [
+     0.01869081417,
+     0.01087252267,
+     0.9997661935
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-299-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.76,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 229.55,
+    "atmosphere": {
+     "present": true,
+     "surface_pressure_pa": 9200000.0,
+     "greenhouse_k": 500.0
+    }
+   },
+   "appearance": {
+    "profile": "Planet_Venus",
+    "seed": 3978998456,
+    "params": {
+     "Seed": 369.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Venus",
+      "params": {},
+      "thickness_fraction": 0.02
+     }
+    }
+   },
+   "elements": {
+    "a_m": 108208168170.929,
+    "e": 0.0067557863,
+    "i_deg": 3.3945896,
+    "period_s": 19413935.7184596,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "earth",
+   "name": {
+    "en": "Earth",
+    "ru": "Земля"
+   },
+   "catalogue_name": "NAIF 399",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 5.97216839978758e+24,
+   "gm_m3_s2": 398600435507023.0,
+   "radius_m": 6371008.4,
+   "position_m": [
+    -27566740482.81145,
+    144279021520.7299,
+    30250667.8288132
+   ],
+   "velocity_mps": [
+    -29784.94749851088,
+    -5482.119695478543,
+    0.01843295986780902
+   ],
+   "rotation": {
+    "period_s": 86164.2,
+    "obliquity_deg": 23.44,
+    "axis": [
+     6.123233996e-17,
+     0.3977771558,
+     0.9174820621
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-399-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.306,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 256.18,
+    "atmosphere": {
+     "present": true,
+     "surface_pressure_pa": 101325.0,
+     "greenhouse_k": 33.0
+    },
+    "ocean_fraction": 0.71,
+    "ice_fraction": 0.1
+   },
+   "appearance": {
+    "profile": "Planet_Earth",
+    "seed": 414479483,
+    "params": {
+     "Seed": 661.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.016
+     }
+    }
+   },
+   "elements": {
+    "a_m": 149665014552.863,
+    "e": 0.017118629,
+    "i_deg": 0.0004181077,
+    "period_s": 31579397.3223523,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "moon",
+   "name": {
+    "en": "Moon",
+    "ru": "Луна"
+   },
+   "catalogue_name": "NAIF 301",
+   "class": "moon",
+   "subclass": "",
+   "parent": "earth",
+   "mass_kg": 7.34578924899622e+22,
+   "gm_m3_s2": 4902800118457.55,
+   "radius_m": 1737400.0,
+   "position_m": [
+    -27858348866.99916,
+    144004041779.0567,
+    66521864.45580423
+   ],
+   "velocity_mps": [
+    -29141.41610952193,
+    -6213.103678165645,
+    -11.48803177931867
+   ],
+   "rotation": {
+    "period_s": 2360620.8,
+    "obliquity_deg": 6.68,
+    "axis": [
+     -3.543751263e-05,
+     -0.0003753996676,
+     0.9999999289
+    ],
+    "tidally_locked": true
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-301-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.11,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 272.82,
+    "atmosphere": {
+     "present": false
+    }
+   },
+   "appearance": {
+    "profile": "Solar_Moon",
+    "seed": 1052014750,
+    "params": {
+     "Seed": 290.0
+    },
+    "layers": {}
+   },
+   "elements": {
+    "a_m": 381874524.85003,
+    "e": 0.063147217,
+    "i_deg": 5.240273,
+    "period_s": 2334196.36483124,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "mars",
+   "name": {
+    "en": "Mars",
+    "ru": "Марс"
+   },
+   "catalogue_name": "NAIF 499",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 6.41690868266321e+23,
+   "gm_m3_s2": 42828373620699.1,
+   "radius_m": 3389500.0,
+   "position_m": [
+    206980433836.461,
+    -2425327899.844669,
+    -5125427142.013254
+   ],
+   "velocity_mps": [
+    1171.984975692608,
+    26283.23978975472,
+    522.1336722766505
+   ],
+   "rotation": {
+    "period_s": 88642.44,
+    "obliquity_deg": 25.19,
+    "axis": [
+     0.4272593822,
+     -0.03855585307,
+     0.9033066293
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-499-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.25,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 219.6,
+    "atmosphere": {
+     "present": true,
+     "surface_pressure_pa": 610.0,
+     "greenhouse_k": 5.0
+    },
+    "ice_fraction": 0.02
+   },
+   "appearance": {
+    "profile": "Solar_Mars",
+    "seed": 1102993617,
+    "params": {
+     "Seed": 553.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Mars",
+      "params": {},
+      "thickness_fraction": 0.012
+     }
+    }
+   },
+   "elements": {
+    "a_m": 227939132973.936,
+    "e": 0.093315101,
+    "i_deg": 1.8498765,
+    "period_s": 59354318.0026497,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "jupiter",
+   "name": {
+    "en": "Jupiter",
+    "ru": "Юпитер"
+   },
+   "catalogue_name": "NAIF 599",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 1.898124625809e+27,
+   "gm_m3_s2": 1.2668653190037e+17,
+   "radius_m": 69911000.0,
+   "position_m": [
+    597499917851.6835,
+    439186404676.3535,
+    -15195999855.73271
+   ],
+   "velocity_mps": [
+    -7900.547720245487,
+    11143.39277065934,
+    130.7023308637314
+   ],
+   "rotation": {
+    "period_s": 35730.0,
+    "obliquity_deg": 3.13,
+    "axis": [
+     -0.01460213604,
+     -0.03581309629,
+     0.99925182
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-599-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "ring": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "note": "ring extent; mass order of magnitude; rings are visual + not separate bodies"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.343,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 112.45,
+    "atmosphere": {
+     "present": false
+    }
+   },
+   "ring": {
+    "inner_radius_m": 122500000.0,
+    "outer_radius_m": 129000000.0,
+    "mass_kg": 1e+16,
+    "profile": "Ring_Dark",
+    "massless_in_dynamics": true
+   },
+   "appearance": {
+    "profile": "Solar_Jupiter",
+    "seed": 1992530974,
+    "params": {
+     "Seed": 552.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.02
+     },
+     "ring": {
+      "profile": "Ring_Dark",
+      "params": {},
+      "inner_radius_m": 122500000.0,
+      "outer_radius_m": 129000000.0
+     }
+    }
+   },
+   "elements": {
+    "a_m": 778557615696.128,
+    "e": 0.048787594,
+    "i_deg": 1.3046306,
+    "period_s": 374501014.498365,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "saturn",
+   "name": {
+    "en": "Saturn",
+    "ru": "Сатурн"
+   },
+   "catalogue_name": "NAIF 699",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 5.6831737012663e+26,
+   "gm_m3_s2": 3.79312062343617e+16,
+   "radius_m": 58232000.0,
+   "position_m": [
+    957317652110.3407,
+    982438007687.5085,
+    -55182117881.50037
+   ],
+   "velocity_mps": [
+    -7421.90038683812,
+    6723.930997200832,
+    177.5749426205731
+   ],
+   "rotation": {
+    "period_s": 38361.6,
+    "obliquity_deg": 26.73,
+    "axis": [
+     0.08547883186,
+     0.4624416774,
+     0.8825197246
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-699-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "ring": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "note": "ring extent; mass order of magnitude; rings are visual + not separate bodies"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.342,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 82.719,
+    "atmosphere": {
+     "present": true,
+     "note": "no solid surface; surface grid applies to the cloud deck"
+    }
+   },
+   "ring": {
+    "inner_radius_m": 74500000.0,
+    "outer_radius_m": 140220000.0,
+    "mass_kg": 1.54e+19,
+    "profile": "Ring_Saturn",
+    "massless_in_dynamics": true
+   },
+   "appearance": {
+    "profile": "Giant_Saturn",
+    "seed": 2209712313,
+    "params": {
+     "Seed": 396.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.02
+     },
+     "ring": {
+      "profile": "Ring_Saturn",
+      "params": {},
+      "inner_radius_m": 74500000.0,
+      "outer_radius_m": 140220000.0
+     }
+    }
+   },
+   "elements": {
+    "a_m": 1433436205589.77,
+    "e": 0.055638343,
+    "i_deg": 2.4842524,
+    "period_s": 935900222.80973,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "uranus",
+   "name": {
+    "en": "Uranus",
+    "ru": "Уран"
+   },
+   "catalogue_name": "NAIF 799",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 8.68098715449892e+25,
+   "gm_m3_s2": 5793951256527210.0,
+   "radius_m": 25362000.0,
+   "position_m": [
+    2157907112723.417,
+    -2055043811740.037,
+    -35594639499.61483
+   ],
+   "velocity_mps": [
+    4646.584677611653,
+    4614.773473441427,
+    -43.08521888870875
+   ],
+   "rotation": {
+    "period_s": -62064.0,
+    "obliquity_deg": 97.77,
+    "axis": [
+     -0.2119995815,
+     -0.9679890019,
+     0.1343632004
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-799-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "ring": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "note": "ring extent; mass order of magnitude; rings are visual + not separate bodies"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 57.036,
+    "atmosphere": {
+     "present": true,
+     "note": "no solid surface; surface grid applies to the cloud deck"
+    }
+   },
+   "ring": {
+    "inner_radius_m": 41837000.0,
+    "outer_radius_m": 51149000.0,
+    "mass_kg": 1e+18,
+    "profile": "Ring_Dark",
+    "massless_in_dynamics": true
+   },
+   "appearance": {
+    "profile": "Giant_Uranus",
+    "seed": 3504328941,
+    "params": {
+     "Seed": 560.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.025
+     },
+     "ring": {
+      "profile": "Ring_Dark",
+      "params": {},
+      "inner_radius_m": 41837000.0,
+      "outer_radius_m": 51149000.0
+     }
+    }
+   },
+   "elements": {
+    "a_m": 2876789143042.63,
+    "e": 0.044392765,
+    "i_deg": 0.77267578,
+    "period_s": 2661194503.92548,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "neptune",
+   "name": {
+    "en": "Neptune",
+    "ru": "Нептун"
+   },
+   "catalogue_name": "NAIF 899",
+   "class": "planet",
+   "subclass": "",
+   "parent": "sun",
+   "mass_kg": 1.02409288546549e+26,
+   "gm_m3_s2": 6835103145462290.0,
+   "radius_m": 24622000.0,
+   "position_m": [
+    2513978816984.908,
+    -3739132842893.97,
+    19063078769.80734
+   ],
+   "velocity_mps": [
+    4474.58791838248,
+    3063.15514301819,
+    -166.4119952893173
+   ],
+   "rotation": {
+    "period_s": 57996.0,
+    "obliquity_deg": 28.32,
+    "axis": [
+     0.3558832569,
+     -0.3068103048,
+     0.8827312979
+    ],
+    "tidally_locked": false
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "state": {
+     "kind": "measured",
+     "source": "jpl_horizons",
+     "original": {
+      "file": "sources/horizons-899-j2000.json",
+      "units": "km, km/s"
+     }
+    },
+    "gm_m3_s2": {
+     "kind": "measured",
+     "source": "jpl_gm_de440"
+    },
+    "mass_kg": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "GM / G (CODATA 2018 G)"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015"
+    },
+    "rotation": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "pole RA/Dec -> ecliptic unit axis"
+    },
+    "surface.albedo_bond": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "method": "NASA fact sheet Bond albedo"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "blackbody, full redistribution, J2000 distance"
+    },
+    "ring": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "note": "ring extent; mass order of magnitude; rings are visual + not separate bodies"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "procedural look inspired by the body's colours; not a photographic map"
+    }
+   },
+   "surface": {
+    "albedo_bond": 0.29,
+    "emissivity": 0.95,
+    "equilibrium_temp_k": 46.552,
+    "atmosphere": {
+     "present": true,
+     "note": "no solid surface; surface grid applies to the cloud deck"
+    }
+   },
+   "ring": {
+    "inner_radius_m": 41900000.0,
+    "outer_radius_m": 62930000.0,
+    "mass_kg": 1e+17,
+    "profile": "Ring_Dark",
+    "massless_in_dynamics": true
+   },
+   "appearance": {
+    "profile": "Giant_Neptune",
+    "seed": 822120375,
+    "params": {
+     "Seed": 157.0
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.025
+     },
+     "ring": {
+      "profile": "Ring_Dark",
+      "params": {},
+      "inner_radius_m": 41900000.0,
+      "outer_radius_m": 62930000.0
+     }
+    }
+   },
+   "elements": {
+    "a_m": 4501986735900.44,
+    "e": 0.011203528,
+    "i_deg": 1.7702141,
+    "period_s": 5209777604.42612,
+    "reference": "osculating_vs_parent",
+    "convention": "standard"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [
+  {
+   "id": "main_belt",
+   "type": "debris_belt",
+   "parent": "sun",
+   "inner_radius_m": 314155528470.0,
+   "outer_radius_m": 493672973310.0,
+   "thickness_m": 44879361210.0,
+   "total_mass_kg": 0.0,
+   "massless": true,
+   "real_mass_estimate_kg": 3e+21,
+   "test_particle_count": 512,
+   "seed": 2101,
+   "eccentricity_max": 0.2,
+   "inclination_max_deg": 15.0,
+   "appearance": {
+    "profile": "Debris_Rock",
+    "params": {}
+   },
+   "provenance": {
+    "geometry": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "note": "illustrative tracer belt; real asteroids not individually listed"
+    }
+   },
+   "note": {
+    "en": "Tracers show the belt's region; its real total mass (~3e21 kg) is not included.",
+    "ru": "Трассеры показывают область пояса; его реальная масса (~3e21 кг) не учтена."
+   },
+   "visual_particle_count": 3000,
+   "particle_note": {
+    "en": "test_particle_count are integrated massless tracers (Portable64 total <= 1024); visual_particle_count may be drawn as decoration only.",
+    "ru": "test_particle_count — интегрируемые безмассовые трассеры (Portable64: всего <= 1024); visual_particle_count — только декоративные частицы."
+   }
+  },
+  {
+   "id": "kuiper_belt",
+   "type": "debris_belt",
+   "parent": "sun",
+   "inner_radius_m": 4487936121000.0,
+   "outer_radius_m": 7479893535000.0,
+   "thickness_m": 747989353500.0,
+   "total_mass_kg": 0.0,
+   "massless": true,
+   "test_particle_count": 512,
+   "seed": 3050,
+   "eccentricity_max": 0.25,
+   "inclination_max_deg": 20.0,
+   "appearance": {
+    "profile": "Debris_Ice",
+    "params": {}
+   },
+   "provenance": {
+    "geometry": {
+     "kind": "literature",
+     "source": "iau_wgccre_2015",
+     "note": "illustrative tracer belt"
+    }
+   },
+   "note": {
+    "en": "Massless tracers.",
+    "ru": "Безмассовые трассеры."
+   },
+   "visual_particle_count": 3000,
+   "particle_note": {
+    "en": "test_particle_count are integrated massless tracers (Portable64 total <= 1024); visual_particle_count may be drawn as decoration only.",
+    "ru": "test_particle_count — интегрируемые безмассовые трассеры (Portable64: всего <= 1024); visual_particle_count — только декоративные частицы."
+   }
+  }
+ ],
+ "assumptions": [
+  {
+   "id": "ssb_not_recentred",
+   "text": {
+    "en": "States are the original Solar-System-barycentre vectors. The ten-body subset has a small residual barycentre velocity (listed in frame); the core may subtract it explicitly as a Galilean change of frame.",
+    "ru": "Состояния — исходные векторы относительно барицентра Солнечной системы. У подмножества из десяти тел есть малая остаточная скорость барицентра (указана в frame); ядро может явно вычесть её галилеевым преобразованием."
+   },
+   "affects": [
+    "frame"
+   ]
+  },
+  {
+   "id": "subset_only",
+   "text": {
+    "en": "Only ten bodies: other moons, dwarf planets and small bodies are absent, so long-term positions drift from the real ephemeris.",
+    "ru": "Только десять тел: остальные спутники, карликовые планеты и малые тела отсутствуют, поэтому со временем положения расходятся с реальной эфемеридой."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "no_gr",
+   "text": {
+    "en": "Newtonian dynamics: Mercury's relativistic perihelion advance (43 arcsec/century) is absent.",
+    "ru": "Ньютоновская динамика: релятивистское смещение перигелия Меркурия (43″ за век) отсутствует."
+   },
+   "affects": [
+    "mercury"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 20,
+  "derived": 19,
+  "reconstructed": 0,
+  "assumed": 0,
+  "literature": 35,
+  "authored": 9
+ },
+ "sources": [
+  {
+   "id": "jpl_horizons",
+   "title": "NASA/JPL Horizons API vectors at J2000 TDB (ICRF ecliptic, SSB)",
+   "url": "https://ssd.jpl.nasa.gov/api/horizons.api",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "jpl_gm_de440",
+   "title": "NAIF gm_de440.tpc",
+   "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/gm_de440.tpc",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "iau_wgccre_2015",
+   "title": "IAU WGCCRE 2015 / NASA planetary fact sheets: radii, rotation, obliquity",
+   "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L01",
+  "L02",
+  "L14",
+  "L23",
+  "L24"
+ ],
+ "experiment_ids": [
+  "E01",
+  "E02",
+  "E03",
+  "E04",
+  "E05",
+  "E06",
+  "E08",
+  "E24",
+  "E31",
+  "E37",
+  "E38",
+  "E39",
+  "E48",
+  "E63",
+  "E67",
+  "E68",
+  "E70",
+  "E72"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 49.6)",
+   "bound_to_parent; two-body period vs listed period max rel diff 4e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "data_version": {
+  "ephemeris": "JPL Horizons API",
+  "retrieved_utc": "2026-11-02T18:01:53.232120+00:00"
+ },
+ "plan": {
+  "research_id": null,
+  "gameplay": "Эталон орбит, спутников и понятных сравнений"
+ }
+}

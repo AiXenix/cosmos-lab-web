@@ -1,0 +1,706 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.agn",
+ "name": {
+  "en": "Active nucleus laboratory",
+  "ru": "Лаборатория активного ядра"
+ },
+ "kind": "authored_procedural",
+ "group": "agn_lab",
+ "description": {
+  "en": "A supermassive black hole with a finite accretion reservoir, a jet and stars on eccentric orbits.",
+  "ru": "Сверхмассивная чёрная дыра с конечным запасом аккреции, джетом и звёздами на вытянутых орбитах."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 9803.44,
+  "suggested_horizon_s": 10689500000.0,
+  "time_scale_hint": 936290.0,
+  "guard": {
+   "min_separation_m": 802406000.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   },
+   "schwarzschild_guard_factor": 100.0,
+   "max_speed_fraction_c": 0.1
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 479697000000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "s_cluster",
+   "kind": "hierarchy",
+   "members": [
+    "s1",
+    "s2",
+    "s3",
+    "s4"
+   ],
+   "name": {
+    "en": "Stars near the nucleus",
+    "ru": "Звёзды у ядра"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "core",
+   "name": {
+    "en": "Pheelsa nucleus",
+    "ru": "Ядро Pheelsa"
+   },
+   "class": "black_hole",
+   "subclass": "supermassive",
+   "parent": null,
+   "mass_kg": 4.05290744578889e+36,
+   "radius_m": 6019508049.66653,
+   "position_m": [
+    -42756090.32441975,
+    14798248.56252866,
+    -15540082.73141637
+   ],
+   "velocity_mps": [
+    -3.363119609391121,
+    2.551365780585786,
+    3.390145903736545
+   ],
+   "compact": {
+    "schwarzschild_radius_m": 6019508049.66653,
+    "accretion": {
+     "enabled": true,
+     "disk_mass_kg": 2.22820042449092e+28,
+     "mdot_kg_s": 2.14487e+20,
+     "efficiency": 0.1,
+     "luminosity_w": 1.92772e+36,
+     "fuel_finite": true,
+     "eddington_fraction": 0.07506,
+     "inner_radius_m": 18058524148.9996,
+     "outer_radius_m": 1805852414899.96,
+     "depletion_time_s": 103885000.0
+    },
+    "jet": {
+     "enabled": true,
+     "power_w": 1.92772e+35,
+     "half_opening_deg": 3.0,
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "appearance": {
+    "profile": "BlackHole_Default",
+    "seed": 10110,
+    "params": {},
+    "layers": {
+     "disk": {
+      "profile": "Disk_AGN",
+      "params": {}
+     },
+     "jet": {
+      "profile": "Jet_Relativistic",
+      "params": {}
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored"
+    },
+    "radius_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Schwarzschild radius"
+    },
+    "compact.accretion": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "finite reservoir; L = eta mdot c^2, eta = 0.1; no GR-MHD"
+    },
+    "compact.jet": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "illustrative jet power fraction"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "s1",
+   "name": {
+    "en": "Pheelsa-S1",
+    "ru": "Pheelsa-S1"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "core",
+   "mass_kg": 4.20301813929112e+30,
+   "radius_m": 1065868322.08213,
+   "position_m": [
+    -33090545977278.88,
+    6957475361821.002,
+    830367131145.9927
+   ],
+   "velocity_mps": [
+    1689628.347400059,
+    -2806474.285620098,
+    -870842.2253381787
+   ],
+   "star": {
+    "teff_k": 9764.3,
+    "luminosity_w": 7.3585572e+27,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_Hot",
+    "seed": 1008123112,
+    "params": {
+     "StarColor": [
+      0.6238,
+      0.7046,
+      1.0,
+      1
+     ],
+     "Seed": 112.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.6238,
+        0.7046,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 60043476302560.4,
+    "e": 0.7401360011,
+    "i_deg": 18.83368294,
+    "node_deg": 352.2549529,
+    "omega_deg": 281.096875,
+    "mean_anomaly_deg": 340.3958105,
+    "period_s": 177742866.923105,
+    "reference": "core",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "s2",
+   "name": {
+    "en": "Pheelsa-S2",
+    "ru": "Pheelsa-S2"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "core",
+   "mass_kg": 2.37668188655968e+30,
+   "radius_m": 802405912.293599,
+   "position_m": [
+    -8577581227337.229,
+    -6381811352817.757,
+    -17606072429118.26
+   ],
+   "velocity_mps": [
+    -2126693.352284729,
+    1070034.521997978,
+    633149.5663824663
+   ],
+   "star": {
+    "teff_k": 6424.0,
+    "luminosity_w": 7.8132457e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 1183330989,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.938,
+      0.9753,
+      1
+     ],
+     "Seed": 989.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.938,
+        0.9753,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 13393618213949.7,
+    "e": 0.5379102134,
+    "i_deg": 116.6384013,
+    "node_deg": 160.9571215,
+    "omega_deg": 107.2684213,
+    "mean_anomaly_deg": 179.2766208,
+    "period_s": 18725801.220458,
+    "reference": "core",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "s3",
+   "name": {
+    "en": "Pheelsa-S3",
+    "ru": "Pheelsa-S3"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "core",
+   "mass_kg": 3.06921445523043e+30,
+   "radius_m": 891002983.570896,
+   "position_m": [
+    -109708366563785.6,
+    76247198667062.89,
+    -87852762147955.77
+   ],
+   "velocity_mps": [
+    -32182.66358007534,
+    231268.7112583976,
+    -703752.852502885
+   ],
+   "star": {
+    "teff_k": 7872.62,
+    "luminosity_w": 2.1729823e+27,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 2670404673,
+    "params": {
+     "StarColor": [
+      0.7806,
+      0.8114,
+      1.0,
+      1
+     ],
+     "Seed": 673.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        0.7806,
+        0.8114,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 95461514054120.9,
+    "e": 0.8499165176,
+    "i_deg": 105.7040703,
+    "node_deg": 335.8551558,
+    "omega_deg": 45.82119685,
+    "mean_anomaly_deg": 112.9899095,
+    "period_s": 356316534.881835,
+    "reference": "core",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "s4",
+   "name": {
+    "en": "Pheelsa-S4",
+    "ru": "Pheelsa-S4"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "core",
+   "mass_kg": 1.0523009236326e+31,
+   "radius_m": 1798429454.50934,
+   "position_m": [
+    63619760586159.91,
+    -29275826799023.52,
+    35253743631374.7
+   ],
+   "velocity_mps": [
+    1110150.406195543,
+    -170838.201966868,
+    -895619.1496597853
+   ],
+   "star": {
+    "teff_k": 16780.4,
+    "luminosity_w": 1.8273346e+29,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_Hot",
+    "seed": 1459717211,
+    "params": {
+     "StarColor": [
+      0.4375,
+      0.5615,
+      1.0,
+      1
+     ],
+     "Seed": 211.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.4375,
+        0.5615,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 10110"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 55931059422975.6,
+    "e": 0.5382763677,
+    "i_deg": 77.95524748,
+    "node_deg": 161.4556356,
+    "omega_deg": 356.2087691,
+    "mean_anomaly_deg": 117.766083,
+    "period_s": 159798488.879851,
+    "reference": "core",
+    "convention": "standard"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  },
+  {
+   "id": "agn_finite",
+   "text": {
+    "en": "The accretion disk is a finite reservoir with no resupply: the nucleus fades when fuel runs out. No GR, no MHD, no gas dynamics.",
+    "ru": "Аккреционный диск — конечный запас без пополнения: ядро гаснет, когда топливо кончается. Без ОТО, МГД и газодинамики."
+   },
+   "affects": [
+    "core.compact.accretion"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 9,
+  "reconstructed": 0,
+  "assumed": 0,
+  "literature": 0,
+  "authored": 20
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L22"
+ ],
+ "experiment_ids": [
+  "E64",
+  "E65"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 3.02e+03)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 3.2e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "agn_lab",
+  "seed": 10110,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Pheelsa",
+   "agn": {
+    "L_edd_w": 2.5682146600453436e+37,
+    "fuel_kg": 2.2282004244909163e+28
+   }
+  }
+ },
+ "sky_profile": "Sky_GalacticCenter",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

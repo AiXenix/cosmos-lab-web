@@ -1,0 +1,341 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.sirius_ab",
+ "name": {
+  "en": "Sirius A/B",
+  "ru": "Сириус A/B"
+ },
+ "kind": "real_stellar_or_compact",
+ "group": "white_dwarf_binary",
+ "description": {
+  "en": "The brightest star in Earth's sky and its white-dwarf companion: similar masses, wildly different radii and luminosities.",
+  "ru": "Ярчайшая звезда земного неба и её спутник — белый карлик: близкие массы, но совершенно разные радиусы и светимости."
+ },
+ "gameplay": "Масса, радиус и светимость обычной звезды и белого карлика",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 395482.99896,
+  "suggested_horizon_s": 6327730000.0,
+  "time_scale_hint": 79096600.0,
+  "guard": {
+   "min_separation_m": 5635170.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 4801900000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "sirius_ab",
+   "kind": "binary",
+   "members": [
+    "sirius_a",
+    "sirius_b"
+   ],
+   "name": {
+    "en": "Sirius A/B",
+    "ru": "Сириус A/B"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "sirius_a",
+   "name": {
+    "en": "Sirius A",
+    "ru": "Сириус A"
+   },
+   "class": "star",
+   "subclass": "A0mA1Va",
+   "parent": null,
+   "mass_kg": 4.10208956452601e+30,
+   "radius_m": 1190342700.0,
+   "position_m": [
+    -509919935445.3018,
+    534219682882.3396,
+    -280076220233.5694
+   ],
+   "velocity_mps": [
+    529.6699437553011,
+    2356.451029174294,
+    -4053.429500326566
+   ],
+   "star": {
+    "teff_k": 9940.0,
+    "luminosity_w": 9.8562376e+27,
+    "spectral_type": "A0mA1Va"
+   },
+   "appearance": {
+    "profile": "Star_Hot",
+    "seed": 2311014774,
+    "params": {
+     "StarColor": [
+      0.6139,
+      0.6975,
+      1.0,
+      1
+     ],
+     "Seed": 774.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.6139,
+        0.6975,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "bond2017"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "bond2017"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "bond2017"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    }
+   }
+  },
+  {
+   "id": "sirius_b",
+   "name": {
+    "en": "Sirius B",
+    "ru": "Сириус B"
+   },
+   "class": "white_dwarf",
+   "subclass": "DA2",
+   "parent": "sirius_a",
+   "mass_kg": 2.02420124900023e+30,
+   "radius_m": 5635170.0,
+   "position_m": [
+    1033364269964.301,
+    -1082608257157.434,
+    567580788155.063
+   ],
+   "velocity_mps": [
+    -1073.388108022777,
+    -4775.401250674432,
+    8214.366462842547
+   ],
+   "star": {
+    "teff_k": 25369.0,
+    "luminosity_w": 9.3723617e+24,
+    "spectral_type": "DA2"
+   },
+   "appearance": {
+    "profile": "Star_WhiteDwarf",
+    "seed": 1527458010,
+    "params": {
+     "StarColor": [
+      0.3783,
+      0.5106,
+      1.0,
+      1
+     ],
+     "Seed": 10.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Hot",
+      "params": {
+       "CoronaColor": [
+        0.3783,
+        0.5106,
+        1.0,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "literature",
+     "source": "bond2017"
+    },
+    "radius_m": {
+     "kind": "literature",
+     "source": "bond2017"
+    },
+    "star.teff_k": {
+     "kind": "literature",
+     "source": "bond2017"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "literature",
+     "source": "bond2017",
+     "method": "astrometric orbit elements -> state"
+    }
+   },
+   "elements": {
+    "a_m": 2959418642834.67,
+    "e": 0.59142,
+    "i_deg": 136.336,
+    "node_deg": 45.4,
+    "omega_deg": 149.161,
+    "mean_anomaly_deg": 38.9850863,
+    "period_s": 1581931995.84,
+    "reference": "binary",
+    "convention": "sky"
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "no_evolution",
+   "text": {
+    "en": "No stellar evolution is simulated; luminosity and radius are fixed unless the player edits them.",
+    "ru": "Звёздная эволюция не моделируется; светимость и радиус фиксированы, пока игрок их не изменит."
+   },
+   "affects": [
+    "sirius_a.star",
+    "sirius_b.star"
+   ]
+  },
+  {
+   "id": "no_planets",
+   "text": {
+    "en": "No planets are known; anything added is the player's hypothesis.",
+    "ru": "Планеты не известны; всё добавленное — гипотеза игрока."
+   },
+   "affects": [
+    "bodies"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 4,
+  "reconstructed": 0,
+  "assumed": 0,
+  "literature": 7,
+  "authored": 0
+ },
+ "sources": [
+  {
+   "id": "bond2017",
+   "title": "Bond et al. 2017, ApJ 840, 70 (Sirius astrometric orbit and masses)",
+   "url": "https://arxiv.org/abs/1703.10625",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_14080aea",
+   "title": "Hubble",
+   "url": "https://science.nasa.gov/asset/hubble/the-dog-star-sirius-and-its-tiny-companion/",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L05",
+  "L20"
+ ],
+ "experiment_ids": [
+  "E18",
+  "E60"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 2e+03)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 1.7e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": "CS32",
+  "gameplay": "Масса, радиус и светимость обычной звезды и белого карлика"
+ }
+}

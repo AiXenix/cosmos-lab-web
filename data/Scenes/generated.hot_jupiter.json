@@ -1,0 +1,485 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.hot_jupiter",
+ "name": {
+  "en": "Hot Jupiter",
+  "ru": "Горячий Юпитер"
+ },
+ "kind": "authored_procedural",
+ "group": "hot_jupiter",
+ "description": {
+  "en": "A giant planet skimming its star every few days.",
+  "ru": "Гигант, огибающий звезду за несколько суток."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true,
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ]
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 440.429,
+  "suggested_horizon_s": 5485450000.0,
+  "time_scale_hint": 13212.9,
+  "guard": {
+   "min_separation_m": 84471800.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 1106470000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [],
+ "bodies": [
+  {
+   "id": "star",
+   "name": {
+    "en": "Taan",
+    "ru": "Taan"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 2.11833575039867e+30,
+   "radius_m": 731834891.736967,
+   "position_m": [
+    791629140.1551496,
+    81636960.56343195,
+    45904493.34530193
+   ],
+   "velocity_mps": [
+    -179.2019142497897,
+    39.47713196412513,
+    0.05107263991191349
+   ],
+   "star": {
+    "teff_k": 5995.42,
+    "luminosity_w": 4.9309028e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 499801682,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.9004,
+      0.8752,
+      1
+     ],
+     "Seed": 682.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.9004,
+        0.8752,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 3303"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 3303"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 3303"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Taan b",
+    "ru": "Taan b"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 2.39515287431871e+27,
+   "radius_m": 86916871.7510764,
+   "position_m": [
+    1039761080.008315,
+    -6214789106.662789,
+    -87704770.96116607
+   ],
+   "velocity_mps": [
+    149563.0917204876,
+    5937.922108445087,
+    125.2152348877474
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 6302729735.21233,
+    "e": 0.0,
+    "i_deg": 1.215625844,
+    "node_deg": 0,
+    "omega_deg": 148.2991431,
+    "mean_anomaly_deg": 123.9571155,
+    "period_s": 264257.456849709,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.1,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 1407.0
+   },
+   "appearance": {
+    "profile": "Giant_HotJupiter",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 237.0,
+     "ColorA": [
+      0.8151,
+      0.5889,
+      0.4688,
+      1
+     ],
+     "ColorB": [
+      0.5173,
+      0.4145,
+      0.2571,
+      1
+     ],
+     "ColorC": [
+      0.9442,
+      0.8865,
+      0.8509,
+      1
+     ],
+     "BandCount": 8.54,
+     "Turbulence": 0.605
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_HotGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "p2",
+   "name": {
+    "en": "Taan c",
+    "ru": "Taan c"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 4.581155832802e+27,
+   "radius_m": 84471819.0853318,
+   "position_m": [
+    -366594535676.4259,
+    -34499835389.05895,
+    -21180476404.72516
+   ],
+   "velocity_mps": [
+    4667.676291598421,
+    -21358.81308985898,
+    -89.08202288611459
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 493420055595.399,
+    "e": 0.276727945,
+    "i_deg": 3.352938742,
+    "node_deg": 286.3154164,
+    "omega_deg": 291.8393079,
+    "mean_anomaly_deg": 341.7381639,
+    "period_s": 182848267.675434,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 149.34
+   },
+   "appearance": {
+    "profile": "Giant_SuperJupiter",
+    "seed": 1690977849,
+    "params": {
+     "Seed": 630.0,
+     "ColorA": [
+      0.7149,
+      0.6561,
+      0.4528,
+      1
+     ],
+     "ColorB": [
+      0.5573,
+      0.3539,
+      0.2633,
+      1
+     ],
+     "ColorC": [
+      0.8102,
+      0.875,
+      0.703,
+      1
+     ],
+     "BandCount": 13.3,
+     "Turbulence": 0.435,
+     "StormIntensity": 0.635,
+     "StormLatitude": 0.252
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 4,
+  "reconstructed": 0,
+  "assumed": 2,
+  "literature": 0,
+  "authored": 12
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L09"
+ ],
+ "experiment_ids": [
+  "E25",
+  "E27"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 7.7)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.01 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "hot_jupiter",
+  "seed": 3303,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Taan"
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

@@ -1,0 +1,1063 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.gj_876",
+ "name": {
+  "en": "GJ 876",
+  "ru": "GJ 876"
+ },
+ "kind": "real_planetary",
+ "group": "compact_resonant",
+ "description": {
+  "en": "An M dwarf with a 1:2:4 Laplace resonance of two giants and a Neptune.",
+  "ru": "M-карлик с лапласовским резонансом 1:2:4 двух гигантов и нептуна."
+ },
+ "gameplay": "Либрация трёхтельного угла в согласованном N-body решении",
+ "epoch": {
+  "jd_tdb": 2450602.093,
+  "label": "JD 2450602.093 TDB (fit epoch of the literature solution); time scale as published by Rivera et al. 2010 (TDB not confirmed)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 197.05,
+  "suggested_horizon_s": 536803000.0,
+  "time_scale_hint": 8371.21,
+  "guard": {
+   "min_separation_m": 15980000.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 142638000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "planets",
+   "kind": "planet_family",
+   "members": [
+    "gj_876_d",
+    "gj_876_c",
+    "gj_876_b",
+    "gj_876_e"
+   ],
+   "name": {
+    "en": "Planets",
+    "ru": "Планеты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "gj_876_star",
+   "name": {
+    "en": "GJ 876",
+    "ru": "GJ 876"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 6.36291158821291e+29,
+   "radius_m": 208710000.0,
+   "position_m": [
+    219885850.7380995,
+    -14607486.35588398,
+    -8777063.294233091
+   ],
+   "velocity_mps": [
+    -2.541223186945568,
+    -280.0450974665915,
+    -168.2680706194096
+   ],
+   "star": {
+    "teff_k": 3372.22,
+    "luminosity_w": 4.0139394e+24,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_RedDwarf",
+    "seed": 3440415769,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.554,
+      0.232,
+      1
+     ],
+     "Seed": 769.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Faint",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.554,
+        0.232,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "star.teff_k"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.32,
+      "unit": "M_sun",
+      "column": "st_mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.3,
+      "unit": "R_sun",
+      "column": "st_rad"
+     }
+    },
+    "star.teff_k": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "main-sequence L ~ M^4 with R -> Teff"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    }
+   },
+   "catalogue_name": "GJ 876"
+  },
+  {
+   "id": "gj_876_d",
+   "name": {
+    "en": "GJ 876 d",
+    "ru": "GJ 876 d"
+   },
+   "catalogue_name": "GJ 876 d",
+   "class": "planet",
+   "subclass": "sub_neptune",
+   "parent": "gj_876_star",
+   "mass_kg": 4.07899101705469e+25,
+   "radius_m": 15979989.1224528,
+   "position_m": [
+    1930072570.700004,
+    -1544819151.513312,
+    -928220991.6639196
+   ],
+   "velocity_mps": [
+    -106215.8864688763,
+    -83530.61136770206,
+    -50190.25485414802
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 59.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 6.83,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 1.93778,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.02080665,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.207,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "published angle placed as the planet's argument of periastron (transit at f = 90deg - omega); NASA does not standardise planet vs stellar-reflex conventions, so the subject is unknown (reconstruction)",
+     "original": {
+      "value": 234.0,
+      "column": "pl_orblper"
+     },
+     "angle_subject": "unknown"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "literature",
+     "source": "rivera2010",
+     "method": "mean anomaly at the fit epoch from the cited solution (transcribed; re-verify)",
+     "note": "NASA pl_orbtper equals the fit epoch for all rows; interpreted as osculating epoch, not periastron time"
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     2.38887e+24,
+     2.38887e+24
+    ]
+   },
+   "elements": {
+    "a_m": 3112590920.925,
+    "e": 0.207,
+    "i_deg": 59.0,
+    "node_deg": 0.0,
+    "omega_deg": 234.0,
+    "mean_anomaly_deg": 355.0,
+    "period_s": 167424.192,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 564.79
+   },
+   "appearance": {
+    "profile": "Giant_SubNeptune",
+    "seed": 1238591173,
+    "params": {
+     "Seed": 472.0,
+     "ColorA": [
+      0.7297,
+      0.6263,
+      0.491,
+      1
+     ],
+     "ColorB": [
+      0.5065,
+      0.3495,
+      0.2498,
+      1
+     ],
+     "ColorC": [
+      0.9937,
+      0.7672,
+      0.7369,
+      1
+     ],
+     "BandCount": 11.1,
+     "Turbulence": 0.232
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "gj_876_c",
+   "name": {
+    "en": "GJ 876 c",
+    "ru": "GJ 876 c"
+   },
+   "catalogue_name": "GJ 876 c",
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "gj_876_star",
+   "mass_kg": 1.35559025535835e+27,
+   "radius_m": 89121214.9293486,
+   "position_m": [
+    -12634450770.87863,
+    -11432350622.74278,
+    -6869249272.121338
+   ],
+   "velocity_mps": [
+    -25559.753537646,
+    35574.05198855562,
+    21375.04689916215
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 59.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 226.9846,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 30.0881,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.12959,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.25591,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "published angle placed as the planet's argument of periastron (transit at f = 90deg - omega); NASA does not standardise planet vs stellar-reflex conventions, so the subject is unknown (reconstruction)",
+     "original": {
+      "value": 48.76,
+      "column": "pl_orblper"
+     },
+     "angle_subject": "unknown"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "literature",
+     "source": "rivera2010",
+     "method": "mean anomaly at the fit epoch from the cited solution (transcribed; re-verify)",
+     "note": "NASA pl_orbtper equals the fit epoch for all rows; interpreted as osculating epoch, not periastron time"
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     7.4025e+24,
+     7.4025e+24
+    ]
+   },
+   "elements": {
+    "a_m": 19386093812.6987,
+    "e": 0.25591,
+    "i_deg": 59.0,
+    "node_deg": 0.0,
+    "omega_deg": 48.76,
+    "mean_anomaly_deg": 294.59,
+    "period_s": 2599611.83999999,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 226.31
+   },
+   "appearance": {
+    "profile": "Giant_Jupiter",
+    "seed": 3846403866,
+    "params": {
+     "Seed": 757.0,
+     "ColorA": [
+      0.8173,
+      0.6482,
+      0.545,
+      1
+     ],
+     "ColorB": [
+      0.4941,
+      0.3806,
+      0.2378,
+      1
+     ],
+     "ColorC": [
+      0.9669,
+      0.7699,
+      0.8001,
+      1
+     ],
+     "BandCount": 19.3,
+     "Turbulence": 0.643,
+     "StormIntensity": 0.652,
+     "StormLatitude": 0.353
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "gj_876_b",
+   "name": {
+    "en": "GJ 876 b",
+    "ru": "GJ 876 b"
+   },
+   "catalogue_name": "GJ 876 b",
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "gj_876_star",
+   "mass_kg": 4.31921253268353e+27,
+   "radius_m": 84690939.0459143,
+   "position_m": [
+    -29267036254.58308,
+    6180289970.137126,
+    3713492857.226415
+   ],
+   "velocity_mps": [
+    9733.496246740473,
+    31327.54314294561,
+    18823.4869654829
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 59.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 723.2235,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 61.1166,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.208317,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.0324,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "published angle placed as the planet's argument of periastron (transit at f = 90deg - omega); NASA does not standardise planet vs stellar-reflex conventions, so the subject is unknown (reconstruction)",
+     "original": {
+      "value": 50.3,
+      "column": "pl_orblper"
+     },
+     "angle_subject": "unknown"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "literature",
+     "source": "rivera2010",
+     "method": "mean anomaly at the fit epoch from the cited solution (transcribed; re-verify)",
+     "note": "NASA pl_orbtper equals the fit epoch for all rows; interpreted as osculating epoch, not periastron time"
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     8.5414e+24,
+     8.5414e+24
+    ]
+   },
+   "elements": {
+    "a_m": 31163326723.5565,
+    "e": 0.0324,
+    "i_deg": 59.0,
+    "node_deg": 0.0,
+    "omega_deg": 50.3,
+    "mean_anomaly_deg": 325.7,
+    "period_s": 5280474.23999999,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 178.49
+   },
+   "appearance": {
+    "profile": "Giant_SuperJupiter",
+    "seed": 464311263,
+    "params": {
+     "Seed": 650.0,
+     "ColorA": [
+      0.7125,
+      0.655,
+      0.4776,
+      1
+     ],
+     "ColorB": [
+      0.5126,
+      0.354,
+      0.2387,
+      1
+     ],
+     "ColorC": [
+      0.8297,
+      0.9203,
+      0.8426,
+      1
+     ],
+     "BandCount": 19.1,
+     "Turbulence": 0.322
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  },
+  {
+   "id": "gj_876_e",
+   "name": {
+    "en": "GJ 876 e",
+    "ru": "GJ 876 e"
+   },
+   "catalogue_name": "GJ 876 e",
+   "class": "planet",
+   "subclass": "neptune_like",
+   "parent": "gj_876_star",
+   "mass_kg": 8.71936586368938e+25,
+   "radius_m": 24998072.1354529,
+   "position_m": [
+    40685732497.44413,
+    -21088406749.74159,
+    -12671193133.95471
+   ],
+   "velocity_mps": [
+    -16549.27501745342,
+    -22211.81548464353,
+    -13346.20520182886
+   ],
+   "flags": {
+    "msini": false,
+    "mass_is_lower_limit": false,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 59.0,
+      "unit": "deg",
+      "column": "pl_orbincl"
+     }
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 14.6,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Mass"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 124.26,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.3343,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.055,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "published angle placed as the planet's argument of periastron (transit at f = 90deg - omega); NASA does not standardise planet vs stellar-reflex conventions, so the subject is unknown (reconstruction)",
+     "original": {
+      "value": 239.0,
+      "column": "pl_orblper"
+     },
+     "angle_subject": "unknown"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "literature",
+     "source": "rivera2010",
+     "method": "mean anomaly at the fit epoch from the cited solution (transcribed; re-verify)",
+     "note": "NASA pl_orbtper equals the fit epoch for all rows; interpreted as osculating epoch, not periastron time"
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "uncertainty": {
+    "mass_kg": [
+     1.01527e+25,
+     1.01527e+25
+    ]
+   },
+   "elements": {
+    "a_m": 50016302352.5683,
+    "e": 0.055,
+    "i_deg": 59.0,
+    "node_deg": 0.0,
+    "omega_deg": 239.0,
+    "mean_anomaly_deg": 335.0,
+    "period_s": 10736064.0,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 140.89
+   },
+   "appearance": {
+    "profile": "Giant_Neptune",
+    "seed": 2776948358,
+    "params": {
+     "Seed": 815.0,
+     "ColorA": [
+      0.7296,
+      0.7055,
+      0.4644,
+      1
+     ],
+     "ColorB": [
+      0.4913,
+      0.409,
+      0.2639,
+      1
+     ],
+     "ColorC": [
+      0.839,
+      0.8617,
+      0.8171,
+      1
+     ],
+     "BandCount": 12.0,
+     "Turbulence": 0.399,
+     "StormIntensity": 0.616,
+     "StormLatitude": -0.132
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_IceGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "star_teff_ms",
+   "text": {
+    "en": "Missing effective temperatures use main-sequence scalings.",
+    "ru": "Недостающие эффективные температуры оценены по главной последовательности."
+   },
+   "affects": [
+    "gj_876_star.star.teff_k"
+   ]
+  },
+  {
+   "id": "mr_radius",
+   "text": {
+    "en": "Planets without a measured radius (RV, timing, imaging) get a mass-radius relation estimate.",
+    "ru": "Планетам без измеренного радиуса присвоена оценка по соотношению масса–радиус."
+   },
+   "affects": [
+    "gj_876_d.radius_m",
+    "gj_876_c.radius_m",
+    "gj_876_b.radius_m",
+    "gj_876_e.radius_m"
+   ]
+  },
+  {
+   "id": "node_zero",
+   "text": {
+    "en": "Sky-plane node angles are not measured for transit/RV planets; all are set to 0, so mutual inclinations may be underestimated.",
+    "ru": "Углы узлов в картинной плоскости не измерены для транзитных/RV планет; все приняты 0, взаимные наклоны могут быть занижены."
+   },
+   "affects": [
+    "gj_876_d.elements.node_deg",
+    "gj_876_c.elements.node_deg",
+    "gj_876_b.elements.node_deg",
+    "gj_876_e.elements.node_deg"
+   ]
+  },
+  {
+   "id": "not_coherent_fit",
+   "text": {
+    "en": "Elements come from independently published solutions; the scene is a reconstruction, not a coherent photodynamical fit, and will not reproduce exact future transit times.",
+    "ru": "Элементы взяты из независимо опубликованных решений; сцена — реконструкция, а не согласованный фотодинамический fit, и не воспроизведёт точные будущие транзиты."
+   },
+   "affects": [
+    "bodies.state"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 22,
+  "derived": 14,
+  "reconstructed": 5,
+  "assumed": 8,
+  "literature": 4,
+  "authored": 4
+ },
+ "sources": [
+  {
+   "id": "nasa_ps_default",
+   "title": "NASA Exoplanet Archive, Planetary Systems (PS) table, default_flag=1 snapshot",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync (query in Atlas/atlas_hosts.json)",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_51601d64",
+   "title": "Rivera et al.",
+   "url": "https://arxiv.org/abs/1006.4244",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_fd91772a",
+   "title": "трёхмерный анализ",
+   "url": "https://arxiv.org/abs/1504.07995",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "rivera2010",
+   "title": "Rivera et al. 2010, ApJ 719, 890: four-planet coplanar fit (osculating Jacobi elements at JD 2450602.093)",
+   "url": "https://arxiv.org/abs/1006.4244",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L08"
+ ],
+ "experiment_ids": [
+  "E20"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 11)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 0.024 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "data_version": {
+  "catalogue": "NASA PS default snapshot",
+  "retrieved_utc": "2026-11-02T19:04:00.627107+00:00",
+  "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+ },
+ "plan": {
+  "research_id": "CS07",
+  "gameplay": "Либрация трёхтельного угла в согласованном N-body решении"
+ }
+}

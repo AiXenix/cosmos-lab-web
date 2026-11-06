@@ -1,0 +1,1610 @@
+{
+ "schema": "aixenix.cosmos.scene_index/1",
+ "scenes": [
+  {
+   "id": "real.trappist_1",
+   "file": "Scenes/real.trappist_1.json",
+   "name": {
+    "en": "TRAPPIST-1",
+    "ru": "TRAPPIST-1"
+   },
+   "kind": "real_planetary",
+   "group": "compact_resonant",
+   "description": {
+    "en": "Seven transiting Earth-sized planets around an ultracool M8 dwarf in a resonant chain.",
+    "ru": "Семь транзитных планет земного размера у ультрахолодного карлика M8 в резонансной цепочке."
+   },
+   "body_count": 8,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "trappist_1_b",
+    "profile": "Planet_Desert",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E07",
+    "E29",
+    "E67"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 31,
+    "derived": 23,
+    "reconstructed": 7,
+    "assumed": 28,
+    "literature": 0,
+    "authored": 7
+   }
+  },
+  {
+   "id": "real.kepler_90",
+   "file": "Scenes/real.kepler_90.json",
+   "name": {
+    "en": "Kepler-90 / KOI-351",
+    "ru": "Kepler-90 / KOI-351"
+   },
+   "kind": "real_planetary",
+   "group": "compact_multi",
+   "description": {
+    "en": "Eight known planets packed inside about 1 au: a compact analogue of the Solar System's architecture.",
+    "ru": "Восемь известных планет в пределах ~1 а.е.: компактный аналог архитектуры Солнечной системы."
+   },
+   "body_count": 9,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_90_h",
+    "profile": "Giant_Jupiter",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E08"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 29,
+    "derived": 34,
+    "reconstructed": 8,
+    "assumed": 30,
+    "literature": 0,
+    "authored": 8
+   }
+  },
+  {
+   "id": "real.kepler_11",
+   "file": "Scenes/real.kepler_11.json",
+   "name": {
+    "en": "Kepler-11",
+    "ru": "Kepler-11"
+   },
+   "kind": "real_planetary",
+   "group": "compact_multi",
+   "description": {
+    "en": "Six low-density transiting planets, five of them inside Mercury's orbit size.",
+    "ru": "Шесть транзитных планет низкой плотности, пять — ближе орбиты Меркурия."
+   },
+   "body_count": 7,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_11_g",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L12"
+   ],
+   "experiment_ids": [
+    "E09",
+    "E26"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 31,
+    "derived": 26,
+    "reconstructed": 1,
+    "assumed": 19,
+    "literature": 0,
+    "authored": 6
+   }
+  },
+  {
+   "id": "real.hd_110067",
+   "file": "Scenes/real.hd_110067.json",
+   "name": {
+    "en": "HD 110067",
+    "ru": "HD 110067"
+   },
+   "kind": "real_planetary",
+   "group": "compact_resonant",
+   "description": {
+    "en": "Six sub-Neptunes in an unbroken resonant chain around a bright K dwarf.",
+    "ru": "Шесть субнептунов в непрерывной резонансной цепочке у яркого K-карлика."
+   },
+   "body_count": 7,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hd_110067_d",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E19"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 24,
+    "derived": 26,
+    "reconstructed": 3,
+    "assumed": 24,
+    "literature": 0,
+    "authored": 6
+   }
+  },
+  {
+   "id": "real.toi_178",
+   "file": "Scenes/real.toi_178.json",
+   "name": {
+    "en": "TOI-178",
+    "ru": "TOI-178"
+   },
+   "kind": "real_planetary",
+   "group": "compact_resonant",
+   "description": {
+    "en": "Six planets, five in a Laplace-like resonance chain, with wildly varying densities.",
+    "ru": "Шесть планет, пять в лапласовской цепочке, с сильно различающимися плотностями."
+   },
+   "body_count": 7,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "toi_178_f",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E21",
+    "E26"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 31,
+    "derived": 21,
+    "reconstructed": 0,
+    "assumed": 25,
+    "literature": 0,
+    "authored": 6
+   }
+  },
+  {
+   "id": "real.k2_138",
+   "file": "Scenes/real.k2_138.json",
+   "name": {
+    "en": "K2-138",
+    "ru": "K2-138"
+   },
+   "kind": "real_planetary",
+   "group": "compact_multi",
+   "description": {
+    "en": "A near-resonant chain of six planets with a wide gap before the outermost.",
+    "ru": "Почти резонансная цепочка шести планет с большим промежутком перед внешней."
+   },
+   "body_count": 7,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "k2_138_e",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E22"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 39,
+    "derived": 26,
+    "reconstructed": 0,
+    "assumed": 12,
+    "literature": 0,
+    "authored": 6
+   }
+  },
+  {
+   "id": "real.gj_876",
+   "file": "Scenes/real.gj_876.json",
+   "name": {
+    "en": "GJ 876",
+    "ru": "GJ 876"
+   },
+   "kind": "real_planetary",
+   "group": "compact_resonant",
+   "description": {
+    "en": "An M dwarf with a 1:2:4 Laplace resonance of two giants and a Neptune.",
+    "ru": "M-карлик с лапласовским резонансом 1:2:4 двух гигантов и нептуна."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "gj_876_b",
+    "profile": "Giant_SuperJupiter",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L08"
+   ],
+   "experiment_ids": [
+    "E20"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 22,
+    "derived": 14,
+    "reconstructed": 5,
+    "assumed": 8,
+    "literature": 4,
+    "authored": 4
+   }
+  },
+  {
+   "id": "real.kepler_223",
+   "file": "Scenes/real.kepler_223.json",
+   "name": {
+    "en": "Kepler-223",
+    "ru": "Kepler-223"
+   },
+   "kind": "real_planetary",
+   "group": "compact_resonant",
+   "description": {
+    "en": "Four sub-Neptunes locked in a 3:4:6:8 resonant chain.",
+    "ru": "Четыре субнептуна в резонансной цепочке 3:4:6:8."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_223_d",
+    "profile": "Giant_WarmNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E19"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 22,
+    "derived": 18,
+    "reconstructed": 1,
+    "assumed": 12,
+    "literature": 0,
+    "authored": 4
+   }
+  },
+  {
+   "id": "real.hd_158259",
+   "file": "Scenes/real.hd_158259.json",
+   "name": {
+    "en": "HD 158259",
+    "ru": "HD 158259"
+   },
+   "kind": "real_planetary",
+   "group": "near_resonant",
+   "description": {
+    "en": "Five planets with period ratios close to 3:2 -- close to, but not proven to be, in resonance.",
+    "ru": "Пять планет с отношениями периодов около 3:2 — близко к резонансу, но это не доказывает резонанс."
+   },
+   "body_count": 6,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hd_158259_f",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E21"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 12,
+    "derived": 17,
+    "reconstructed": 6,
+    "assumed": 30,
+    "literature": 0,
+    "authored": 5
+   }
+  },
+  {
+   "id": "real.kepler_62",
+   "file": "Scenes/real.kepler_62.json",
+   "name": {
+    "en": "Kepler-62",
+    "ru": "Kepler-62"
+   },
+   "kind": "real_planetary",
+   "group": "habitable_zone",
+   "description": {
+    "en": "Five planets, two of them super-Earths in the habitable-zone flux range.",
+    "ru": "Пять планет, две суперземли в диапазоне потока зоны обитаемости."
+   },
+   "body_count": 6,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_62_d",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E53"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 18,
+    "derived": 22,
+    "reconstructed": 5,
+    "assumed": 20,
+    "literature": 0,
+    "authored": 5
+   }
+  },
+  {
+   "id": "real.proxima_centauri",
+   "file": "Scenes/real.proxima_centauri.json",
+   "name": {
+    "en": "Proxima Centauri",
+    "ru": "Проксима Центавра"
+   },
+   "kind": "real_planetary",
+   "group": "habitable_zone",
+   "description": {
+    "en": "The nearest star to the Sun: a flaring red dwarf with an Earth-mass planet (minimum mass) in its temperate zone.",
+    "ru": "Ближайшая к Солнцу звезда: вспыхивающий красный карлик с планетой земной (минимальной) массы в умеренной зоне."
+   },
+   "body_count": 3,
+   "optional_count": 1,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "proxima_cen_b",
+    "profile": "Planet_Eyeball",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L03"
+   ],
+   "experiment_ids": [
+    "E10",
+    "E44"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 9,
+    "derived": 13,
+    "reconstructed": 3,
+    "assumed": 14,
+    "literature": 3,
+    "authored": 4
+   }
+  },
+  {
+   "id": "real.lhs_1140",
+   "file": "Scenes/real.lhs_1140.json",
+   "name": {
+    "en": "LHS 1140",
+    "ru": "LHS 1140"
+   },
+   "kind": "real_planetary",
+   "group": "habitable_zone",
+   "description": {
+    "en": "A dense temperate super-Earth/water-world candidate and an inner rocky planet around a quiet M dwarf.",
+    "ru": "Плотная умеренная суперземля/кандидат в водные миры и внутренняя каменная планета у спокойного M-карлика."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "lhs_1140_b",
+    "profile": "Planet_Ocean",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E10"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 11,
+    "derived": 10,
+    "reconstructed": 0,
+    "assumed": 8,
+    "literature": 0,
+    "authored": 3
+   }
+  },
+  {
+   "id": "real.toi_700",
+   "file": "Scenes/real.toi_700.json",
+   "name": {
+    "en": "TOI 700",
+    "ru": "TOI 700"
+   },
+   "kind": "real_planetary",
+   "group": "habitable_zone",
+   "description": {
+    "en": "An M dwarf with two Earth-sized planets in its conservative and optimistic habitable zones.",
+    "ru": "M-карлик с двумя планетами земного размера в консервативной и оптимистичной зонах обитаемости."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "toi_700_c",
+    "profile": "Giant_SubNeptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L18"
+   ],
+   "experiment_ids": [
+    "E53"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 14,
+    "derived": 18,
+    "reconstructed": 5,
+    "assumed": 16,
+    "literature": 0,
+    "authored": 4
+   }
+  },
+  {
+   "id": "real.55_cancri_ab",
+   "file": "Scenes/real.55_cancri_ab.json",
+   "name": {
+    "en": "55 Cancri A/B",
+    "ru": "55 Рака A/B"
+   },
+   "kind": "real_planetary",
+   "group": "wide_binary_families",
+   "description": {
+    "en": "Two planet families in one wide binary: five planets around 55 Cnc A (including the lava world e) and two around the M dwarf B.",
+    "ru": "Две планетные семьи в одной широкой двойной: пять планет у 55 Cnc A (включая лавовый мир e) и две у M-карлика B."
+   },
+   "body_count": 9,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "55_cnc_d",
+    "profile": "Giant_SuperJupiter",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E11"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 34,
+    "derived": 32,
+    "reconstructed": 6,
+    "assumed": 23,
+    "literature": 0,
+    "authored": 7
+   }
+  },
+  {
+   "id": "real.hr_8799",
+   "file": "Scenes/real.hr_8799.json",
+   "name": {
+    "en": "HR 8799",
+    "ru": "HR 8799"
+   },
+   "kind": "real_planetary",
+   "group": "imaged_giants",
+   "description": {
+    "en": "Four young, self-luminous giant planets imaged directly, between inner and outer debris belts. Start state is an unstable teaching reconstruction (not the observed orbital phases).",
+    "ru": "Четыре молодых самосветящихся гиганта, снятых напрямую, между внутренним и внешним поясами обломков. Стартовое состояние — неустойчивая учебная реконструкция (не наблюдаемые орбитальные фазы)."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hr_8799_e",
+    "profile": "Giant_YoungHot",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E22"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 15,
+    "derived": 14,
+    "reconstructed": 0,
+    "assumed": 22,
+    "literature": 2,
+    "authored": 4
+   }
+  },
+  {
+   "id": "real.beta_pictoris",
+   "file": "Scenes/real.beta_pictoris.json",
+   "name": {
+    "en": "Beta Pictoris",
+    "ru": "Бета Живописца"
+   },
+   "kind": "real_planetary",
+   "group": "imaged_giants",
+   "description": {
+    "en": "A young A star with two imaged giants, a newer outer planet record and an edge-on debris disk.",
+    "ru": "Молодая A-звезда с двумя снятыми гигантами, новой записью внешней планеты и обломочным диском, видимым с ребра."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "bet_pic_c",
+    "profile": "Giant_YoungHot",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E12"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 16,
+    "derived": 15,
+    "reconstructed": 2,
+    "assumed": 8,
+    "literature": 1,
+    "authored": 3
+   }
+  },
+  {
+   "id": "real.hd_10180",
+   "file": "Scenes/real.hd_10180.json",
+   "name": {
+    "en": "HD 10180",
+    "ru": "HD 10180"
+   },
+   "kind": "real_planetary",
+   "group": "rich_rv",
+   "description": {
+    "en": "A Sun-like star with six archive-confirmed planets (minimum masses) and three contested extra signals.",
+    "ru": "Солнцеподобная звезда с шестью подтверждёнными архивом планетами (минимальные массы) и тремя спорными сигналами."
+   },
+   "body_count": 7,
+   "optional_count": 3,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hd_10180_h",
+    "profile": "Giant_Saturn",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L04"
+   ],
+   "experiment_ids": [
+    "E30",
+    "E33",
+    "E71"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 27,
+    "derived": 35,
+    "reconstructed": 9,
+    "assumed": 33,
+    "literature": 9,
+    "authored": 9
+   }
+  },
+  {
+   "id": "real.hd_69830",
+   "file": "Scenes/real.hd_69830.json",
+   "name": {
+    "en": "HD 69830",
+    "ru": "HD 69830"
+   },
+   "kind": "real_planetary",
+   "group": "rich_rv",
+   "description": {
+    "en": "Three Neptune-mass planets and a warm dust belt detected in the infrared.",
+    "ru": "Три планеты нептуновой массы и тёплый пылевой пояс, найденный в инфракрасном."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hd_69830_d",
+    "profile": "Giant_Neptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L10"
+   ],
+   "experiment_ids": [
+    "E28"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 14,
+    "derived": 14,
+    "reconstructed": 4,
+    "assumed": 9,
+    "literature": 0,
+    "authored": 3
+   }
+  },
+  {
+   "id": "real.kepler_16",
+   "file": "Scenes/real.kepler_16.json",
+   "name": {
+    "en": "Kepler-16",
+    "ru": "Kepler-16"
+   },
+   "kind": "real_planetary",
+   "group": "circumbinary",
+   "description": {
+    "en": "A Saturn-mass planet orbiting both stars of an eclipsing K+M binary.",
+    "ru": "Планета массы Сатурна, обращающаяся вокруг обеих звёзд затменной пары K+M."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_16_b",
+    "profile": "Giant_Saturn",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L06"
+   ],
+   "experiment_ids": [
+    "E13",
+    "E17"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 6,
+    "derived": 7,
+    "reconstructed": 1,
+    "assumed": 3,
+    "literature": 6,
+    "authored": 1
+   }
+  },
+  {
+   "id": "real.kepler_47",
+   "file": "Scenes/real.kepler_47.json",
+   "name": {
+    "en": "Kepler-47",
+    "ru": "Kepler-47"
+   },
+   "kind": "real_planetary",
+   "group": "circumbinary",
+   "description": {
+    "en": "Three planets around a Sun-like star and a red dwarf orbiting each other every 7.4 days.",
+    "ru": "Три планеты вокруг солнцеподобной звезды и красного карлика с периодом 7,4 суток."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_47_d",
+    "profile": "Giant_Neptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E14"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 18,
+    "derived": 16,
+    "reconstructed": 1,
+    "assumed": 6,
+    "literature": 6,
+    "authored": 3
+   }
+  },
+  {
+   "id": "real.kepler_34",
+   "file": "Scenes/real.kepler_34.json",
+   "name": {
+    "en": "Kepler-34",
+    "ru": "Kepler-34"
+   },
+   "kind": "real_planetary",
+   "group": "circumbinary",
+   "description": {
+    "en": "A gas giant around an eccentric pair of Sun-like stars.",
+    "ru": "Газовый гигант вокруг эксцентричной пары солнцеподобных звёзд."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "kepler_34_b",
+    "profile": "Giant_Saturn",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E45"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 4,
+    "derived": 7,
+    "reconstructed": 5,
+    "assumed": 1,
+    "literature": 6,
+    "authored": 1
+   }
+  },
+  {
+   "id": "real.hd_80606_80607",
+   "file": "Scenes/real.hd_80606_80607.json",
+   "name": {
+    "en": "HD 80606 / HD 80607",
+    "ru": "HD 80606 / HD 80607"
+   },
+   "kind": "real_planetary",
+   "group": "eccentric_giant",
+   "description": {
+    "en": "A giant planet on a 0.93-eccentricity orbit, heated by a short flash at periastron; a wide stellar companion HD 80607.",
+    "ru": "Гигант на орбите с эксцентриситетом 0,93 с коротким нагревом в перицентре; широкий звёздный компаньон HD 80607."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hd_80606_b",
+    "profile": "Giant_HotJupiter",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E44"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 9,
+    "derived": 8,
+    "reconstructed": 0,
+    "assumed": 6,
+    "literature": 0,
+    "authored": 1
+   }
+  },
+  {
+   "id": "real.alpha_centauri_ab",
+   "file": "Scenes/real.alpha_centauri_ab.json",
+   "name": {
+    "en": "Alpha Centauri A/B",
+    "ru": "Альфа Центавра A/B"
+   },
+   "kind": "real_stellar_or_compact",
+   "group": "hierarchical_triple",
+   "description": {
+    "en": "The nearest stellar system: Sun-like A and B on an 80-year orbit, with Proxima on a ~550,000-year outer orbit.",
+    "ru": "Ближайшая звёздная система: солнцеподобные A и B на 80-летней орбите и Проксима на внешней орбите ~550 тыс. лет."
+   },
+   "body_count": 3,
+   "optional_count": 2,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "alpha_cen_a",
+    "profile": "Star_MainSequence",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E16"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 6,
+    "reconstructed": 0,
+    "assumed": 0,
+    "literature": 11,
+    "authored": 6
+   }
+  },
+  {
+   "id": "real.psr_b1257_12",
+   "file": "Scenes/real.psr_b1257_12.json",
+   "name": {
+    "en": "PSR B1257+12 / Lich",
+    "ru": "PSR B1257+12 (Лич)"
+   },
+   "kind": "real_planetary",
+   "group": "pulsar_planets",
+   "description": {
+    "en": "The first confirmed exoplanets: three small worlds orbiting the millisecond pulsar Lich.",
+    "ru": "Первые подтверждённые экзопланеты: три небольших мира у миллисекундного пульсара Лич."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "psr_b1257_12_c",
+    "profile": "Planet_Pulsar",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L19"
+   ],
+   "experiment_ids": [
+    "E55",
+    "E56",
+    "E57",
+    "E59"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 14,
+    "derived": 14,
+    "reconstructed": 3,
+    "assumed": 12,
+    "literature": 3,
+    "authored": 3
+   }
+  },
+  {
+   "id": "real.psr_b1620_26",
+   "file": "Scenes/real.psr_b1620_26.json",
+   "name": {
+    "en": "PSR B1620-26",
+    "ru": "PSR B1620-26"
+   },
+   "kind": "real_planetary",
+   "group": "pulsar_planets",
+   "description": {
+    "en": "A circumbinary giant planet around a pulsar-white dwarf pair in the globular cluster M4.",
+    "ru": "Планета-гигант вокруг пары пульсар–белый карлик в шаровом скоплении M4."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_Cluster",
+   "thumbnail_hint": {
+    "body": "psr_b1620_26_b",
+    "profile": "Giant_SuperJupiter",
+    "sky_profile": "Sky_Cluster"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E58"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 2,
+    "derived": 7,
+    "reconstructed": 2,
+    "assumed": 14,
+    "literature": 4,
+    "authored": 1
+   }
+  },
+  {
+   "id": "real.sirius_ab",
+   "file": "Scenes/real.sirius_ab.json",
+   "name": {
+    "en": "Sirius A/B",
+    "ru": "Сириус A/B"
+   },
+   "kind": "real_stellar_or_compact",
+   "group": "white_dwarf_binary",
+   "description": {
+    "en": "The brightest star in Earth's sky and its white-dwarf companion: similar masses, wildly different radii and luminosities.",
+    "ru": "Ярчайшая звезда земного неба и её спутник — белый карлик: близкие массы, но совершенно разные радиусы и светимости."
+   },
+   "body_count": 2,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "sirius_a",
+    "profile": "Star_Hot",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L05",
+    "L20"
+   ],
+   "experiment_ids": [
+    "E18",
+    "E60"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 4,
+    "reconstructed": 0,
+    "assumed": 0,
+    "literature": 7,
+    "authored": 0
+   }
+  },
+  {
+   "id": "real.cygnus_x_1",
+   "file": "Scenes/real.cygnus_x_1.json",
+   "name": {
+    "en": "Cygnus X-1",
+    "ru": "Лебедь X-1"
+   },
+   "kind": "real_stellar_or_compact",
+   "group": "x_ray_binary",
+   "description": {
+    "en": "A 21-solar-mass black hole feeding on the wind of a blue supergiant every 5.6 days; finite-fuel accretion model.",
+    "ru": "Чёрная дыра массой 21 Солнце, питающаяся ветром голубого сверхгиганта с периодом 5,6 суток; модель аккреции с конечным запасом."
+   },
+   "body_count": 2,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "hde_226868",
+    "profile": "Star_Giant",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L21"
+   ],
+   "experiment_ids": [
+    "E61",
+    "E62"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 3,
+    "reconstructed": 0,
+    "assumed": 2,
+    "literature": 5,
+    "authored": 0
+   }
+  },
+  {
+   "id": "real.sgr_a_s2",
+   "file": "Scenes/real.sgr_a_s2.json",
+   "name": {
+    "en": "Sgr A* / S2",
+    "ru": "Стрелец A* / S2"
+   },
+   "kind": "real_stellar_or_compact",
+   "group": "galactic_centre",
+   "description": {
+    "en": "The Milky Way's central black hole of 4.3 million solar masses and the star S2 on a 16-year orbit passing 120 au from it.",
+    "ru": "Центральная чёрная дыра Млечного Пути массой 4,3 млн Солнц и звезда S2 на 16-летней орбите, проходящая в 120 а.е. от неё."
+   },
+   "body_count": 2,
+   "optional_count": 0,
+   "sky_profile": "Sky_GalacticCenter",
+   "thumbnail_hint": {
+    "body": "sgr_a_star",
+    "profile": "BlackHole_Default",
+    "sky_profile": "Sky_GalacticCenter"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E36",
+    "E66"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 3,
+    "reconstructed": 0,
+    "assumed": 1,
+    "literature": 5,
+    "authored": 0
+   }
+  },
+  {
+   "id": "real.solar_system",
+   "file": "Scenes/real.solar_system.json",
+   "name": {
+    "en": "Solar System",
+    "ru": "Солнечная система"
+   },
+   "kind": "solar",
+   "group": "solar",
+   "description": {
+    "en": "The Sun, eight planets and the Moon from JPL Horizons barycentric vectors at J2000.",
+    "ru": "Солнце, восемь планет и Луна по барицентрическим векторам JPL Horizons на J2000."
+   },
+   "body_count": 10,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "earth",
+    "profile": "Planet_Earth",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L01",
+    "L02",
+    "L14",
+    "L23",
+    "L24"
+   ],
+   "experiment_ids": [
+    "E01",
+    "E02",
+    "E03",
+    "E04",
+    "E05",
+    "E06",
+    "E08",
+    "E24",
+    "E31",
+    "E37",
+    "E38",
+    "E39",
+    "E48",
+    "E63",
+    "E67",
+    "E68",
+    "E70",
+    "E72"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 20,
+    "derived": 19,
+    "reconstructed": 0,
+    "assumed": 0,
+    "literature": 35,
+    "authored": 9
+   }
+  },
+  {
+   "id": "generated.red_chain",
+   "file": "Scenes/generated.red_chain.json",
+   "name": {
+    "en": "Red dwarf chain",
+    "ru": "Цепочка у красного карлика"
+   },
+   "kind": "authored_procedural",
+   "group": "red_dwarf_chain",
+   "description": {
+    "en": "A compact chain of rocky worlds near period commensurabilities around a cool red dwarf.",
+    "ru": "Компактная цепочка каменных миров у соизмеримостей периодов вокруг холодного красного карлика."
+   },
+   "body_count": 9,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p7",
+    "profile": "Planet_Snowball",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L07"
+   ],
+   "experiment_ids": [
+    "E19",
+    "E23",
+    "E35",
+    "E69"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 10,
+    "reconstructed": 0,
+    "assumed": 8,
+    "literature": 0,
+    "authored": 36
+   }
+  },
+  {
+   "id": "generated.wide_giants",
+   "file": "Scenes/generated.wide_giants.json",
+   "name": {
+    "en": "Distant giants and belts",
+    "ru": "Далёкие гиганты и пояс"
+   },
+   "kind": "authored_procedural",
+   "group": "wide_giants",
+   "description": {
+    "en": "Young giant planets far from an A-type star, between warm and cold debris belts.",
+    "ru": "Молодые гиганты далеко от звезды класса A между тёплым и холодным поясами."
+   },
+   "body_count": 6,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p3",
+    "profile": "Giant_YoungHot",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 7,
+    "reconstructed": 0,
+    "assumed": 5,
+    "literature": 0,
+    "authored": 24
+   }
+  },
+  {
+   "id": "generated.hot_jupiter",
+   "file": "Scenes/generated.hot_jupiter.json",
+   "name": {
+    "en": "Hot Jupiter",
+    "ru": "Горячий Юпитер"
+   },
+   "kind": "authored_procedural",
+   "group": "hot_jupiter",
+   "description": {
+    "en": "A giant planet skimming its star every few days.",
+    "ru": "Гигант, огибающий звезду за несколько суток."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p2",
+    "profile": "Giant_SuperJupiter",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L09"
+   ],
+   "experiment_ids": [
+    "E25",
+    "E27"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 4,
+    "reconstructed": 0,
+    "assumed": 2,
+    "literature": 0,
+    "authored": 12
+   }
+  },
+  {
+   "id": "generated.binary_s",
+   "file": "Scenes/generated.binary_s.json",
+   "name": {
+    "en": "Planets around one of two stars",
+    "ru": "Планеты у одной из двух звёзд"
+   },
+   "kind": "authored_procedural",
+   "group": "s_type_binary",
+   "description": {
+    "en": "Planets orbit one star while a companion circles the pair far out (S-type).",
+    "ru": "Планеты обращаются вокруг одной звезды, а компаньон — далеко снаружи (S-тип)."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p2",
+    "profile": "Giant_Neptune",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E15",
+    "E40"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 6,
+    "reconstructed": 0,
+    "assumed": 2,
+    "literature": 0,
+    "authored": 16
+   }
+  },
+  {
+   "id": "generated.binary_p",
+   "file": "Scenes/generated.binary_p.json",
+   "name": {
+    "en": "A world with two suns",
+    "ru": "Мир у двух солнц"
+   },
+   "kind": "authored_procedural",
+   "group": "p_type_circumbinary",
+   "description": {
+    "en": "Planets orbit both stars of a close binary beyond the stability limit (P-type).",
+    "ru": "Планеты обращаются вокруг обеих звёзд тесной пары за пределом устойчивости (P-тип)."
+   },
+   "body_count": 3,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p1",
+    "profile": "Planet_Ocean",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E13",
+    "E15",
+    "E45",
+    "E67"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 5,
+    "reconstructed": 0,
+    "assumed": 1,
+    "literature": 0,
+    "authored": 12
+   }
+  },
+  {
+   "id": "generated.triple",
+   "file": "Scenes/generated.triple.json",
+   "name": {
+    "en": "Hierarchical triple",
+    "ru": "Иерархическая тройная"
+   },
+   "kind": "authored_procedural",
+   "group": "hierarchical_triple",
+   "description": {
+    "en": "An inner stellar pair, a distant third star and a planet around the third.",
+    "ru": "Внутренняя пара звёзд, далёкая третья звезда и планета у неё."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p1",
+    "profile": "Planet_Desert",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E41"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 7,
+    "reconstructed": 0,
+    "assumed": 1,
+    "literature": 0,
+    "authored": 16
+   }
+  },
+  {
+   "id": "generated.moon_lab",
+   "file": "Scenes/generated.moon_lab.json",
+   "name": {
+    "en": "Planet, moons and a ring",
+    "ru": "Планета, спутники и кольцо"
+   },
+   "kind": "authored_procedural",
+   "group": "moon_system_ring",
+   "description": {
+    "en": "A ringed giant with a chain of large moons -- a laboratory for tides-free moon dynamics.",
+    "ru": "Окольцованный гигант с цепочкой крупных спутников — лаборатория динамики спутников (без приливов)."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "planet",
+    "profile": "Giant_Saturn",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L13"
+   ],
+   "experiment_ids": [],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 6,
+    "reconstructed": 0,
+    "assumed": 4,
+    "literature": 0,
+    "authored": 21
+   }
+  },
+  {
+   "id": "generated.rogue",
+   "file": "Scenes/generated.rogue.json",
+   "name": {
+    "en": "Interstellar visitor",
+    "ru": "Межзвёздный гость"
+   },
+   "kind": "authored_procedural",
+   "group": "rogue_flyby",
+   "description": {
+    "en": "A free-floating giant on a hyperbolic path approaches a small planetary system.",
+    "ru": "Свободный гигант на гиперболической траектории приближается к небольшой планетной системе."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_Sparse",
+   "thumbnail_hint": {
+    "body": "intruder",
+    "profile": "Giant_BrownDwarfT",
+    "sky_profile": "Sky_Sparse"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [
+    "E42"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 5,
+    "reconstructed": 0,
+    "assumed": 3,
+    "literature": 0,
+    "authored": 16
+   }
+  },
+  {
+   "id": "generated.remnant",
+   "file": "Scenes/generated.remnant.json",
+   "name": {
+    "en": "Planets around a stellar remnant",
+    "ru": "Планеты у остатка звезды"
+   },
+   "kind": "authored_procedural",
+   "group": "remnant_planets",
+   "description": {
+    "en": "Survivors around a white dwarf (or pulsar) with a tidal debris disk.",
+    "ru": "Уцелевшие планеты у белого карлика (или пульсара) с приливным обломочным диском."
+   },
+   "body_count": 4,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p1",
+    "profile": "Giant_Jupiter",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [],
+   "experiment_ids": [],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 5,
+    "reconstructed": 0,
+    "assumed": 3,
+    "literature": 0,
+    "authored": 16
+   }
+  },
+  {
+   "id": "generated.agn",
+   "file": "Scenes/generated.agn.json",
+   "name": {
+    "en": "Active nucleus laboratory",
+    "ru": "Лаборатория активного ядра"
+   },
+   "kind": "authored_procedural",
+   "group": "agn_lab",
+   "description": {
+    "en": "A supermassive black hole with a finite accretion reservoir, a jet and stars on eccentric orbits.",
+    "ru": "Сверхмассивная чёрная дыра с конечным запасом аккреции, джетом и звёздами на вытянутых орбитах."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_GalacticCenter",
+   "thumbnail_hint": {
+    "body": "core",
+    "profile": "BlackHole_Default",
+    "sky_profile": "Sky_GalacticCenter"
+   },
+   "lesson_ids": [
+    "L22"
+   ],
+   "experiment_ids": [
+    "E64",
+    "E65"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 9,
+    "reconstructed": 0,
+    "assumed": 0,
+    "literature": 0,
+    "authored": 20
+   }
+  },
+  {
+   "id": "generated.climate",
+   "file": "Scenes/generated.climate.json",
+   "name": {
+    "en": "Planetary engineering climate lab",
+    "ru": "Инженерная климатическая лаборатория"
+   },
+   "kind": "authored_procedural",
+   "group": "single_star",
+   "description": {
+    "en": "A Sun-like system with an Earth-mass target world at 1 au-equivalent flux for surface-grid engineering.",
+    "ru": "Солнцеподобная система с целевым миром земной массы при потоке, эквивалентном 1 а.е., для инженерии поверхностной сетки."
+   },
+   "body_count": 5,
+   "optional_count": 0,
+   "sky_profile": "Sky_MilkyWay",
+   "thumbnail_hint": {
+    "body": "p4",
+    "profile": "Planet_Temperate",
+    "sky_profile": "Sky_MilkyWay"
+   },
+   "lesson_ids": [
+    "L11",
+    "L15",
+    "L16",
+    "L17"
+   ],
+   "experiment_ids": [
+    "E03",
+    "E32",
+    "E34",
+    "E43",
+    "E44",
+    "E46",
+    "E47",
+    "E49",
+    "E50",
+    "E51",
+    "E52",
+    "E54"
+   ],
+   "validation": {
+    "scenario_validated": false,
+    "core_integration_tested": false
+   },
+   "provenance_summary": {
+    "measured": 0,
+    "derived": 6,
+    "reconstructed": 0,
+    "assumed": 4,
+    "literature": 0,
+    "authored": 20
+   }
+  }
+ ]
+}

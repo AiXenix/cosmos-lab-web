@@ -1,0 +1,483 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.binary_p",
+ "name": {
+  "en": "A world with two suns",
+  "ru": "Мир у двух солнц"
+ },
+ "kind": "authored_procedural",
+ "group": "p_type_circumbinary",
+ "description": {
+  "en": "Planets orbit both stars of a close binary beyond the stability limit (P-type).",
+  "ru": "Планеты обращаются вокруг обеих звёзд тесной пары за пределом устойчивости (P-тип)."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 1843.14,
+  "suggested_horizon_s": 307981000.0,
+  "time_scale_hint": 68418.7,
+  "guard": {
+   "min_separation_m": 17721500.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 206516000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "binary",
+   "kind": "binary",
+   "members": [
+    "star_a",
+    "star_b"
+   ],
+   "name": {
+    "en": "Binary",
+    "ru": "Двойная"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "star_a",
+   "name": {
+    "en": "Lordra A",
+    "ru": "Lordra A"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 1.50337747929689e+30,
+   "radius_m": 556252155.777559,
+   "position_m": [
+    2431522102.313808,
+    -3945970934.579731,
+    882.6782655168381
+   ],
+   "velocity_mps": [
+    13835.3085845571,
+    9744.95367616239,
+    -0.006473662997821008
+   ],
+   "star": {
+    "teff_k": 4880.49,
+    "luminosity_w": 1.2508909e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 1423020471,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.7808,
+      0.5996,
+      1
+     ],
+     "Seed": 471.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.7808,
+        0.5996,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 5505"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 5505"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 5505"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "star_b",
+   "name": {
+    "en": "Lordra B",
+    "ru": "Lordra B"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": "star_a",
+   "mass_kg": 4.39931410432265e+29,
+   "radius_m": 208125479.680897,
+   "position_m": [
+    -8316819467.506692,
+    13485221119.87736,
+    882.6782655168381
+   ],
+   "velocity_mps": [
+    -47279.97111026266,
+    -33306.23709319059,
+    -0.006473662997821008
+   ],
+   "star": {
+    "teff_k": 3069.81,
+    "luminosity_w": 2.7410728e+24,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_RedDwarf",
+    "seed": 4193922392,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.4976,
+      0.1683,
+      1
+     ],
+     "Seed": 392.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Faint",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.4976,
+        0.1683,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 5505"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 5505"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 5505"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   },
+   "elements": {
+    "a_m": 18323109200.3262,
+    "e": 0.1323664573,
+    "i_deg": 0.0,
+    "node_deg": 0.0,
+    "omega_deg": 277.6692206,
+    "mean_anomaly_deg": 210.7625473,
+    "period_s": 1368374.09120451,
+    "reference": "binary",
+    "convention": "standard"
+   }
+  },
+  {
+   "id": "p1",
+   "name": {
+    "en": "Lordra (AB) b",
+    "ru": "Lordra (AB) b"
+   },
+   "class": "planet",
+   "subclass": "water_world_hypothesis",
+   "parent": "binary",
+   "mass_kg": 4.86210729208733e+25,
+   "radius_m": 17721503.4348055,
+   "position_m": [
+    68582394817.93358,
+    -5933852011.363453,
+    -35279281.53582945
+   ],
+   "velocity_mps": [
+    5204.134201872585,
+    43519.54693029261,
+    258.7422715506439
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 70221090953.0722,
+    "e": 0.03815134928,
+    "i_deg": 0.3406438374,
+    "node_deg": 0,
+    "omega_deg": 294.185972,
+    "mean_anomaly_deg": 57.10335295,
+    "period_s": 10266017.8133022,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 282.47
+   },
+   "appearance": {
+    "profile": "Planet_Ocean",
+    "seed": 4233184758,
+    "params": {
+     "Seed": 192.0,
+     "LandColorA": [
+      0.2384,
+      0.3019,
+      0.1685,
+      1
+     ],
+     "LandColorB": [
+      0.4057,
+      0.3882,
+      0.2606,
+      1
+     ],
+     "OceanColor": [
+      0.009306,
+      0.05684,
+      0.1705,
+      1
+     ],
+     "NoiseScale": 1.469,
+     "CloudCoverage": 0.675
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 5,
+  "reconstructed": 0,
+  "assumed": 1,
+  "literature": 0,
+  "authored": 12
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [],
+ "experiment_ids": [
+  "E13",
+  "E15",
+  "E45",
+  "E67"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 26.8)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 1.4e-15 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "p_type_circumbinary",
+  "seed": 5505,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Lordra",
+   "a_crit_m": 51015164988.3314
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}

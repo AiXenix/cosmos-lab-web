@@ -1,0 +1,891 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "real.proxima_centauri",
+ "name": {
+  "en": "Proxima Centauri",
+  "ru": "Проксима Центавра"
+ },
+ "kind": "real_planetary",
+ "group": "habitable_zone",
+ "description": {
+  "en": "The nearest star to the Sun: a flaring red dwarf with an Earth-mass planet (minimum mass) in its temperate zone.",
+  "ru": "Ближайшая к Солнцу звезда: вспыхивающий красный карлик с планетой земной (минимальной) массы в умеренной зоне."
+ },
+ "gameplay": "Поток, активность красного карлика и неопределённая атмосфера",
+ "epoch": {
+  "jd_tdb": 2460557.5,
+  "label": "JD 2460557.5 TDB (median of catalogue reference times, to limit propagation)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "system_barycentric_sky",
+  "origin": "barycenter",
+  "axes": "right-handed; x = sky-plane reference direction (node line), y = toward the observer (Earth), z = completes the right-handed set (sky-plane 'south' of the node). Edge-on orbits lie near the x-y plane.",
+  "observer_direction": [
+   0.0,
+   1.0,
+   0.0
+  ],
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "A",
+  "softening_m": 0.0,
+  "suggested_dt_s": 737.767,
+  "suggested_horizon_s": 48317700.0,
+  "time_scale_hint": 22133.0,
+  "guard": {
+   "min_separation_m": 4414990.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 21791900000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "planets",
+   "kind": "planet_family",
+   "members": [
+    "proxima_cen_d",
+    "proxima_cen_b"
+   ],
+   "name": {
+    "en": "Planets",
+    "ru": "Планеты"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "proxima_centauri_star",
+   "name": {
+    "en": "Proxima Cen",
+    "ru": "Proxima Cen"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 2.42784845287749e+29,
+   "radius_m": 98093700.0,
+   "position_m": [
+    182169.0898282675,
+    -81995.9247616824,
+    -5.020802340126076e-12
+   ],
+   "velocity_mps": [
+    -0.745092514669182,
+    -1.197467966619422,
+    -7.332376562009824e-17
+   ],
+   "star": {
+    "teff_k": 2900.0,
+    "luminosity_w": 4.8494873e+23,
+    "spectral_type": "",
+    "activity": {
+     "flare_rate_per_day": 0.9,
+     "note": "frequent flares; rate illustrative from TESS-era studies"
+    }
+   },
+   "appearance": {
+    "profile": "Star_RedDwarf",
+    "seed": 1447892520,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.4641,
+      0.1354,
+      1
+     ],
+     "Seed": 520.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Faint",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.4641,
+        0.1354,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.1221,
+      "unit": "M_sun",
+      "column": "st_mass"
+     }
+    },
+    "radius_m": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.141,
+      "unit": "R_sun",
+      "column": "st_rad"
+     }
+    },
+    "star.teff_k": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 2900.0,
+      "unit": "K",
+      "column": "st_teff"
+     }
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "star.activity": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "frequent flares; rate illustrative from TESS-era studies"
+    }
+   },
+   "catalogue_name": "Proxima Cen"
+  },
+  {
+   "id": "proxima_cen_d",
+   "name": {
+    "en": "Proxima Cen d",
+    "ru": "Proxima Cen d"
+   },
+   "catalogue_name": "Proxima Cen d",
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "proxima_centauri_star",
+   "mass_kg": 1.55276378394468e+24,
+   "radius_m": 4414986.91030259,
+   "position_m": [
+    -264337577.6963302,
+    4308357550.767565,
+    2.638108142064914e-07
+   ],
+   "velocity_mps": [
+    61153.91559446769,
+    3753.436938388954,
+    2.298317266199737e-13
+   ],
+   "flags": {
+    "msini": true,
+    "mass_is_lower_limit": true,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.i_deg",
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown inclination; edge-on (i=90 deg) assumed, consistent with using Msini as the mass"
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "minimum mass Msini used as mass (edge-on)",
+     "original": {
+      "value": 0.26,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Msini"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 5.12338,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.02881,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.0,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from time of periastron with catalogue period",
+     "original": {
+      "value": 2460557.55,
+      "unit": "JD",
+      "column": "pl_orbtper"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 4316552099.06497,
+    "e": 0.0,
+    "i_deg": 90.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 356.4866943,
+    "period_s": 442660.031999999,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 282.75
+   },
+   "appearance": {
+    "profile": "Planet_Temperate",
+    "seed": 1038474056,
+    "params": {
+     "Seed": 457.0,
+     "LandColorA": [
+      0.2657,
+      0.315,
+      0.1873,
+      1
+     ],
+     "LandColorB": [
+      0.438,
+      0.3932,
+      0.2422,
+      1
+     ],
+     "OceanColor": [
+      0.02023,
+      0.07119,
+      0.1565,
+      1
+     ],
+     "NoiseScale": 1.866,
+     "CloudCoverage": 0.474
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  },
+  {
+   "id": "proxima_cen_b",
+   "name": {
+    "en": "Proxima Cen b",
+    "ru": "Proxima Cen b"
+   },
+   "catalogue_name": "Proxima Cen b",
+   "class": "planet",
+   "subclass": "terrestrial",
+   "parent": "proxima_centauri_star",
+   "mass_kg": 6.30063766177554e+24,
+   "radius_m": 6525883.13873827,
+   "position_m": [
+    -6954445379.173821,
+    2097804546.762296,
+    1.284534811714605e-07
+   ],
+   "velocity_mps": [
+    13639.82347991425,
+    45217.46676497436,
+    2.768771296963884e-12
+   ],
+   "flags": {
+    "msini": true,
+    "mass_is_lower_limit": true,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.i_deg",
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown inclination; edge-on (i=90 deg) assumed, consistent with using Msini as the mass"
+    },
+    "mass_kg": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "method": "minimum mass Msini used as mass (edge-on)",
+     "original": {
+      "value": 1.055,
+      "unit": "M_earth",
+      "column": "pl_bmasse",
+      "provenance": "Msini"
+     }
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 11.18465,
+      "unit": "day",
+      "column": "pl_orbper"
+     }
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)",
+     "original": {
+      "value": 0.04848,
+      "unit": "au",
+      "column": "pl_orbsmax"
+     }
+    },
+    "elements.e": {
+     "kind": "measured",
+     "source": "nasa_ps_default",
+     "original": {
+      "value": 0.0,
+      "column": "pl_orbeccen"
+     }
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "derived",
+     "source": "nasa_ps_default",
+     "method": "propagated from time of periastron with catalogue period",
+     "original": {
+      "value": 2460548.59,
+      "unit": "JD",
+      "column": "pl_orbtper"
+     }
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    },
+    "surface.atmosphere": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "competing hypotheses with illustrative numbers; none is presented as observed"
+    }
+   },
+   "elements": {
+    "a_m": 7264147103.13468,
+    "e": 0.0,
+    "i_deg": 90.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 286.7859075,
+    "period_s": 966353.759999998,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown",
+     "hypotheses": [
+      "airless_bare_rock",
+      "thin_n2_co2_atmosphere",
+      "dense_atmosphere_ocean"
+     ],
+     "hypothesis_params": {
+      "airless_bare_rock": {
+       "present": false,
+       "surface_pressure_pa": 0.0,
+       "greenhouse_k": 0.0,
+       "albedo_bond": 0.1
+      },
+      "thin_n2_co2_atmosphere": {
+       "present": true,
+       "surface_pressure_pa": 10000.0,
+       "mean_molar_mass_kg_mol": 0.0296,
+       "specific_heat_j_kg_k": 1000.0,
+       "greenhouse_k": 8.0,
+       "albedo_bond": 0.25
+      },
+      "dense_atmosphere_ocean": {
+       "present": true,
+       "surface_pressure_pa": 100000.0,
+       "mean_molar_mass_kg_mol": 0.0286,
+       "specific_heat_j_kg_k": 1040.0,
+       "greenhouse_k": 35.0,
+       "albedo_bond": 0.3,
+       "ocean_fraction": 0.7
+      }
+     }
+    },
+    "equilibrium_temp_k": 217.96
+   },
+   "appearance": {
+    "profile": "Planet_Eyeball",
+    "seed": 2006531124,
+    "params": {
+     "Seed": 422.0,
+     "LandColorA": [
+      0.4199,
+      0.3931,
+      0.3956,
+      1
+     ],
+     "LandColorB": [
+      0.2537,
+      0.2174,
+      0.2198,
+      1
+     ],
+     "OceanColor": [
+      0.02124,
+      0.08063,
+      0.201,
+      1
+     ],
+     "NoiseScale": 2.333,
+     "CloudCoverage": 0.312
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   }
+  }
+ ],
+ "optional_bodies": [
+  {
+   "id": "proxima_cen_c",
+   "name": {
+    "en": "Proxima Cen c",
+    "ru": "Proxima Cen c"
+   },
+   "catalogue_name": "Proxima Cen c",
+   "class": "planet",
+   "subclass": "water_world_hypothesis",
+   "parent": "proxima_centauri_star",
+   "mass_kg": 4.18051787985107e+25,
+   "radius_m": 16213076.4465143,
+   "position_m": [
+    -183946180910.9573,
+    120372514986.8528,
+    7.370690759198305e-06
+   ],
+   "velocity_mps": [
+    4989.932357869331,
+    7106.075519701436,
+    4.351216319850864e-13
+   ],
+   "flags": {
+    "msini": true,
+    "mass_is_lower_limit": true,
+    "mass_is_upper_limit": false,
+    "radius_is_limit": false,
+    "controversial": true,
+    "candidate": true,
+    "conditional": false,
+    "excluded_from_start": true,
+    "reconstructed_fields": [
+     "radius_m",
+     "elements.mean_anomaly_deg",
+     "elements.i_deg",
+     "elements.omega_deg",
+     "elements.node_deg",
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "elements.i_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown inclination; edge-on (i=90 deg) assumed, consistent with using Msini as the mass"
+    },
+    "mass_kg": {
+     "kind": "literature",
+     "source": "damasso2020",
+     "note": "2020 RV candidate (Damasso et al. 2020); not in PS default snapshot; contested"
+    },
+    "radius_m": {
+     "kind": "reconstructed",
+     "source": "this_script",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large from mass"
+    },
+    "elements.period_s": {
+     "kind": "literature",
+     "source": "damasso2020",
+     "note": "2020 RV candidate (Damasso et al. 2020); not in PS default snapshot; contested"
+    },
+    "elements.a_m": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Kepler III from the catalogue period with the Jacobi interior mass (star + inner bodies + planet)"
+    },
+    "elements.e": {
+     "kind": "literature",
+     "source": "damasso2020",
+     "note": "2020 RV candidate (Damasso et al. 2020); not in PS default snapshot; contested"
+    },
+    "elements.omega_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "unknown; 90 deg (transit at periapsis phase convention). Irrelevant for circular orbits"
+    },
+    "elements.node_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "longitude of node is unconstrained by transits/RV; 0 deg for all planets (mutual nodes unknown)"
+    },
+    "elements.mean_anomaly_deg": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "no epoch in default row; deterministic spread (golden angle + seeded jitter)"
+    },
+    "state": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "Keplerian elements -> Cartesian in Jacobi order around the inner subsystem; independently published elements, NOT a coherent N-body fit"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 225006273360.136,
+    "e": 0.04,
+    "i_deg": 90.0,
+    "node_deg": 0.0,
+    "omega_deg": 90.0,
+    "mean_anomaly_deg": 306.9729504,
+    "period_s": 166579200.0,
+    "reference": "jacobi",
+    "convention": "sky"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 39.163
+   },
+   "appearance": {
+    "profile": "Planet_Ocean",
+    "seed": 2107613059,
+    "params": {
+     "Seed": 538.0,
+     "LandColorA": [
+      0.2317,
+      0.3221,
+      0.1727,
+      1
+     ],
+     "LandColorB": [
+      0.3987,
+      0.3825,
+      0.2552,
+      1
+     ],
+     "OceanColor": [
+      0.01004,
+      0.05565,
+      0.1874,
+      1
+     ],
+     "NoiseScale": 2.012,
+     "CloudCoverage": 0.645
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_Earth",
+      "params": {},
+      "thickness_fraction": 0.015
+     }
+    }
+   },
+   "optional_note": {
+    "en": "2020 RV candidate (Damasso et al. 2020); not in PS default snapshot; contested",
+    "ru": "Кандидат/спорный сигнал из литературы; не входит в старт."
+   }
+  }
+ ],
+ "excluded": [
+  {
+   "name": "Proxima Cen c",
+   "reason": "2020 RV candidate (Damasso et al. 2020); not in PS default snapshot; contested",
+   "source": "damasso2020"
+  }
+ ],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "edge_on_rv",
+   "text": {
+    "en": "RV-only planets: inclination unknown, edge-on assumed so the minimum mass equals the simulated mass. True masses are higher by 1/sin(i).",
+    "ru": "Планеты только по лучевым скоростям: наклон неизвестен, принят ребром; моделируемая масса равна минимальной. Истинная масса больше в 1/sin(i) раз."
+   },
+   "affects": [
+    "proxima_cen_d.elements.i_deg",
+    "proxima_cen_d.mass_kg",
+    "proxima_cen_b.elements.i_deg",
+    "proxima_cen_b.mass_kg",
+    "proxima_cen_c.elements.i_deg",
+    "proxima_cen_c.mass_kg"
+   ]
+  },
+  {
+   "id": "mr_radius",
+   "text": {
+    "en": "Planets without a measured radius (RV, timing, imaging) get a mass-radius relation estimate.",
+    "ru": "Планетам без измеренного радиуса присвоена оценка по соотношению масса–радиус."
+   },
+   "affects": [
+    "proxima_cen_d.radius_m",
+    "proxima_cen_b.radius_m",
+    "proxima_cen_c.radius_m"
+   ]
+  },
+  {
+   "id": "node_zero",
+   "text": {
+    "en": "Sky-plane node angles are not measured for transit/RV planets; all are set to 0, so mutual inclinations may be underestimated.",
+    "ru": "Углы узлов в картинной плоскости не измерены для транзитных/RV планет; все приняты 0, взаимные наклоны могут быть занижены."
+   },
+   "affects": [
+    "proxima_cen_d.elements.node_deg",
+    "proxima_cen_b.elements.node_deg",
+    "proxima_cen_c.elements.node_deg"
+   ]
+  },
+  {
+   "id": "phase_assumed",
+   "text": {
+    "en": "Planets without a transit time or periastron time get an arbitrary but fixed starting phase.",
+    "ru": "Планетам без времени транзита/перицентра задана произвольная, но фиксированная начальная фаза."
+   },
+   "affects": [
+    "proxima_cen_c.elements.mean_anomaly_deg"
+   ]
+  },
+  {
+   "id": "not_coherent_fit",
+   "text": {
+    "en": "Elements come from independently published solutions; the scene is a reconstruction, not a coherent photodynamical fit, and will not reproduce exact future transit times.",
+    "ru": "Элементы взяты из независимо опубликованных решений; сцена — реконструкция, а не согласованный фотодинамический fit, и не воспроизведёт точные будущие транзиты."
+   },
+   "affects": [
+    "bodies.state"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 9,
+  "derived": 13,
+  "reconstructed": 3,
+  "assumed": 14,
+  "literature": 3,
+  "authored": 4
+ },
+ "sources": [
+  {
+   "id": "nasa_ps_default",
+   "title": "NASA Exoplanet Archive, Planetary Systems (PS) table, default_flag=1 snapshot",
+   "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync (query in Atlas/atlas_hosts.json)",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_e2b44e7a",
+   "title": "ESPRESSO",
+   "url": "https://arxiv.org/abs/2005.12114",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "ref_3485fe63",
+   "title": "новый NIRPS-анализ",
+   "url": "https://doi.org/10.1051/0004-6361/202553728",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "damasso2020",
+   "title": "Damasso et al. 2020, Sci. Adv. 6, eaax7467",
+   "url": "https://www.science.org/doi/10.1126/sciadv.aax7467",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L03"
+ ],
+ "experiment_ids": [
+  "E10",
+  "E44"
+ ],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 42.1)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 2.5e-05 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "data_version": {
+  "catalogue": "NASA PS default snapshot",
+  "retrieved_utc": "2026-11-02T19:04:00.627107+00:00",
+  "sha256": "f2ffc45d7ddcb42646fd590bf5b51d6f3620603f691eb27e7faded5a381362f4"
+ },
+ "plan": {
+  "research_id": "CS12",
+  "gameplay": "Поток, активность красного карлика и неопределённая атмосфера"
+ }
+}

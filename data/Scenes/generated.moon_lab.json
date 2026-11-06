@@ -1,0 +1,740 @@
+{
+ "schema": "aixenix.cosmos.scene/1",
+ "id": "generated.moon_lab",
+ "name": {
+  "en": "Planet, moons and a ring",
+  "ru": "Планета, спутники и кольцо"
+ },
+ "kind": "authored_procedural",
+ "group": "moon_system_ring",
+ "description": {
+  "en": "A ringed giant with a chain of large moons -- a laboratory for tides-free moon dynamics.",
+  "ru": "Окольцованный гигант с цепочкой крупных спутников — лаборатория динамики спутников (без приливов)."
+ },
+ "gameplay": "Авторская система с фиксированными seed и паспортом допущений",
+ "epoch": {
+  "jd_tdb": 2451545.0,
+  "label": "J2000.0 TDB (authored; epoch has no observational meaning)",
+  "basis": "common instant of every body state in this file"
+ },
+ "frame": {
+  "id": "authored_barycentric",
+  "origin": "barycenter",
+  "axes": "right-handed; x-y = generator reference plane, z = its pole",
+  "recentred": true
+ },
+ "physics": {
+  "model": "newtonian_point_mass",
+  "mode_default": "D",
+  "softening_m": 0.0,
+  "suggested_dt_s": 188.774,
+  "suggested_horizon_s": 6283080000.0,
+  "time_scale_hint": 5718.33,
+  "guard": {
+   "min_separation_m": 1024500.0,
+   "collision": "surface_contact (sum of physical radii)",
+   "notes": {
+    "en": "Newtonian point masses; no GR, tides, radiation pressure or gas hydrodynamics unless a module says so.",
+    "ru": "Ньютоновские точечные массы; без ОТО, приливов, давления излучения и газодинамики, если модуль не указан явно."
+   }
+  }
+ },
+ "camera": {
+  "focus": "barycenter",
+  "distance_m": 1602560000000.0,
+  "pitch_deg": -28.0,
+  "yaw_deg": 35.0,
+  "visual_radius_scale_hint": 1.0,
+  "visual_scale_mode_hint": "enhanced_bodies"
+ },
+ "groups": [
+  {
+   "id": "moon_system",
+   "kind": "hierarchy",
+   "members": [
+    "planet",
+    "moon1",
+    "moon2",
+    "moon3"
+   ],
+   "name": {
+    "en": "Planet and moons",
+    "ru": "Планета и спутники"
+   }
+  }
+ ],
+ "bodies": [
+  {
+   "id": "star",
+   "name": {
+    "en": "Lorno",
+    "ru": "Lorno"
+   },
+   "class": "star",
+   "subclass": "",
+   "parent": null,
+   "mass_kg": 1.98840987131653e+30,
+   "radius_m": 695700000.0,
+   "position_m": [
+    -1475433998.413229,
+    187149679.1649673,
+    1.548276740077002e-17
+   ],
+   "velocity_mps": [
+    -6.537633714592108,
+    -43.11731063004486,
+    -1.012492636594719e-22
+   ],
+   "star": {
+    "teff_k": 5772.0,
+    "luminosity_w": 3.8279909e+26,
+    "spectral_type": ""
+   },
+   "appearance": {
+    "profile": "Star_MainSequence",
+    "seed": 499801682,
+    "params": {
+     "StarColor": [
+      1.0,
+      0.8791,
+      0.8215,
+      1
+     ],
+     "Seed": 682.0
+    },
+    "layers": {
+     "corona": {
+      "profile": "Corona_Default",
+      "params": {
+       "CoronaColor": [
+        1.0,
+        0.8791,
+        0.8215,
+        1
+       ]
+      },
+      "size_factor": 4.0
+     }
+    }
+   },
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": []
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 7707"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 7707"
+    },
+    "star.teff_k": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "main-sequence mass-luminosity-radius scalings",
+     "note": "seed 7707"
+    },
+    "star.luminosity_w": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "L = 4 pi R^2 sigma Teff^4"
+    },
+    "appearance": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "colour = CIE-integrated blackbody of Teff; surface detail artistic"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Cartesian state (barycentric, zero momentum)"
+    }
+   }
+  },
+  {
+   "id": "planet",
+   "name": {
+    "en": "Lorno b",
+    "ru": "Lorno b"
+   },
+   "class": "planet",
+   "subclass": "gas_giant",
+   "parent": "star",
+   "mass_kg": 5.54443910613072e+27,
+   "radius_m": 83765467.0646928,
+   "position_m": [
+    529129448725.6447,
+    -67116790273.45811,
+    38.53435036097007
+   ],
+   "velocity_mps": [
+    2344.424523387025,
+    15462.89995322948,
+    -0.000434259000217734
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "rotation": {
+     "kind": "authored",
+     "source": "authored"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 528795937589.73,
+    "e": 0.0268708561,
+    "i_deg": 0.0,
+    "node_deg": 0,
+    "omega_deg": 236.1395092,
+    "mean_anomaly_deg": 113.8541841,
+    "period_s": 209436109.4932,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "ring": {
+    "inner_radius_m": 100518560.477631,
+    "outer_radius_m": 184284027.542324,
+    "mass_kg": 1e+19,
+    "profile": "Ring_Icy",
+    "massless_in_dynamics": true
+   },
+   "rotation": {
+    "period_s": 47845.0141124259,
+    "obliquity_deg": 3.6718,
+    "axis": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "tidally_locked": false
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 135.41
+   },
+   "appearance": {
+    "profile": "Giant_Saturn",
+    "seed": 4262811851,
+    "params": {
+     "Seed": 117.0,
+     "ColorA": [
+      0.8212,
+      0.6801,
+      0.4826,
+      1
+     ],
+     "ColorB": [
+      0.5709,
+      0.4216,
+      0.2538,
+      1
+     ],
+     "ColorC": [
+      0.9295,
+      0.7924,
+      0.691,
+      1
+     ],
+     "BandCount": 9.12,
+     "Turbulence": 0.619
+    },
+    "layers": {
+     "atmosphere": {
+      "profile": "Atmo_GasGiant",
+      "params": {},
+      "thickness_fraction": 0.03
+     },
+     "ring": {
+      "profile": "Ring_Icy",
+      "params": {},
+      "inner_radius_m": 100518560.477631,
+      "outer_radius_m": 184284027.542324
+     }
+    }
+   }
+  },
+  {
+   "id": "moon1",
+   "name": {
+    "en": "Lorno b-I",
+    "ru": "Lorno b-I"
+   },
+   "class": "moon",
+   "subclass": "terrestrial",
+   "parent": "planet",
+   "mass_kg": 8.26444847442475e+21,
+   "radius_m": 1024504.0678023,
+   "position_m": [
+    528658907141.9734,
+    -66961818574.54517,
+    1347253.974117615
+   ],
+   "velocity_mps": [
+    -6066.186920527014,
+    -10580.34884990771,
+    -226.40220397177
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 496784129.42994,
+    "e": 0.006434924333,
+    "i_deg": 0.4980768419,
+    "node_deg": 0,
+    "omega_deg": 226.5723086,
+    "mean_anomaly_deg": 295.8637263,
+    "period_s": 114366.661459951,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 135.41
+   },
+   "appearance": {
+    "profile": "Planet_Io",
+    "seed": 3891450174,
+    "params": {
+     "Seed": 108.0,
+     "LandColorA": [
+      0.855,
+      0.7628,
+      0.2962,
+      1
+     ],
+     "LandColorB": [
+      0.6574,
+      0.39,
+      0.184,
+      1
+     ],
+     "OceanColor": [
+      0.01902,
+      0.05916,
+      0.1498,
+      1
+     ],
+     "NoiseScale": 1.615
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "moon2",
+   "name": {
+    "en": "Lorno b-II",
+    "ru": "Lorno b-II"
+   },
+   "class": "moon",
+   "subclass": "terrestrial",
+   "parent": "planet",
+   "mass_kg": 6.15699245721832e+22,
+   "radius_m": 1794092.6253162,
+   "position_m": [
+    529867703546.7333,
+    -67788057275.38323,
+    -3392460.633332903
+   ],
+   "velocity_mps": [
+    15281.53834448014,
+    29717.83554622112,
+    72.04209746507415
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 997036288.463107,
+    "e": 0.001228634873,
+    "i_deg": 0.2895632841,
+    "node_deg": 0,
+    "omega_deg": 87.17454133,
+    "mean_anomaly_deg": 230.6548319,
+    "period_s": 325171.077767161,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 135.41
+   },
+   "appearance": {
+    "profile": "Planet_Europa",
+    "seed": 677562264,
+    "params": {
+     "Seed": 761.0,
+     "LandColorA": [
+      0.8232,
+      0.7783,
+      0.6953,
+      1
+     ],
+     "LandColorB": [
+      0.6114,
+      0.4362,
+      0.301,
+      1
+     ],
+     "OceanColor": [
+      0.01942,
+      0.06323,
+      0.1388,
+      1
+     ],
+     "NoiseScale": 1.571
+    },
+    "layers": {}
+   }
+  },
+  {
+   "id": "moon3",
+   "name": {
+    "en": "Lorno b-III",
+    "ru": "Lorno b-III"
+   },
+   "class": "moon",
+   "subclass": "terrestrial",
+   "parent": "planet",
+   "mass_kg": 8.58111616589456e+21,
+   "radius_m": 1035308.38303621,
+   "position_m": [
+    527461941031.349,
+    -68253024828.11852,
+    -1854318.774590022
+   ],
+   "velocity_mps": [
+    9981.782343197481,
+    4265.457328012986,
+    -18.2743796608199
+   ],
+   "flags": {
+    "msini": false,
+    "controversial": false,
+    "candidate": false,
+    "conditional": false,
+    "excluded_from_start": false,
+    "reconstructed_fields": [
+     "surface.albedo_bond"
+    ]
+   },
+   "provenance": {
+    "mass_kg": {
+     "kind": "authored",
+     "source": "authored",
+     "note": "generator draw"
+    },
+    "radius_m": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "Chen & Kipping 2017 mean mass-radius relation (no scatter); astrophysical scatter is large"
+    },
+    "state": {
+     "kind": "authored",
+     "source": "authored",
+     "method": "generator elements -> Jacobi Cartesian state"
+    },
+    "surface.albedo_bond": {
+     "kind": "assumed",
+     "source": "this_script",
+     "note": "class-typical Bond albedo; not measured"
+    },
+    "surface.equilibrium_temp_k": {
+     "kind": "derived",
+     "source": "this_script",
+     "method": "full-redistribution blackbody at the semi-major axis using summed host luminosity"
+    },
+    "appearance": {
+     "kind": "authored",
+     "source": "this_script",
+     "note": "artistic hypothesis chosen from size/temperature class; no observed surface map exists"
+    }
+   },
+   "elements": {
+    "a_m": 2021339098.88712,
+    "e": 0.001794034525,
+    "i_deg": 0.09350656055,
+    "node_deg": 0,
+    "omega_deg": 228.6705997,
+    "mean_anomaly_deg": 345.6506032,
+    "period_s": 938650.447195242,
+    "reference": "jacobi",
+    "convention": "standard"
+   },
+   "surface": {
+    "albedo_bond": 0.3,
+    "emissivity": 0.95,
+    "atmosphere": {
+     "present": "unknown"
+    },
+    "equilibrium_temp_k": 135.41
+   },
+   "appearance": {
+    "profile": "Planet_Ganymede",
+    "seed": 253102262,
+    "params": {
+     "Seed": 8.0,
+     "LandColorA": [
+      0.5126,
+      0.5021,
+      0.4721,
+      1
+     ],
+     "LandColorB": [
+      0.323,
+      0.3081,
+      0.2635,
+      1
+     ],
+     "OceanColor": [
+      0.01982,
+      0.06021,
+      0.1391,
+      1
+     ],
+     "NoiseScale": 2.43
+    },
+    "layers": {}
+   }
+  }
+ ],
+ "optional_bodies": [],
+ "excluded": [],
+ "structures": [],
+ "assumptions": [
+  {
+   "id": "authored",
+   "text": {
+    "en": "Every body is authored by the generator with a fixed seed; nothing here is an observed system.",
+    "ru": "Все тела созданы генератором с фиксированным seed; это не наблюдаемая система."
+   },
+   "affects": [
+    "bodies"
+   ]
+  },
+  {
+   "id": "ms_scalings",
+   "text": {
+    "en": "Stars use main-sequence mass-radius-luminosity scalings; planets use the mass-radius relation.",
+    "ru": "Звёзды заданы соотношениями главной последовательности; планеты — соотношением масса–радиус."
+   },
+   "affects": [
+    "bodies.radius_m",
+    "bodies.star"
+   ]
+  },
+  {
+   "id": "short_check_only",
+   "text": {
+    "en": "The start state passed static checks only (no overlaps, bound orbits, Hill spacing listed). Long-term stability is not claimed.",
+    "ru": "Стартовое состояние прошло только статические проверки (без перекрытий, связанные орбиты, разнос по Хиллу). Долгосрочная устойчивость не заявляется."
+   },
+   "affects": [
+    "validation"
+   ]
+  },
+  {
+   "id": "ring_visual",
+   "text": {
+    "en": "The ring is visual and massless; moons do not raise tides in this model.",
+    "ru": "Кольцо визуальное и безмассовое; спутники не создают приливов в этой модели."
+   },
+   "affects": [
+    "planet.ring"
+   ]
+  }
+ ],
+ "provenance_summary": {
+  "measured": 0,
+  "derived": 6,
+  "reconstructed": 0,
+  "assumed": 4,
+  "literature": 0,
+  "authored": 21
+ },
+ "sources": [
+  {
+   "id": "authored",
+   "title": "AiXenix authored scenario values (fixed seed, documented assumptions)",
+   "url": "",
+   "retrieved_or_checked": "2026-11-02"
+  },
+  {
+   "id": "this_script",
+   "title": "AiXenix Cosmos Lab prepare_content.py reconstruction (documented method per field)",
+   "url": "Scripts/prepare_content.py",
+   "retrieved_or_checked": "2026-11-02"
+  }
+ ],
+ "lesson_ids": [
+  "L13"
+ ],
+ "experiment_ids": [],
+ "measurements": [],
+ "validation": {
+  "scenario_validated": false,
+  "core_integration_tested": false,
+  "data_checks": [
+   "finite_positive_mass_radius",
+   "no_overlap(min separation / sum of radii = 5.84)",
+   "zero_total_momentum(<1e-9 relative)",
+   "bound_to_parent; two-body period vs listed period max rel diff 2.3e-05 (Jacobi/perturbation effects expected)"
+  ],
+  "status_text": {
+   "en": "Initial conditions prepared and data-checked by prepare_content.py. Not yet integrated or validated by CosmicCore; no stability or accuracy claim.",
+   "ru": "Начальные условия подготовлены и проверены prepare_content.py. Ещё не проинтегрированы и не проверены CosmicCore; заявлений об устойчивости или точности нет."
+  }
+ },
+ "generator": {
+  "archetype": "moon_system_ring",
+  "seed": 7707,
+  "version": "aixenix.gen/1",
+  "params": {},
+  "meta": {
+   "host": "Lorno"
+  }
+ },
+ "sky_profile": "Sky_MilkyWay",
+ "plan": {
+  "research_id": null,
+  "gameplay": "Авторская система с фиксированными seed и паспортом допущений"
+ }
+}
